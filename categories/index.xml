@@ -6,14 +6,24 @@
     <description>Recent content in Categories on Muxuan - An .net developer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
+    <lastBuildDate>Sun, 11 Feb 2018 15:43:48 +0800</lastBuildDate>
     
 	<atom:link href="https://muxuanuser.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Android</title>
+      <link>https://muxuanuser.github.io/categories/android/</link>
+      <pubDate>Sun, 11 Feb 2018 15:43:48 +0800</pubDate>
+      
+      <guid>https://muxuanuser.github.io/categories/android/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Http</title>
       <link>https://muxuanuser.github.io/categories/http/</link>
-      <pubDate>Thu, 31 Aug 2017 15:43:48 +0800</pubDate>
+      <pubDate>Sun, 03 Dec 2017 15:43:48 +0800</pubDate>
       
       <guid>https://muxuanuser.github.io/categories/http/</guid>
       <description></description>
@@ -22,9 +32,63 @@
     <item>
       <title>Ionic</title>
       <link>https://muxuanuser.github.io/categories/ionic/</link>
-      <pubDate>Thu, 31 Aug 2017 15:43:48 +0800</pubDate>
+      <pubDate>Sun, 11 Feb 2018 15:43:48 +0800</pubDate>
       
       <guid>https://muxuanuser.github.io/categories/ionic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java</title>
+      <link>https://muxuanuser.github.io/categories/java/</link>
+      <pubDate>Wed, 14 Feb 2018 15:43:48 +0800</pubDate>
+      
+      <guid>https://muxuanuser.github.io/categories/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Localsortage</title>
+      <link>https://muxuanuser.github.io/categories/localsortage/</link>
+      <pubDate>Thu, 08 Mar 2018 15:43:48 +0800</pubDate>
+      
+      <guid>https://muxuanuser.github.io/categories/localsortage/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Web</title>
+      <link>https://muxuanuser.github.io/categories/web/</link>
+      <pubDate>Thu, 08 Mar 2018 15:43:48 +0800</pubDate>
+      
+      <guid>https://muxuanuser.github.io/categories/web/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>嵌入式</title>
+      <link>https://muxuanuser.github.io/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/</link>
+      <pubDate>Thu, 22 Feb 2018 15:43:48 +0800</pubDate>
+      
+      <guid>https://muxuanuser.github.io/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>树莓派</title>
+      <link>https://muxuanuser.github.io/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/</link>
+      <pubDate>Thu, 22 Feb 2018 15:43:48 +0800</pubDate>
+      
+      <guid>https://muxuanuser.github.io/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>框架</title>
+      <link>https://muxuanuser.github.io/categories/%E6%A1%86%E6%9E%B6/</link>
+      <pubDate>Wed, 14 Feb 2018 15:43:48 +0800</pubDate>
+      
+      <guid>https://muxuanuser.github.io/categories/%E6%A1%86%E6%9E%B6/</guid>
       <description></description>
     </item>
     
