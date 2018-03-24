@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Java中搭建SSM框架 - Muxuan - An .net developer</title>
+  <link rel="alternate" hreflang="en" href="http://www.gecore.win" />
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="牧轩居士" />
+  <meta name="description" content="一、什么是SSM框架 SSM框架是JavaWeb中常用的框架，包括Spring、Spring MVC、Mybatis三种框架的一个整合。其中任意" />
+
+  <meta name="keywords" content="muxuan, asp.net, .net, C# 7.0, Java, ionic, WebRTC, .net core" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.37.1" />
+
+
+<link rel="canonical" href="http://www.gecore.win/post/201802/java%E4%B8%AD%E7%9A%84ssm%E6%A1%86%E6%9E%B6%E5%92%8C%E9%85%8D%E7%BD%AE/java%E4%B8%AD%E7%9A%84ssm%E6%A1%86%E6%9E%B6%E5%92%8C%E9%85%8D%E7%BD%AE/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="Java中搭建SSM框架" />
+<meta property="og:description" content="一、什么是SSM框架 SSM框架是JavaWeb中常用的框架，包括Spring、Spring MVC、Mybatis三种框架的一个整合。其中任意" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.gecore.win/post/201802/java%E4%B8%AD%E7%9A%84ssm%E6%A1%86%E6%9E%B6%E5%92%8C%E9%85%8D%E7%BD%AE/java%E4%B8%AD%E7%9A%84ssm%E6%A1%86%E6%9E%B6%E5%92%8C%E9%85%8D%E7%BD%AE/" />
+
+
+
+<meta property="article:published_time" content="2018-02-11T15:43:48&#43;08:00"/>
+
+<meta property="article:modified_time" content="2018-02-11T15:43:48&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Java中搭建SSM框架">
+<meta itemprop="description" content="一、什么是SSM框架 SSM框架是JavaWeb中常用的框架，包括Spring、Spring MVC、Mybatis三种框架的一个整合。其中任意">
+
+
+<meta itemprop="datePublished" content="2018-02-11T15:43:48&#43;08:00" />
+<meta itemprop="dateModified" content="2018-02-11T15:43:48&#43;08:00" />
+<meta itemprop="wordCount" content="3193">
+
+
+
+<meta itemprop="keywords" content="java,ssm," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Java中搭建SSM框架"/>
+<meta name="twitter:description" content="一、什么是SSM框架 SSM框架是JavaWeb中常用的框架，包括Spring、Spring MVC、Mybatis三种框架的一个整合。其中任意"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Muxuan</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">目录</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">Muxuan</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">目录</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">Java中搭建SSM框架</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-02-11 </span>
+        <div class="post-category">
+            
+              <a href="/categories/java/"> java </a>
+            
+              <a href="/categories/%E6%A1%86%E6%9E%B6/"> 框架 </a>
+            
+          </div>
+        <span class="more-meta"> 3193 words </span>
+        <span class="more-meta"> 7 min read </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Table of Contents</h2>
+  
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#一-什么是ssm框架">一、什么是SSM框架</a></li>
+<li><a href="#框架基本结构">框架基本结构</a></li>
+<li><a href="#框架整合过程">框架整合过程</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<h2 id="一-什么是ssm框架">一、什么是SSM框架</h2>
+
+<p>SSM框架是JavaWeb中常用的框架，包括<code>Spring</code>、<code>Spring MVC</code>、<code>Mybatis</code>三种框架的一个整合。其中任意两个框架都可以相互组合<code>SS框架</code>、<code>SM</code>（O(∩_∩)O~）框架（两种情况：<code>Spring + Mybatis</code>、<code>Spring MVC + Mybatis</code>）。具体的详细情况可以参考这篇文章<a href='http://blog.csdn.net/daniel_fei/article/details/56670751' target='_blank'><a href="http://blog.csdn.net/daniel_fei/article/details/56670751">http://blog.csdn.net/daniel_fei/article/details/56670751</a></a>。</p>
+
+<h2 id="框架基本结构">框架基本结构</h2>
+
+<pre><code>-       |----controllers  控制器
+|       |----dao          dao层
+|       |----mapper       mybatis的mapper文件
+|--src--|----pojo         简单java对象
+|       |----service      服务层
+|       |----service.impl 服务实现层
+|
+|
+|               |----jdbc.properties    jdbc配置
+|               |----log4j.properties   log4j配置
+|-- resources --|----spring-mvc.xml     springmvc配置
+|               |----spring-mybatis.xml spring整合mybatis配置
+|   
+|---|Deployed Resources     部署资源文件
+</code></pre>
+
+<p>图片</p>
+
+<h2 id="框架整合过程">框架整合过程</h2>
+
+<p>创建一个<code>maven</code>的网站项目(不要问为什么)，然后按照下面步骤配置。
+1. 数据库初始化
+&gt; 请预先整理好数据库，我这里使用的MariaDB(mysql)，也可以使用其他数据库。</p>
+
+<pre><code class="language-sql">--mysql-connctor-java 5.1.32
+DROP TABLE IF EXISTS `user_t`;  
+  
+CREATE TABLE `user_t` (  
+  `id` int(11) NOT NULL AUTO_INCREMENT,  
+  `user_name` varchar(40) NOT NULL,  
+  `password` varchar(255) NOT NULL,  
+  `age` int(4) NOT NULL,  
+  PRIMARY KEY (`id`)  
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;  
+  
+insert  into `user_t`(`id`,`user_name`,`password`,`age`) values (1,'测试','sfasgfaf',24);  
+
+</code></pre>
+
+<ol>
+<li>maven配置文件
+&gt; 下面的是maven项目的<code>pom.xml</code>文件配置。</li>
+</ol>
+
+<pre><code class="language-xml">&lt;properties&gt;  
+        &lt;!-- spring版本号 --&gt;  
+        &lt;spring.version&gt;4.0.2.RELEASE&lt;/spring.version&gt;  
+        &lt;!-- mybatis版本号 --&gt;  
+        &lt;mybatis.version&gt;3.2.6&lt;/mybatis.version&gt;  
+        &lt;!-- log4j日志文件管理包版本 --&gt;  
+        &lt;slf4j.version&gt;1.7.7&lt;/slf4j.version&gt;  
+        &lt;log4j.version&gt;1.2.17&lt;/log4j.version&gt;  
+    &lt;/properties&gt;  
+    &lt;dependencies&gt;  
+        &lt;dependency&gt;  
+            &lt;groupId&gt;junit&lt;/groupId&gt;  
+            &lt;artifactId&gt;junit&lt;/artifactId&gt;  
+            &lt;version&gt;4.11&lt;/version&gt;  
+            &lt;!-- 表示开发的时候引入，发布的时候不会加载此包 --&gt;  
+            &lt;scope&gt;test&lt;/scope&gt;  
+        &lt;/dependency&gt;  
+        &lt;!-- spring核心包 --&gt;  
+        &lt;dependency&gt;  
+            &lt;groupId&gt;org.springframework&lt;/groupId&gt;  
+            &lt;artifactId&gt;spring-core&lt;/artifactId&gt;  
+            &lt;version&gt;${spring.version}&lt;/version&gt;  
+        &lt;/dependency&gt;  
+        &lt;dependency&gt;  
+            &lt;groupId&gt;org.springframework&lt;/groupId&gt;  
+            &lt;artifactId&gt;spring-web&lt;/artifactId&gt;  
+            &lt;version&gt;${spring.version}&lt;/version&gt;  
+        &lt;/dependency&gt;  
+        &lt;dependency&gt;  
+            &lt;groupId&gt;org.springframework&lt;/groupId&gt;  
+            &lt;artifactId&gt;spring-oxm&lt;/artifactId&gt;  
+            &lt;version&gt;${spring.version}&lt;/version&gt;  
+        &lt;/dependency&gt;  
+        &lt;dependency&gt;  
+            &lt;groupId&gt;org.springframework&lt;/groupId&gt;  
+            &lt;artifactId&gt;spring-tx&lt;/artifactId&gt;  
+            &lt;version&gt;${spring.version}&lt;/version&gt;  
+        &lt;/dependency&gt;  
+        &lt;dependency&gt;  
+            &lt;groupId&gt;org.springframework&lt;/groupId&gt;  
+            &lt;artifactId&gt;spring-jdbc&lt;/artifactId&gt;  
+            &lt;version&gt;${spring.version}&lt;/version&gt;  
+        &lt;/dependency&gt;  
+        &lt;dependency&gt;  
+            &lt;groupId&gt;org.springframework&lt;/groupId&gt;  
+            &lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt;  
+            &lt;version&gt;${spring.version}&lt;/version&gt;  
+        &lt;/dependency&gt;  
+        &lt;dependency&gt;  
+            &lt;groupId&gt;org.springframework&lt;/groupId&gt;  
+            &lt;artifactId&gt;spring-aop&lt;/artifactId&gt;  
+            &lt;version&gt;${spring.version}&lt;/version&gt;  
+        &lt;/dependency&gt;  
+        &lt;dependency&gt;  
+            &lt;groupId&gt;org.springframework&lt;/groupId&gt;  
+            &lt;artifactId&gt;spring-context-support&lt;/artifactId&gt;  
+            &lt;version&gt;${spring.version}&lt;/version&gt;  
+        &lt;/dependency&gt;  
+        &lt;dependency&gt;  
+            &lt;groupId&gt;org.springframework&lt;/groupId&gt;  
+            &lt;artifactId&gt;spring-test&lt;/artifactId&gt;  
+            &lt;version&gt;${spring.version}&lt;/version&gt;  
+        &lt;/dependency&gt;  
+        &lt;!-- mybatis核心包 --&gt;  
+        &lt;dependency&gt;  
+            &lt;groupId&gt;org.mybatis&lt;/groupId&gt;  
+            &lt;artifactId&gt;mybatis&lt;/artifactId&gt;  
+            &lt;version&gt;${mybatis.version}&lt;/version&gt;  
+        &lt;/dependency&gt;  
+        &lt;!-- mybatis/spring包 --&gt;  
+        &lt;dependency&gt;  
+            &lt;groupId&gt;org.mybatis&lt;/groupId&gt;  
+            &lt;artifactId&gt;mybatis-spring&lt;/artifactId&gt;  
+            &lt;version&gt;1.2.2&lt;/version&gt;  
+        &lt;/dependency&gt;  
+        &lt;!-- 导入java ee jar 包 --&gt;  
+        &lt;dependency&gt;  
+            &lt;groupId&gt;javax&lt;/groupId&gt;  
+            &lt;artifactId&gt;javaee-api&lt;/artifactId&gt;  
+            &lt;version&gt;7.0&lt;/version&gt;  
+        &lt;/dependency&gt;  
+        &lt;!-- 导入Mysql数据库链接jar包 --&gt;  
+        &lt;dependency&gt;  
+            &lt;groupId&gt;mysql&lt;/groupId&gt;  
+            &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;  
+            &lt;version&gt;5.1.30&lt;/version&gt;  
+        &lt;/dependency&gt;  
+        &lt;!-- 导入dbcp的jar包，用来在applicationContext.xml中配置数据库 --&gt;  
+        &lt;dependency&gt;  
+            &lt;groupId&gt;commons-dbcp&lt;/groupId&gt;  
+            &lt;artifactId&gt;commons-dbcp&lt;/artifactId&gt;  
+            &lt;version&gt;1.2.2&lt;/version&gt;  
+        &lt;/dependency&gt;  
+        &lt;!-- JSTL标签类 --&gt;  
+        &lt;dependency&gt;  
+            &lt;groupId&gt;jstl&lt;/groupId&gt;  
+            &lt;artifactId&gt;jstl&lt;/artifactId&gt;  
+            &lt;version&gt;1.2&lt;/version&gt;  
+        &lt;/dependency&gt;  
+        &lt;!-- 日志文件管理包 --&gt;  
+        &lt;!-- log start --&gt;  
+        &lt;dependency&gt;  
+            &lt;groupId&gt;log4j&lt;/groupId&gt;  
+            &lt;artifactId&gt;log4j&lt;/artifactId&gt;  
+            &lt;version&gt;${log4j.version}&lt;/version&gt;  
+        &lt;/dependency&gt;  
+        &lt;!-- 格式化对象，方便输出日志 --&gt;  
+        &lt;dependency&gt;  
+            &lt;groupId&gt;com.alibaba&lt;/groupId&gt;  
+            &lt;artifactId&gt;fastjson&lt;/artifactId&gt;  
+            &lt;version&gt;1.1.41&lt;/version&gt;  
+        &lt;/dependency&gt;  
+        &lt;dependency&gt;  
+            &lt;groupId&gt;org.slf4j&lt;/groupId&gt;  
+            &lt;artifactId&gt;slf4j-api&lt;/artifactId&gt;  
+            &lt;version&gt;${slf4j.version}&lt;/version&gt;  
+        &lt;/dependency&gt;  
+        &lt;dependency&gt;  
+            &lt;groupId&gt;org.slf4j&lt;/groupId&gt;  
+            &lt;artifactId&gt;slf4j-log4j12&lt;/artifactId&gt;  
+            &lt;version&gt;${slf4j.version}&lt;/version&gt;  
+        &lt;/dependency&gt;  
+        &lt;!-- log end --&gt;  
+        &lt;!-- 映入JSON --&gt;  
+        &lt;dependency&gt;  
+            &lt;groupId&gt;org.codehaus.jackson&lt;/groupId&gt;  
+            &lt;artifactId&gt;jackson-mapper-asl&lt;/artifactId&gt;  
+            &lt;version&gt;1.9.13&lt;/version&gt;  
+        &lt;/dependency&gt;  
+        &lt;!-- 上传组件包 --&gt;  
+        &lt;dependency&gt;  
+            &lt;groupId&gt;commons-fileupload&lt;/groupId&gt;  
+            &lt;artifactId&gt;commons-fileupload&lt;/artifactId&gt;  
+            &lt;version&gt;1.3.1&lt;/version&gt;  
+        &lt;/dependency&gt;  
+        &lt;dependency&gt;  
+            &lt;groupId&gt;commons-io&lt;/groupId&gt;  
+            &lt;artifactId&gt;commons-io&lt;/artifactId&gt;  
+            &lt;version&gt;2.4&lt;/version&gt;  
+        &lt;/dependency&gt;  
+        &lt;dependency&gt;  
+            &lt;groupId&gt;commons-codec&lt;/groupId&gt;  
+            &lt;artifactId&gt;commons-codec&lt;/artifactId&gt;  
+            &lt;version&gt;1.9&lt;/version&gt;  
+        &lt;/dependency&gt; 
+    &lt;/dependencies&gt;  
+</code></pre>
+
+<ol>
+<li>properties配置</li>
+</ol>
+
+<p>首先是jdbc的配置<code>jdbc.properties</code></p>
+
+<pre><code class="language-properties">driver=com.mysql.jdbc.Driver
+url=jdbc:mysql://127.0.0.1:3306/mybatis?useUnicode=true&amp;characterEncoding=UTF-8
+username=testroot
+password=123
+#定义初始连接数
+initialSize=0
+#定义最大连接数
+maxActive=20
+#定义最大空闲
+maxIdle=20
+#定义最小空闲
+minIdle=1
+#定义最长等待时间
+maxWait=60000
+</code></pre>
+
+<p>然后是log4j的配置<code>log4j.properties</code></p>
+
+<pre><code class="language-properties">#定义LOG输出级别
+log4j.rootLogger=INFO,Console,File
+#定义日志输出目的地为控制台
+log4j.appender.Console=org.apache.log4j.ConsoleAppender
+log4j.appender.Console.Target=System.out
+#可以灵活地指定日志输出格式，下面一行是指定具体的格式
+log4j.appender.Console.layout = org.apache.log4j.PatternLayout
+log4j.appender.Console.layout.ConversionPattern=[%c] - %m%n
+
+#文件大小到达指定尺寸的时候产生一个新的文件
+log4j.appender.File = org.apache.log4j.RollingFileAppender
+#指定输出目录
+log4j.appender.File.File = logs/springmvcMybist/ssm.log
+#定义文件最大大小
+log4j.appender.File.MaxFileSize = 10MB
+#输出所以日志，如果换成DEBUG表示输出DEBUG以上级别日志
+log4j.appender.File.Threshold = ALL
+log4j.appender.File.layout = org.apache.log4j.PatternLayout
+log4j.appender.File.layout.ConversionPattern =[%p] [%d{yyyy-MM-dd HH\:mm\:ss}][%c]%m%n
+</code></pre>
+
+<ol>
+<li><p>spring-mybatis整合
+&gt; 文件名为<code>spring-mybatis.xml</code>，注意文件的位置。</p>
+
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:p=&quot;http://www.springframework.org/schema/p&quot;
+xmlns:context=&quot;http://www.springframework.org/schema/context&quot;
+xmlns:mvc=&quot;http://www.springframework.org/schema/mvc&quot;
+xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans  
+                    http://www.springframework.org/schema/beans/spring-beans-4.0.xsd  
+                    http://www.springframework.org/schema/context  
+                    http://www.springframework.org/schema/context/spring-context-4.0.xsd  
+                    http://www.springframework.org/schema/mvc  
+                    http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd&quot;&gt;
+&lt;!-- 这里的 base-package 需要修改，修改为你所需要的即可 --&gt;
+&lt;!-- 自动扫描 --&gt;
+&lt;context:component-scan base-package=&quot;com.mxcms&quot; /&gt;
+
+&lt;!-- 引入配置文件 --&gt;
+&lt;bean id=&quot;propertyConfigurer&quot;
+    class=&quot;org.springframework.beans.factory.config.PropertyPlaceholderConfigurer&quot;&gt;
+    &lt;property name=&quot;location&quot; value=&quot;classpath:jdbc.properties&quot; /&gt;
+&lt;/bean&gt;
+
+&lt;bean id=&quot;dataSource&quot; class=&quot;org.apache.commons.dbcp.BasicDataSource&quot;
+    destroy-method=&quot;close&quot;&gt;
+    &lt;property name=&quot;driverClassName&quot; value=&quot;${driver}&quot; /&gt;
+    &lt;property name=&quot;url&quot; value=&quot;${url}&quot; /&gt;
+    &lt;property name=&quot;username&quot; value=&quot;${username}&quot; /&gt;
+    &lt;property name=&quot;password&quot; value=&quot;${password}&quot; /&gt;
+    &lt;!-- 初始化连接大小 --&gt;
+    &lt;property name=&quot;initialSize&quot; value=&quot;${initialSize}&quot;&gt;&lt;/property&gt;
+    &lt;!-- 连接池最大数量 --&gt;
+    &lt;property name=&quot;maxActive&quot; value=&quot;${maxActive}&quot;&gt;&lt;/property&gt;
+    &lt;!-- 连接池最大空闲 --&gt;
+    &lt;property name=&quot;maxIdle&quot; value=&quot;${maxIdle}&quot;&gt;&lt;/property&gt;
+    &lt;!-- 连接池最小空闲 --&gt;
+    &lt;property name=&quot;minIdle&quot; value=&quot;${minIdle}&quot;&gt;&lt;/property&gt;
+    &lt;!-- 获取连接最大等待时间 --&gt;
+    &lt;property name=&quot;maxWait&quot; value=&quot;${maxWait}&quot;&gt;&lt;/property&gt;
+&lt;/bean&gt;
+
+&lt;!-- spring和MyBatis完美整合，不需要mybatis的配置映射文件 --&gt;
+&lt;bean id=&quot;sqlSessionFactory&quot; class=&quot;org.mybatis.spring.SqlSessionFactoryBean&quot;&gt;
+    &lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot; /&gt;
+    &lt;!-- 这里的value需要修改为你的mapper文件位置，注意这里是斜线 / 不是 . --&gt;
+    &lt;!-- 自动扫描mapping.xml文件 --&gt;
+    &lt;property name=&quot;mapperLocations&quot; value=&quot;classpath:com/mxcms/mapper/*.xml&quot;&gt;&lt;/property&gt;
+&lt;/bean&gt;
+
+&lt;!-- 这里的value需要修改为你的dao文件夹位置 --&gt;
+&lt;!-- DAO接口所在包名，Spring会自动查找其下的类 --&gt;
+&lt;bean class=&quot;org.mybatis.spring.mapper.MapperScannerConfigurer&quot;&gt;
+    &lt;property name=&quot;basePackage&quot; value=&quot;com.mxcms.dao&quot; /&gt;
+    &lt;property name=&quot;sqlSessionFactoryBeanName&quot; value=&quot;sqlSessionFactory&quot;&gt;&lt;/property&gt;
+&lt;/bean&gt;
+
+&lt;!-- (事务管理)transaction manager, use JtaTransactionManager for global tx --&gt;
+&lt;bean id=&quot;transactionManager&quot;
+    class=&quot;org.springframework.jdbc.datasource.DataSourceTransactionManager&quot;&gt;
+    &lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot; /&gt;
+&lt;/bean&gt;
+&lt;/beans&gt;
+</code></pre></li>
+
+<li><p>maven 自动生成代码</p></li>
+</ol>
+
+<p>下面需要使用maven自动生成工具生成代码，可以</p>
+
+<p>下载</p>
+
+<p>压缩包，解压文件，然后按照下面方法进行自动生成代码。</p>
+
+<p>(1). 准备好你的下面的文件</p>
+
+<pre><code class="language-shell">mybatis-3.2.7.jar
+mybatis-generator-core-1.3.2.jar
+mysql-connector-java-5.1.25-bin.jar
+</code></pre>
+
+<p>(2). 修改自动生成代码配置文件</p>
+
+<p>修改配置文件<code>generatorConfig.xml</code>的相关内容，准备生成代码。</p>
+
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;  
+&lt;!DOCTYPE generatorConfiguration  
+  PUBLIC &quot;-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN&quot;  
+  &quot;http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd&quot;&gt;  
+&lt;generatorConfiguration&gt;  
+&lt;!-- 数据库驱动--&gt;  
+    &lt;classPathEntry  location=&quot;mysql-connector-java-5.1.25-bin.jar&quot;/&gt;  
+    &lt;context id=&quot;DB2Tables&quot;  targetRuntime=&quot;MyBatis3&quot;&gt;  
+        &lt;commentGenerator&gt;  
+            &lt;property name=&quot;suppressDate&quot; value=&quot;true&quot;/&gt;  
+            &lt;!-- 是否去除自动生成的注释 true：是 ： false:否 --&gt;  
+            &lt;property name=&quot;suppressAllComments&quot; value=&quot;true&quot;/&gt;  
+        &lt;/commentGenerator&gt; 
+        &lt;!-- 这里的连接字符串需要修改为你的真实可用字符串。 --&gt; 
+        &lt;!--数据库链接URL，用户名、密码 --&gt;  
+        &lt;jdbcConnection driverClass=&quot;com.mysql.jdbc.Driver&quot; connectionURL=&quot;jdbc:mysql://127.0.0.1/mybatis&quot; userId=&quot;testroot&quot; password=&quot;123&quot;&gt;  
+        &lt;/jdbcConnection&gt;  
+        &lt;javaTypeResolver&gt;  
+            &lt;property name=&quot;forceBigDecimals&quot; value=&quot;false&quot;/&gt;
+        &lt;/javaTypeResolver&gt;  
+        &lt;!-- 这里需要修改这个文件夹名称 --&gt;
+        &lt;!-- 生成模型的包名和位置--&gt;
+        &lt;javaModelGenerator targetPackage=&quot;com.mxcms.pojo&quot; targetProject=&quot;src&quot;&gt;  &lt;!--这个targetPackage需要修改--&gt;
+            &lt;property name=&quot;enableSubPackages&quot; value=&quot;true&quot;/&gt;  
+            &lt;property name=&quot;trimStrings&quot; value=&quot;true&quot;/&gt;  
+        &lt;/javaModelGenerator&gt;  
+        &lt;!--这个targetPackage需要修改--&gt;
+        &lt;!-- 生成映射文件的包名和位置--&gt;  
+        &lt;sqlMapGenerator targetPackage=&quot;com.mxcms.mapper&quot; targetProject=&quot;src&quot;&gt;  
+            &lt;property name=&quot;enableSubPackages&quot; value=&quot;true&quot;/&gt;  
+        &lt;/sqlMapGenerator&gt;  
+        &lt;!--这个targetPackage需要修改--&gt;
+        &lt;!-- 生成DAO的包名和位置--&gt;  
+        &lt;javaClientGenerator type=&quot;XMLMAPPER&quot; targetPackage=&quot;com.mxcms.dao&quot; targetProject=&quot;src&quot;&gt;  
+            &lt;property name=&quot;enableSubPackages&quot; value=&quot;true&quot;/&gt;
+        &lt;/javaClientGenerator&gt;  
+        &lt;!-- 要生成的表 tableName是数据库中的表名或视图名 domainObjectName是实体类名--&gt;  
+        &lt;table tableName=&quot;user_t&quot; domainObjectName=&quot;User&quot; enableCountByExample=&quot;false&quot; enableUpdateByExample=&quot;false&quot; enableDeleteByExample=&quot;false&quot; enableSelectByExample=&quot;false&quot; selectByExampleQueryId=&quot;false&quot;&gt;&lt;/table&gt;
+    &lt;/context&gt;  
+&lt;/generatorConfiguration&gt;
+</code></pre>
+
+<p>(3). 制作一个bat脚本</p>
+
+<pre><code class="language-bat">IF NOT EXIST &quot;src&quot; MD &quot;src&quot;
+
+java -jar mybatis-generator-core-1.3.2.jar -configfile generatorConfig.xml -overwrite
+
+pause();
+</code></pre>
+
+<p>(4). 生成代码</p>
+
+<p>将上面的所有文件放到一个文件夹中，然后运行bat文件，将会自动生成代码。
+&gt; 注意:表配置请务必一次写完，虽然中途仍然可以自动生成并复制，建议一次性设计好数据库和关系。</p>
+
+<p>(5). 复制代码</p>
+
+<p>将上面的所有代码复制到<code>src/main/java</code>下面即可。
+&gt; 一个错误信息：</p>
+
+<p>你或许会遇到下面的错误：</p>
+
+<pre><code class="language-shell"> org.apache.ibatis.binding.BindingException: Invalid bound statement (not found)
+</code></pre>
+
+<p>首先检验一下你的路径是否正确，如果确保路径正确，可以尝试将<code>mapper</code>文件夹放到<code>resource</code>中。</p>
+
+<ol>
+<li>实现service</li>
+</ol>
+
+<p>到此为止dao层做好了，下面开始做服务层。</p>
+
+<p>(1) 创建service接口</p>
+
+<pre><code class="language-java">public interface IUserService {
+    public User getUserById(int userId);
+}
+</code></pre>
+
+<p>(2). 实现接口</p>
+
+<pre><code class="language-java">@Service(&quot;userService&quot;)
+public class UserService implements IUserService {
+    @Resource
+    private UserMapper userDao;
+    public User getUserById(int userId) {
+        return this.userDao.selectByPrimaryKey(userId);
+    }
+}
+</code></pre>
+
+<ol>
+<li>测试</li>
+</ol>
+
+<p>到了这一步恭喜你<code>spring + mybatis</code>已经做好了，可以开始测试了。</p>
+
+<pre><code class="language-java">@RunWith(SpringJUnit4ClassRunner.class) // 表示继承了SpringJUnit4ClassRunner类
+@ContextConfiguration(locations = { &quot;classpath:spring-mybatis.xml&quot; })
+
+public class TestMyBatis {
+    private static Logger logger = Logger.getLogger(TestMyBatis.class);
+    // private ApplicationContext ac = null;
+    @Resource
+    private IUserService userService = null;
+
+    // @Before
+    // public void before() {
+    // ac = new ClassPathXmlApplicationContext(&quot;applicationContext.xml&quot;);
+    // userService = (IUserService) ac.getBean(&quot;userService&quot;);
+    // }
+
+    @Test
+    public void test() {
+        User user = userService.getUserById(1);
+        // System.out.println(user.getUserName());
+        // logger.info(&quot;值：&quot;+user.getUserName());
+        logger.info(JSON.toJSONString(user));
+    }
+}
+</code></pre>
+
+<p>下面右键<code>debug as junit</code>，如果看到你的数据库的用户信息打印出来了，恭喜你。初步整合成功，如果报错好好看看步骤，然后认真跟着错误修改一下。</p>
+
+<ol>
+<li>ssm整合</li>
+</ol>
+
+<p>经过上面的战斗，你已经完成<code>spring + mybatis</code>的整合，下面就会变得很简单。 配置<code>spring.xml</code>文件：</p>
+
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:p=&quot;http://www.springframework.org/schema/p&quot;
+    xmlns:context=&quot;http://www.springframework.org/schema/context&quot;
+    xmlns:mvc=&quot;http://www.springframework.org/schema/mvc&quot;
+    xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans  
+                            http://www.springframework.org/schema/beans/spring-beans-4.0.xsd  
+                            http://www.springframework.org/schema/context  
+                            http://www.springframework.org/schema/context/spring-context-4.0.xsd  
+                            http://www.springframework.org/schema/mvc  
+                            http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd&quot;&gt;
+
+    &lt;!--避免IE执行AJAX时，返回JSON出现下载文件 --&gt;
+    &lt;bean id=&quot;mappingJacksonHttpMessageConverter&quot;
+        class=&quot;org.springframework.http.converter.json.MappingJacksonHttpMessageConverter&quot;&gt;
+        &lt;property name=&quot;supportedMediaTypes&quot;&gt;
+            &lt;list&gt;
+                &lt;value&gt;text/html;charset=UTF-8&lt;/value&gt;
+            &lt;/list&gt;
+        &lt;/property&gt;
+    &lt;/bean&gt;
+    &lt;!-- 启动SpringMVC的注解功能，完成请求和注解POJO的映射 --&gt;
+    &lt;bean
+        class=&quot;org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter&quot;&gt;
+        &lt;property name=&quot;messageConverters&quot;&gt;
+            &lt;list&gt;
+                &lt;ref bean=&quot;mappingJacksonHttpMessageConverter&quot; /&gt;    &lt;!-- JSON转换器 --&gt;
+            &lt;/list&gt;
+        &lt;/property&gt;
+    &lt;/bean&gt;
+    &lt;!-- 对静态资源的访问 --&gt;
+    &lt;!-- &lt;mvc:resources mapping=&quot;/js/**&quot; location=&quot;/js/&quot; /&gt; &lt;mvc:resources mapping=&quot;/css/**&quot; 
+        location=&quot;/css/&quot; /&gt; --&gt;
+
+    &lt;!-- 自动扫描该包，使SpringMVC认为包下用了@controller注解的类是控制器 --&gt;
+    &lt;context:component-scan base-package=&quot;com.mxcms.controller&quot; /&gt;
+    &lt;!-- 添加注解驱动 --&gt;
+    &lt;mvc:annotation-driven enable-matrix-variables=&quot;true&quot; /&gt;
+    &lt;!-- 允许对静态资源文件的访问 --&gt;
+    &lt;mvc:default-servlet-handler /&gt;
+    &lt;!-- 定义跳转的文件的前后缀 ，视图模式配置 --&gt;
+    &lt;bean
+        class=&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;&gt;
+        &lt;!-- 这里的配置我的理解是自动给后面action的方法return的字符串加上前缀和后缀，变成一个 可用的url地址 --&gt;
+        &lt;property name=&quot;prefix&quot; value=&quot;/WEB-INF/views/&quot; /&gt;
+        &lt;property name=&quot;suffix&quot; value=&quot;.jsp&quot; /&gt;
+    &lt;/bean&gt;
+    &lt;!-- 配置文件上传，如果没有使用文件上传可以不用配置，当然如果不配，那么配置文件中也不必引入上传组件包 --&gt;
+    &lt;bean id=&quot;multipartResolver&quot;
+        class=&quot;org.springframework.web.multipart.commons.CommonsMultipartResolver&quot;&gt;
+        &lt;!-- 默认编码 --&gt;
+        &lt;property name=&quot;defaultEncoding&quot; value=&quot;UTF-8&quot; /&gt;
+        &lt;!-- 文件大小最大值 --&gt;
+        &lt;property name=&quot;maxUploadSize&quot; value=&quot;10485760000&quot; /&gt;
+        &lt;!-- 内存中的最大值 --&gt;
+        &lt;property name=&quot;maxInMemorySize&quot; value=&quot;40960&quot; /&gt;
+    &lt;/bean&gt;
+&lt;/beans&gt;
+</code></pre>
+
+<ol>
+<li><p>web.xml整合</p>
+
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;web-app xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+xmlns=&quot;http://java.sun.com/xml/ns/javaee&quot;
+xsi:schemaLocation=&quot;http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd&quot;
+version=&quot;3.0&quot;&gt;
+&lt;display-name&gt;Archetype Created Web Application&lt;/display-name&gt;
+    
+&lt;!-- Spring和mybatis的配置文件 --&gt;
+&lt;context-param&gt;
+    &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
+    &lt;param-value&gt;classpath:spring-mybatis.xml&lt;/param-value&gt;
+&lt;/context-param&gt;
+    
+&lt;!-- 编码过滤器 --&gt;
+&lt;filter&gt;
+    &lt;filter-name&gt;encodingFilter&lt;/filter-name&gt;
+    &lt;filter-class&gt;org.springframework.web.filter.CharacterEncodingFilter&lt;/filter-class&gt;
+    &lt;async-supported&gt;true&lt;/async-supported&gt;
+    &lt;init-param&gt;
+        &lt;param-name&gt;encoding&lt;/param-name&gt;
+        &lt;param-value&gt;UTF-8&lt;/param-value&gt;
+    &lt;/init-param&gt;
+&lt;/filter&gt;
+&lt;filter-mapping&gt;
+    &lt;filter-name&gt;encodingFilter&lt;/filter-name&gt;
+    &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
+&lt;/filter-mapping&gt;
+    
+&lt;!-- Spring监听器 --&gt;
+&lt;listener&gt;
+    &lt;listener-class&gt;org.springframework.web.context.ContextLoaderListener&lt;/listener-class&gt;
+&lt;/listener&gt;
+    
+&lt;!-- 防止Spring内存溢出监听器 --&gt;
+&lt;listener&gt;
+    &lt;listener-class&gt;org.springframework.web.util.IntrospectorCleanupListener&lt;/listener-class&gt;
+&lt;/listener&gt;
+    
+&lt;!-- Spring MVC servlet --&gt;
+&lt;servlet&gt;
+    &lt;servlet-name&gt;SpringMVC&lt;/servlet-name&gt;
+    &lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&lt;/servlet-class&gt;
+    &lt;init-param&gt;
+        &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
+        &lt;param-value&gt;classpath:spring-mvc.xml&lt;/param-value&gt;
+    &lt;/init-param&gt;
+    &lt;load-on-startup&gt;1&lt;/load-on-startup&gt;
+    &lt;async-supported&gt;true&lt;/async-supported&gt;
+&lt;/servlet&gt;
+&lt;servlet-mapping&gt;
+    &lt;servlet-name&gt;SpringMVC&lt;/servlet-name&gt;
+    &lt;!-- 此处可以可以配置成*.do，对应struts的后缀习惯 --&gt;
+    &lt;url-pattern&gt;/&lt;/url-pattern&gt;
+&lt;/servlet-mapping&gt;
+    
+&lt;welcome-file-list&gt;
+    &lt;welcome-file&gt;/index.html&lt;/welcome-file&gt;
+    &lt;welcome-file&gt;/index.jsp&lt;/welcome-file&gt;
+&lt;/welcome-file-list&gt;
+&lt;/web-app&gt;
+</code></pre></li>
+
+<li><p>controllers编写配置</p></li>
+</ol>
+
+<p>编写controller</p>
+
+<pre><code class="language-java">@Controller
+@RequestMapping(&quot;/user&quot;)
+public class UserController {
+    @Resource
+    private IUserService userService;
+    @RequestMapping(&quot;/showUser&quot;)
+    public String toIndex(HttpServletRequest request, Model model) {
+        int userId = Integer.parseInt(request.getParameter(&quot;id&quot;));
+        User user = this.userService.getUserById(userId);
+        model.addAttribute(&quot;user&quot;, user);
+        return &quot;User&quot;;
+    }
+}
+</code></pre>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">牧轩居士</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2018-02-11</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="noopener" target="_blank">署名 4.0 国际 (CC BY 4.0)</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/java/">java</a>
+          
+          <a href="/tags/ssm/">ssm</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/201802/dynamic_web_module_3.0_require_1.6_or_newer/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Java SSM框架报错Dynamic_Web_Module....</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/201802/ionic3%E6%9E%84%E5%BB%BA%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E6%89%BE%E4%B8%8D%E5%88%B0androidmanifest.xml%E7%9A%84%E9%97%AE%E9%A2%98/">
+            <span class="next-text nav-default">ionic3 构建中遇到找不到AndroidManifest.xml</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+    
+
+  
+
+  
+
+  
+  </article>
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:dev@gecore.win" rel="me" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/muxuanuser" rel="me" class="iconfont icon-github" title="github"></a>
+  <a href="http://www.gecore.win/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">牧轩</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/jane.min.js?v=2.7.0"></script>
+
+
+
+
+
+</body>
+</html>

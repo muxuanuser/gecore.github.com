@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>嵌入式 on Muxuan - An .net developer</title>
+    <link>http://www.gecore.win/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/</link>
+    <description>Recent content in 嵌入式 on Muxuan - An .net developer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 22 Feb 2018 15:43:48 +0800</lastBuildDate>
+    
+	<atom:link href="http://www.gecore.win/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>树莓派安装Node js</title>
+      <link>http://www.gecore.win/post/201802/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%89%E8%A3%85node/</link>
+      <pubDate>Thu, 22 Feb 2018 15:43:48 +0800</pubDate>
+      
+      <guid>http://www.gecore.win/post/201802/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%89%E8%A3%85node/</guid>
+      <description>树莓派安装node环境 下载node包 &amp;gt; https://npm.taobao.org/mirrors/node/ 我选择的是node-v9.5.0-linux-armv7l.tar.gz，当然可以选择其他版本，但是</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>使用JAXB处理XML文件 - Muxuan - An .net developer</title>
+  <link rel="alternate" hreflang="en" href="http://www.gecore.win" />
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="牧轩居士" />
+  <meta name="description" content="使用JAXB处理XML文件 JAXB（Java Architecture for XML Binding) 是一个业界的标准，是一项可以根据XML Schema产生Java类的技术。该过程中，JAX" />
+
+  <meta name="keywords" content="muxuan, asp.net, .net, C# 7.0, Java, ionic, WebRTC, .net core" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.37.1" />
+
+
+<link rel="canonical" href="http://www.gecore.win/post/201801/%E4%BD%BF%E7%94%A8jaxb%E5%A4%84%E7%90%86xml%E6%96%87%E4%BB%B6/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="使用JAXB处理XML文件" />
+<meta property="og:description" content="使用JAXB处理XML文件 JAXB（Java Architecture for XML Binding) 是一个业界的标准，是一项可以根据XML Schema产生Java类的技术。该过程中，JAX" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.gecore.win/post/201801/%E4%BD%BF%E7%94%A8jaxb%E5%A4%84%E7%90%86xml%E6%96%87%E4%BB%B6/" />
+
+
+
+<meta property="article:published_time" content="2018-01-31T15:43:48&#43;08:00"/>
+
+<meta property="article:modified_time" content="2018-01-31T15:43:48&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="使用JAXB处理XML文件">
+<meta itemprop="description" content="使用JAXB处理XML文件 JAXB（Java Architecture for XML Binding) 是一个业界的标准，是一项可以根据XML Schema产生Java类的技术。该过程中，JAX">
+
+
+<meta itemprop="datePublished" content="2018-01-31T15:43:48&#43;08:00" />
+<meta itemprop="dateModified" content="2018-01-31T15:43:48&#43;08:00" />
+<meta itemprop="wordCount" content="1207">
+
+
+
+<meta itemprop="keywords" content="java,jaxb,xml," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="使用JAXB处理XML文件"/>
+<meta name="twitter:description" content="使用JAXB处理XML文件 JAXB（Java Architecture for XML Binding) 是一个业界的标准，是一项可以根据XML Schema产生Java类的技术。该过程中，JAX"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Muxuan</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">目录</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">Muxuan</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">目录</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">使用JAXB处理XML文件</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-01-31 </span>
+        <div class="post-category">
+            
+              <a href="/categories/java/"> java </a>
+            
+          </div>
+        <span class="more-meta"> 1207 words </span>
+        <span class="more-meta"> 3 min read </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Table of Contents</h2>
+  
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#使用jaxb处理xml文件">使用JAXB处理XML文件</a></li>
+<li><a href="#一个案例">一个案例</a>
+<ul>
+<li>
+<ul>
+<li><a href="#model">model</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<h2 id="使用jaxb处理xml文件">使用JAXB处理XML文件</h2>
+
+<p>JAXB（Java Architecture for XML Binding) 是一个业界的标准，是一项可以根据XML Schema产生Java类的技术。该过程中，JAXB也提供了将XML实例文档反向生成Java对象树的方法，并能将Java对象树的内容重新写到XML实例文档。从另一方面来讲，JAXB提供了快速而简便的方法将XML模式绑定到Java表示，从而使得Java开发者在Java应用程序中能方便地结合XML数据和处理函数。
+&gt; 关键字：<code>JAXB</code> , <code>Java</code> , <code>Serialize</code></p>
+
+<h2 id="一个案例">一个案例</h2>
+
+<h4 id="model">model</h4>
+
+<pre><code class="language-java">//AllProductLevels 模型
+package com.serializations.model;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement(name=&quot;AllProductLevels&quot;)
+public class AllProductLevels {
+    @Override
+    public String toString() {
+        String result = &quot;&quot;;
+        
+        for (Level level : children) {
+            result += level.toString() + &quot;    &quot;;
+        }
+        
+        return result;
+    }
+
+    @XmlElement(name = &quot;level&quot;, required = true)
+    private ArrayList&lt;Level&gt; children;
+
+    public ArrayList&lt;Level&gt; getChildren() {
+        return children;
+    }
+
+    public void setChildren(ArrayList&lt;Level&gt; childs) {
+        children = childs;
+    }
+}
+
+//Level 模型
+package com.serializations.model;
+
+import java.util.ArrayList;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement(name=&quot;level&quot;)
+public class Level {
+    @XmlAttribute(name = &quot;id&quot;, required = true)
+    private String id;
+
+    @Override
+    public String toString() {
+        return &quot;Level [id=&quot; + id + &quot;, name=&quot; + name + &quot;, lev=&quot; + lev + &quot;, children=&quot; + children + &quot;]&quot;;
+    }
+
+    @XmlAttribute(name = &quot;name&quot;, required = true)
+    private String name;
+    
+    @XmlAttribute(name = &quot;lev&quot;, required = true)
+    private String lev;
+    @XmlElement(name = &quot;level&quot;, required = true)
+    private ArrayList&lt;Level&gt; children;
+
+    public String getLev() {
+        return lev;
+    }
+
+    public void setLev(String lev) {
+        this.lev = lev;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public ArrayList&lt;Level&gt; getChildren() {
+        return children;
+    }
+
+    public void setChildren(ArrayList&lt;Level&gt; child) {
+        this.children = child;
+    }
+}
+
+</code></pre>
+
+<p>创建好模型之后开始使用帮助工具，该工具可以方便Java对象和XML字符串之间相互转换，具体细节如下：</p>
+
+<pre><code class="language-java">package com.serializations.util;
+
+import java.io.StringReader;  
+import java.io.StringWriter;  
+  
+import javax.xml.bind.JAXBContext;  
+import javax.xml.bind.Marshaller;  
+import javax.xml.bind.Unmarshaller; 
+
+public class JAXBUtil {
+     /** 
+     * JavaBean转换成xml 
+     * 默认编码UTF-8 
+     * @param obj 
+     * @param writer 
+     * @return  
+     */  
+    public static String convertToXml(Object obj) {  
+        return convertToXml(obj, &quot;UTF-8&quot;);  
+    }  
+  
+    /** 
+     * JavaBean转换成xml 
+     * @param obj 
+     * @param encoding  
+     * @return  
+     */  
+    public static String convertToXml(Object obj, String encoding) {  
+        String result = null;  
+        try {  
+            JAXBContext context = JAXBContext.newInstance(obj.getClass());  
+            Marshaller marshaller = context.createMarshaller();  
+            marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);  
+            marshaller.setProperty(Marshaller.JAXB_ENCODING, encoding);  
+  
+            StringWriter writer = new StringWriter();  
+            marshaller.marshal(obj, writer);  
+            result = writer.toString();  
+        } catch (Exception e) {  
+            e.printStackTrace();  
+        }  
+  
+        return result;  
+    }  
+  
+    /** 
+     * xml转换成JavaBean 
+     * @param xml 
+     * @param c 
+     * @return 
+     */  
+    @SuppressWarnings(&quot;unchecked&quot;)  
+    public static &lt;T&gt; T converyToJavaBean(String xml, Class&lt;T&gt; c) {  
+        T t = null;  
+        try {  
+            JAXBContext context = JAXBContext.newInstance(c);  
+            Unmarshaller unmarshaller = context.createUnmarshaller();  
+            t = (T) unmarshaller.unmarshal(new StringReader(xml));  
+        } catch (Exception e) {  
+            e.printStackTrace();  
+        }  
+  
+        return t;  
+    }  
+}
+
+</code></pre>
+
+<p>转换案例：</p>
+
+<pre><code class="language-java">package com.serializations.controller;
+
+import java.awt.List;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+
+import com.serializations.model.AllProductLevels;
+import com.serializations.model.Level;
+import com.serializations.util.JAXBUtil;
+
+public class JAXBController {
+    public void serialize() {
+        ArrayList&lt;Level&gt; children = new ArrayList&lt;Level&gt;();
+
+        Level level = new Level();
+        level.setId(&quot;1&quot;);
+        level.setName(&quot;张三&quot;);
+        level.setLev(&quot;1&quot;);
+
+        Level level2 = new Level();
+        level2.setId(&quot;1&quot;);
+        level2.setName(&quot;李四&quot;);
+        level2.setLev(&quot;2&quot;);
+        level2.setChildren(null);
+
+        Level level3 = new Level();
+        level3.setId(&quot;2&quot;);
+        level3.setName(&quot;李四22&quot;);
+        level3.setLev(&quot;2&quot;);
+        level3.setChildren(null);
+
+        Level level4 = new Level();
+        level4.setId(&quot;3&quot;);
+        level4.setName(&quot;李四23&quot;);
+        level4.setLev(&quot;2&quot;);
+        level4.setChildren(null);
+
+        ArrayList&lt;Level&gt; list = new ArrayList&lt;Level&gt;();
+        list.add(level2);
+        list.add(level3);
+        list.add(level4);
+        level.setChildren(list);
+
+        Level level5 = new Level();
+        level5.setId(&quot;2&quot;);
+        level5.setName(&quot;李四&quot;);
+        level5.setLev(&quot;1&quot;);
+        level5.setChildren(null);
+
+        children.add(level);
+        children.add(level5);
+
+        AllProductLevels levels = new AllProductLevels();
+        levels.setChildren(children);
+
+        String str = JAXBUtil.convertToXml(levels);
+        System.out.println(str);
+    }
+
+    public void deSerialize() {
+        String xml = &quot;&lt;?xml version=\&quot;1.0\&quot; encoding=\&quot;UTF-8\&quot; standalone=\&quot;yes\&quot;?&gt;&quot; + &quot;&lt;AllProductLevels&gt;&quot;
+                + &quot;&lt;level id=\&quot;1\&quot; name=\&quot;张三\&quot; lev=\&quot;1\&quot;&gt;&quot; + &quot;&lt;level id=\&quot;1\&quot; name=\&quot;李四\&quot; lev=\&quot;2\&quot;/&gt;&quot;
+                + &quot;&lt;level id=\&quot;2\&quot; name=\&quot;李四22\&quot; lev=\&quot;2\&quot;/&gt;&quot; + &quot;&lt;level id=\&quot;3\&quot; name=\&quot;李四23\&quot; lev=\&quot;2\&quot;/&gt;&quot; + &quot;&lt;/level&gt;&quot;
+                + &quot;&lt;level id=\&quot;2\&quot; name=\&quot;李四\&quot; lev=\&quot;1\&quot;/&gt;&quot; + &quot;&lt;/AllProductLevels&gt;&quot;;
+        
+        AllProductLevels levels = (AllProductLevels)JAXBUtil.converyToJavaBean(xml, AllProductLevels.class);
+        System.out.println(levels);
+    }
+
+    public void deSerializeFromFile() throws Exception{
+        BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(&quot;AllProduct.xml&quot;),&quot;UTF-8&quot;));
+        String data = null;
+        String result = &quot;&quot;;
+        while((data = reader.readLine()) != null) result += data;
+        
+        System.out.println(result);
+        
+        AllProductLevels levels = (AllProductLevels)JAXBUtil.converyToJavaBean(result, AllProductLevels.class);
+        
+        System.out.println(levels.getChildren().get(0).getName());
+    }
+}
+
+</code></pre>
+
+<p>执行结果如下：</p>
+
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
+&lt;AllProductLevels&gt;
+    &lt;level id=&quot;1&quot; name=&quot;张三&quot; lev=&quot;1&quot;&gt;
+        &lt;level id=&quot;1&quot; name=&quot;李四&quot; lev=&quot;2&quot;/&gt;
+        &lt;level id=&quot;2&quot; name=&quot;李四22&quot; lev=&quot;2&quot;/&gt;
+        &lt;level id=&quot;3&quot; name=&quot;李四23&quot; lev=&quot;2&quot;/&gt;
+    &lt;/level&gt;
+    &lt;level id=&quot;2&quot; name=&quot;李四&quot; lev=&quot;1&quot;/&gt;
+&lt;/AllProductLevels&gt;
+</code></pre>
+
+<p>解析结果：</p>
+
+<pre><code class="language-bash">Level [id=1, name=张三, lev=1, children=[Level [id=1, name=李四, lev=2, children=null], Level [id=2, name=李四22, lev=2, children=null], Level [id=3, name=李四23, lev=2, children=null]]]    Level [id=2, name=李四, lev=1, children=null]    
+</code></pre>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">牧轩居士</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2018-01-31</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="noopener" target="_blank">署名 4.0 国际 (CC BY 4.0)</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/java/">java</a>
+          
+          <a href="/tags/jaxb/">jaxb</a>
+          
+          <a href="/tags/xml/">xml</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/201802/ionic3%E6%9E%84%E5%BB%BA%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E6%89%BE%E4%B8%8D%E5%88%B0androidmanifest.xml%E7%9A%84%E9%97%AE%E9%A2%98/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">ionic3 构建中遇到找不到AndroidManifest.xml</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/201712/ionic_jpush/">
+            <span class="next-text nav-default">IONIC集成极光推送</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+    
+
+  
+
+  
+
+  
+  </article>
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:dev@gecore.win" rel="me" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/muxuanuser" rel="me" class="iconfont icon-github" title="github"></a>
+  <a href="http://www.gecore.win/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">牧轩</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/jane.min.js?v=2.7.0"></script>
+
+
+
+
+
+</body>
+</html>

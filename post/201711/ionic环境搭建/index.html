@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>IONIC开发环境搭建 - Muxuan - An .net developer</title>
+  <link rel="alternate" hreflang="en" href="http://www.gecore.win" />
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="牧轩居士" />
+  <meta name="description" content="IONI开发环境搭建 官网：https://ionicframework.com/docs/ ionic是一个用来开发混合手机应用的，开源的，免" />
+
+  <meta name="keywords" content="muxuan, asp.net, .net, C# 7.0, Java, ionic, WebRTC, .net core" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.37.1" />
+
+
+<link rel="canonical" href="http://www.gecore.win/post/201711/ionic%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="IONIC开发环境搭建" />
+<meta property="og:description" content="IONI开发环境搭建 官网：https://ionicframework.com/docs/ ionic是一个用来开发混合手机应用的，开源的，免" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.gecore.win/post/201711/ionic%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" />
+
+
+
+<meta property="article:published_time" content="2017-11-15T15:43:48&#43;08:00"/>
+
+<meta property="article:modified_time" content="2017-11-15T15:43:48&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="IONIC开发环境搭建">
+<meta itemprop="description" content="IONI开发环境搭建 官网：https://ionicframework.com/docs/ ionic是一个用来开发混合手机应用的，开源的，免">
+
+
+<meta itemprop="datePublished" content="2017-11-15T15:43:48&#43;08:00" />
+<meta itemprop="dateModified" content="2017-11-15T15:43:48&#43;08:00" />
+<meta itemprop="wordCount" content="311">
+
+
+
+<meta itemprop="keywords" content="ionic," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="IONIC开发环境搭建"/>
+<meta name="twitter:description" content="IONI开发环境搭建 官网：https://ionicframework.com/docs/ ionic是一个用来开发混合手机应用的，开源的，免"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Muxuan</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">目录</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">Muxuan</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">目录</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">IONIC开发环境搭建</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2017-11-15 </span>
+        <div class="post-category">
+            
+              <a href="/categories/ionic/"> ionic </a>
+            
+          </div>
+        <span class="more-meta"> 311 words </span>
+        <span class="more-meta"> 1 min read </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Table of Contents</h2>
+  
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#ioni开发环境搭建">IONI开发环境搭建</a>
+<ul>
+<li>
+<ul>
+<li><a href="#预备环境">预备环境</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<h2 id="ioni开发环境搭建">IONI开发环境搭建</h2>
+
+<blockquote>
+<p>官网：<a href="https://ionicframework.com/docs/">https://ionicframework.com/docs/</a></p>
+</blockquote>
+
+<p>ionic是一个用来开发混合手机应用的，开源的，免费的代码库。可以优化html、css和js的性能，构建高效的应用程序，而且还可以用于构建Sass和AngularJS的优化。ionic会是一个可以信赖的框架。</p>
+
+<h4 id="预备环境">预备环境</h4>
+
+<ol>
+<li>node环境</li>
+</ol>
+
+<p>在nodejs官网<a href="http://nodejs.cn/">http://nodejs.cn/</a>下载最新的适合电脑系统要求的nodejs安装包，解压文件配置环境变量，如：<code>NODE_HOME</code>：<code>D:\DevT\node-v8.9.3-win-x64</code>，配置完毕之后可以使用命令查看是否安装完成。</p>
+
+<pre><code class="language-shell">&gt; node -v
+v8.9.3
+&gt; npm -v
+5.5.1
+</code></pre>
+
+<ol>
+<li>ionic环境</li>
+</ol>
+
+<p>完成上述步骤之后，你可以安装ionic了，使用npm安装ionic。</p>
+
+<pre><code class="language-shell">&gt; npm install -g ionic
+&gt; ionic -v
+3.20.0
+</code></pre>
+
+<ol>
+<li>cordova 环境</li>
+</ol>
+
+<pre><code class="language-shell">&gt; npm install cordova -g cordova
+&gt; cordova -v
+6.5.0
+</code></pre>
+
+<p>此时ionic开发环境已经完全安装完毕，<code>ionic start [AppName]</code> 开始创建ionic项目</p>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">牧轩居士</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2017-11-15</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="noopener" target="_blank">署名 4.0 国际 (CC BY 4.0)</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/ionic/">ionic</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/201711/vscode/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">VSCode使用</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/201803/ionic-webrtc/ionic-webrtc/">
+            <span class="next-text nav-default"></span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+    
+
+  
+
+  
+
+  
+  </article>
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:dev@gecore.win" rel="me" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/muxuanuser" rel="me" class="iconfont icon-github" title="github"></a>
+  <a href="http://www.gecore.win/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">牧轩</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/jane.min.js?v=2.7.0"></script>
+
+
+
+
+
+</body>
+</html>
