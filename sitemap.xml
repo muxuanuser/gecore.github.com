@@ -3,13 +3,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://muxuanuser.github.io/about/</loc>
-    <lastmod>2017-08-28T21:41:52+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://muxuanuser.github.io/post/201803/%E5%9F%BA%E4%BA%8Elocalsortage%E5%AE%9E%E7%8E%B0%E7%9A%84web%E6%95%B0%E6%8D%AE/</loc>
     <lastmod>2018-03-08T15:43:48+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -112,14 +105,14 @@
   </url>
   
   <url>
-    <loc>https://muxuanuser.github.io/categories/http/</loc>
+    <loc>https://muxuanuser.github.io/tags/http/</loc>
     <lastmod>2017-12-14T15:43:48+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://muxuanuser.github.io/tags/http/</loc>
+    <loc>https://muxuanuser.github.io/categories/http/</loc>
     <lastmod>2017-12-14T15:43:48+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
@@ -132,13 +125,6 @@
   </url>
   
   <url>
-    <loc>https://muxuanuser.github.io/categories/ionic/</loc>
-    <lastmod>2018-02-14T15:43:48+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://muxuanuser.github.io/tags/ionic/</loc>
     <lastmod>2018-02-14T15:43:48+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -146,7 +132,7 @@
   </url>
   
   <url>
-    <loc>https://muxuanuser.github.io/categories/java/</loc>
+    <loc>https://muxuanuser.github.io/categories/ionic/</loc>
     <lastmod>2018-02-14T15:43:48+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
@@ -160,15 +146,15 @@
   </url>
   
   <url>
-    <loc>https://muxuanuser.github.io/tags/jaxb/</loc>
-    <lastmod>2018-01-31T15:43:48+08:00</lastmod>
+    <loc>https://muxuanuser.github.io/categories/java/</loc>
+    <lastmod>2018-02-14T15:43:48+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://muxuanuser.github.io/categories/localsortage/</loc>
-    <lastmod>2018-03-08T15:43:48+08:00</lastmod>
+    <loc>https://muxuanuser.github.io/tags/jaxb/</loc>
+    <lastmod>2018-01-31T15:43:48+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -181,8 +167,15 @@
   </url>
   
   <url>
+    <loc>https://muxuanuser.github.io/categories/localsortage/</loc>
+    <lastmod>2018-03-08T15:43:48+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://muxuanuser.github.io/</loc>
-    <lastmod>2017-08-28T21:41:52+08:00</lastmod>
+    <lastmod>2018-03-08T15:43:48+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -216,14 +209,14 @@
   </url>
   
   <url>
-    <loc>https://muxuanuser.github.io/categories/web/</loc>
+    <loc>https://muxuanuser.github.io/tags/web/</loc>
     <lastmod>2018-03-08T15:43:48+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://muxuanuser.github.io/tags/web/</loc>
+    <loc>https://muxuanuser.github.io/categories/web/</loc>
     <lastmod>2018-03-08T15:43:48+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
@@ -237,14 +230,14 @@
   </url>
   
   <url>
-    <loc>https://muxuanuser.github.io/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/</loc>
+    <loc>https://muxuanuser.github.io/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/</loc>
     <lastmod>2018-02-22T15:43:48+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://muxuanuser.github.io/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/</loc>
+    <loc>https://muxuanuser.github.io/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/</loc>
     <lastmod>2018-02-22T15:43:48+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
@@ -258,14 +251,14 @@
   </url>
   
   <url>
-    <loc>https://muxuanuser.github.io/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/</loc>
+    <loc>https://muxuanuser.github.io/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/</loc>
     <lastmod>2018-02-22T15:43:48+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://muxuanuser.github.io/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/</loc>
+    <loc>https://muxuanuser.github.io/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/</loc>
     <lastmod>2018-02-22T15:43:48+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
