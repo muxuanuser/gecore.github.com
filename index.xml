@@ -1291,6 +1291,107 @@ Python for VSCode
     </item>
     
     <item>
+      <title>IONIC操作HTTP</title>
+      <link>https://muxuanuser.github.io/post/201711/ionic%E6%93%8D%E4%BD%9Chttp/</link>
+      <pubDate>Thu, 16 Nov 2017 15:43:48 +0800</pubDate>
+      
+      <guid>https://muxuanuser.github.io/post/201711/ionic%E6%93%8D%E4%BD%9Chttp/</guid>
+      
+        <description>
+
+&lt;h2 id=&#34;http技术&#34;&gt;Http技术：&lt;/h2&gt;
+
+&lt;p&gt;http请求是客户端请求api使用的一项非常重要的技术，主要有下面几种方法。&lt;/p&gt;
+
+&lt;h4 id=&#34;使用native组件&#34;&gt;使用Native组件&lt;/h4&gt;
+
+&lt;p&gt;这种方法是一种和原生交互行最强的一种方法。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;官网：&lt;a href=&#34;https://ionicframework.com/docs/native/http/&#34;&gt;https://ionicframework.com/docs/native/http/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ ionic cordova plugin add cordova-plugin-advanced-http
+$ npm install --save @ionic-native/http
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;具体用法：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ts&#34;&gt;import { HTTP } from &#39;@ionic-native/http&#39;;
+
+constructor(private http: HTTP) { }
+
+this.http.get(&#39;http://ionic.io&#39;, {}, {})
+  .then(data =&amp;gt; {
+    console.log(data.status);
+    console.log(data.data); // data received by server
+    console.log(data.headers);
+  })
+  .catch(error =&amp;gt; {
+    console.log(error.status);
+    console.log(error.error); // error message as string
+    console.log(error.headers);
+  });
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;使用angular自带的http组件-推荐&#34;&gt;使用Angular自带的http组件（推荐）&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;从 @angular/http 模块中导入 Http 类&lt;/li&gt;
+&lt;li&gt;导入 RxJS 中的 map 操作符&lt;/li&gt;
+&lt;li&gt;使用 DI 方式注入 http 服务&lt;/li&gt;
+&lt;li&gt;调用 http 服务的 get() 方法，设置请求地址并发送 HTTP 请求&lt;/li&gt;
+&lt;li&gt;调用 Response 对象的 json() 方法，把响应体转成 JSON 对象&lt;/li&gt;
+&lt;li&gt;把请求的结果，赋值给 members 属性
+&lt;code&gt;ts
+import { Component, OnInit } from &#39;@angular/core&#39;;
+import { Http } from &#39;@angular/http&#39;; // (1)
+import &#39;rxjs/add/operator/map&#39;; // (2)
+interface Member {
+id: string;
+login: string;
+avatar_url: string;
+}
+@Component({
+selector: &#39;exe-app&#39;,
+template: `
+&amp;lt;h3&amp;gt;Angular Orgs Members&amp;lt;/h3&amp;gt;
+&amp;lt;ul *ngIf=&amp;quot;members&amp;quot;&amp;gt;
+  &amp;lt;li *ngFor=&amp;quot;let member of members;&amp;quot;&amp;gt;
+    &amp;lt;p&amp;gt;
+      &amp;lt;img [src]=&amp;quot;member.avatar_url&amp;quot; width=&amp;quot;48&amp;quot; height=&amp;quot;48&amp;quot;/&amp;gt;
+      ID：&amp;lt;span&amp;gt;{{member.id}}&amp;lt;/span&amp;gt;
+      Name: &amp;lt;span&amp;gt;{{member.login}}&amp;lt;/span&amp;gt;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/li&amp;gt;
+&amp;lt;/ul&amp;gt;
+`
+})
+export class AppComponent implements OnInit {
+members: Member[];
+constructor(private http: Http) { } // (3)
+ngOnInit() {
+this.http.get(`https://api.github.com/orgs/angular/members?page=1&amp;amp;per_page=5`) // (4)
+  .map(res =&amp;gt; res.json()) // (5)
+  .subscribe(data =&amp;gt; {
+    if (data) this.members = data; // (6)
+  });
+}
+}
+&lt;/code&gt;
+具体内容和步骤请到这里查看：&lt;a href=&#34;https://segmentfault.com/a/1190000009028150?utm_source=tuicool&amp;amp;utm_medium=referral#articleHeader2&#34;&gt;https://segmentfault.com/a/1190000009028150?utm_source=tuicool&amp;amp;utm_medium=referral#articleHeader2&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&#34;使用jquery的http组件-不太推荐的方法&#34;&gt;使用JQuery的http组件（不太推荐的方法）&lt;/h4&gt;
+
+&lt;p&gt;如果你不熟悉上述的方法，也可以使用JQuery，&lt;code&gt;但是我们并不推荐使用这种方法&lt;/code&gt;，ionic是混合开发的框架，当然兼容JQuery。
+1. 引入JQuery脚本
+2. 使用JQuery 的Ajax&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
       <title>IONIC开发环境搭建</title>
       <link>https://muxuanuser.github.io/post/201711/ionic%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</link>
       <pubDate>Wed, 15 Nov 2017 15:43:48 +0800</pubDate>
@@ -1560,107 +1661,6 @@ export class MapDemosPage {
 }
 
 &lt;/code&gt;&lt;/pre&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title>IONIC操作HTTP</title>
-      <link>https://muxuanuser.github.io/post/201711/ionic%E6%93%8D%E4%BD%9Chttp/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://muxuanuser.github.io/post/201711/ionic%E6%93%8D%E4%BD%9Chttp/</guid>
-      
-        <description>
-
-&lt;h2 id=&#34;http技术&#34;&gt;Http技术：&lt;/h2&gt;
-
-&lt;p&gt;http请求是客户端请求api使用的一项非常重要的技术，主要有下面几种方法。&lt;/p&gt;
-
-&lt;h4 id=&#34;使用native组件&#34;&gt;使用Native组件&lt;/h4&gt;
-
-&lt;p&gt;这种方法是一种和原生交互行最强的一种方法。&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;官网：&lt;a href=&#34;https://ionicframework.com/docs/native/http/&#34;&gt;https://ionicframework.com/docs/native/http/&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ ionic cordova plugin add cordova-plugin-advanced-http
-$ npm install --save @ionic-native/http
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;具体用法：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-ts&#34;&gt;import { HTTP } from &#39;@ionic-native/http&#39;;
-
-constructor(private http: HTTP) { }
-
-this.http.get(&#39;http://ionic.io&#39;, {}, {})
-  .then(data =&amp;gt; {
-    console.log(data.status);
-    console.log(data.data); // data received by server
-    console.log(data.headers);
-  })
-  .catch(error =&amp;gt; {
-    console.log(error.status);
-    console.log(error.error); // error message as string
-    console.log(error.headers);
-  });
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&#34;使用angular自带的http组件-推荐&#34;&gt;使用Angular自带的http组件（推荐）&lt;/h4&gt;
-
-&lt;ol&gt;
-&lt;li&gt;从 @angular/http 模块中导入 Http 类&lt;/li&gt;
-&lt;li&gt;导入 RxJS 中的 map 操作符&lt;/li&gt;
-&lt;li&gt;使用 DI 方式注入 http 服务&lt;/li&gt;
-&lt;li&gt;调用 http 服务的 get() 方法，设置请求地址并发送 HTTP 请求&lt;/li&gt;
-&lt;li&gt;调用 Response 对象的 json() 方法，把响应体转成 JSON 对象&lt;/li&gt;
-&lt;li&gt;把请求的结果，赋值给 members 属性
-&lt;code&gt;ts
-import { Component, OnInit } from &#39;@angular/core&#39;;
-import { Http } from &#39;@angular/http&#39;; // (1)
-import &#39;rxjs/add/operator/map&#39;; // (2)
-interface Member {
-id: string;
-login: string;
-avatar_url: string;
-}
-@Component({
-selector: &#39;exe-app&#39;,
-template: `
-&amp;lt;h3&amp;gt;Angular Orgs Members&amp;lt;/h3&amp;gt;
-&amp;lt;ul *ngIf=&amp;quot;members&amp;quot;&amp;gt;
-  &amp;lt;li *ngFor=&amp;quot;let member of members;&amp;quot;&amp;gt;
-    &amp;lt;p&amp;gt;
-      &amp;lt;img [src]=&amp;quot;member.avatar_url&amp;quot; width=&amp;quot;48&amp;quot; height=&amp;quot;48&amp;quot;/&amp;gt;
-      ID：&amp;lt;span&amp;gt;{{member.id}}&amp;lt;/span&amp;gt;
-      Name: &amp;lt;span&amp;gt;{{member.login}}&amp;lt;/span&amp;gt;
-    &amp;lt;/p&amp;gt;
-  &amp;lt;/li&amp;gt;
-&amp;lt;/ul&amp;gt;
-`
-})
-export class AppComponent implements OnInit {
-members: Member[];
-constructor(private http: Http) { } // (3)
-ngOnInit() {
-this.http.get(`https://api.github.com/orgs/angular/members?page=1&amp;amp;per_page=5`) // (4)
-  .map(res =&amp;gt; res.json()) // (5)
-  .subscribe(data =&amp;gt; {
-    if (data) this.members = data; // (6)
-  });
-}
-}
-&lt;/code&gt;
-具体内容和步骤请到这里查看：&lt;a href=&#34;https://segmentfault.com/a/1190000009028150?utm_source=tuicool&amp;amp;utm_medium=referral#articleHeader2&#34;&gt;https://segmentfault.com/a/1190000009028150?utm_source=tuicool&amp;amp;utm_medium=referral#articleHeader2&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h4 id=&#34;使用jquery的http组件-不太推荐的方法&#34;&gt;使用JQuery的http组件（不太推荐的方法）&lt;/h4&gt;
-
-&lt;p&gt;如果你不熟悉上述的方法，也可以使用JQuery，&lt;code&gt;但是我们并不推荐使用这种方法&lt;/code&gt;，ionic是混合开发的框架，当然兼容JQuery。
-1. 引入JQuery脚本
-2. 使用JQuery 的Ajax&lt;/p&gt;
 </description>
       
     </item>

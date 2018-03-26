@@ -23,7 +23,7 @@
     <item>
       <title>IONIC操作HTTP</title>
       <link>https://muxuanuser.github.io/post/201711/ionic%E6%93%8D%E4%BD%9Chttp/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 16 Nov 2017 15:43:48 +0800</pubDate>
       
       <guid>https://muxuanuser.github.io/post/201711/ionic%E6%93%8D%E4%BD%9Chttp/</guid>
       <description>Http技术： http请求是客户端请求api使用的一项非常重要的技术，主要有下面几种方法。 使用Native组件 这种方法是一种和原生交互行最强</description>

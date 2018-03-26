@@ -84,6 +84,15 @@
     </item>
     
     <item>
+      <title>IONIC操作HTTP</title>
+      <link>https://muxuanuser.github.io/post/201711/ionic%E6%93%8D%E4%BD%9Chttp/</link>
+      <pubDate>Thu, 16 Nov 2017 15:43:48 +0800</pubDate>
+      
+      <guid>https://muxuanuser.github.io/post/201711/ionic%E6%93%8D%E4%BD%9Chttp/</guid>
+      <description>Http技术： http请求是客户端请求api使用的一项非常重要的技术，主要有下面几种方法。 使用Native组件 这种方法是一种和原生交互行最强</description>
+    </item>
+    
+    <item>
       <title>IONIC开发环境搭建</title>
       <link>https://muxuanuser.github.io/post/201711/ionic%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</link>
       <pubDate>Wed, 15 Nov 2017 15:43:48 +0800</pubDate>
@@ -117,15 +126,6 @@
       
       <guid>https://muxuanuser.github.io/post/201803/ionic%E8%9E%8D%E5%85%A5%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE/ionic%E8%9E%8D%E5%85%A5%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE/</guid>
       <description>ionic 融入百度地图 百度地图是一个非常成熟的一个地图组件，在很多项目中都会用到百度地图组件，本节就介绍如何在ionic项目中使用百度地图。 在ind</description>
-    </item>
-    
-    <item>
-      <title>IONIC操作HTTP</title>
-      <link>https://muxuanuser.github.io/post/201711/ionic%E6%93%8D%E4%BD%9Chttp/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://muxuanuser.github.io/post/201711/ionic%E6%93%8D%E4%BD%9Chttp/</guid>
-      <description>Http技术： http请求是客户端请求api使用的一项非常重要的技术，主要有下面几种方法。 使用Native组件 这种方法是一种和原生交互行最强</description>
     </item>
     
   </channel>
