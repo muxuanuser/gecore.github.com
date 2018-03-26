@@ -12,6 +12,194 @@
     
     
     <item>
+      <title>ionic 使用 webrtc</title>
+      <link>https://muxuanuser.github.io/post/201803/ionic-webrtc/ionic-webrtc/</link>
+      <pubDate>Thu, 08 Mar 2018 15:43:48 +0800</pubDate>
+      
+      <guid>https://muxuanuser.github.io/post/201803/ionic-webrtc/ionic-webrtc/</guid>
+      
+        <description>
+
+&lt;h2 id=&#34;ionic-使用-webrtc&#34;&gt;ionic 使用 webrtc&lt;/h2&gt;
+
+&lt;p&gt;WebRTC实现了基于网页的视频会议，标准是WHATWG 协议，目的是通过浏览器提供简单的javascript就可以达到实时通讯（Real-Time Communications (RTC)）能力。
+WebRTC（Web Real-Time Communication）项目的最终目的主要是让Web开发者能够基于浏览器（Chrome\FireFox...）轻易快捷开发出丰富的实时多媒体应用，而无需下载安装任何插件，Web开发者也无需关注多媒体的数字信号处理过程，只需编写简单的Javascript程序即可实现，W3C等组织正在制定Javascript 标准API，目前是WebRTC 1.0版本，Draft状态；另外WebRTC还希望能够建立一个多互联网浏览器间健壮的实时通信的平台，形成开发者与浏览器厂商良好的生态环境。同时，Google也希望和致力于让WebRTC的技术成为HTML5标准之一，可见Google布局之深远。
+WebRTC提供了视频会议的核心技术，包括音视频的采集、编解码、网络传输、显示等功能，并且还支持跨平台：windows，linux，mac，android。 &amp;mdash; &lt;a href=&#34;https://baike.baidu.com/item/WebRTC/5522744?fr=aladdin&#34;&gt;百度百科&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;官网：&lt;a href=&#34;www.webrtc.ort&#34;&gt;www.webrtc.org&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;实现qq电话功能&#34;&gt;实现QQ电话功能&lt;/h3&gt;
+
+&lt;p&gt;本节介绍如何使用ionic + webrtc使用rtcmulticonnection组件实现QQ电话功能。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;官网：&lt;a href=&#34;http://www.rtcmulticonnection.org/&#34;&gt;http://www.rtcmulticonnection.org/&lt;/a&gt;
+Github：&lt;a href=&#34;https://github.com/muaz-khan/RTCMultiConnection&#34;&gt;https://github.com/muaz-khan/RTCMultiConnection&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&#34;引用脚本&#34;&gt;引用脚本&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;  &amp;lt;!-- WebRTC 引用 --&amp;gt;
+  &amp;lt;script src=&amp;quot;https://rtcmulticonnection.herokuapp.com/dist/RTCMultiConnection.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+  &amp;lt;script src=&amp;quot;https://rtcmulticonnection.herokuapp.com/socket.io/socket.io.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+  &amp;lt;!-- &amp;lt;script src=&amp;quot;assets/js/getHtmlMediaElement.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; --&amp;gt;
+  &amp;lt;script src=&amp;quot;assets/js/getMediaElement.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;html代码&#34;&gt;html代码&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;ion-header&amp;gt;
+  &amp;lt;ion-navbar&amp;gt;
+    &amp;lt;ion-title&amp;gt;视频聊天界面&amp;lt;/ion-title&amp;gt;
+  &amp;lt;/ion-navbar&amp;gt;
+&amp;lt;/ion-header&amp;gt;
+
+&amp;lt;ion-content padding&amp;gt;
+  &amp;lt;div id=&amp;quot;videos-container&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;/ion-content&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;typescript代码&#34;&gt;Typescript代码&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ts&#34;&gt;import { Component } from &#39;@angular/core&#39;;
+import { IonicPage, NavController, NavParams } from &#39;ionic-angular&#39;;
+declare var RTCMultiConnection;
+declare var MediaHelper;
+
+@IonicPage()
+@Component({
+  selector: &#39;page-video-running&#39;,
+  templateUrl: &#39;video-running.html&#39;,
+})
+export class VideoRunningPage {
+
+  mediaHelper: any;
+  connection: any;
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  }
+
+  ionViewDidLoad() {
+    this.mediaHelper = new MediaHelper();
+    this.connection = new RTCMultiConnection();
+    this.doWork();
+  }
+
+  doWork(): void {
+    //数据配置
+    this.connection.socketURL = &#39;https://rtcmulticonnection.herokuapp.com:443/&#39;;
+    // comment-out below line if you do not have your own socket.io server
+    // connection.socketURL = &#39;https://rtcmulticonnection.herokuapp.com:443/&#39;;
+    this.connection.socketMessageEvent = &#39;video-conference-demo&#39;;
+    this.connection.session = {
+      audio: true,
+      video: true
+    };
+    this.connection.maxParticipantsAllowed = 1;
+    this.connection.sdpConstraints.mandatory = {
+      OfferToReceiveAudio: true,
+      OfferToReceiveVideo: true
+    };
+    this.connection.videosContainer = document.getElementById(&#39;videos-container&#39;);
+
+    this.connection.onstream = (event) =&amp;gt; {
+      if (event.type == &#39;local&#39;) {
+        event.stream.muted = true;
+      }
+
+      var width = 200;//parseInt(connection.videosContainer.clientWidth / 2) - 20;
+      var mediaElement = this.mediaHelper.getMedia(event.mediaElement, {
+        title: event.userid,
+        buttons: [&#39;full-screen&#39;],
+        width: width,
+        showOnMouseEnter: false
+      });
+      this.connection.videosContainer.appendChild(mediaElement);
+      setTimeout(() =&amp;gt; {
+        mediaElement.media.play();
+      }, 5000);
+      mediaElement.id = event.streamid;
+    };
+
+    this.connection.onstreamended = (event) =&amp;gt; {
+      var mediaElement = document.getElementById(event.streamid);
+      if (mediaElement) {
+        mediaElement.parentNode.removeChild(mediaElement);
+      }
+    };
+    this.connection.openOrJoin(&amp;quot;15700000000&amp;quot;, (isRoomExists, roomid) =&amp;gt; {
+      if (!isRoomExists) {
+        console.log(roomid);
+      }
+    });
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;效果&#34;&gt;效果&lt;/h4&gt;
+
+&lt;p&gt;![&amp;lsquo;效果&amp;rsquo;](&amp;lsquo;&lt;a href=&#34;https://ycdn.lucoder.com/usr/muxuanuser.github.io/201803/201803262.png&#39;&#34;&gt;https://ycdn.lucoder.com/usr/muxuanuser.github.io/201803/201803262.png&#39;&lt;/a&gt;)&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>ionic 融入百度地图</title>
+      <link>https://muxuanuser.github.io/post/201803/ionic%E8%9E%8D%E5%85%A5%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE/ionic%E8%9E%8D%E5%85%A5%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE/</link>
+      <pubDate>Thu, 08 Mar 2018 15:43:48 +0800</pubDate>
+      
+      <guid>https://muxuanuser.github.io/post/201803/ionic%E8%9E%8D%E5%85%A5%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE/ionic%E8%9E%8D%E5%85%A5%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE/</guid>
+      
+        <description>
+
+&lt;h2 id=&#34;ionic-融入百度地图&#34;&gt;ionic 融入百度地图&lt;/h2&gt;
+
+&lt;p&gt;百度地图是一个非常成熟的一个地图组件，在很多项目中都会用到百度地图组件，本节就介绍如何在ionic项目中使用百度地图。&lt;/p&gt;
+
+&lt;h4 id=&#34;在index-html中添加引用&#34;&gt;在index.html中添加引用&lt;/h4&gt;
+
+&lt;p&gt;在ionic的&lt;code&gt;index.html&lt;/code&gt;文件中添加script引用脚本：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;script src=&amp;quot;https://api.map.baidu.com/api?v=2.0&amp;amp;ak=your key&amp;quot; type=&amp;quot;text/javascript&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;引入百度地图&#34;&gt;引入百度地图&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ts&#34;&gt;import { Component } from &#39;@angular/core&#39;;
+import {Platform, IonicPage, NavController, NavParams } from &#39;ionic-angular&#39;;
+
+//百度地图API需要先这样声明一下，声明以后就可以使用了
+declare var BMap: any;
+
+@IonicPage()
+@Component({
+  selector: &#39;page-map-demos&#39;,
+  templateUrl: &#39;map-demos.html&#39;,
+})
+export class MapDemosPage {
+  constructor(public navCtrl: NavController,public navParams: NavParams) {
+  }
+
+  ionViewDidLoad() {
+    // 创建百度地图API的Map实例
+    let map = new BMap.Map(&#39;map&#39;);
+    // 初始化地图,设置中心点坐标（河大计算机学院门前路上）和地图级别（11）
+    map.centerAndZoom(new BMap.Point(114.315745, 34.824635), 11);
+    //添加地图类型控件
+    map.addControl(new BMap.MapTypeControl());
+    // 设置地图显示的城市 此项是必须设置的
+    map.setCurrentCity(&amp;quot;开封&amp;quot;);
+    //开启鼠标滚轮缩放，默认false
+    map.enableScrollWheelZoom(true);
+  }
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+      
+    </item>
+    
+    <item>
       <title>基于LocalSortage实现Web临时数据库</title>
       <link>https://muxuanuser.github.io/post/201803/%E5%9F%BA%E4%BA%8Elocalsortage%E5%AE%9E%E7%8E%B0%E7%9A%84web%E6%95%B0%E6%8D%AE/</link>
       <pubDate>Thu, 08 Mar 2018 15:43:48 +0800</pubDate>
@@ -1443,224 +1631,6 @@ v8.9.3
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;此时ionic开发环境已经完全安装完毕，&lt;code&gt;ionic start [AppName]&lt;/code&gt; 开始创建ionic项目&lt;/p&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://muxuanuser.github.io/post/201803/ionic-webrtc/ionic-webrtc/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://muxuanuser.github.io/post/201803/ionic-webrtc/ionic-webrtc/</guid>
-      
-        <description>
-
-&lt;h2 id=&#34;ionic-使用-webrtc&#34;&gt;ionic 使用 webrtc&lt;/h2&gt;
-
-&lt;p&gt;WebRTC实现了基于网页的视频会议，标准是WHATWG 协议，目的是通过浏览器提供简单的javascript就可以达到实时通讯（Real-Time Communications (RTC)）能力。
-WebRTC（Web Real-Time Communication）项目的最终目的主要是让Web开发者能够基于浏览器（Chrome\FireFox...）轻易快捷开发出丰富的实时多媒体应用，而无需下载安装任何插件，Web开发者也无需关注多媒体的数字信号处理过程，只需编写简单的Javascript程序即可实现，W3C等组织正在制定Javascript 标准API，目前是WebRTC 1.0版本，Draft状态；另外WebRTC还希望能够建立一个多互联网浏览器间健壮的实时通信的平台，形成开发者与浏览器厂商良好的生态环境。同时，Google也希望和致力于让WebRTC的技术成为HTML5标准之一，可见Google布局之深远。
-WebRTC提供了视频会议的核心技术，包括音视频的采集、编解码、网络传输、显示等功能，并且还支持跨平台：windows，linux，mac，android。 &amp;mdash; &lt;a href=&#34;https://baike.baidu.com/item/WebRTC/5522744?fr=aladdin&#34;&gt;百度百科&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;官网：&lt;a href=&#34;www.webrtc.ort&#34;&gt;www.webrtc.org&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;实现qq电话功能&#34;&gt;实现QQ电话功能&lt;/h3&gt;
-
-&lt;p&gt;本节介绍如何使用ionic + webrtc使用rtcmulticonnection组件实现QQ电话功能。&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;官网：&lt;a href=&#34;http://www.rtcmulticonnection.org/&#34;&gt;http://www.rtcmulticonnection.org/&lt;/a&gt;
-Github：&lt;a href=&#34;https://github.com/muaz-khan/RTCMultiConnection&#34;&gt;https://github.com/muaz-khan/RTCMultiConnection&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h4 id=&#34;引用脚本&#34;&gt;引用脚本&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;  &amp;lt;!-- WebRTC 引用 --&amp;gt;
-  &amp;lt;script src=&amp;quot;https://rtcmulticonnection.herokuapp.com/dist/RTCMultiConnection.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
-  &amp;lt;script src=&amp;quot;https://rtcmulticonnection.herokuapp.com/socket.io/socket.io.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
-  &amp;lt;!-- &amp;lt;script src=&amp;quot;assets/js/getHtmlMediaElement.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; --&amp;gt;
-  &amp;lt;script src=&amp;quot;assets/js/getMediaElement.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&#34;html代码&#34;&gt;html代码&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;ion-header&amp;gt;
-  &amp;lt;ion-navbar&amp;gt;
-    &amp;lt;ion-title&amp;gt;视频聊天界面&amp;lt;/ion-title&amp;gt;
-  &amp;lt;/ion-navbar&amp;gt;
-&amp;lt;/ion-header&amp;gt;
-
-&amp;lt;ion-content padding&amp;gt;
-  &amp;lt;div id=&amp;quot;videos-container&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
-&amp;lt;/ion-content&amp;gt;
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&#34;typescript代码&#34;&gt;Typescript代码&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-ts&#34;&gt;import { Component } from &#39;@angular/core&#39;;
-import { IonicPage, NavController, NavParams } from &#39;ionic-angular&#39;;
-declare var RTCMultiConnection;
-declare var MediaHelper;
-
-@IonicPage()
-@Component({
-  selector: &#39;page-video-running&#39;,
-  templateUrl: &#39;video-running.html&#39;,
-})
-export class VideoRunningPage {
-
-  mediaHelper: any;
-  connection: any;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
-
-  ionViewDidLoad() {
-    this.mediaHelper = new MediaHelper();
-    this.connection = new RTCMultiConnection();
-    this.doWork();
-  }
-
-  doWork(): void {
-    //数据配置
-    this.connection.socketURL = &#39;https://rtcmulticonnection.herokuapp.com:443/&#39;;
-    // comment-out below line if you do not have your own socket.io server
-    // connection.socketURL = &#39;https://rtcmulticonnection.herokuapp.com:443/&#39;;
-    this.connection.socketMessageEvent = &#39;video-conference-demo&#39;;
-    this.connection.session = {
-      audio: true,
-      video: true
-    };
-    this.connection.maxParticipantsAllowed = 1;
-    this.connection.sdpConstraints.mandatory = {
-      OfferToReceiveAudio: true,
-      OfferToReceiveVideo: true
-    };
-    this.connection.videosContainer = document.getElementById(&#39;videos-container&#39;);
-
-    this.connection.onstream = (event) =&amp;gt; {
-      if (event.type == &#39;local&#39;) {
-        event.stream.muted = true;
-      }
-
-      var width = 200;//parseInt(connection.videosContainer.clientWidth / 2) - 20;
-      var mediaElement = this.mediaHelper.getMedia(event.mediaElement, {
-        title: event.userid,
-        buttons: [&#39;full-screen&#39;],
-        width: width,
-        showOnMouseEnter: false
-      });
-      this.connection.videosContainer.appendChild(mediaElement);
-      setTimeout(() =&amp;gt; {
-        mediaElement.media.play();
-      }, 5000);
-      mediaElement.id = event.streamid;
-    };
-
-    this.connection.onstreamended = (event) =&amp;gt; {
-      var mediaElement = document.getElementById(event.streamid);
-      if (mediaElement) {
-        mediaElement.parentNode.removeChild(mediaElement);
-      }
-    };
-    this.connection.openOrJoin(&amp;quot;15700000000&amp;quot;, (isRoomExists, roomid) =&amp;gt; {
-      if (!isRoomExists) {
-        console.log(roomid);
-      }
-    });
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&#34;效果&#34;&gt;效果&lt;/h4&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://muxuanuser.github.io/post/201803/ionic%E5%AE%9A%E4%BD%8D/ionic%E8%9E%8D%E5%85%A5%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://muxuanuser.github.io/post/201803/ionic%E5%AE%9A%E4%BD%8D/ionic%E8%9E%8D%E5%85%A5%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE/</guid>
-      
-        <description>
-
-&lt;h2 id=&#34;ionic-定位技术&#34;&gt;ionic 定位技术&lt;/h2&gt;
-
-&lt;p&gt;ionic开发的混合app应用，所以离不开手机定位。&lt;/p&gt;
-
-&lt;h4 id=&#34;使用ionic-native&#34;&gt;使用ionic native&lt;/h4&gt;
-
-&lt;p&gt;使用ionic native可以参考这个网址：&lt;a href=&#34;https://ionicframework.com/docs/native/geolocation/&#34;&gt;https://ionicframework.com/docs/native/geolocation/&lt;/a&gt;，按照这里面的步骤一步一步实现即可完成。&lt;/p&gt;
-
-&lt;h4 id=&#34;使用html5-定位&#34;&gt;使用HTML5 定位&lt;/h4&gt;
-
-&lt;p&gt;可以使用html5来实现定位&lt;a href=&#34;http://www.w3school.com.cn/html5/html_5_geolocation.asp&#34;&gt;http://www.w3school.com.cn/html5/html_5_geolocation.asp&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;使用三方组建&#34;&gt;使用三方组建&lt;/h4&gt;
-
-&lt;p&gt;可以使用百度地图、高德地图等三方地图组件实现定位功能。&lt;/p&gt;
-
-&lt;p&gt;百度定位：&lt;a href=&#34;http://lbsyun.baidu.com/jsdemo.htm#i8_1&#34;&gt;http://lbsyun.baidu.com/jsdemo.htm#i8_1&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;高德地图：&lt;a href=&#34;http://lbs.amap.com/api/javascript-api/example/location/browser-location&#34;&gt;http://lbs.amap.com/api/javascript-api/example/location/browser-location&lt;/a&gt;&lt;/p&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://muxuanuser.github.io/post/201803/ionic%E8%9E%8D%E5%85%A5%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE/ionic%E8%9E%8D%E5%85%A5%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://muxuanuser.github.io/post/201803/ionic%E8%9E%8D%E5%85%A5%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE/ionic%E8%9E%8D%E5%85%A5%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE/</guid>
-      
-        <description>
-
-&lt;h2 id=&#34;ionic-融入百度地图&#34;&gt;ionic 融入百度地图&lt;/h2&gt;
-
-&lt;p&gt;百度地图是一个非常成熟的一个地图组件，在很多项目中都会用到百度地图组件，本节就介绍如何在ionic项目中使用百度地图。&lt;/p&gt;
-
-&lt;h4 id=&#34;在index-html中添加引用&#34;&gt;在index.html中添加引用&lt;/h4&gt;
-
-&lt;p&gt;在ionic的&lt;code&gt;index.html&lt;/code&gt;文件中添加script引用脚本：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;script src=&amp;quot;https://api.map.baidu.com/api?v=2.0&amp;amp;ak=da1K4Mxg4LItgEhMy5h8k3ZbXzLzFb2I&amp;quot; type=&amp;quot;text/javascript&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&#34;引入百度地图&#34;&gt;引入百度地图&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-ts&#34;&gt;import { Component } from &#39;@angular/core&#39;;
-import {Platform, IonicPage, NavController, NavParams } from &#39;ionic-angular&#39;;
-
-//百度地图API需要先这样声明一下，声明以后就可以使用了
-declare var BMap: any;
-
-@IonicPage()
-@Component({
-  selector: &#39;page-map-demos&#39;,
-  templateUrl: &#39;map-demos.html&#39;,
-})
-export class MapDemosPage {
-  constructor(public navCtrl: NavController,public navParams: NavParams) {
-  }
-
-  ionViewDidLoad() {
-    // 创建百度地图API的Map实例
-    let map = new BMap.Map(&#39;map&#39;);
-    // 初始化地图,设置中心点坐标（河大计算机学院门前路上）和地图级别（11）
-    map.centerAndZoom(new BMap.Point(114.315745, 34.824635), 11);
-    //添加地图类型控件
-    map.addControl(new BMap.MapTypeControl());
-    // 设置地图显示的城市 此项是必须设置的
-    map.setCurrentCity(&amp;quot;开封&amp;quot;);
-    //开启鼠标滚轮缩放，默认false
-    map.enableScrollWheelZoom(true);
-  }
-}
-
-&lt;/code&gt;&lt;/pre&gt;
 </description>
       
     </item>

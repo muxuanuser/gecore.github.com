@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title> - Muxuan - An .net developer</title>
+  <title>ionic 融入百度地图 - Muxuan - An .net developer</title>
   <link rel="alternate" hreflang="en" href="https://muxuanuser.github.io/" />
 
 <meta name="renderer" content="webkit" />
@@ -18,7 +18,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="牧轩" />
+<meta name="author" content="牧轩居士" />
   <meta name="description" content="ionic 融入百度地图 百度地图是一个非常成熟的一个地图组件，在很多项目中都会用到百度地图组件，本节就介绍如何在ionic项目中使用百度地图。 在ind" />
 
   <meta name="keywords" content="muxuan, asp.net, .net, C# 7.0, Java, ionic, WebRTC, .net core" />
@@ -49,13 +49,16 @@
 
 
 
-<meta property="og:title" content="" />
+<meta property="og:title" content="ionic 融入百度地图" />
 <meta property="og:description" content="ionic 融入百度地图 百度地图是一个非常成熟的一个地图组件，在很多项目中都会用到百度地图组件，本节就介绍如何在ionic项目中使用百度地图。 在ind" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://muxuanuser.github.io/post/201803/ionic%E8%9E%8D%E5%85%A5%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE/ionic%E8%9E%8D%E5%85%A5%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE/" />
 
 
 
+<meta property="article:published_time" content="2018-03-08T15:43:48&#43;08:00"/>
+
+<meta property="article:modified_time" content="2018-03-08T15:43:48&#43;08:00"/>
 
 
 
@@ -67,20 +70,19 @@
 
 
 
-
-
-<meta itemprop="name" content="">
+<meta itemprop="name" content="ionic 融入百度地图">
 <meta itemprop="description" content="ionic 融入百度地图 百度地图是一个非常成熟的一个地图组件，在很多项目中都会用到百度地图组件，本节就介绍如何在ionic项目中使用百度地图。 在ind">
 
 
+<meta itemprop="datePublished" content="2018-03-08T15:43:48&#43;08:00" />
+<meta itemprop="dateModified" content="2018-03-08T15:43:48&#43;08:00" />
+<meta itemprop="wordCount" content="327">
 
-<meta itemprop="wordCount" content="326">
 
 
-
-<meta itemprop="keywords" content="" />
+<meta itemprop="keywords" content="ionic,百度地图," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content=""/>
+<meta name="twitter:title" content="ionic 融入百度地图"/>
 <meta name="twitter:description" content="ionic 融入百度地图 百度地图是一个非常成熟的一个地图组件，在很多项目中都会用到百度地图组件，本节就介绍如何在ionic项目中使用百度地图。 在ind"/>
 
 <!--[if lte IE 9]>
@@ -115,10 +117,10 @@
         <li class="mobile-menu-item">分类</li>
       </a><a href="/tags/">
         <li class="mobile-menu-item">标签</li>
-      </a><a href="http://gecore.gitee.io/mypage/">
-        <li class="mobile-menu-item">关于</li>
       </a><a href="/categories/">
         <li class="mobile-menu-item">目录</li>
+      </a><a href="http://gecore.gitee.io/mypage/">
+        <li class="mobile-menu-item">关于</li>
       </a>
   </ul>
 </nav>
@@ -137,9 +139,9 @@
       </li><li class="menu-item">
         <a class="menu-item-link" href="/tags/">标签</a>
       </li><li class="menu-item">
-        <a class="menu-item-link" href="http://gecore.gitee.io/mypage/">关于</a>
-      </li><li class="menu-item">
         <a class="menu-item-link" href="/categories/">目录</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="http://gecore.gitee.io/mypage/">关于</a>
       </li>
   </ul>
 </nav>
@@ -152,12 +154,18 @@
           <article class="post bg-white">
     
     <header class="post-header">
-      <h1 class="post-title"></h1>
+      <h1 class="post-title">ionic 融入百度地图</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 0001-01-01 </span>
-        
-        <span class="more-meta"> 326 words </span>
+        <span class="post-time"> 2018-03-08 </span>
+        <div class="post-category">
+            
+              <a href="/categories/ionic/"> ionic </a>
+            
+              <a href="/categories/%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE/"> 百度地图 </a>
+            
+          </div>
+        <span class="more-meta"> 327 words </span>
         <span class="more-meta"> 1 min read </span>
       </div>
     </header>
@@ -167,7 +175,7 @@
 <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">Table of Contents</h2>
   
-  <div class="post-toc-content always-active">
+  <div class="post-toc-content">
     <nav id="TableOfContents">
 <ul>
 <li>
@@ -198,7 +206,7 @@
 
 <p>在ionic的<code>index.html</code>文件中添加script引用脚本：</p>
 
-<pre><code class="language-html">&lt;script src=&quot;https://api.map.baidu.com/api?v=2.0&amp;ak=da1K4Mxg4LItgEhMy5h8k3ZbXzLzFb2I&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+<pre><code class="language-html">&lt;script src=&quot;https://api.map.baidu.com/api?v=2.0&amp;ak=your key&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
 </code></pre>
 
 <h4 id="引入百度地图">引入百度地图</h4>
@@ -241,16 +249,16 @@ export class MapDemosPage {
 <div class="post-copyright">
   <p class="copyright-item">
     <span class="item-title">Author</span>
-    <span class="item-content">牧轩</span>
+    <span class="item-content">牧轩居士</span>
   </p>
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
-    <span class="item-content">0001-01-01</span>
+    <span class="item-content">2018-03-08</span>
   </p>
   
   <p class="copyright-item">
     <span class="item-title">License</span>
-    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+    <span class="item-content"><a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="noopener" target="_blank">署名 4.0 国际 (CC BY 4.0)</a></span>
   </p>
 </div>
 
@@ -258,17 +266,28 @@ export class MapDemosPage {
     
 
     <footer class="post-footer">
-      
+      <div class="post-tags">
+          
+          <a href="/tags/ionic/">ionic</a>
+          
+          <a href="/tags/%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE/">百度地图</a>
+          
+        </div>
 
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/201803/ionic%E5%AE%9A%E4%BD%8D/ionic%E8%9E%8D%E5%85%A5%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE/">
+          <a class="prev" href="/post/201803/ionic-webrtc/ionic-webrtc/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default"></span>
+            <span class="prev-text nav-default">ionic 使用 webrtc</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
         
+          <a class="next" href="/post/201803/%E5%9F%BA%E4%BA%8Elocalsortage%E5%AE%9E%E7%8E%B0%E7%9A%84web%E6%95%B0%E6%8D%AE/">
+            <span class="next-text nav-default">基于LocalSortage实现Web临时数据库</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
       </nav>
     </footer>
     
