@@ -193,8 +193,13 @@ export class MapDemosPage {
     map.enableScrollWheelZoom(true);
   }
 }
-
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;效果：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;效果1.png&#34; alt=&#34;&#39;百度地图&#39;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;效果2.png&#34; alt=&#34;&#39;百度地图&#39;&#34; /&gt;&lt;/p&gt;
 </description>
       
     </item>
@@ -407,7 +412,7 @@ pi@raspberrypi:~ $ npm -v
 |---|Deployed Resources     部署资源文件
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;图片&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;1.png&#34; alt=&#34;&#39;图片&#39;&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;框架整合过程&#34;&gt;框架整合过程&lt;/h2&gt;
 
