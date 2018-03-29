@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Muxuan - An .net developer</title>
-    <link>https://muxuanuser.github.io/</link>
-    <description>Recent content on Muxuan - An .net developer</description>
+    <title>牧轩居士</title>
+    <link>https://www.gecore.win/</link>
+    <description>Recent content on 牧轩居士</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Thu, 08 Mar 2018 15:43:48 +0800</lastBuildDate>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 16 Mar 2018 00:00:00 +0000</lastBuildDate>
     
-        <atom:link href="https://muxuanuser.github.io/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://www.gecore.win/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>ionic 使用 webrtc</title>
-      <link>https://muxuanuser.github.io/post/201803/ionic-webrtc/ionic-webrtc/</link>
-      <pubDate>Thu, 08 Mar 2018 15:43:48 +0800</pubDate>
+      <title> ionic 使用 webrtc</title>
+      <link>https://www.gecore.win/post/201803/ionic-webrtc/ionic-webrtc/</link>
+      <pubDate>Fri, 16 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://muxuanuser.github.io/post/201803/ionic-webrtc/ionic-webrtc/</guid>
+      <guid>https://www.gecore.win/post/201803/ionic-webrtc/ionic-webrtc/</guid>
       
         <description>
 
@@ -138,17 +138,49 @@ export class VideoRunningPage {
 
 &lt;h4 id=&#34;效果&#34;&gt;效果&lt;/h4&gt;
 
-&lt;p&gt;![&amp;lsquo;效果&amp;rsquo;](&amp;lsquo;&lt;a href=&#34;https://ycdn.lucoder.com/usr/muxuanuser.github.io/201803/201803262.png&#39;&#34;&gt;https://ycdn.lucoder.com/usr/muxuanuser.github.io/201803/201803262.png&#39;&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://gitee.com/Gecore/PictureCdn/raw/master/post/201803/ionic-webrtc/%E6%95%88%E6%9E%9C.png&#34; alt=&#34;https://gitee.com/Gecore/PictureCdn/raw/master/post/201803/ionic-webrtc/%E6%95%88%E6%9E%9C.png&#34; /&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>ionic 定位技术</title>
+      <link>https://www.gecore.win/post/201803/ionic%E5%AE%9A%E4%BD%8D/</link>
+      <pubDate>Thu, 08 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.gecore.win/post/201803/ionic%E5%AE%9A%E4%BD%8D/</guid>
+      
+        <description>
+
+&lt;h2 id=&#34;ionic-定位技术&#34;&gt;ionic 定位技术&lt;/h2&gt;
+
+&lt;p&gt;ionic开发的混合app应用，所以离不开手机定位。&lt;/p&gt;
+
+&lt;h4 id=&#34;使用ionic-native&#34;&gt;使用ionic native&lt;/h4&gt;
+
+&lt;p&gt;使用ionic native可以参考这个网址：&lt;a href=&#34;https://ionicframework.com/docs/native/geolocation/&#34;&gt;https://ionicframework.com/docs/native/geolocation/&lt;/a&gt;，按照这里面的步骤一步一步实现即可完成。&lt;/p&gt;
+
+&lt;h4 id=&#34;使用html5-定位&#34;&gt;使用HTML5 定位&lt;/h4&gt;
+
+&lt;p&gt;可以使用html5来实现定位&lt;a href=&#34;http://www.w3school.com.cn/html5/html_5_geolocation.asp&#34;&gt;http://www.w3school.com.cn/html5/html_5_geolocation.asp&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;使用三方组建&#34;&gt;使用三方组建&lt;/h4&gt;
+
+&lt;p&gt;可以使用百度地图、高德地图等三方地图组件实现定位功能。&lt;/p&gt;
+
+&lt;p&gt;百度定位：&lt;a href=&#34;http://lbsyun.baidu.com/jsdemo.htm#i8_1&#34;&gt;http://lbsyun.baidu.com/jsdemo.htm#i8_1&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;高德地图：&lt;a href=&#34;http://lbs.amap.com/api/javascript-api/example/location/browser-location&#34;&gt;http://lbs.amap.com/api/javascript-api/example/location/browser-location&lt;/a&gt;&lt;/p&gt;
 </description>
       
     </item>
     
     <item>
       <title>ionic 融入百度地图</title>
-      <link>https://muxuanuser.github.io/post/201803/ionic%E8%9E%8D%E5%85%A5%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE/ionic%E8%9E%8D%E5%85%A5%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE/</link>
-      <pubDate>Thu, 08 Mar 2018 15:43:48 +0800</pubDate>
+      <link>https://www.gecore.win/post/201803/ionic%E8%9E%8D%E5%85%A5%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE/</link>
+      <pubDate>Thu, 08 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://muxuanuser.github.io/post/201803/ionic%E8%9E%8D%E5%85%A5%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE/ionic%E8%9E%8D%E5%85%A5%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE/</guid>
+      <guid>https://www.gecore.win/post/201803/ionic%E8%9E%8D%E5%85%A5%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE/</guid>
       
         <description>
 
@@ -160,7 +192,7 @@ export class VideoRunningPage {
 
 &lt;p&gt;在ionic的&lt;code&gt;index.html&lt;/code&gt;文件中添加script引用脚本：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;script src=&amp;quot;https://api.map.baidu.com/api?v=2.0&amp;amp;ak=your key&amp;quot; type=&amp;quot;text/javascript&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;script src=&amp;quot;https://api.map.baidu.com/api?v=2.0&amp;amp;ak=da1K4Mxg4LItgEhMy5h8k3ZbXzLzFb2I&amp;quot; type=&amp;quot;text/javascript&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h4 id=&#34;引入百度地图&#34;&gt;引入百度地图&lt;/h4&gt;
@@ -193,23 +225,23 @@ export class MapDemosPage {
     map.enableScrollWheelZoom(true);
   }
 }
+
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;效果：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;效果1.png&#34; alt=&#34;&#39;百度地图&#39;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;效果2.png&#34; alt=&#34;&#39;百度地图&#39;&#34; /&gt;&lt;/p&gt;
+&lt;figure class=&#34;half&#34;&gt;
+    &lt;img src=&#34;https://gitee.com/Gecore/PictureCdn/raw/master/post/201803/ionic%E8%9E%8D%E5%85%A5%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE/%E6%95%88%E6%9E%9C1.png&#34;&gt;
+    &lt;img src=&#34;https://gitee.com/Gecore/PictureCdn/raw/master/post/201803/ionic%E8%9E%8D%E5%85%A5%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE/%E6%95%88%E6%9E%9C2.png&#34;&gt;
+&lt;/figure&gt;
 </description>
       
     </item>
     
     <item>
-      <title>基于LocalSortage实现Web临时数据库</title>
-      <link>https://muxuanuser.github.io/post/201803/%E5%9F%BA%E4%BA%8Elocalsortage%E5%AE%9E%E7%8E%B0%E7%9A%84web%E6%95%B0%E6%8D%AE/</link>
-      <pubDate>Thu, 08 Mar 2018 15:43:48 +0800</pubDate>
+      <title>基于LocalSortage实现的web临时数据库</title>
+      <link>https://www.gecore.win/post/201803/%E5%9F%BA%E4%BA%8Elocalsortage%E5%AE%9E%E7%8E%B0%E7%9A%84web%E6%95%B0%E6%8D%AE/</link>
+      <pubDate>Wed, 07 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://muxuanuser.github.io/post/201803/%E5%9F%BA%E4%BA%8Elocalsortage%E5%AE%9E%E7%8E%B0%E7%9A%84web%E6%95%B0%E6%8D%AE/</guid>
+      <guid>https://www.gecore.win/post/201803/%E5%9F%BA%E4%BA%8Elocalsortage%E5%AE%9E%E7%8E%B0%E7%9A%84web%E6%95%B0%E6%8D%AE/</guid>
       
         <description>
 
@@ -291,66 +323,97 @@ var LocalDb = function () {
     </item>
     
     <item>
-      <title>树莓派安装Node js</title>
-      <link>https://muxuanuser.github.io/post/201802/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%89%E8%A3%85node/</link>
-      <pubDate>Thu, 22 Feb 2018 15:43:48 +0800</pubDate>
+      <title>设置Maven镜像加快文件下载</title>
+      <link>https://www.gecore.win/post/201803/maven%E8%AE%BE%E7%BD%AE%E5%A4%9A%E4%BB%93%E5%BA%93%E9%95%9C%E5%83%8F/</link>
+      <pubDate>Wed, 07 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://muxuanuser.github.io/post/201802/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%89%E8%A3%85node/</guid>
+      <guid>https://www.gecore.win/post/201803/maven%E8%AE%BE%E7%BD%AE%E5%A4%9A%E4%BB%93%E5%BA%93%E9%95%9C%E5%83%8F/</guid>
       
         <description>
 
-&lt;h2 id=&#34;树莓派安装node环境&#34;&gt;树莓派安装node环境&lt;/h2&gt;
+&lt;h2 id=&#34;设置maven镜像加快文件下载&#34;&gt;设置Maven镜像加快文件下载&lt;/h2&gt;
 
-&lt;ol&gt;
-&lt;li&gt;下载node包
-&amp;gt; &lt;a href=&#34;https://npm.taobao.org/mirrors/node/&#34;&gt;https://npm.taobao.org/mirrors/node/&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在日常生活中，我们使用maven下载需要的jar包，但是很多的时候由于中央仓库没有，所以我们没有办法下载到需要的jar包，手动去下载上，然后放入到lib下，然后build path有的时候会感到很不舒服，不是很是不实用。所以此处可以在maven的设置中心添加多个下载仓库，当中央仓库没有的话，继续到下一个仓库去下载。这样丰富了中央仓库的下载地址。&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;p&gt;我选择的是&lt;code&gt;node-v9.5.0-linux-armv7l.tar.gz&lt;/code&gt;，当然可以选择其他版本，但是注意是&lt;code&gt;arm版本&lt;/code&gt;即可。&lt;/p&gt;
+&lt;p&gt;首先找到你的Maven的配置文件的位置，然后将下面的代码复制到你的配置文件中：
+&amp;gt; 注意将速度比较慢的网址放到后面&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-code&#34;&gt;wget https://npm.taobao.org/mirrors/node/v9.5.0/node-v9.5.0-linux-armv7l.tar.gz
+&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;&amp;lt;mirrors&amp;gt;  
+    &amp;lt;!-- mirror  
+     | Specifies a repository mirror site to use instead of a given repository. The repository that  
+     | this mirror serves has an ID that matches the mirrorOf element of this mirror. IDs are used  
+     | for inheritance and direct lookup purposes, and must be unique across the set of mirrors.  
+     |  
+    &amp;lt;mirror&amp;gt;  
+      &amp;lt;id&amp;gt;mirrorId&amp;lt;/id&amp;gt;  
+      &amp;lt;mirrorOf&amp;gt;repositoryId&amp;lt;/mirrorOf&amp;gt;  
+      &amp;lt;name&amp;gt;Human Readable Name for this Mirror.&amp;lt;/name&amp;gt;  
+      &amp;lt;url&amp;gt;http://my.repository.com/repo/path&amp;lt;/url&amp;gt;  
+    &amp;lt;/mirror&amp;gt;  
+     --&amp;gt;  
+
+     &amp;lt;mirror&amp;gt;
+        &amp;lt;id&amp;gt;nexus-163&amp;lt;/id&amp;gt;
+        &amp;lt;mirrorOf&amp;gt;*&amp;lt;/mirrorOf&amp;gt;
+        &amp;lt;name&amp;gt;Nexus 163&amp;lt;/name&amp;gt;
+        &amp;lt;url&amp;gt;http://mirrors.163.com/maven/repository/maven-public/&amp;lt;/url&amp;gt;
+    &amp;lt;/mirror&amp;gt;
+    作者：知乎用户
+链接：https://www.zhihu.com/question/47261839/answer/134716331
+来源：知乎
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
+&amp;lt;mirror&amp;gt;
+        &amp;lt;id&amp;gt;alimaven&amp;lt;/id&amp;gt;
+        &amp;lt;name&amp;gt;aliyun maven&amp;lt;/name&amp;gt;
+        &amp;lt;url&amp;gt;http://maven.aliyun.com/nexus/content/groups/public/&amp;lt;/url&amp;gt;
+        &amp;lt;mirrorOf&amp;gt;central&amp;lt;/mirrorOf&amp;gt;
+    &amp;lt;/mirror&amp;gt;
+    &amp;lt;mirror&amp;gt;
+        &amp;lt;id&amp;gt;central&amp;lt;/id&amp;gt;
+        &amp;lt;name&amp;gt;Maven Repository Switchboard&amp;lt;/name&amp;gt;
+        &amp;lt;url&amp;gt;http://repo1.maven.org/maven2/&amp;lt;/url&amp;gt;
+        &amp;lt;mirrorOf&amp;gt;central&amp;lt;/mirrorOf&amp;gt;
+    &amp;lt;/mirror&amp;gt;
+    &amp;lt;mirror&amp;gt;
+        &amp;lt;id&amp;gt;repo2&amp;lt;/id&amp;gt;
+        &amp;lt;mirrorOf&amp;gt;central&amp;lt;/mirrorOf&amp;gt;
+        &amp;lt;name&amp;gt;Human Readable Name for this Mirror.&amp;lt;/name&amp;gt;
+        &amp;lt;url&amp;gt;http://repo2.maven.org/maven2/&amp;lt;/url&amp;gt;
+    &amp;lt;/mirror&amp;gt;
+    &amp;lt;mirror&amp;gt;
+        &amp;lt;id&amp;gt;ibiblio&amp;lt;/id&amp;gt;
+        &amp;lt;mirrorOf&amp;gt;central&amp;lt;/mirrorOf&amp;gt;
+        &amp;lt;name&amp;gt;Human Readable Name for this Mirror.&amp;lt;/name&amp;gt;
+        &amp;lt;url&amp;gt;http://mirrors.ibiblio.org/pub/mirrors/maven2/&amp;lt;/url&amp;gt;
+    &amp;lt;/mirror&amp;gt;
+    &amp;lt;mirror&amp;gt;
+        &amp;lt;id&amp;gt;jboss-public-repository-group&amp;lt;/id&amp;gt;
+        &amp;lt;mirrorOf&amp;gt;central&amp;lt;/mirrorOf&amp;gt;
+        &amp;lt;name&amp;gt;JBoss Public Repository Group&amp;lt;/name&amp;gt;
+        &amp;lt;url&amp;gt;http://repository.jboss.org/nexus/content/groups/public&amp;lt;/url&amp;gt;
+    &amp;lt;/mirror&amp;gt;
+    &amp;lt;!-- 中央仓库在中国的镜像 --&amp;gt;
+    &amp;lt;mirror&amp;gt;
+        &amp;lt;id&amp;gt;maven.net.cn&amp;lt;/id&amp;gt;
+        &amp;lt;name&amp;gt;oneof the central mirrors in china&amp;lt;/name&amp;gt;
+        &amp;lt;url&amp;gt;http://maven.net.cn/content/groups/public/&amp;lt;/url&amp;gt;
+        &amp;lt;mirrorOf&amp;gt;central&amp;lt;/mirrorOf&amp;gt;
+    &amp;lt;/mirror&amp;gt;
+  &amp;lt;/mirrors&amp;gt;  
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;ol&gt;
-&lt;li&gt;解压node包&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-code&#34;&gt;tar -zxvf node-v9.5.0-linux-armv7l.tar.gz
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ol&gt;
-&lt;li&gt;复制到&lt;code&gt;/usr/&lt;/code&gt;目录里面&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-code&#34;&gt;sudo cp -rvi node-v9.5.0-linux-armv7l /usr/
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ol&gt;
-&lt;li&gt;添加链接&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;首先切换到&lt;code&gt;/usr/bin&lt;/code&gt;目录。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-code&#34;&gt;sudo ln -s ../node-v9.5.0-linux-armv7l/lib/node_modules/npm/bin/npm-cli.js
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ol&gt;
-&lt;li&gt;测试结果
-&lt;code&gt;code
-pi@raspberrypi:~ $ npm -v
-5.6.0
-&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
 </description>
       
     </item>
     
     <item>
-      <title>Java SSM框架报错Dynamic_Web_Module....</title>
-      <link>https://muxuanuser.github.io/post/201802/dynamic_web_module_3.0_require_1.6_or_newer/</link>
-      <pubDate>Wed, 14 Feb 2018 15:43:48 +0800</pubDate>
+      <title>Dynamic_Web_Module_3.0_require_1.6_or_newer</title>
+      <link>https://www.gecore.win/post/201802/dynamic_web_module_3.0_require_1.6_or_newer/</link>
+      <pubDate>Sun, 07 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://muxuanuser.github.io/post/201802/dynamic_web_module_3.0_require_1.6_or_newer/</guid>
+      <guid>https://www.gecore.win/post/201802/dynamic_web_module_3.0_require_1.6_or_newer/</guid>
       
         <description>
 
@@ -382,11 +445,11 @@ pi@raspberrypi:~ $ npm -v
     </item>
     
     <item>
-      <title>Java中搭建SSM框架</title>
-      <link>https://muxuanuser.github.io/post/201802/java%E4%B8%AD%E7%9A%84ssm%E6%A1%86%E6%9E%B6%E5%92%8C%E9%85%8D%E7%BD%AE/java%E4%B8%AD%E7%9A%84ssm%E6%A1%86%E6%9E%B6%E5%92%8C%E9%85%8D%E7%BD%AE/</link>
-      <pubDate>Sun, 11 Feb 2018 15:43:48 +0800</pubDate>
+      <title>Java中的SSM框架和配置</title>
+      <link>https://www.gecore.win/post/201802/java%E4%B8%AD%E7%9A%84ssm%E6%A1%86%E6%9E%B6%E5%92%8C%E9%85%8D%E7%BD%AE/java%E4%B8%AD%E7%9A%84ssm%E6%A1%86%E6%9E%B6%E5%92%8C%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Sun, 07 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://muxuanuser.github.io/post/201802/java%E4%B8%AD%E7%9A%84ssm%E6%A1%86%E6%9E%B6%E5%92%8C%E9%85%8D%E7%BD%AE/java%E4%B8%AD%E7%9A%84ssm%E6%A1%86%E6%9E%B6%E5%92%8C%E9%85%8D%E7%BD%AE/</guid>
+      <guid>https://www.gecore.win/post/201802/java%E4%B8%AD%E7%9A%84ssm%E6%A1%86%E6%9E%B6%E5%92%8C%E9%85%8D%E7%BD%AE/java%E4%B8%AD%E7%9A%84ssm%E6%A1%86%E6%9E%B6%E5%92%8C%E9%85%8D%E7%BD%AE/</guid>
       
         <description>
 
@@ -412,7 +475,7 @@ pi@raspberrypi:~ $ npm -v
 |---|Deployed Resources     部署资源文件
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;1.png&#34; alt=&#34;&#39;图片&#39;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;[图片](&amp;lsquo;/post/201802/1.png&amp;rsquo;)&lt;/p&gt;
 
 &lt;h2 id=&#34;框架整合过程&#34;&gt;框架整合过程&lt;/h2&gt;
 
@@ -437,158 +500,155 @@ insert  into `user_t`(`id`,`user_name`,`password`,`age`) values (1,&#39;测试&#
 
 &lt;ol&gt;
 &lt;li&gt;maven配置文件
-&amp;gt; 下面的是maven项目的&lt;code&gt;pom.xml&lt;/code&gt;文件配置。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;&amp;lt;properties&amp;gt;  
-        &amp;lt;!-- spring版本号 --&amp;gt;  
-        &amp;lt;spring.version&amp;gt;4.0.2.RELEASE&amp;lt;/spring.version&amp;gt;  
-        &amp;lt;!-- mybatis版本号 --&amp;gt;  
-        &amp;lt;mybatis.version&amp;gt;3.2.6&amp;lt;/mybatis.version&amp;gt;  
-        &amp;lt;!-- log4j日志文件管理包版本 --&amp;gt;  
-        &amp;lt;slf4j.version&amp;gt;1.7.7&amp;lt;/slf4j.version&amp;gt;  
-        &amp;lt;log4j.version&amp;gt;1.2.17&amp;lt;/log4j.version&amp;gt;  
-    &amp;lt;/properties&amp;gt;  
-    &amp;lt;dependencies&amp;gt;  
-        &amp;lt;dependency&amp;gt;  
-            &amp;lt;groupId&amp;gt;junit&amp;lt;/groupId&amp;gt;  
-            &amp;lt;artifactId&amp;gt;junit&amp;lt;/artifactId&amp;gt;  
-            &amp;lt;version&amp;gt;4.11&amp;lt;/version&amp;gt;  
-            &amp;lt;!-- 表示开发的时候引入，发布的时候不会加载此包 --&amp;gt;  
-            &amp;lt;scope&amp;gt;test&amp;lt;/scope&amp;gt;  
-        &amp;lt;/dependency&amp;gt;  
-        &amp;lt;!-- spring核心包 --&amp;gt;  
-        &amp;lt;dependency&amp;gt;  
-            &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt;  
-            &amp;lt;artifactId&amp;gt;spring-core&amp;lt;/artifactId&amp;gt;  
-            &amp;lt;version&amp;gt;${spring.version}&amp;lt;/version&amp;gt;  
-        &amp;lt;/dependency&amp;gt;  
-        &amp;lt;dependency&amp;gt;  
-            &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt;  
-            &amp;lt;artifactId&amp;gt;spring-web&amp;lt;/artifactId&amp;gt;  
-            &amp;lt;version&amp;gt;${spring.version}&amp;lt;/version&amp;gt;  
-        &amp;lt;/dependency&amp;gt;  
-        &amp;lt;dependency&amp;gt;  
-            &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt;  
-            &amp;lt;artifactId&amp;gt;spring-oxm&amp;lt;/artifactId&amp;gt;  
-            &amp;lt;version&amp;gt;${spring.version}&amp;lt;/version&amp;gt;  
-        &amp;lt;/dependency&amp;gt;  
-        &amp;lt;dependency&amp;gt;  
-            &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt;  
-            &amp;lt;artifactId&amp;gt;spring-tx&amp;lt;/artifactId&amp;gt;  
-            &amp;lt;version&amp;gt;${spring.version}&amp;lt;/version&amp;gt;  
-        &amp;lt;/dependency&amp;gt;  
-        &amp;lt;dependency&amp;gt;  
-            &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt;  
-            &amp;lt;artifactId&amp;gt;spring-jdbc&amp;lt;/artifactId&amp;gt;  
-            &amp;lt;version&amp;gt;${spring.version}&amp;lt;/version&amp;gt;  
-        &amp;lt;/dependency&amp;gt;  
-        &amp;lt;dependency&amp;gt;  
-            &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt;  
-            &amp;lt;artifactId&amp;gt;spring-webmvc&amp;lt;/artifactId&amp;gt;  
-            &amp;lt;version&amp;gt;${spring.version}&amp;lt;/version&amp;gt;  
-        &amp;lt;/dependency&amp;gt;  
-        &amp;lt;dependency&amp;gt;  
-            &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt;  
-            &amp;lt;artifactId&amp;gt;spring-aop&amp;lt;/artifactId&amp;gt;  
-            &amp;lt;version&amp;gt;${spring.version}&amp;lt;/version&amp;gt;  
-        &amp;lt;/dependency&amp;gt;  
-        &amp;lt;dependency&amp;gt;  
-            &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt;  
-            &amp;lt;artifactId&amp;gt;spring-context-support&amp;lt;/artifactId&amp;gt;  
-            &amp;lt;version&amp;gt;${spring.version}&amp;lt;/version&amp;gt;  
-        &amp;lt;/dependency&amp;gt;  
-        &amp;lt;dependency&amp;gt;  
-            &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt;  
-            &amp;lt;artifactId&amp;gt;spring-test&amp;lt;/artifactId&amp;gt;  
-            &amp;lt;version&amp;gt;${spring.version}&amp;lt;/version&amp;gt;  
-        &amp;lt;/dependency&amp;gt;  
-        &amp;lt;!-- mybatis核心包 --&amp;gt;  
-        &amp;lt;dependency&amp;gt;  
-            &amp;lt;groupId&amp;gt;org.mybatis&amp;lt;/groupId&amp;gt;  
-            &amp;lt;artifactId&amp;gt;mybatis&amp;lt;/artifactId&amp;gt;  
-            &amp;lt;version&amp;gt;${mybatis.version}&amp;lt;/version&amp;gt;  
-        &amp;lt;/dependency&amp;gt;  
-        &amp;lt;!-- mybatis/spring包 --&amp;gt;  
-        &amp;lt;dependency&amp;gt;  
-            &amp;lt;groupId&amp;gt;org.mybatis&amp;lt;/groupId&amp;gt;  
-            &amp;lt;artifactId&amp;gt;mybatis-spring&amp;lt;/artifactId&amp;gt;  
-            &amp;lt;version&amp;gt;1.2.2&amp;lt;/version&amp;gt;  
-        &amp;lt;/dependency&amp;gt;  
-        &amp;lt;!-- 导入java ee jar 包 --&amp;gt;  
-        &amp;lt;dependency&amp;gt;  
-            &amp;lt;groupId&amp;gt;javax&amp;lt;/groupId&amp;gt;  
-            &amp;lt;artifactId&amp;gt;javaee-api&amp;lt;/artifactId&amp;gt;  
-            &amp;lt;version&amp;gt;7.0&amp;lt;/version&amp;gt;  
-        &amp;lt;/dependency&amp;gt;  
-        &amp;lt;!-- 导入Mysql数据库链接jar包 --&amp;gt;  
-        &amp;lt;dependency&amp;gt;  
-            &amp;lt;groupId&amp;gt;mysql&amp;lt;/groupId&amp;gt;  
-            &amp;lt;artifactId&amp;gt;mysql-connector-java&amp;lt;/artifactId&amp;gt;  
-            &amp;lt;version&amp;gt;5.1.30&amp;lt;/version&amp;gt;  
-        &amp;lt;/dependency&amp;gt;  
-        &amp;lt;!-- 导入dbcp的jar包，用来在applicationContext.xml中配置数据库 --&amp;gt;  
-        &amp;lt;dependency&amp;gt;  
-            &amp;lt;groupId&amp;gt;commons-dbcp&amp;lt;/groupId&amp;gt;  
-            &amp;lt;artifactId&amp;gt;commons-dbcp&amp;lt;/artifactId&amp;gt;  
-            &amp;lt;version&amp;gt;1.2.2&amp;lt;/version&amp;gt;  
-        &amp;lt;/dependency&amp;gt;  
-        &amp;lt;!-- JSTL标签类 --&amp;gt;  
-        &amp;lt;dependency&amp;gt;  
-            &amp;lt;groupId&amp;gt;jstl&amp;lt;/groupId&amp;gt;  
-            &amp;lt;artifactId&amp;gt;jstl&amp;lt;/artifactId&amp;gt;  
-            &amp;lt;version&amp;gt;1.2&amp;lt;/version&amp;gt;  
-        &amp;lt;/dependency&amp;gt;  
-        &amp;lt;!-- 日志文件管理包 --&amp;gt;  
-        &amp;lt;!-- log start --&amp;gt;  
-        &amp;lt;dependency&amp;gt;  
-            &amp;lt;groupId&amp;gt;log4j&amp;lt;/groupId&amp;gt;  
-            &amp;lt;artifactId&amp;gt;log4j&amp;lt;/artifactId&amp;gt;  
-            &amp;lt;version&amp;gt;${log4j.version}&amp;lt;/version&amp;gt;  
-        &amp;lt;/dependency&amp;gt;  
-        &amp;lt;!-- 格式化对象，方便输出日志 --&amp;gt;  
-        &amp;lt;dependency&amp;gt;  
-            &amp;lt;groupId&amp;gt;com.alibaba&amp;lt;/groupId&amp;gt;  
-            &amp;lt;artifactId&amp;gt;fastjson&amp;lt;/artifactId&amp;gt;  
-            &amp;lt;version&amp;gt;1.1.41&amp;lt;/version&amp;gt;  
-        &amp;lt;/dependency&amp;gt;  
-        &amp;lt;dependency&amp;gt;  
-            &amp;lt;groupId&amp;gt;org.slf4j&amp;lt;/groupId&amp;gt;  
-            &amp;lt;artifactId&amp;gt;slf4j-api&amp;lt;/artifactId&amp;gt;  
-            &amp;lt;version&amp;gt;${slf4j.version}&amp;lt;/version&amp;gt;  
-        &amp;lt;/dependency&amp;gt;  
-        &amp;lt;dependency&amp;gt;  
-            &amp;lt;groupId&amp;gt;org.slf4j&amp;lt;/groupId&amp;gt;  
-            &amp;lt;artifactId&amp;gt;slf4j-log4j12&amp;lt;/artifactId&amp;gt;  
-            &amp;lt;version&amp;gt;${slf4j.version}&amp;lt;/version&amp;gt;  
-        &amp;lt;/dependency&amp;gt;  
-        &amp;lt;!-- log end --&amp;gt;  
-        &amp;lt;!-- 映入JSON --&amp;gt;  
-        &amp;lt;dependency&amp;gt;  
-            &amp;lt;groupId&amp;gt;org.codehaus.jackson&amp;lt;/groupId&amp;gt;  
-            &amp;lt;artifactId&amp;gt;jackson-mapper-asl&amp;lt;/artifactId&amp;gt;  
-            &amp;lt;version&amp;gt;1.9.13&amp;lt;/version&amp;gt;  
-        &amp;lt;/dependency&amp;gt;  
-        &amp;lt;!-- 上传组件包 --&amp;gt;  
-        &amp;lt;dependency&amp;gt;  
-            &amp;lt;groupId&amp;gt;commons-fileupload&amp;lt;/groupId&amp;gt;  
-            &amp;lt;artifactId&amp;gt;commons-fileupload&amp;lt;/artifactId&amp;gt;  
-            &amp;lt;version&amp;gt;1.3.1&amp;lt;/version&amp;gt;  
-        &amp;lt;/dependency&amp;gt;  
-        &amp;lt;dependency&amp;gt;  
-            &amp;lt;groupId&amp;gt;commons-io&amp;lt;/groupId&amp;gt;  
-            &amp;lt;artifactId&amp;gt;commons-io&amp;lt;/artifactId&amp;gt;  
-            &amp;lt;version&amp;gt;2.4&amp;lt;/version&amp;gt;  
-        &amp;lt;/dependency&amp;gt;  
-        &amp;lt;dependency&amp;gt;  
-            &amp;lt;groupId&amp;gt;commons-codec&amp;lt;/groupId&amp;gt;  
-            &amp;lt;artifactId&amp;gt;commons-codec&amp;lt;/artifactId&amp;gt;  
-            &amp;lt;version&amp;gt;1.9&amp;lt;/version&amp;gt;  
-        &amp;lt;/dependency&amp;gt; 
-    &amp;lt;/dependencies&amp;gt;  
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ol&gt;
+&amp;gt; 下面的是maven项目的&lt;code&gt;pom.xml&lt;/code&gt;文件配置。
+&lt;code&gt;xml
+&amp;lt;properties&amp;gt;  
+    &amp;lt;!-- spring版本号 --&amp;gt;  
+    &amp;lt;spring.version&amp;gt;4.0.2.RELEASE&amp;lt;/spring.version&amp;gt;  
+    &amp;lt;!-- mybatis版本号 --&amp;gt;  
+    &amp;lt;mybatis.version&amp;gt;3.2.6&amp;lt;/mybatis.version&amp;gt;  
+    &amp;lt;!-- log4j日志文件管理包版本 --&amp;gt;  
+    &amp;lt;slf4j.version&amp;gt;1.7.7&amp;lt;/slf4j.version&amp;gt;  
+    &amp;lt;log4j.version&amp;gt;1.2.17&amp;lt;/log4j.version&amp;gt;  
+&amp;lt;/properties&amp;gt;  
+&amp;lt;dependencies&amp;gt;  
+    &amp;lt;dependency&amp;gt;  
+        &amp;lt;groupId&amp;gt;junit&amp;lt;/groupId&amp;gt;  
+        &amp;lt;artifactId&amp;gt;junit&amp;lt;/artifactId&amp;gt;  
+        &amp;lt;version&amp;gt;4.11&amp;lt;/version&amp;gt;  
+        &amp;lt;!-- 表示开发的时候引入，发布的时候不会加载此包 --&amp;gt;  
+        &amp;lt;scope&amp;gt;test&amp;lt;/scope&amp;gt;  
+    &amp;lt;/dependency&amp;gt;  
+    &amp;lt;!-- spring核心包 --&amp;gt;  
+    &amp;lt;dependency&amp;gt;  
+        &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt;  
+        &amp;lt;artifactId&amp;gt;spring-core&amp;lt;/artifactId&amp;gt;  
+        &amp;lt;version&amp;gt;${spring.version}&amp;lt;/version&amp;gt;  
+    &amp;lt;/dependency&amp;gt;  
+    &amp;lt;dependency&amp;gt;  
+        &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt;  
+        &amp;lt;artifactId&amp;gt;spring-web&amp;lt;/artifactId&amp;gt;  
+        &amp;lt;version&amp;gt;${spring.version}&amp;lt;/version&amp;gt;  
+    &amp;lt;/dependency&amp;gt;  
+    &amp;lt;dependency&amp;gt;  
+        &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt;  
+        &amp;lt;artifactId&amp;gt;spring-oxm&amp;lt;/artifactId&amp;gt;  
+        &amp;lt;version&amp;gt;${spring.version}&amp;lt;/version&amp;gt;  
+    &amp;lt;/dependency&amp;gt;  
+    &amp;lt;dependency&amp;gt;  
+        &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt;  
+        &amp;lt;artifactId&amp;gt;spring-tx&amp;lt;/artifactId&amp;gt;  
+        &amp;lt;version&amp;gt;${spring.version}&amp;lt;/version&amp;gt;  
+    &amp;lt;/dependency&amp;gt;  
+    &amp;lt;dependency&amp;gt;  
+        &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt;  
+        &amp;lt;artifactId&amp;gt;spring-jdbc&amp;lt;/artifactId&amp;gt;  
+        &amp;lt;version&amp;gt;${spring.version}&amp;lt;/version&amp;gt;  
+    &amp;lt;/dependency&amp;gt;  
+    &amp;lt;dependency&amp;gt;  
+        &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt;  
+        &amp;lt;artifactId&amp;gt;spring-webmvc&amp;lt;/artifactId&amp;gt;  
+        &amp;lt;version&amp;gt;${spring.version}&amp;lt;/version&amp;gt;  
+    &amp;lt;/dependency&amp;gt;  
+    &amp;lt;dependency&amp;gt;  
+        &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt;  
+        &amp;lt;artifactId&amp;gt;spring-aop&amp;lt;/artifactId&amp;gt;  
+        &amp;lt;version&amp;gt;${spring.version}&amp;lt;/version&amp;gt;  
+    &amp;lt;/dependency&amp;gt;  
+    &amp;lt;dependency&amp;gt;  
+        &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt;  
+        &amp;lt;artifactId&amp;gt;spring-context-support&amp;lt;/artifactId&amp;gt;  
+        &amp;lt;version&amp;gt;${spring.version}&amp;lt;/version&amp;gt;  
+    &amp;lt;/dependency&amp;gt;  
+    &amp;lt;dependency&amp;gt;  
+        &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt;  
+        &amp;lt;artifactId&amp;gt;spring-test&amp;lt;/artifactId&amp;gt;  
+        &amp;lt;version&amp;gt;${spring.version}&amp;lt;/version&amp;gt;  
+    &amp;lt;/dependency&amp;gt;  
+    &amp;lt;!-- mybatis核心包 --&amp;gt;  
+    &amp;lt;dependency&amp;gt;  
+        &amp;lt;groupId&amp;gt;org.mybatis&amp;lt;/groupId&amp;gt;  
+        &amp;lt;artifactId&amp;gt;mybatis&amp;lt;/artifactId&amp;gt;  
+        &amp;lt;version&amp;gt;${mybatis.version}&amp;lt;/version&amp;gt;  
+    &amp;lt;/dependency&amp;gt;  
+    &amp;lt;!-- mybatis/spring包 --&amp;gt;  
+    &amp;lt;dependency&amp;gt;  
+        &amp;lt;groupId&amp;gt;org.mybatis&amp;lt;/groupId&amp;gt;  
+        &amp;lt;artifactId&amp;gt;mybatis-spring&amp;lt;/artifactId&amp;gt;  
+        &amp;lt;version&amp;gt;1.2.2&amp;lt;/version&amp;gt;  
+    &amp;lt;/dependency&amp;gt;  
+    &amp;lt;!-- 导入java ee jar 包 --&amp;gt;  
+    &amp;lt;dependency&amp;gt;  
+        &amp;lt;groupId&amp;gt;javax&amp;lt;/groupId&amp;gt;  
+        &amp;lt;artifactId&amp;gt;javaee-api&amp;lt;/artifactId&amp;gt;  
+        &amp;lt;version&amp;gt;7.0&amp;lt;/version&amp;gt;  
+    &amp;lt;/dependency&amp;gt;  
+    &amp;lt;!-- 导入Mysql数据库链接jar包 --&amp;gt;  
+    &amp;lt;dependency&amp;gt;  
+        &amp;lt;groupId&amp;gt;mysql&amp;lt;/groupId&amp;gt;  
+        &amp;lt;artifactId&amp;gt;mysql-connector-java&amp;lt;/artifactId&amp;gt;  
+        &amp;lt;version&amp;gt;5.1.30&amp;lt;/version&amp;gt;  
+    &amp;lt;/dependency&amp;gt;  
+    &amp;lt;!-- 导入dbcp的jar包，用来在applicationContext.xml中配置数据库 --&amp;gt;  
+    &amp;lt;dependency&amp;gt;  
+        &amp;lt;groupId&amp;gt;commons-dbcp&amp;lt;/groupId&amp;gt;  
+        &amp;lt;artifactId&amp;gt;commons-dbcp&amp;lt;/artifactId&amp;gt;  
+        &amp;lt;version&amp;gt;1.2.2&amp;lt;/version&amp;gt;  
+    &amp;lt;/dependency&amp;gt;  
+    &amp;lt;!-- JSTL标签类 --&amp;gt;  
+    &amp;lt;dependency&amp;gt;  
+        &amp;lt;groupId&amp;gt;jstl&amp;lt;/groupId&amp;gt;  
+        &amp;lt;artifactId&amp;gt;jstl&amp;lt;/artifactId&amp;gt;  
+        &amp;lt;version&amp;gt;1.2&amp;lt;/version&amp;gt;  
+    &amp;lt;/dependency&amp;gt;  
+    &amp;lt;!-- 日志文件管理包 --&amp;gt;  
+    &amp;lt;!-- log start --&amp;gt;  
+    &amp;lt;dependency&amp;gt;  
+        &amp;lt;groupId&amp;gt;log4j&amp;lt;/groupId&amp;gt;  
+        &amp;lt;artifactId&amp;gt;log4j&amp;lt;/artifactId&amp;gt;  
+        &amp;lt;version&amp;gt;${log4j.version}&amp;lt;/version&amp;gt;  
+    &amp;lt;/dependency&amp;gt;  
+    &amp;lt;!-- 格式化对象，方便输出日志 --&amp;gt;  
+    &amp;lt;dependency&amp;gt;  
+        &amp;lt;groupId&amp;gt;com.alibaba&amp;lt;/groupId&amp;gt;  
+        &amp;lt;artifactId&amp;gt;fastjson&amp;lt;/artifactId&amp;gt;  
+        &amp;lt;version&amp;gt;1.1.41&amp;lt;/version&amp;gt;  
+    &amp;lt;/dependency&amp;gt;  
+    &amp;lt;dependency&amp;gt;  
+        &amp;lt;groupId&amp;gt;org.slf4j&amp;lt;/groupId&amp;gt;  
+        &amp;lt;artifactId&amp;gt;slf4j-api&amp;lt;/artifactId&amp;gt;  
+        &amp;lt;version&amp;gt;${slf4j.version}&amp;lt;/version&amp;gt;  
+    &amp;lt;/dependency&amp;gt;  
+    &amp;lt;dependency&amp;gt;  
+        &amp;lt;groupId&amp;gt;org.slf4j&amp;lt;/groupId&amp;gt;  
+        &amp;lt;artifactId&amp;gt;slf4j-log4j12&amp;lt;/artifactId&amp;gt;  
+        &amp;lt;version&amp;gt;${slf4j.version}&amp;lt;/version&amp;gt;  
+    &amp;lt;/dependency&amp;gt;  
+    &amp;lt;!-- log end --&amp;gt;  
+    &amp;lt;!-- 映入JSON --&amp;gt;  
+    &amp;lt;dependency&amp;gt;  
+        &amp;lt;groupId&amp;gt;org.codehaus.jackson&amp;lt;/groupId&amp;gt;  
+        &amp;lt;artifactId&amp;gt;jackson-mapper-asl&amp;lt;/artifactId&amp;gt;  
+        &amp;lt;version&amp;gt;1.9.13&amp;lt;/version&amp;gt;  
+    &amp;lt;/dependency&amp;gt;  
+    &amp;lt;!-- 上传组件包 --&amp;gt;  
+    &amp;lt;dependency&amp;gt;  
+        &amp;lt;groupId&amp;gt;commons-fileupload&amp;lt;/groupId&amp;gt;  
+        &amp;lt;artifactId&amp;gt;commons-fileupload&amp;lt;/artifactId&amp;gt;  
+        &amp;lt;version&amp;gt;1.3.1&amp;lt;/version&amp;gt;  
+    &amp;lt;/dependency&amp;gt;  
+    &amp;lt;dependency&amp;gt;  
+        &amp;lt;groupId&amp;gt;commons-io&amp;lt;/groupId&amp;gt;  
+        &amp;lt;artifactId&amp;gt;commons-io&amp;lt;/artifactId&amp;gt;  
+        &amp;lt;version&amp;gt;2.4&amp;lt;/version&amp;gt;  
+    &amp;lt;/dependency&amp;gt;  
+    &amp;lt;dependency&amp;gt;  
+        &amp;lt;groupId&amp;gt;commons-codec&amp;lt;/groupId&amp;gt;  
+        &amp;lt;artifactId&amp;gt;commons-codec&amp;lt;/artifactId&amp;gt;  
+        &amp;lt;version&amp;gt;1.9&amp;lt;/version&amp;gt;  
+    &amp;lt;/dependency&amp;gt; 
+&amp;lt;/dependencies&amp;gt;  
+&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;properties配置&lt;/li&gt;
 &lt;/ol&gt;
 
@@ -1000,14 +1060,13 @@ public class UserController {
     </item>
     
     <item>
-      <title>ionic3 构建中遇到找不到AndroidManifest.xml</title>
-      <link>https://muxuanuser.github.io/post/201802/ionic3%E6%9E%84%E5%BB%BA%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E6%89%BE%E4%B8%8D%E5%88%B0androidmanifest.xml%E7%9A%84%E9%97%AE%E9%A2%98/</link>
-      <pubDate>Sun, 11 Feb 2018 15:43:48 +0800</pubDate>
+      <title>ionic3构建过程中遇到找不到AndroidManifest.xml</title>
+      <link>https://www.gecore.win/post/201802/ionic3%E6%9E%84%E5%BB%BA%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E6%89%BE%E4%B8%8D%E5%88%B0androidmanifest.xml%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Sun, 07 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://muxuanuser.github.io/post/201802/ionic3%E6%9E%84%E5%BB%BA%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E6%89%BE%E4%B8%8D%E5%88%B0androidmanifest.xml%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <guid>https://www.gecore.win/post/201802/ionic3%E6%9E%84%E5%BB%BA%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E6%89%BE%E4%B8%8D%E5%88%B0androidmanifest.xml%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
       
-        <description>&lt;blockquote&gt;
-&lt;p&gt;构建Ionic时候有时候会遇到下面问题：&lt;/p&gt;
+        <description>&lt;p&gt;构建Ionic时候有时候会遇到下面问题：&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-error&#34;&gt;Failed to install &#39;ionic-plugin-keyboard&#39;: Error: ENOENT: no such file or directory, open &#39;/Users/theo/Projects/mobile/platforms/android/AndroidManifest.xml&#39;
     at Object.fs.openSync (fs.js:651:18)
@@ -1023,7 +1082,6 @@ public class UserController {
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;这个问题的原因就是新版本的cordova 7.0.0及以上版本对于新的AndroidManifest.xml路径还没有更新，导致找不到AndroidManifest.xml，下面给出两个解决办法：&lt;/p&gt;
-&lt;/blockquote&gt;
 
 &lt;ol&gt;
 &lt;li&gt;使用原先的cordova
@@ -1052,11 +1110,11 @@ cordova platform add android
     </item>
     
     <item>
-      <title>使用JAXB处理XML文件</title>
-      <link>https://muxuanuser.github.io/post/201801/%E4%BD%BF%E7%94%A8jaxb%E5%A4%84%E7%90%86xml%E6%96%87%E4%BB%B6/</link>
-      <pubDate>Wed, 31 Jan 2018 15:43:48 +0800</pubDate>
+      <title>Java 使用 JAXB处理XML文件</title>
+      <link>https://www.gecore.win/post/201801/%E4%BD%BF%E7%94%A8jaxb%E5%A4%84%E7%90%86xml%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Sat, 07 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://muxuanuser.github.io/post/201801/%E4%BD%BF%E7%94%A8jaxb%E5%A4%84%E7%90%86xml%E6%96%87%E4%BB%B6/</guid>
+      <guid>https://www.gecore.win/post/201801/%E4%BD%BF%E7%94%A8jaxb%E5%A4%84%E7%90%86xml%E6%96%87%E4%BB%B6/</guid>
       
         <description>
 
@@ -1354,11 +1412,66 @@ public class JAXBController {
     </item>
     
     <item>
-      <title>IONIC集成极光推送</title>
-      <link>https://muxuanuser.github.io/post/201712/ionic_jpush/</link>
-      <pubDate>Sun, 03 Dec 2017 15:43:48 +0800</pubDate>
+      <title>树莓派部署Node环境</title>
+      <link>https://www.gecore.win/post/201802/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%89%E8%A3%85node/</link>
+      <pubDate>Sat, 07 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://muxuanuser.github.io/post/201712/ionic_jpush/</guid>
+      <guid>https://www.gecore.win/post/201802/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%89%E8%A3%85node/</guid>
+      
+        <description>
+
+&lt;h2 id=&#34;树莓派安装node环境&#34;&gt;树莓派安装node环境&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;下载node包
+&amp;gt; &lt;a href=&#34;https://npm.taobao.org/mirrors/node/&#34;&gt;https://npm.taobao.org/mirrors/node/&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;我选择的是&lt;code&gt;node-v9.5.0-linux-armv7l.tar.gz&lt;/code&gt;，当然可以选择其他版本，但是注意是&lt;code&gt;arm版本&lt;/code&gt;即可。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-code&#34;&gt;wget https://npm.taobao.org/mirrors/node/v9.5.0/node-v9.5.0-linux-armv7l.tar.gz
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+&lt;li&gt;解压node包&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-code&#34;&gt;tar -zxvf node-v9.5.0-linux-armv7l.tar.gz
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+&lt;li&gt;复制到&lt;code&gt;/usr/&lt;/code&gt;目录里面&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-code&#34;&gt;sudo cp -rvi node-v9.5.0-linux-armv7l /usr/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+&lt;li&gt;添加链接&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;首先切换到&lt;code&gt;/usr/bin&lt;/code&gt;目录。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-code&#34;&gt;sudo ln -s ../node-v9.5.0-linux-armv7l/lib/node_modules/npm/bin/npm-cli.js
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+&lt;li&gt;测试结果
+&lt;code&gt;code
+pi@raspberrypi:~ $ npm -v
+5.6.0
+&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>IONIC集成极光推送</title>
+      <link>https://www.gecore.win/post/201712/ionic_jpush/</link>
+      <pubDate>Sat, 30 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.gecore.win/post/201712/ionic_jpush/</guid>
       
         <description>
 
@@ -1433,11 +1546,11 @@ npm install --save @jiguang-ionic/jpush
     </item>
     
     <item>
-      <title>VSCode使用</title>
-      <link>https://muxuanuser.github.io/post/201711/vscode/</link>
-      <pubDate>Sat, 18 Nov 2017 15:43:48 +0800</pubDate>
+      <title>Visual Studio Code</title>
+      <link>https://www.gecore.win/post/201711/vscode/</link>
+      <pubDate>Sat, 30 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://muxuanuser.github.io/post/201711/vscode/</guid>
+      <guid>https://www.gecore.win/post/201711/vscode/</guid>
       
         <description>
 
@@ -1484,11 +1597,11 @@ Python for VSCode
     </item>
     
     <item>
-      <title>IONIC操作HTTP</title>
-      <link>https://muxuanuser.github.io/post/201711/ionic%E6%93%8D%E4%BD%9Chttp/</link>
-      <pubDate>Thu, 16 Nov 2017 15:43:48 +0800</pubDate>
+      <title>ionic 操作http</title>
+      <link>https://www.gecore.win/post/201712/ionic%E6%93%8D%E4%BD%9Chttp/</link>
+      <pubDate>Sat, 30 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://muxuanuser.github.io/post/201711/ionic%E6%93%8D%E4%BD%9Chttp/</guid>
+      <guid>https://www.gecore.win/post/201712/ionic%E6%93%8D%E4%BD%9Chttp/</guid>
       
         <description>
 
@@ -1535,61 +1648,65 @@ this.http.get(&#39;http://ionic.io&#39;, {}, {})
 &lt;li&gt;使用 DI 方式注入 http 服务&lt;/li&gt;
 &lt;li&gt;调用 http 服务的 get() 方法，设置请求地址并发送 HTTP 请求&lt;/li&gt;
 &lt;li&gt;调用 Response 对象的 json() 方法，把响应体转成 JSON 对象&lt;/li&gt;
-&lt;li&gt;把请求的结果，赋值给 members 属性
-&lt;code&gt;ts
-import { Component, OnInit } from &#39;@angular/core&#39;;
+&lt;li&gt;把请求的结果，赋值给 members 属性&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ts&#34;&gt;import { Component, OnInit } from &#39;@angular/core&#39;;
 import { Http } from &#39;@angular/http&#39;; // (1)
 import &#39;rxjs/add/operator/map&#39;; // (2)
 interface Member {
-id: string;
-login: string;
-avatar_url: string;
+  id: string;
+  login: string;
+  avatar_url: string;
 }
 @Component({
-selector: &#39;exe-app&#39;,
-template: `
-&amp;lt;h3&amp;gt;Angular Orgs Members&amp;lt;/h3&amp;gt;
-&amp;lt;ul *ngIf=&amp;quot;members&amp;quot;&amp;gt;
-  &amp;lt;li *ngFor=&amp;quot;let member of members;&amp;quot;&amp;gt;
-    &amp;lt;p&amp;gt;
-      &amp;lt;img [src]=&amp;quot;member.avatar_url&amp;quot; width=&amp;quot;48&amp;quot; height=&amp;quot;48&amp;quot;/&amp;gt;
-      ID：&amp;lt;span&amp;gt;{{member.id}}&amp;lt;/span&amp;gt;
-      Name: &amp;lt;span&amp;gt;{{member.login}}&amp;lt;/span&amp;gt;
-    &amp;lt;/p&amp;gt;
-  &amp;lt;/li&amp;gt;
-&amp;lt;/ul&amp;gt;
-`
+  selector: &#39;exe-app&#39;,
+  template: `
+    &amp;lt;h3&amp;gt;Angular Orgs Members&amp;lt;/h3&amp;gt;
+    &amp;lt;ul *ngIf=&amp;quot;members&amp;quot;&amp;gt;
+      &amp;lt;li *ngFor=&amp;quot;let member of members;&amp;quot;&amp;gt;
+        &amp;lt;p&amp;gt;
+          &amp;lt;img [src]=&amp;quot;member.avatar_url&amp;quot; width=&amp;quot;48&amp;quot; height=&amp;quot;48&amp;quot;/&amp;gt;
+          ID：&amp;lt;span&amp;gt;{{member.id}}&amp;lt;/span&amp;gt;
+          Name: &amp;lt;span&amp;gt;{{member.login}}&amp;lt;/span&amp;gt;
+        &amp;lt;/p&amp;gt;
+      &amp;lt;/li&amp;gt;
+    &amp;lt;/ul&amp;gt;
+  `
 })
 export class AppComponent implements OnInit {
-members: Member[];
-constructor(private http: Http) { } // (3)
-ngOnInit() {
-this.http.get(`https://api.github.com/orgs/angular/members?page=1&amp;amp;per_page=5`) // (4)
-  .map(res =&amp;gt; res.json()) // (5)
-  .subscribe(data =&amp;gt; {
-    if (data) this.members = data; // (6)
-  });
+  members: Member[];
+  constructor(private http: Http) { } // (3)
+  ngOnInit() {
+    this.http.get(`https://api.github.com/orgs/angular/members?page=1&amp;amp;per_page=5`) // (4)
+      .map(res =&amp;gt; res.json()) // (5)
+      .subscribe(data =&amp;gt; {
+        if (data) this.members = data; // (6)
+      });
+  }
 }
-}
-&lt;/code&gt;
-具体内容和步骤请到这里查看：&lt;a href=&#34;https://segmentfault.com/a/1190000009028150?utm_source=tuicool&amp;amp;utm_medium=referral#articleHeader2&#34;&gt;https://segmentfault.com/a/1190000009028150?utm_source=tuicool&amp;amp;utm_medium=referral#articleHeader2&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;具体内容和步骤请到这里查看：&lt;a href=&#34;https://segmentfault.com/a/1190000009028150?utm_source=tuicool&amp;amp;utm_medium=referral#articleHeader2&#34;&gt;https://segmentfault.com/a/1190000009028150?utm_source=tuicool&amp;amp;utm_medium=referral#articleHeader2&lt;/a&gt;&lt;/p&gt;
 
 &lt;h4 id=&#34;使用jquery的http组件-不太推荐的方法&#34;&gt;使用JQuery的http组件（不太推荐的方法）&lt;/h4&gt;
 
-&lt;p&gt;如果你不熟悉上述的方法，也可以使用JQuery，&lt;code&gt;但是我们并不推荐使用这种方法&lt;/code&gt;，ionic是混合开发的框架，当然兼容JQuery。
-1. 引入JQuery脚本
-2. 使用JQuery 的Ajax&lt;/p&gt;
+&lt;p&gt;如果你不熟悉上述的方法，也可以使用JQuery，&lt;code&gt;但是我们并不推荐使用这种方法&lt;/code&gt;，ionic是混合开发的框架，当然兼容JQuery。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;引入JQuery脚本&lt;/li&gt;
+&lt;li&gt;使用JQuery 的Ajax&lt;/li&gt;
+&lt;/ol&gt;
 </description>
       
     </item>
     
     <item>
-      <title>IONIC开发环境搭建</title>
-      <link>https://muxuanuser.github.io/post/201711/ionic%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</link>
-      <pubDate>Wed, 15 Nov 2017 15:43:48 +0800</pubDate>
+      <title>Ionic环境搭建</title>
+      <link>https://www.gecore.win/post/201711/ionic%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</link>
+      <pubDate>Thu, 28 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://muxuanuser.github.io/post/201711/ionic%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</guid>
+      <guid>https://www.gecore.win/post/201711/ionic%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</guid>
       
         <description>
 

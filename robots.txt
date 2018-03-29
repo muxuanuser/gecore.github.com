@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://muxuanuser.github.io/sitemap.xml
+Sitemap: https://www.gecore.win/sitemap.xml

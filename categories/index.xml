@@ -1,112 +1,193 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on Muxuan - An .net developer</title>
-    <link>https://muxuanuser.github.io/categories/</link>
-    <description>Recent content in Categories on Muxuan - An .net developer</description>
+    <title>Categories on 牧轩居士</title>
+    <link>https://www.gecore.win/categories/</link>
+    <description>Recent content in Categories on 牧轩居士</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Sun, 11 Feb 2018 15:43:48 +0800</lastBuildDate>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 07 Jan 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://muxuanuser.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.gecore.win/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Android</title>
-      <link>https://muxuanuser.github.io/categories/android/</link>
-      <pubDate>Sun, 11 Feb 2018 15:43:48 +0800</pubDate>
+      <title>Androidmanifest</title>
+      <link>https://www.gecore.win/categories/androidmanifest/</link>
+      <pubDate>Sun, 07 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://muxuanuser.github.io/categories/android/</guid>
+      <guid>https://www.gecore.win/categories/androidmanifest/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cordova</title>
+      <link>https://www.gecore.win/categories/cordova/</link>
+      <pubDate>Thu, 28 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.gecore.win/categories/cordova/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Http</title>
-      <link>https://muxuanuser.github.io/categories/http/</link>
-      <pubDate>Sun, 03 Dec 2017 15:43:48 +0800</pubDate>
+      <link>https://www.gecore.win/categories/http/</link>
+      <pubDate>Sat, 30 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://muxuanuser.github.io/categories/http/</guid>
+      <guid>https://www.gecore.win/categories/http/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ionic</title>
-      <link>https://muxuanuser.github.io/categories/ionic/</link>
-      <pubDate>Thu, 08 Mar 2018 15:43:48 +0800</pubDate>
+      <link>https://www.gecore.win/categories/ionic/</link>
+      <pubDate>Fri, 16 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://muxuanuser.github.io/categories/ionic/</guid>
+      <guid>https://www.gecore.win/categories/ionic/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Java</title>
-      <link>https://muxuanuser.github.io/categories/java/</link>
-      <pubDate>Wed, 14 Feb 2018 15:43:48 +0800</pubDate>
+      <link>https://www.gecore.win/categories/java/</link>
+      <pubDate>Wed, 07 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://muxuanuser.github.io/categories/java/</guid>
+      <guid>https://www.gecore.win/categories/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jaxb</title>
+      <link>https://www.gecore.win/categories/jaxb/</link>
+      <pubDate>Sat, 07 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.gecore.win/categories/jaxb/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Localsortage</title>
-      <link>https://muxuanuser.github.io/categories/localsortage/</link>
-      <pubDate>Thu, 08 Mar 2018 15:43:48 +0800</pubDate>
+      <link>https://www.gecore.win/categories/localsortage/</link>
+      <pubDate>Wed, 07 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://muxuanuser.github.io/categories/localsortage/</guid>
+      <guid>https://www.gecore.win/categories/localsortage/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Maven</title>
+      <link>https://www.gecore.win/categories/maven/</link>
+      <pubDate>Wed, 07 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.gecore.win/categories/maven/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Node</title>
+      <link>https://www.gecore.win/categories/node/</link>
+      <pubDate>Sat, 07 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.gecore.win/categories/node/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ssm</title>
+      <link>https://www.gecore.win/categories/ssm/</link>
+      <pubDate>Sun, 07 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.gecore.win/categories/ssm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Visual Studio Code</title>
+      <link>https://www.gecore.win/categories/visual-studio-code/</link>
+      <pubDate>Sat, 30 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.gecore.win/categories/visual-studio-code/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vscode</title>
+      <link>https://www.gecore.win/categories/vscode/</link>
+      <pubDate>Sat, 30 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.gecore.win/categories/vscode/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Web</title>
-      <link>https://muxuanuser.github.io/categories/web/</link>
-      <pubDate>Thu, 08 Mar 2018 15:43:48 +0800</pubDate>
+      <link>https://www.gecore.win/categories/web/</link>
+      <pubDate>Wed, 07 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://muxuanuser.github.io/categories/web/</guid>
+      <guid>https://www.gecore.win/categories/web/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Webrtc</title>
-      <link>https://muxuanuser.github.io/categories/webrtc/</link>
-      <pubDate>Thu, 08 Mar 2018 15:43:48 +0800</pubDate>
+      <link>https://www.gecore.win/categories/webrtc/</link>
+      <pubDate>Fri, 16 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://muxuanuser.github.io/categories/webrtc/</guid>
+      <guid>https://www.gecore.win/categories/webrtc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Xml</title>
+      <link>https://www.gecore.win/categories/xml/</link>
+      <pubDate>Sat, 07 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.gecore.win/categories/xml/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>地图</title>
+      <link>https://www.gecore.win/categories/%E5%9C%B0%E5%9B%BE/</link>
+      <pubDate>Thu, 08 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.gecore.win/categories/%E5%9C%B0%E5%9B%BE/</guid>
       <description></description>
     </item>
     
     <item>
       <title>嵌入式</title>
-      <link>https://muxuanuser.github.io/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/</link>
-      <pubDate>Thu, 22 Feb 2018 15:43:48 +0800</pubDate>
+      <link>https://www.gecore.win/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/</link>
+      <pubDate>Sat, 07 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://muxuanuser.github.io/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/</guid>
+      <guid>https://www.gecore.win/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>树莓派</title>
-      <link>https://muxuanuser.github.io/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/</link>
-      <pubDate>Thu, 22 Feb 2018 15:43:48 +0800</pubDate>
+      <title>工具</title>
+      <link>https://www.gecore.win/categories/%E5%B7%A5%E5%85%B7/</link>
+      <pubDate>Sat, 30 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://muxuanuser.github.io/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/</guid>
+      <guid>https://www.gecore.win/categories/%E5%B7%A5%E5%85%B7/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>框架</title>
-      <link>https://muxuanuser.github.io/categories/%E6%A1%86%E6%9E%B6/</link>
-      <pubDate>Wed, 14 Feb 2018 15:43:48 +0800</pubDate>
+      <title>极光推送</title>
+      <link>https://www.gecore.win/categories/%E6%9E%81%E5%85%89%E6%8E%A8%E9%80%81/</link>
+      <pubDate>Sat, 30 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://muxuanuser.github.io/categories/%E6%A1%86%E6%9E%B6/</guid>
+      <guid>https://www.gecore.win/categories/%E6%9E%81%E5%85%89%E6%8E%A8%E9%80%81/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>百度地图</title>
-      <link>https://muxuanuser.github.io/categories/%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE/</link>
-      <pubDate>Thu, 08 Mar 2018 15:43:48 +0800</pubDate>
+      <title>视频聊天</title>
+      <link>https://www.gecore.win/categories/%E8%A7%86%E9%A2%91%E8%81%8A%E5%A4%A9/</link>
+      <pubDate>Fri, 16 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://muxuanuser.github.io/categories/%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE/</guid>
+      <guid>https://www.gecore.win/categories/%E8%A7%86%E9%A2%91%E8%81%8A%E5%A4%A9/</guid>
       <description></description>
     </item>
     

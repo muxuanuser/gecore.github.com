@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-cn">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>ionic 使用 webrtc - Muxuan - An .net developer</title>
-  <link rel="alternate" hreflang="en" href="https://muxuanuser.github.io/" />
+  <title> ionic 使用 webrtc - 牧轩居士</title>
+  <link rel="alternate" hreflang="zh-cn" href="https://www.gecore.win/" />
 
 <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
@@ -21,7 +21,7 @@
 <meta name="author" content="牧轩居士" />
   <meta name="description" content="ionic 使用 webrtc WebRTC实现了基于网页的视频会议，标准是WHATWG 协议，目的是通过浏览器提供简单的javascript就可以达到实时通讯（Re" />
 
-  <meta name="keywords" content="muxuan, asp.net, .net, C# 7.0, Java, ionic, WebRTC, .net core" />
+  <meta name="keywords" content="牧轩居士, java, c#, ionic, webrtc" />
 
 
 
@@ -31,7 +31,7 @@
 <meta name="generator" content="Hugo 0.37.1" />
 
 
-<link rel="canonical" href="https://muxuanuser.github.io/post/201803/ionic-webrtc/ionic-webrtc/" />
+<link rel="canonical" href="https://www.gecore.win/post/201803/ionic-webrtc/ionic-webrtc/" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -44,25 +44,21 @@
 
 
 <link href="/dist/jane.min.css?v=2.7.0" rel="stylesheet">
-<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+<link href="https://cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.css" rel="stylesheet" crossorigin="anonymous">
 
 
 
 
-<meta property="og:title" content="ionic 使用 webrtc" />
+<meta property="og:title" content=" ionic 使用 webrtc" />
 <meta property="og:description" content="ionic 使用 webrtc WebRTC实现了基于网页的视频会议，标准是WHATWG 协议，目的是通过浏览器提供简单的javascript就可以达到实时通讯（Re" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://muxuanuser.github.io/post/201803/ionic-webrtc/ionic-webrtc/" />
+<meta property="og:url" content="https://www.gecore.win/post/201803/ionic-webrtc/ionic-webrtc/" />
 
 
 
-<meta property="article:published_time" content="2018-03-08T15:43:48&#43;08:00"/>
+<meta property="article:published_time" content="2018-03-16T00:00:00&#43;00:00"/>
 
-<meta property="article:modified_time" content="2018-03-08T15:43:48&#43;08:00"/>
-
-
-
-
+<meta property="article:modified_time" content="2018-03-16T00:00:00&#43;00:00"/>
 
 
 
@@ -70,19 +66,23 @@
 
 
 
-<meta itemprop="name" content="ionic 使用 webrtc">
+
+
+
+
+<meta itemprop="name" content=" ionic 使用 webrtc">
 <meta itemprop="description" content="ionic 使用 webrtc WebRTC实现了基于网页的视频会议，标准是WHATWG 协议，目的是通过浏览器提供简单的javascript就可以达到实时通讯（Re">
 
 
-<meta itemprop="datePublished" content="2018-03-08T15:43:48&#43;08:00" />
-<meta itemprop="dateModified" content="2018-03-08T15:43:48&#43;08:00" />
-<meta itemprop="wordCount" content="1004">
+<meta itemprop="datePublished" content="2018-03-16T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2018-03-16T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="905">
 
 
 
-<meta itemprop="keywords" content="ionic,webrtc," />
+<meta itemprop="keywords" content="ionic,webrtc,视频聊天," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="ionic 使用 webrtc"/>
+<meta name="twitter:title" content=" ionic 使用 webrtc"/>
 <meta name="twitter:description" content="ionic 使用 webrtc WebRTC实现了基于网页的视频会议，标准是WHATWG 协议，目的是通过浏览器提供简单的javascript就可以达到实时通讯（Re"/>
 
 <!--[if lte IE 9]>
@@ -101,7 +101,7 @@
 <body>
   <div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
-    <a href="/" class="logo">Muxuan</a>
+    <a href="/" class="logo">牧轩居士</a>
   </div>
   <div class="mobile-navbar-icon">
     <span></span>
@@ -114,11 +114,11 @@
     <a href="/">
         <li class="mobile-menu-item">首页</li>
       </a><a href="/post/">
-        <li class="mobile-menu-item">分类</li>
+        <li class="mobile-menu-item">归档</li>
       </a><a href="/tags/">
         <li class="mobile-menu-item">标签</li>
       </a><a href="/categories/">
-        <li class="mobile-menu-item">目录</li>
+        <li class="mobile-menu-item">分类</li>
       </a><a href="http://gecore.gitee.io/mypage/">
         <li class="mobile-menu-item">关于</li>
       </a>
@@ -127,7 +127,7 @@
 
   <header id="header" class="header container">
     <div class="logo-wrapper">
-  <a href="/" class="logo">Muxuan</a>
+  <a href="/" class="logo">牧轩居士</a>
 </div>
 
 <nav class="site-navbar">
@@ -135,11 +135,11 @@
     <li class="menu-item">
         <a class="menu-item-link" href="/">首页</a>
       </li><li class="menu-item">
-        <a class="menu-item-link" href="/post/">分类</a>
+        <a class="menu-item-link" href="/post/">归档</a>
       </li><li class="menu-item">
         <a class="menu-item-link" href="/tags/">标签</a>
       </li><li class="menu-item">
-        <a class="menu-item-link" href="/categories/">目录</a>
+        <a class="menu-item-link" href="/categories/">分类</a>
       </li><li class="menu-item">
         <a class="menu-item-link" href="http://gecore.gitee.io/mypage/">关于</a>
       </li>
@@ -154,19 +154,21 @@
           <article class="post bg-white">
     
     <header class="post-header">
-      <h1 class="post-title">ionic 使用 webrtc</h1>
+      <h1 class="post-title"> ionic 使用 webrtc</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2018-03-08 </span>
+        <span class="post-time"> 2018-03-16 </span>
         <div class="post-category">
             
               <a href="/categories/ionic/"> ionic </a>
             
               <a href="/categories/webrtc/"> webrtc </a>
             
+              <a href="/categories/%E8%A7%86%E9%A2%91%E8%81%8A%E5%A4%A9/"> 视频聊天 </a>
+            
           </div>
-        <span class="more-meta"> 1004 words </span>
-        <span class="more-meta"> 3 min read </span>
+        <span class="more-meta"> 905 words </span>
+        <span class="more-meta"> 2 min read </span>
       </div>
     </header>
 
@@ -175,7 +177,7 @@
 <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">Table of Contents</h2>
   
-  <div class="post-toc-content">
+  <div class="post-toc-content always-active">
     <nav id="TableOfContents">
 <ul>
 <li>
@@ -318,7 +320,7 @@ export class VideoRunningPage {
 
 <h4 id="效果">效果</h4>
 
-<p>![&lsquo;效果&rsquo;](&lsquo;<a href="https://ycdn.lucoder.com/usr/muxuanuser.github.io/201803/201803262.png'">https://ycdn.lucoder.com/usr/muxuanuser.github.io/201803/201803262.png'</a>)</p>
+<p><img src="https://gitee.com/Gecore/PictureCdn/raw/master/post/201803/ionic-webrtc/%E6%95%88%E6%9E%9C.png" alt="https://gitee.com/Gecore/PictureCdn/raw/master/post/201803/ionic-webrtc/%E6%95%88%E6%9E%9C.png" /></p>
 
     </div>
 
@@ -331,12 +333,12 @@ export class VideoRunningPage {
   </p>
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
-    <span class="item-content">2018-03-08</span>
+    <span class="item-content">2018-03-16</span>
   </p>
   
   <p class="copyright-item">
     <span class="item-title">License</span>
-    <span class="item-content"><a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="noopener" target="_blank">署名 4.0 国际 (CC BY 4.0)</a></span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
   </p>
 </div>
 
@@ -350,14 +352,16 @@ export class VideoRunningPage {
           
           <a href="/tags/webrtc/">webrtc</a>
           
+          <a href="/tags/%E8%A7%86%E9%A2%91%E8%81%8A%E5%A4%A9/">视频聊天</a>
+          
         </div>
 
       
       <nav class="post-nav">
         
         
-          <a class="next" href="/post/201803/ionic%E8%9E%8D%E5%85%A5%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE/ionic%E8%9E%8D%E5%85%A5%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE/">
-            <span class="next-text nav-default">ionic 融入百度地图</span>
+          <a class="next" href="/post/201803/ionic%E5%AE%9A%E4%BD%8D/">
+            <span class="next-text nav-default">ionic 定位技术</span>
             <span class="prev-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -378,8 +382,9 @@ export class VideoRunningPage {
     <footer id="footer" class="footer">
       <div class="social-links">
       <a href="mailto:dev@gecore.win" rel="me" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" rel="me" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
       <a href="https://github.com/muxuanuser" rel="me" class="iconfont icon-github" title="github"></a>
-  <a href="https://muxuanuser.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+  <a href="https://www.gecore.win/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
 </div>
 
 <div class="copyright">
@@ -393,11 +398,13 @@ export class VideoRunningPage {
 
   <span class="copyright-year">
     &copy; 
+    
+      2017 - 
     2018
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
-    <span class="author">牧轩</span>
+    <span class="author">牧轩居士</span>
   </span>
 </div>
     </footer>
@@ -408,9 +415,9 @@ export class VideoRunningPage {
   </div>
   
 <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
-<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
-  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
-  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://cdn.bootcss.com/slideout/1.0.1/slideout.min.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.js" crossorigin="anonymous"></script>
 <script type="text/javascript" src="/dist/jane.min.js?v=2.7.0"></script>
 
 
