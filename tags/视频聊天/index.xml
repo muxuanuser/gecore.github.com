@@ -13,10 +13,10 @@
     
     <item>
       <title> ionic 使用 webrtc</title>
-      <link>https://www.gecore.win/post/201803/ionic-webrtc/ionic-webrtc/</link>
+      <link>https://www.gecore.win/post/201803/ionic-webrtc/</link>
       <pubDate>Fri, 16 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://www.gecore.win/post/201803/ionic-webrtc/ionic-webrtc/</guid>
+      <guid>https://www.gecore.win/post/201803/ionic-webrtc/</guid>
       <description>ionic 使用 webrtc WebRTC实现了基于网页的视频会议，标准是WHATWG 协议，目的是通过浏览器提供简单的javascript就可以达到实时通讯（Re</description>
     </item>
     
