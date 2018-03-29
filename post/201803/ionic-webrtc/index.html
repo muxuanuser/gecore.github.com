@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title> ionic 使用 webrtc - 牧轩居士</title>
+  <link rel="alternate" hreflang="zh-cn" href="https://www.gecore.win/" />
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="牧轩居士" />
+  <meta name="description" content="ionic 使用 webrtc WebRTC实现了基于网页的视频会议，标准是WHATWG 协议，目的是通过浏览器提供简单的javascript就可以达到实时通讯（Re" />
+
+  <meta name="keywords" content="牧轩居士, java, c#, ionic, webrtc" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.37.1" />
+
+
+<link rel="canonical" href="https://www.gecore.win/post/201803/ionic-webrtc/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+<link href="https://cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.css" rel="stylesheet" crossorigin="anonymous">
+
+
+
+
+<meta property="og:title" content=" ionic 使用 webrtc" />
+<meta property="og:description" content="ionic 使用 webrtc WebRTC实现了基于网页的视频会议，标准是WHATWG 协议，目的是通过浏览器提供简单的javascript就可以达到实时通讯（Re" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.gecore.win/post/201803/ionic-webrtc/" />
+
+
+
+<meta property="article:published_time" content="2018-03-16T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2018-03-16T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content=" ionic 使用 webrtc">
+<meta itemprop="description" content="ionic 使用 webrtc WebRTC实现了基于网页的视频会议，标准是WHATWG 协议，目的是通过浏览器提供简单的javascript就可以达到实时通讯（Re">
+
+
+<meta itemprop="datePublished" content="2018-03-16T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2018-03-16T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="905">
+
+
+
+<meta itemprop="keywords" content="ionic,webrtc,视频聊天," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=" ionic 使用 webrtc"/>
+<meta name="twitter:description" content="ionic 使用 webrtc WebRTC实现了基于网页的视频会议，标准是WHATWG 协议，目的是通过浏览器提供简单的javascript就可以达到实时通讯（Re"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">牧轩居士</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="http://gecore.gitee.io/mypage/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">牧轩居士</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="http://gecore.gitee.io/mypage/">关于</a>
+      </li>
+  </ul>
+</nav>
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title"> ionic 使用 webrtc</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-03-16 </span>
+        <div class="post-category">
+            
+              <a href="/categories/ionic/"> ionic </a>
+            
+              <a href="/categories/webrtc/"> webrtc </a>
+            
+              <a href="/categories/%E8%A7%86%E9%A2%91%E8%81%8A%E5%A4%A9/"> 视频聊天 </a>
+            
+          </div>
+        <span class="more-meta"> 905 words </span>
+        <span class="more-meta"> 2 min read </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Table of Contents</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#ionic-使用-webrtc">ionic 使用 webrtc</a>
+<ul>
+<li><a href="#实现qq电话功能">实现QQ电话功能</a>
+<ul>
+<li><a href="#引用脚本">引用脚本</a></li>
+<li><a href="#html代码">html代码</a></li>
+<li><a href="#typescript代码">Typescript代码</a></li>
+<li><a href="#效果">效果</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<h2 id="ionic-使用-webrtc">ionic 使用 webrtc</h2>
+
+<p>WebRTC实现了基于网页的视频会议，标准是WHATWG 协议，目的是通过浏览器提供简单的javascript就可以达到实时通讯（Real-Time Communications (RTC)）能力。
+WebRTC（Web Real-Time Communication）项目的最终目的主要是让Web开发者能够基于浏览器（Chrome\FireFox...）轻易快捷开发出丰富的实时多媒体应用，而无需下载安装任何插件，Web开发者也无需关注多媒体的数字信号处理过程，只需编写简单的Javascript程序即可实现，W3C等组织正在制定Javascript 标准API，目前是WebRTC 1.0版本，Draft状态；另外WebRTC还希望能够建立一个多互联网浏览器间健壮的实时通信的平台，形成开发者与浏览器厂商良好的生态环境。同时，Google也希望和致力于让WebRTC的技术成为HTML5标准之一，可见Google布局之深远。
+WebRTC提供了视频会议的核心技术，包括音视频的采集、编解码、网络传输、显示等功能，并且还支持跨平台：windows，linux，mac，android。 &mdash; <a href="https://baike.baidu.com/item/WebRTC/5522744?fr=aladdin">百度百科</a></p>
+
+<p>官网：<a href="www.webrtc.ort">www.webrtc.org</a></p>
+
+<h3 id="实现qq电话功能">实现QQ电话功能</h3>
+
+<p>本节介绍如何使用ionic + webrtc使用rtcmulticonnection组件实现QQ电话功能。</p>
+
+<blockquote>
+<p>官网：<a href="http://www.rtcmulticonnection.org/">http://www.rtcmulticonnection.org/</a>
+Github：<a href="https://github.com/muaz-khan/RTCMultiConnection">https://github.com/muaz-khan/RTCMultiConnection</a></p>
+</blockquote>
+
+<h4 id="引用脚本">引用脚本</h4>
+
+<pre><code class="language-html">  &lt;!-- WebRTC 引用 --&gt;
+  &lt;script src=&quot;https://rtcmulticonnection.herokuapp.com/dist/RTCMultiConnection.min.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;https://rtcmulticonnection.herokuapp.com/socket.io/socket.io.js&quot;&gt;&lt;/script&gt;
+  &lt;!-- &lt;script src=&quot;assets/js/getHtmlMediaElement.js&quot;&gt;&lt;/script&gt; --&gt;
+  &lt;script src=&quot;assets/js/getMediaElement.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+<h4 id="html代码">html代码</h4>
+
+<pre><code class="language-html">&lt;ion-header&gt;
+  &lt;ion-navbar&gt;
+    &lt;ion-title&gt;视频聊天界面&lt;/ion-title&gt;
+  &lt;/ion-navbar&gt;
+&lt;/ion-header&gt;
+
+&lt;ion-content padding&gt;
+  &lt;div id=&quot;videos-container&quot;&gt;&lt;/div&gt;
+&lt;/ion-content&gt;
+
+</code></pre>
+
+<h4 id="typescript代码">Typescript代码</h4>
+
+<pre><code class="language-ts">import { Component } from '@angular/core';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+declare var RTCMultiConnection;
+declare var MediaHelper;
+
+@IonicPage()
+@Component({
+  selector: 'page-video-running',
+  templateUrl: 'video-running.html',
+})
+export class VideoRunningPage {
+
+  mediaHelper: any;
+  connection: any;
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  }
+
+  ionViewDidLoad() {
+    this.mediaHelper = new MediaHelper();
+    this.connection = new RTCMultiConnection();
+    this.doWork();
+  }
+
+  doWork(): void {
+    //数据配置
+    this.connection.socketURL = 'https://rtcmulticonnection.herokuapp.com:443/';
+    // comment-out below line if you do not have your own socket.io server
+    // connection.socketURL = 'https://rtcmulticonnection.herokuapp.com:443/';
+    this.connection.socketMessageEvent = 'video-conference-demo';
+    this.connection.session = {
+      audio: true,
+      video: true
+    };
+    this.connection.maxParticipantsAllowed = 1;
+    this.connection.sdpConstraints.mandatory = {
+      OfferToReceiveAudio: true,
+      OfferToReceiveVideo: true
+    };
+    this.connection.videosContainer = document.getElementById('videos-container');
+
+    this.connection.onstream = (event) =&gt; {
+      if (event.type == 'local') {
+        event.stream.muted = true;
+      }
+
+      var width = 200;//parseInt(connection.videosContainer.clientWidth / 2) - 20;
+      var mediaElement = this.mediaHelper.getMedia(event.mediaElement, {
+        title: event.userid,
+        buttons: ['full-screen'],
+        width: width,
+        showOnMouseEnter: false
+      });
+      this.connection.videosContainer.appendChild(mediaElement);
+      setTimeout(() =&gt; {
+        mediaElement.media.play();
+      }, 5000);
+      mediaElement.id = event.streamid;
+    };
+
+    this.connection.onstreamended = (event) =&gt; {
+      var mediaElement = document.getElementById(event.streamid);
+      if (mediaElement) {
+        mediaElement.parentNode.removeChild(mediaElement);
+      }
+    };
+    this.connection.openOrJoin(&quot;15700000000&quot;, (isRoomExists, roomid) =&gt; {
+      if (!isRoomExists) {
+        console.log(roomid);
+      }
+    });
+  }
+}
+</code></pre>
+
+<h4 id="效果">效果</h4>
+
+<p><img src="https://gitee.com/Gecore/PictureCdn/raw/master/post/201803/ionic-webrtc/%E6%95%88%E6%9E%9C.png" alt="https://gitee.com/Gecore/PictureCdn/raw/master/post/201803/ionic-webrtc/%E6%95%88%E6%9E%9C.png" /></p>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">牧轩居士</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2018-03-16</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/ionic/">ionic</a>
+          
+          <a href="/tags/webrtc/">webrtc</a>
+          
+          <a href="/tags/%E8%A7%86%E9%A2%91%E8%81%8A%E5%A4%A9/">视频聊天</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/201803/ionic%E5%AE%9A%E4%BD%8D/">
+            <span class="next-text nav-default">ionic 定位技术</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+    
+
+  
+
+  
+
+  
+  </article>
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:dev@gecore.win" rel="me" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" rel="me" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://github.com/muxuanuser" rel="me" class="iconfont icon-github" title="github"></a>
+  <a href="https://www.gecore.win/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">牧轩居士</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://cdn.bootcss.com/slideout/1.0.1/slideout.min.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.js" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/jane.min.js?v=2.7.0"></script>
+
+
+
+
+
+</body>
+</html>

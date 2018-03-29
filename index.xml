@@ -360,12 +360,7 @@ var LocalDb = function () {
         &amp;lt;name&amp;gt;Nexus 163&amp;lt;/name&amp;gt;
         &amp;lt;url&amp;gt;http://mirrors.163.com/maven/repository/maven-public/&amp;lt;/url&amp;gt;
     &amp;lt;/mirror&amp;gt;
-    作者：知乎用户
-链接：https://www.zhihu.com/question/47261839/answer/134716331
-来源：知乎
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
-
-&amp;lt;mirror&amp;gt;
+    &amp;lt;mirror&amp;gt;
         &amp;lt;id&amp;gt;alimaven&amp;lt;/id&amp;gt;
         &amp;lt;name&amp;gt;aliyun maven&amp;lt;/name&amp;gt;
         &amp;lt;url&amp;gt;http://maven.aliyun.com/nexus/content/groups/public/&amp;lt;/url&amp;gt;
