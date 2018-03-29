@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>地图 on 牧轩居士</title>
+    <link>https://www.gecore.win/categories/%E5%9C%B0%E5%9B%BE/</link>
+    <description>Recent content in 地图 on 牧轩居士</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 08 Mar 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.gecore.win/categories/%E5%9C%B0%E5%9B%BE/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ionic 定位技术</title>
+      <link>https://www.gecore.win/post/201803/ionic%E5%AE%9A%E4%BD%8D/</link>
+      <pubDate>Thu, 08 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.gecore.win/post/201803/ionic%E5%AE%9A%E4%BD%8D/</guid>
+      <description>ionic 定位技术 ionic开发的混合app应用，所以离不开手机定位。 使用ionic native 使用ionic native可以参考这个网址：https://i</description>
+    </item>
+    
+    <item>
+      <title>ionic 融入百度地图</title>
+      <link>https://www.gecore.win/post/201803/ionic%E8%9E%8D%E5%85%A5%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE/</link>
+      <pubDate>Thu, 08 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.gecore.win/post/201803/ionic%E8%9E%8D%E5%85%A5%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE/</guid>
+      <description>ionic 融入百度地图 百度地图是一个非常成熟的一个地图组件，在很多项目中都会用到百度地图组件，本节就介绍如何在ionic项目中使用百度地图。 在ind</description>
+    </item>
+    
+  </channel>
+</rss>

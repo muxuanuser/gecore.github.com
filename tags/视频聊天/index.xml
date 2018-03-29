@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>视频聊天 on 牧轩居士</title>
+    <link>https://www.gecore.win/tags/%E8%A7%86%E9%A2%91%E8%81%8A%E5%A4%A9/</link>
+    <description>Recent content in 视频聊天 on 牧轩居士</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 16 Mar 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.gecore.win/tags/%E8%A7%86%E9%A2%91%E8%81%8A%E5%A4%A9/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title> ionic 使用 webrtc</title>
+      <link>https://www.gecore.win/post/201803/ionic-webrtc/ionic-webrtc/</link>
+      <pubDate>Fri, 16 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.gecore.win/post/201803/ionic-webrtc/ionic-webrtc/</guid>
+      <description>ionic 使用 webrtc WebRTC实现了基于网页的视频会议，标准是WHATWG 协议，目的是通过浏览器提供简单的javascript就可以达到实时通讯（Re</description>
+    </item>
+    
+  </channel>
+</rss>

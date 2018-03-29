@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vscode on 牧轩居士</title>
+    <link>https://www.gecore.win/tags/vscode/</link>
+    <description>Recent content in Vscode on 牧轩居士</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 30 Sep 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.gecore.win/tags/vscode/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Visual Studio Code</title>
+      <link>https://www.gecore.win/post/201711/vscode/</link>
+      <pubDate>Sat, 30 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.gecore.win/post/201711/vscode/</guid>
+      <description>Visual Studio Code 官网：https://code.visualstudio.com/ VSCode可以认为是一个迷你版的Visual Studio，大概45</description>
+    </item>
+    
+  </channel>
+</rss>

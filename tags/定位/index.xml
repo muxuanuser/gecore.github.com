@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>定位 on 牧轩居士</title>
+    <link>https://www.gecore.win/tags/%E5%AE%9A%E4%BD%8D/</link>
+    <description>Recent content in 定位 on 牧轩居士</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 08 Mar 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.gecore.win/tags/%E5%AE%9A%E4%BD%8D/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ionic 定位技术</title>
+      <link>https://www.gecore.win/post/201803/ionic%E5%AE%9A%E4%BD%8D/</link>
+      <pubDate>Thu, 08 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.gecore.win/post/201803/ionic%E5%AE%9A%E4%BD%8D/</guid>
+      <description>ionic 定位技术 ionic开发的混合app应用，所以离不开手机定位。 使用ionic native 使用ionic native可以参考这个网址：https://i</description>
+    </item>
+    
+  </channel>
+</rss>

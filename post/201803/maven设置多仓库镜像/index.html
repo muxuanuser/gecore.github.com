@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>设置Maven镜像加快文件下载 - 牧轩居士</title>
+  <link rel="alternate" hreflang="zh-cn" href="https://www.gecore.win/" />
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="牧轩居士" />
+  <meta name="description" content="设置Maven镜像加快文件下载 在日常生活中，我们使用maven下载需要的jar包，但是很多的时候由于中央仓库没有，所以我们没有办法下载到需要" />
+
+  <meta name="keywords" content="牧轩居士, java, c#, ionic, webrtc" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.37.1" />
+
+
+<link rel="canonical" href="https://www.gecore.win/post/201803/maven%E8%AE%BE%E7%BD%AE%E5%A4%9A%E4%BB%93%E5%BA%93%E9%95%9C%E5%83%8F/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+<link href="https://cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.css" rel="stylesheet" crossorigin="anonymous">
+
+
+
+
+<meta property="og:title" content="设置Maven镜像加快文件下载" />
+<meta property="og:description" content="设置Maven镜像加快文件下载 在日常生活中，我们使用maven下载需要的jar包，但是很多的时候由于中央仓库没有，所以我们没有办法下载到需要" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.gecore.win/post/201803/maven%E8%AE%BE%E7%BD%AE%E5%A4%9A%E4%BB%93%E5%BA%93%E9%95%9C%E5%83%8F/" />
+
+
+
+<meta property="article:published_time" content="2018-03-07T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2018-03-07T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="设置Maven镜像加快文件下载">
+<meta itemprop="description" content="设置Maven镜像加快文件下载 在日常生活中，我们使用maven下载需要的jar包，但是很多的时候由于中央仓库没有，所以我们没有办法下载到需要">
+
+
+<meta itemprop="datePublished" content="2018-03-07T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2018-03-07T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="460">
+
+
+
+<meta itemprop="keywords" content="java,maven," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="设置Maven镜像加快文件下载"/>
+<meta name="twitter:description" content="设置Maven镜像加快文件下载 在日常生活中，我们使用maven下载需要的jar包，但是很多的时候由于中央仓库没有，所以我们没有办法下载到需要"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">牧轩居士</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="http://gecore.gitee.io/mypage/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">牧轩居士</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="http://gecore.gitee.io/mypage/">关于</a>
+      </li>
+  </ul>
+</nav>
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">设置Maven镜像加快文件下载</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-03-07 </span>
+        <div class="post-category">
+            
+              <a href="/categories/java/"> java </a>
+            
+              <a href="/categories/maven/"> maven </a>
+            
+          </div>
+        <span class="more-meta"> 460 words </span>
+        <span class="more-meta"> 1 min read </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Table of Contents</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#设置maven镜像加快文件下载">设置Maven镜像加快文件下载</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<h2 id="设置maven镜像加快文件下载">设置Maven镜像加快文件下载</h2>
+
+<blockquote>
+<p>在日常生活中，我们使用maven下载需要的jar包，但是很多的时候由于中央仓库没有，所以我们没有办法下载到需要的jar包，手动去下载上，然后放入到lib下，然后build path有的时候会感到很不舒服，不是很是不实用。所以此处可以在maven的设置中心添加多个下载仓库，当中央仓库没有的话，继续到下一个仓库去下载。这样丰富了中央仓库的下载地址。</p>
+</blockquote>
+
+<p>首先找到你的Maven的配置文件的位置，然后将下面的代码复制到你的配置文件中：
+&gt; 注意将速度比较慢的网址放到后面</p>
+
+<pre><code class="language-xml">&lt;mirrors&gt;  
+    &lt;!-- mirror  
+     | Specifies a repository mirror site to use instead of a given repository. The repository that  
+     | this mirror serves has an ID that matches the mirrorOf element of this mirror. IDs are used  
+     | for inheritance and direct lookup purposes, and must be unique across the set of mirrors.  
+     |  
+    &lt;mirror&gt;  
+      &lt;id&gt;mirrorId&lt;/id&gt;  
+      &lt;mirrorOf&gt;repositoryId&lt;/mirrorOf&gt;  
+      &lt;name&gt;Human Readable Name for this Mirror.&lt;/name&gt;  
+      &lt;url&gt;http://my.repository.com/repo/path&lt;/url&gt;  
+    &lt;/mirror&gt;  
+     --&gt;  
+
+     &lt;mirror&gt;
+        &lt;id&gt;nexus-163&lt;/id&gt;
+        &lt;mirrorOf&gt;*&lt;/mirrorOf&gt;
+        &lt;name&gt;Nexus 163&lt;/name&gt;
+        &lt;url&gt;http://mirrors.163.com/maven/repository/maven-public/&lt;/url&gt;
+    &lt;/mirror&gt;
+    作者：知乎用户
+链接：https://www.zhihu.com/question/47261839/answer/134716331
+来源：知乎
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
+&lt;mirror&gt;
+        &lt;id&gt;alimaven&lt;/id&gt;
+        &lt;name&gt;aliyun maven&lt;/name&gt;
+        &lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public/&lt;/url&gt;
+        &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;
+    &lt;/mirror&gt;
+    &lt;mirror&gt;
+        &lt;id&gt;central&lt;/id&gt;
+        &lt;name&gt;Maven Repository Switchboard&lt;/name&gt;
+        &lt;url&gt;http://repo1.maven.org/maven2/&lt;/url&gt;
+        &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;
+    &lt;/mirror&gt;
+    &lt;mirror&gt;
+        &lt;id&gt;repo2&lt;/id&gt;
+        &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;
+        &lt;name&gt;Human Readable Name for this Mirror.&lt;/name&gt;
+        &lt;url&gt;http://repo2.maven.org/maven2/&lt;/url&gt;
+    &lt;/mirror&gt;
+    &lt;mirror&gt;
+        &lt;id&gt;ibiblio&lt;/id&gt;
+        &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;
+        &lt;name&gt;Human Readable Name for this Mirror.&lt;/name&gt;
+        &lt;url&gt;http://mirrors.ibiblio.org/pub/mirrors/maven2/&lt;/url&gt;
+    &lt;/mirror&gt;
+    &lt;mirror&gt;
+        &lt;id&gt;jboss-public-repository-group&lt;/id&gt;
+        &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;
+        &lt;name&gt;JBoss Public Repository Group&lt;/name&gt;
+        &lt;url&gt;http://repository.jboss.org/nexus/content/groups/public&lt;/url&gt;
+    &lt;/mirror&gt;
+    &lt;!-- 中央仓库在中国的镜像 --&gt;
+    &lt;mirror&gt;
+        &lt;id&gt;maven.net.cn&lt;/id&gt;
+        &lt;name&gt;oneof the central mirrors in china&lt;/name&gt;
+        &lt;url&gt;http://maven.net.cn/content/groups/public/&lt;/url&gt;
+        &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;
+    &lt;/mirror&gt;
+  &lt;/mirrors&gt;  
+</code></pre>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">牧轩居士</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2018-03-07</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/java/">java</a>
+          
+          <a href="/tags/maven/">maven</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/201803/%E5%9F%BA%E4%BA%8Elocalsortage%E5%AE%9E%E7%8E%B0%E7%9A%84web%E6%95%B0%E6%8D%AE/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">基于LocalSortage实现的web临时数据库</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/201802/dynamic_web_module_3.0_require_1.6_or_newer/">
+            <span class="next-text nav-default">Dynamic_Web_Module_3.0_require_1.6_or_newer</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+    
+
+  
+
+  
+
+  
+  </article>
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:dev@gecore.win" rel="me" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" rel="me" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://github.com/muxuanuser" rel="me" class="iconfont icon-github" title="github"></a>
+  <a href="https://www.gecore.win/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">牧轩居士</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://cdn.bootcss.com/slideout/1.0.1/slideout.min.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.js" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/jane.min.js?v=2.7.0"></script>
+
+
+
+
+
+</body>
+</html>

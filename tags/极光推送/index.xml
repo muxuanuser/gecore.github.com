@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>极光推送 on 牧轩居士</title>
+    <link>https://www.gecore.win/tags/%E6%9E%81%E5%85%89%E6%8E%A8%E9%80%81/</link>
+    <description>Recent content in 极光推送 on 牧轩居士</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 30 Sep 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.gecore.win/tags/%E6%9E%81%E5%85%89%E6%8E%A8%E9%80%81/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>IONIC集成极光推送</title>
+      <link>https://www.gecore.win/post/201712/ionic_jpush/</link>
+      <pubDate>Sat, 30 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.gecore.win/post/201712/ionic_jpush/</guid>
+      <description>ionic 集成极光推送插件 本文档主要介绍极光推送插件的安装使用，ionic环境搭建和ionic的项目创建不在本文范畴。 1. 注册和使用 打开[&amp;lsquo</description>
+    </item>
+    
+  </channel>
+</rss>
