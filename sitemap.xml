@@ -10,13 +10,6 @@
   </url>
   
   <url>
-    <loc>https://www.gecore.win/post/201804/java10%E5%88%9D%E6%8E%A2/</loc>
-    <lastmod>2018-03-16T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://www.gecore.win/post/201803/ionic%E5%AE%9A%E4%BD%8D/</loc>
     <lastmod>2018-03-08T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -87,6 +80,13 @@
   </url>
   
   <url>
+    <loc>https://www.gecore.win/post/201804/java10%E5%88%9D%E6%8E%A2/</loc>
+    <lastmod>2017-09-30T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://www.gecore.win/post/201711/vscode/</loc>
     <lastmod>2017-09-30T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -137,7 +137,7 @@
   
   <url>
     <loc>https://www.gecore.win/tags/eclipse/</loc>
-    <lastmod>2018-03-16T00:00:00+00:00</lastmod>
+    <lastmod>2017-09-30T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -172,14 +172,28 @@
   
   <url>
     <loc>https://www.gecore.win/tags/java/</loc>
-    <lastmod>2018-03-16T00:00:00+00:00</lastmod>
+    <lastmod>2018-03-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.gecore.win/categories/java/</loc>
-    <lastmod>2018-03-16T00:00:00+00:00</lastmod>
+    <lastmod>2018-03-07T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.gecore.win/tags/java10/</loc>
+    <lastmod>2017-09-30T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.gecore.win/categories/java10/</loc>
+    <lastmod>2017-09-30T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -271,20 +285,6 @@
   <url>
     <loc>https://www.gecore.win/tags/</loc>
     <lastmod>2018-01-07T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.gecore.win/tags/var/</loc>
-    <lastmod>2018-03-16T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.gecore.win/categories/var/</loc>
-    <lastmod>2018-03-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

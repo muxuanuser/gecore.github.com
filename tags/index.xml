@@ -23,7 +23,7 @@
     <item>
       <title>Eclipse</title>
       <link>https://www.gecore.win/tags/eclipse/</link>
-      <pubDate>Fri, 16 Mar 2018 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 30 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>https://www.gecore.win/tags/eclipse/</guid>
       <description></description>
@@ -50,9 +50,18 @@
     <item>
       <title>Java</title>
       <link>https://www.gecore.win/tags/java/</link>
-      <pubDate>Fri, 16 Mar 2018 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 07 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.gecore.win/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java10</title>
+      <link>https://www.gecore.win/tags/java10/</link>
+      <pubDate>Sat, 30 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.gecore.win/tags/java10/</guid>
       <description></description>
     </item>
     
@@ -107,15 +116,6 @@
       <pubDate>Sun, 07 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.gecore.win/tags/ssm/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Var</title>
-      <link>https://www.gecore.win/tags/var/</link>
-      <pubDate>Fri, 16 Mar 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.gecore.win/tags/var/</guid>
       <description></description>
     </item>
     

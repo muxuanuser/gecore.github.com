@@ -144,55 +144,6 @@ export class VideoRunningPage {
     </item>
     
     <item>
-      <title>Java10中的var初探</title>
-      <link>https://www.gecore.win/post/201804/java10%E5%88%9D%E6%8E%A2/</link>
-      <pubDate>Fri, 16 Mar 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.gecore.win/post/201804/java10%E5%88%9D%E6%8E%A2/</guid>
-      
-        <description>
-
-&lt;h2 id=&#34;java10中的var初探&#34;&gt;Java10中的var初探&lt;/h2&gt;
-
-&lt;p&gt;目前java10已经发布，现在可以到
- &lt;a href=&#34;http://www.oracle.com/technetwork/java/javase/downloads/jdk10-downloads-4416644.html&#34;&gt;Java10&lt;/a&gt; 下载java10，如果你是用记事本编写代码可以直接测试，如果使用Eclipse需要使用
- &lt;a href=&#34;http://www.eclipse.org/downloads/download.php?file=/eclipse/downloads/drops4/M-4.7.3aRC1-201803231030/eclipse-SDK-4.7.3aRC1-win32-x86_64.zip&#34;&gt;Eclipse 4.7.3a Release Candidate Build: 4.7.3aRC1&lt;/a&gt; 才支持Java10。&lt;/p&gt;
-
-&lt;h4 id=&#34;var-关键字&#34;&gt;var 关键字&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;package com.test.main;
-
-import java.util.ArrayList;
-
-public class Program {
-
-    public static void main(String[] args) {
-        var list = new ArrayList&amp;lt;Integer&amp;gt;();
-        list.add(1);
-        list.add(8);
-        list.add(6);
-        list.add(3);
-        list.add(5);
-        list.add(0);
-        list.add(-1);
-        list.add(10);
-        list.sort((Integer a, Integer b) -&amp;gt; {return a.compareTo(b);});
-        System.out.println(&amp;quot;排序结果：&amp;quot;);
-        for (int i = 0; i &amp;lt; list.size(); i++) {
-            System.out.print(list.get(i) + &amp;quot;\t&amp;quot;);
-        }
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;结果&#34;&gt;结果&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/Gecore/PictureCdn/raw/master/post/201804/Java10%E5%88%9D%E6%8E%A2/4.png&#34; alt=&#34;结果&#34; /&gt;&lt;/p&gt;
-</description>
-      
-    </item>
-    
-    <item>
       <title>ionic 定位技术</title>
       <link>https://www.gecore.win/post/201803/ionic%E5%AE%9A%E4%BD%8D/</link>
       <pubDate>Thu, 08 Mar 2018 00:00:00 +0000</pubDate>
@@ -1587,6 +1538,55 @@ npm install --save @jiguang-ionic/jpush
 &lt;p&gt;&lt;img src=&#34;https://ycdn.lucoder.com/usr/my_lucoder_com/log/20171216/1_9.png&#34; alt=&#34;&#39;调试&#39;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://ycdn.lucoder.com/usr/my_lucoder_com/log/20171216/1_10.jpg&#34; alt=&#34;&#39;结果&#39;&#34; /&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Java10中的var初探</title>
+      <link>https://www.gecore.win/post/201804/java10%E5%88%9D%E6%8E%A2/</link>
+      <pubDate>Sat, 30 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.gecore.win/post/201804/java10%E5%88%9D%E6%8E%A2/</guid>
+      
+        <description>
+
+&lt;h2 id=&#34;java10中的var初探&#34;&gt;Java10中的var初探&lt;/h2&gt;
+
+&lt;p&gt;目前java10已经发布，现在可以到
+ &lt;a href=&#34;http://www.oracle.com/technetwork/java/javase/downloads/jdk10-downloads-4416644.html&#34;&gt;Java10&lt;/a&gt; 下载java10，如果你是用记事本编写代码可以直接测试，如果使用Eclipse需要使用
+ &lt;a href=&#34;http://www.eclipse.org/downloads/download.php?file=/eclipse/downloads/drops4/M-4.7.3aRC1-201803231030/eclipse-SDK-4.7.3aRC1-win32-x86_64.zip&#34;&gt;Eclipse 4.7.3a Release Candidate Build: 4.7.3aRC1&lt;/a&gt; 才支持Java10。&lt;/p&gt;
+
+&lt;h4 id=&#34;var-关键字&#34;&gt;var 关键字&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;package com.test.main;
+
+import java.util.ArrayList;
+
+public class Program {
+
+    public static void main(String[] args) {
+        var list = new ArrayList&amp;lt;Integer&amp;gt;();
+        list.add(1);
+        list.add(8);
+        list.add(6);
+        list.add(3);
+        list.add(5);
+        list.add(0);
+        list.add(-1);
+        list.add(10);
+        list.sort((Integer a, Integer b) -&amp;gt; {return a.compareTo(b);});
+        System.out.println(&amp;quot;排序结果：&amp;quot;);
+        for (int i = 0; i &amp;lt; list.size(); i++) {
+            System.out.print(list.get(i) + &amp;quot;\t&amp;quot;);
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;结果&#34;&gt;结果&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gitee.com/Gecore/PictureCdn/raw/master/post/201804/Java10%E5%88%9D%E6%8E%A2/4.png&#34; alt=&#34;结果&#34; /&gt;&lt;/p&gt;
 </description>
       
     </item>
