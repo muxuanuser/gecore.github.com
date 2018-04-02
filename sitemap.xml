@@ -136,6 +136,13 @@
   </url>
   
   <url>
+    <loc>https://www.gecore.win/tags/eclipse/</loc>
+    <lastmod>2018-03-16T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.gecore.win/tags/http/</loc>
     <lastmod>2017-09-30T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
