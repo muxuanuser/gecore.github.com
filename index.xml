@@ -1458,6 +1458,66 @@ cordova platform add android
     </item>
     
     <item>
+      <title>在线工具</title>
+      <link>https://www.gecore.win/online/</link>
+      <pubDate>Sun, 07 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.gecore.win/online/</guid>
+      
+        <description>&lt;blockquote&gt;
+&lt;p&gt;这个页面的工具是博主自己常用的收藏，仅提供个人备份使用。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;【编辑器】&lt;a href=&#34;https://www.zybuluo.com/mdeditor&#34;&gt;Markdown&lt;/a&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>常用工具</title>
+      <link>https://www.gecore.win/links/</link>
+      <pubDate>Sun, 07 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.gecore.win/links/</guid>
+      
+        <description>&lt;blockquote&gt;
+&lt;p&gt;这个页面的软件是博主自己常用的收藏，仅提供个人备份使用。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;【资料】&lt;a href=&#34;https://www.appinn.com/markdown/&#34;&gt;MarkDown&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;【.NET网站】 &lt;a href=&#34;http://www.ikende.com/&#34;&gt;IKende&lt;/a&gt; | &lt;a href=&#34;https://www.connectionstrings.com/&#34;&gt;ConnectStrings&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;【开发工具】&lt;a href=&#34;https://code.visualstudio.com/&#34;&gt;Visual Studio Code&lt;/a&gt; | &lt;a href=&#34;https://www.eclipse.org/downloads/download.php?file=/oomph/epp/oxygen/R2/eclipse-inst-win64.exe&#34;&gt;Eclipse&lt;/a&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>常用工具</title>
+      <link>https://www.gecore.win/tools/</link>
+      <pubDate>Sun, 07 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.gecore.win/tools/</guid>
+      
+        <description>&lt;blockquote&gt;
+&lt;p&gt;这个页面的软件是博主自己常用的收藏，仅提供个人备份使用。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;【数据库】&lt;a href=&#34;https://downloads.mariadb.org/interstitial/mariadb-10.2.14/winx64-packages/mariadb-10.2.14-winx64.msi/from/http%3A//mirrors.neusoft.edu.cn/mariadb/&#34;&gt;MariaDB&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;【开发工具】&lt;a href=&#34;https://code.visualstudio.com/&#34;&gt;Visual Studio Code&lt;/a&gt; | &lt;a href=&#34;https://www.eclipse.org/downloads/download.php?file=/oomph/epp/oxygen/R2/eclipse-inst-win64.exe&#34;&gt;Eclipse&lt;/a&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
       <title>树莓派部署Node环境</title>
       <link>https://www.gecore.win/post/201802/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%89%E8%A3%85node/</link>
       <pubDate>Sat, 07 Oct 2017 00:00:00 +0000</pubDate>
