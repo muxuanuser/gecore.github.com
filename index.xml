@@ -1106,59 +1106,9 @@ public class UserController {
     </item>
     
     <item>
-      <title>ionic3构建过程中遇到找不到AndroidManifest.xml</title>
-      <link>https://www.gecore.win/post/201802/ionic3%E6%9E%84%E5%BB%BA%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E6%89%BE%E4%B8%8D%E5%88%B0androidmanifest.xml%E7%9A%84%E9%97%AE%E9%A2%98/</link>
-      <pubDate>Sun, 07 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.gecore.win/post/201802/ionic3%E6%9E%84%E5%BB%BA%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E6%89%BE%E4%B8%8D%E5%88%B0androidmanifest.xml%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
-      
-        <description>&lt;p&gt;构建Ionic时候有时候会遇到下面问题：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-error&#34;&gt;Failed to install &#39;ionic-plugin-keyboard&#39;: Error: ENOENT: no such file or directory, open &#39;/Users/theo/Projects/mobile/platforms/android/AndroidManifest.xml&#39;
-    at Object.fs.openSync (fs.js:651:18)
-    at Object.fs.readFileSync (fs.js:553:33)
-    at Object.parseElementtreeSync (/Users/theo/Projects/mobile/platforms/android/cordova/node_modules/cordova-common/src/util/xml-helpers.js:180:27)
-    at new AndroidManifest (/Users/theo/Projects/mobile/platforms/android/cordova/lib/AndroidManifest.js:29:20)
-    at AndroidProject.getPackageName (/Users/theo/Projects/mobile/platforms/android/cordova/lib/AndroidProject.js:99:12)
-    at Api.addPlugin (/Users/theo/Projects/mobile/platforms/android/cordova/Api.js:223:57)
-    at handleInstall (/Users/theo/.nvm/versions/node/v8.1.2/lib/node_modules/cordova/node_modules/cordova-lib/src/plugman/install.js:594:10)
-    at /Users/theo/.nvm/versions/node/v8.1.2/lib/node_modules/cordova/node_modules/cordova-lib/src/plugman/install.js:357:28
-    at _fulfilled (/Users/theo/.nvm/versions/node/v8.1.2/lib/node_modules/cordova/node_modules/q/q.js:787:54)
-    at self.promiseDispatch.done (/Users/theo/.nvm/versions/node/v8.1.2/lib/node_modules/cordova/node_modules/q/q.js:816:30)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;这个问题的原因就是新版本的cordova 7.0.0及以上版本对于新的AndroidManifest.xml路径还没有更新，导致找不到AndroidManifest.xml，下面给出两个解决办法：&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;使用原先的cordova
-&lt;code&gt;shell
-npm uninstall -g cordova
-npm install -g cordova@6.5.0
-&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;重新布置安卓项目
-&lt;code&gt;shell
-cordova platform rm android
-cordova platform add android
-&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Cordova官方给出的解决办法
-修改&lt;code&gt;config.xml&lt;/code&gt;文件，具体可以查看网址&lt;a href=&#39;https://cordova.apache.org/announcements/2017/12/04/cordova-android-7.0.0.html&#39; target=&#39;_blank&#39;&gt;&lt;a href=&#34;https://cordova.apache.org/announcements/2017/12/04/cordova-android-7.0.0.html&#34;&gt;https://cordova.apache.org/announcements/2017/12/04/cordova-android-7.0.0.html&lt;/a&gt;&lt;/a&gt;
-```shell
-&lt;!-- An existing config.xml --&gt;
-&lt;edit-config file=&#34;AndroidManifest.xml&#34; target=&#34;/manifest/application&#34; mode=&#34;merge&#34;&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;!-- needs to change to --&gt;
-
-&lt;p&gt;&lt;edit-config file=&#34;app/src/main/AndroidManifest.xml&#34; target=&#34;/manifest/application&#34; mode=&#34;merge&#34;&gt;
-```&lt;/p&gt;
-</description>
-      
-    </item>
-    
-    <item>
       <title>Java 使用 JAXB处理XML文件</title>
       <link>https://www.gecore.win/post/201801/%E4%BD%BF%E7%94%A8jaxb%E5%A4%84%E7%90%86xml%E6%96%87%E4%BB%B6/</link>
-      <pubDate>Sat, 07 Oct 2017 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 07 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.gecore.win/post/201801/%E4%BD%BF%E7%94%A8jaxb%E5%A4%84%E7%90%86xml%E6%96%87%E4%BB%B6/</guid>
       
@@ -1453,6 +1403,56 @@ public class JAXBController {
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Level [id=1, name=张三, lev=1, children=[Level [id=1, name=李四, lev=2, children=null], Level [id=2, name=李四22, lev=2, children=null], Level [id=3, name=李四23, lev=2, children=null]]]    Level [id=2, name=李四, lev=1, children=null]    
 &lt;/code&gt;&lt;/pre&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>ionic3构建过程中遇到找不到AndroidManifest.xml</title>
+      <link>https://www.gecore.win/post/201802/ionic3%E6%9E%84%E5%BB%BA%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E6%89%BE%E4%B8%8D%E5%88%B0androidmanifest.xml%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Sun, 07 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.gecore.win/post/201802/ionic3%E6%9E%84%E5%BB%BA%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E6%89%BE%E4%B8%8D%E5%88%B0androidmanifest.xml%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      
+        <description>&lt;p&gt;构建Ionic时候有时候会遇到下面问题：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-error&#34;&gt;Failed to install &#39;ionic-plugin-keyboard&#39;: Error: ENOENT: no such file or directory, open &#39;/Users/theo/Projects/mobile/platforms/android/AndroidManifest.xml&#39;
+    at Object.fs.openSync (fs.js:651:18)
+    at Object.fs.readFileSync (fs.js:553:33)
+    at Object.parseElementtreeSync (/Users/theo/Projects/mobile/platforms/android/cordova/node_modules/cordova-common/src/util/xml-helpers.js:180:27)
+    at new AndroidManifest (/Users/theo/Projects/mobile/platforms/android/cordova/lib/AndroidManifest.js:29:20)
+    at AndroidProject.getPackageName (/Users/theo/Projects/mobile/platforms/android/cordova/lib/AndroidProject.js:99:12)
+    at Api.addPlugin (/Users/theo/Projects/mobile/platforms/android/cordova/Api.js:223:57)
+    at handleInstall (/Users/theo/.nvm/versions/node/v8.1.2/lib/node_modules/cordova/node_modules/cordova-lib/src/plugman/install.js:594:10)
+    at /Users/theo/.nvm/versions/node/v8.1.2/lib/node_modules/cordova/node_modules/cordova-lib/src/plugman/install.js:357:28
+    at _fulfilled (/Users/theo/.nvm/versions/node/v8.1.2/lib/node_modules/cordova/node_modules/q/q.js:787:54)
+    at self.promiseDispatch.done (/Users/theo/.nvm/versions/node/v8.1.2/lib/node_modules/cordova/node_modules/q/q.js:816:30)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这个问题的原因就是新版本的cordova 7.0.0及以上版本对于新的AndroidManifest.xml路径还没有更新，导致找不到AndroidManifest.xml，下面给出两个解决办法：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;使用原先的cordova
+&lt;code&gt;shell
+npm uninstall -g cordova
+npm install -g cordova@6.5.0
+&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;重新布置安卓项目
+&lt;code&gt;shell
+cordova platform rm android
+cordova platform add android
+&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Cordova官方给出的解决办法
+修改&lt;code&gt;config.xml&lt;/code&gt;文件，具体可以查看网址&lt;a href=&#39;https://cordova.apache.org/announcements/2017/12/04/cordova-android-7.0.0.html&#39; target=&#39;_blank&#39;&gt;&lt;a href=&#34;https://cordova.apache.org/announcements/2017/12/04/cordova-android-7.0.0.html&#34;&gt;https://cordova.apache.org/announcements/2017/12/04/cordova-android-7.0.0.html&lt;/a&gt;&lt;/a&gt;
+```shell
+&lt;!-- An existing config.xml --&gt;
+&lt;edit-config file=&#34;AndroidManifest.xml&#34; target=&#34;/manifest/application&#34; mode=&#34;merge&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;!-- needs to change to --&gt;
+
+&lt;p&gt;&lt;edit-config file=&#34;app/src/main/AndroidManifest.xml&#34; target=&#34;/manifest/application&#34; mode=&#34;merge&#34;&gt;
+```&lt;/p&gt;
 </description>
       
     </item>
