@@ -3,6 +3,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.gecore.win/post/201804/asp_net_core/</loc>
+    <lastmod>2018-04-09T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://www.gecore.win/post/201804/java10%E5%88%9D%E6%8E%A2/</loc>
     <lastmod>2018-04-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -73,6 +80,13 @@
   </url>
   
   <url>
+    <loc>https://www.gecore.win/column/</loc>
+    <lastmod>2018-01-07T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://www.gecore.win/online/</loc>
     <lastmod>2018-01-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -129,6 +143,34 @@
   </url>
   
   <url>
+    <loc>https://www.gecore.win/tags/.net/</loc>
+    <lastmod>2018-04-09T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.gecore.win/categories/.net/</loc>
+    <lastmod>2018-04-09T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.gecore.win/tags/.net-core/</loc>
+    <lastmod>2018-04-09T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.gecore.win/tags/.net-%E8%B7%A8%E5%B9%B3%E5%8F%B0/</loc>
+    <lastmod>2018-04-09T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.gecore.win/tags/androidmanifest/</loc>
     <lastmod>2018-01-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -143,8 +185,22 @@
   </url>
   
   <url>
+    <loc>https://www.gecore.win/categories/asp.net-core-2.0/</loc>
+    <lastmod>2018-04-09T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.gecore.win/tags/c#/</loc>
+    <lastmod>2018-04-09T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.gecore.win/categories/</loc>
-    <lastmod>2018-01-07T00:00:00+00:00</lastmod>
+    <lastmod>2018-04-09T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -284,7 +340,7 @@
   
   <url>
     <loc>https://www.gecore.win/post/</loc>
-    <lastmod>2018-04-01T00:00:00+00:00</lastmod>
+    <lastmod>2018-04-09T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -305,7 +361,7 @@
   
   <url>
     <loc>https://www.gecore.win/tags/</loc>
-    <lastmod>2018-01-07T00:00:00+00:00</lastmod>
+    <lastmod>2018-04-09T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -452,7 +508,7 @@
   
   <url>
     <loc>https://www.gecore.win/</loc>
-    <lastmod>2018-04-01T00:00:00+00:00</lastmod>
+    <lastmod>2018-04-09T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -467,6 +523,20 @@
   <url>
     <loc>https://www.gecore.win/categories/%E8%A7%86%E9%A2%91%E8%81%8A%E5%A4%A9/</loc>
     <lastmod>2018-03-16T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.gecore.win/tags/%E8%B7%A8%E5%B9%B3%E5%8F%B0/</loc>
+    <lastmod>2018-04-09T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.gecore.win/categories/%E8%B7%A8%E5%B9%B3%E5%8F%B0/</loc>
+    <lastmod>2018-04-09T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

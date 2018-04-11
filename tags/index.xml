@@ -6,10 +6,37 @@
     <description>Recent content in Tags on 牧轩居士</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 07 Jan 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 09 Apr 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.gecore.win/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>.Net</title>
+      <link>https://www.gecore.win/tags/.net/</link>
+      <pubDate>Mon, 09 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.gecore.win/tags/.net/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>.Net Core</title>
+      <link>https://www.gecore.win/tags/.net-core/</link>
+      <pubDate>Mon, 09 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.gecore.win/tags/.net-core/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>.Net 跨平台</title>
+      <link>https://www.gecore.win/tags/.net-%E8%B7%A8%E5%B9%B3%E5%8F%B0/</link>
+      <pubDate>Mon, 09 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.gecore.win/tags/.net-%E8%B7%A8%E5%B9%B3%E5%8F%B0/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Androidmanifest</title>
@@ -17,6 +44,15 @@
       <pubDate>Sun, 07 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.gecore.win/tags/androidmanifest/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>C#</title>
+      <link>https://www.gecore.win/tags/c#/</link>
+      <pubDate>Mon, 09 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.gecore.win/tags/c#/</guid>
       <description></description>
     </item>
     
@@ -152,42 +188,6 @@
       <pubDate>Fri, 16 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.gecore.win/tags/webrtc/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Xml</title>
-      <link>https://www.gecore.win/tags/xml/</link>
-      <pubDate>Sun, 07 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.gecore.win/tags/xml/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>地图</title>
-      <link>https://www.gecore.win/tags/%E5%9C%B0%E5%9B%BE/</link>
-      <pubDate>Thu, 08 Mar 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.gecore.win/tags/%E5%9C%B0%E5%9B%BE/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>定位</title>
-      <link>https://www.gecore.win/tags/%E5%AE%9A%E4%BD%8D/</link>
-      <pubDate>Thu, 08 Mar 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.gecore.win/tags/%E5%AE%9A%E4%BD%8D/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>嵌入式</title>
-      <link>https://www.gecore.win/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/</link>
-      <pubDate>Sat, 07 Oct 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.gecore.win/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/</guid>
       <description></description>
     </item>
     

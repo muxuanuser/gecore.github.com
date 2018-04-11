@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Asp.net Core 2.0 on 牧轩居士</title>
+    <link>https://www.gecore.win/categories/asp.net-core-2.0/</link>
+    <description>Recent content in Asp.net Core 2.0 on 牧轩居士</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 09 Apr 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.gecore.win/categories/asp.net-core-2.0/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>.NET Core 系列文章</title>
+      <link>https://www.gecore.win/post/201804/asp_net_core/</link>
+      <pubDate>Mon, 09 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.gecore.win/post/201804/asp_net_core/</guid>
+      <description>提前说明 .NET Core 是一个通用开发平台，由 Microsoft 和 GitHub 上的 .NET 社区共同维护。 它是跨平台的，支持 Windows、macOS 和 Linux，并且可用于设备、云和嵌</description>
+    </item>
+    
+  </channel>
+</rss>
