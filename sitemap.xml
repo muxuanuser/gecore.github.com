@@ -17,6 +17,13 @@
   </url>
   
   <url>
+    <loc>https://www.gecore.win/post/201804/mpi%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/</loc>
+    <lastmod>2018-04-01T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://www.gecore.win/post/201803/ionic-webrtc/</loc>
     <lastmod>2018-03-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -325,6 +332,20 @@
   </url>
   
   <url>
+    <loc>https://www.gecore.win/tags/mpi/</loc>
+    <lastmod>2018-04-01T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.gecore.win/categories/mpi/</loc>
+    <lastmod>2018-04-01T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.gecore.win/tags/node/</loc>
     <lastmod>2017-10-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -481,6 +502,20 @@
   <url>
     <loc>https://www.gecore.win/categories/%E5%B7%A5%E5%85%B7/</loc>
     <lastmod>2017-09-30T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.gecore.win/tags/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/</loc>
+    <lastmod>2018-04-01T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.gecore.win/categories/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/</loc>
+    <lastmod>2018-04-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

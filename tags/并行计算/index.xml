@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>并行计算 on 牧轩居士</title>
+    <link>https://www.gecore.win/tags/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/</link>
+    <description>Recent content in 并行计算 on 牧轩居士</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 01 Apr 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.gecore.win/tags/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>mpi并行计算环境搭建</title>
+      <link>https://www.gecore.win/post/201804/mpi%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/</link>
+      <pubDate>Sun, 01 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.gecore.win/post/201804/mpi%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/</guid>
+      <description>什么是MPI MPI是一个跨语言的通讯协议，用于编写并行计算机。支持点对点和广播。MPI是一个信息传递应用程序接口，包括协议和和语义说明，他们</description>
+    </item>
+    
+  </channel>
+</rss>

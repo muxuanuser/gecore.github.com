@@ -107,6 +107,162 @@ public class Program {
     </item>
     
     <item>
+      <title>mpi并行计算环境搭建</title>
+      <link>https://www.gecore.win/post/201804/mpi%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/</link>
+      <pubDate>Sun, 01 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.gecore.win/post/201804/mpi%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/</guid>
+      
+        <description>
+
+&lt;h2 id=&#34;什么是mpi&#34;&gt;什么是MPI&lt;/h2&gt;
+
+&lt;p&gt;MPI是一个跨语言的通讯协议，用于编写并行计算机。支持点对点和广播。MPI是一个信息传递应用程序接口，包括协议和和语义说明，他们指明其如何在各种实现中发挥其特性。MPI的目标是高性能，大规模性，和可移植性。MPI在今天仍为高性能计算的主要模型。&lt;/p&gt;
+
+&lt;h4 id=&#34;下载安装mpi&#34;&gt;下载安装MPI&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.mpich.org/downloads/&#34;&gt;下载地址&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://msdn.microsoft.com/en-us/library/bb524831%28v=vs.85%29.aspx&#34;&gt;Windows下载地址&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gitee.com/Gecore/muxuanuser.github.io/raw/master/content/post/201804/mpi%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/1.png&#34; alt=&#34;Windows MPI&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;安装之后配置环境变量，然后运行：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;C:\Users\Lucifer&amp;gt;mpiexec
+Launches an application on multiple hosts.
+
+Usage:
+
+    mpiexec [options] executable [args] [ : [options] exe [args] : ... ]
+    mpiexec -configfile &amp;lt;file name&amp;gt;
+
+Common options:
+
+-n     &amp;lt;num_processes&amp;gt;
+-env   &amp;lt;env_var_name&amp;gt; &amp;lt;env_var_value&amp;gt;
+-wdir  &amp;lt;working_directory&amp;gt;
+-hosts n host1 [m1] host2 [m2] ... hostn [mn]
+-cores &amp;lt;num_cores_per_host&amp;gt;
+-lines
+-trace [filter] [Deprecated.  Please control MPI tracing with any Event Tracing
+                  for Windows (ETW) tool. E.g. XPERF, LOGMAN]
+-tracemax &amp;lt;size_in_mb&amp;gt; [Deprecated.]
+-debug [0-3]
+
+Examples:
+
+    mpiexec -n 4 pi.exe
+    mpiexec -hosts 1 server1 master : -n 8 worker
+
+For a complete list of options, run mpiexec -help2
+For a list of environment variables, run mpiexec -help3
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;出现上面的结果表示环境配置正确，开始下一步，否则检查自己的配置。&lt;/p&gt;
+
+&lt;h3 id=&#34;mpi-net&#34;&gt;MPI.NET&lt;/h3&gt;
+
+&lt;p&gt;上面简介已经说明，MPI是一个跨语言通讯协议，不局限于某一中开发语言，由于笔者个人原因，选择了C#语言，所以使用MPI.NET。Java开发者可以借助于&lt;a href=&#34;https://blog.csdn.net/kongxx/article/details/52237416&#34;&gt;OpenMPI执行Java MPI作业&lt;/a&gt;这篇文章，有点麻烦，本文不在赘述。&lt;/p&gt;
+
+&lt;h4 id=&#34;创建一个console-项目&#34;&gt;创建一个Console 项目&lt;/h4&gt;
+
+&lt;p&gt;然后使用&lt;code&gt;nuget&lt;/code&gt;下载一个包&lt;code&gt;MPI.NET&lt;/code&gt;，项目地址:&lt;a href=&#34;https://github.com/jmp75/MPI.NET&#34;&gt;https://github.com/jmp75/MPI.NET&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gitee.com/Gecore/muxuanuser.github.io/raw/master/content/post/201804/mpi%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/2.png&#34; alt=&#34;下载mpi包&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;如果&lt;code&gt;nuget&lt;/code&gt;下载包出现错误，可以使用这个压缩包文件，注意使用&lt;code&gt;.NET Fframework 4.0&lt;/code&gt;，其他版本或许可用，但是有潜在的报错风险：[]()&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-C#&#34;&gt;//初始化MPI运行环境  
+using (new MPI.Environment(ref args))  
+{  
+    //获取Communicator  
+    var comm = Communicator.world;  
+    if (0 == comm.Rank)  
+       {  
+        //令0进程发送数据然后接收数据  
+        comm.Send(&amp;quot;Rosie&amp;quot;, 1, 0);  
+        // receive the final message   
+        var msg = comm.Receive&amp;lt;string&amp;gt;(Communicator.anySource, 0);  
+        //输出收到的信息  
+        Console.WriteLine(&amp;quot;Rank &amp;quot; + comm.Rank + &amp;quot; received message \&amp;quot;&amp;quot; + msg + &amp;quot;\&amp;quot;.&amp;quot;);  
+        } 
+        else 
+        { 
+            //令n程序接收上一进程发送的数据然后发给下一进程
+            var msg = comm.Receive&amp;lt;string&amp;gt;(comm.Rank - 1, 0);
+            //输入收到的消息
+            Console.WriteLine(&amp;quot;Rank &amp;quot; + comm.Rank + &amp;quot; received message \&amp;quot;&amp;quot; + msg + &amp;quot;\&amp;quot;.&amp;quot;);
+            //发送给下一个进程 
+            comm.Send(msg + &amp;quot;, &amp;quot; + comm.Rank, (comm.Rank + 1) % comm.Size, 0);
+        }
+}  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;注意最后一行千万不要添加读取一行操作，否则必然报错！&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;创建一个脚本文件：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bat&#34;&gt;mpiexec -n 4 MpiSingleTestDemo.exe
+pause();
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gitee.com/Gecore/muxuanuser.github.io/raw/master/content/post/201804/mpi%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/3.png&#34; alt=&#34;单机运行结果&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;多机运行&#34;&gt;多机运行&lt;/h3&gt;
+
+&lt;p&gt;MPI是一个跨语言的通讯工具，我们可以用它来进行跨机器并行计算，需要借助的工具是&lt;code&gt;smpd.exe&lt;/code&gt;，该文件在你安装MPI时候已经被自动安装。&lt;/p&gt;
+
+&lt;p&gt;我们仍然使用上述的例子进行下面的简单配置：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;寻找两台同一个网络下的电脑 A：10.12.52.160，电脑 B：10.12.37.191。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;两台电脑同时设置两个完全相同的账户和密码，假如均为 &lt;code&gt;root&lt;/code&gt;和&lt;code&gt;123456&lt;/code&gt;（Linux用户不要这么干）。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;关闭防火墙，尝试Ping主机，保证两台主机之间可以相互通讯。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;分别复制完全相同的软件到两台主机，并且保证位置相同，假如：&lt;code&gt;C:\mpi\&lt;/code&gt;。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;双方主机启动smpd软件&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;smpd -d 2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;类似下面的结果：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;C:\Users\Lucifer&amp;gt;smpd -d 2
+[-1:1260] Launching SMPD service.
+[-1:1260] smpd listening on port 8677
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+&lt;li&gt;一方启动并行程序&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code&gt;mpiexec -hosts 2 10.12.52.160 3 10.12.37.191 4 MpiSingleTestDemo.exe
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gitee.com/Gecore/muxuanuser.github.io/raw/master/content/post/201804/mpi%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/4.png&#34; alt=&#34;多机运行结果&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;几点说明&#34;&gt;几点说明&lt;/h3&gt;
+
+&lt;p&gt;MPI单机运行比较简单，但是多机运行时候务必保证下面几点：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;双方必须使用的是同一套用户名和密码，即用户名和密码完全相同。&lt;/li&gt;
+&lt;li&gt;关闭windows防火墙，保证两台机器之间可以相互通讯。&lt;/li&gt;
+&lt;li&gt;必须先启动smpd软件，这是两台计算机之间通讯必不可少的中介。&lt;/li&gt;
+&lt;li&gt;并行程序必须每一个节点都有一套，并且程序的位置是相同的。&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+      
+    </item>
+    
+    <item>
       <title> ionic 使用 webrtc</title>
       <link>https://www.gecore.win/post/201803/ionic-webrtc/</link>
       <pubDate>Fri, 16 Mar 2018 00:00:00 +0000</pubDate>
@@ -1867,62 +2023,6 @@ export class AppComponent implements OnInit {
 &lt;li&gt;引入JQuery脚本&lt;/li&gt;
 &lt;li&gt;使用JQuery 的Ajax&lt;/li&gt;
 &lt;/ol&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title>Ionic环境搭建</title>
-      <link>https://www.gecore.win/post/201711/ionic%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</link>
-      <pubDate>Thu, 28 Sep 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.gecore.win/post/201711/ionic%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</guid>
-      
-        <description>
-
-&lt;h2 id=&#34;ioni开发环境搭建&#34;&gt;IONI开发环境搭建&lt;/h2&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;官网：&lt;a href=&#34;https://ionicframework.com/docs/&#34;&gt;https://ionicframework.com/docs/&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;ionic是一个用来开发混合手机应用的，开源的，免费的代码库。可以优化html、css和js的性能，构建高效的应用程序，而且还可以用于构建Sass和AngularJS的优化。ionic会是一个可以信赖的框架。&lt;/p&gt;
-
-&lt;h4 id=&#34;预备环境&#34;&gt;预备环境&lt;/h4&gt;
-
-&lt;ol&gt;
-&lt;li&gt;node环境&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;在nodejs官网&lt;a href=&#34;http://nodejs.cn/&#34;&gt;http://nodejs.cn/&lt;/a&gt;下载最新的适合电脑系统要求的nodejs安装包，解压文件配置环境变量，如：&lt;code&gt;NODE_HOME&lt;/code&gt;：&lt;code&gt;D:\DevT\node-v8.9.3-win-x64&lt;/code&gt;，配置完毕之后可以使用命令查看是否安装完成。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;&amp;gt; node -v
-v8.9.3
-&amp;gt; npm -v
-5.5.1
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ol&gt;
-&lt;li&gt;ionic环境&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;完成上述步骤之后，你可以安装ionic了，使用npm安装ionic。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;&amp;gt; npm install -g ionic
-&amp;gt; ionic -v
-3.20.0
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ol&gt;
-&lt;li&gt;cordova 环境&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;&amp;gt; npm install cordova -g cordova
-&amp;gt; cordova -v
-6.5.0
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;此时ionic开发环境已经完全安装完毕，&lt;code&gt;ionic start [AppName]&lt;/code&gt; 开始创建ionic项目&lt;/p&gt;
 </description>
       
     </item>
