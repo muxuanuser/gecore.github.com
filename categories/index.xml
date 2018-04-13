@@ -30,6 +30,15 @@
     </item>
     
     <item>
+      <title>Asp.net Core</title>
+      <link>https://www.gecore.win/categories/asp.net-core/</link>
+      <pubDate>Wed, 11 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.gecore.win/categories/asp.net-core/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Asp.net Core 2.0</title>
       <link>https://www.gecore.win/categories/asp.net-core-2.0/</link>
       <pubDate>Mon, 09 Apr 2018 00:00:00 +0000</pubDate>
@@ -44,6 +53,15 @@
       <pubDate>Thu, 28 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>https://www.gecore.win/categories/cordova/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ef</title>
+      <link>https://www.gecore.win/categories/ef/</link>
+      <pubDate>Wed, 11 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.gecore.win/categories/ef/</guid>
       <description></description>
     </item>
     
@@ -170,24 +188,6 @@
       <pubDate>Fri, 16 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.gecore.win/categories/webrtc/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Xml</title>
-      <link>https://www.gecore.win/categories/xml/</link>
-      <pubDate>Sun, 07 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.gecore.win/categories/xml/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>地图</title>
-      <link>https://www.gecore.win/categories/%E5%9C%B0%E5%9B%BE/</link>
-      <pubDate>Thu, 08 Mar 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.gecore.win/categories/%E5%9C%B0%E5%9B%BE/</guid>
       <description></description>
     </item>
     

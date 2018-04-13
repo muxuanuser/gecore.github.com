@@ -6,10 +6,227 @@
     <description>Recent content on 牧轩居士</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 09 Apr 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 11 Apr 2018 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://www.gecore.win/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ASP.NET CORE EF操作数据库</title>
+      <link>https://www.gecore.win/post/201804/asp.net-core-ef%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5/</link>
+      <pubDate>Wed, 11 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.gecore.win/post/201804/asp.net-core-ef%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5/</guid>
+      
+        <description>
+
+&lt;blockquote&gt;
+&lt;p&gt;写在前面：本文主要内容大多参考的MSD官网文档，本节参考网址 &lt;a href=&#34;https://docs.microsoft.com/zh-cn/aspnet/core/data/ef-rp/intro&#34;&gt;https://docs.microsoft.com/zh-cn/aspnet/core/data/ef-rp/intro&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;codefirst&#34;&gt;CodeFirst&lt;/h2&gt;
+
+&lt;h3 id=&#34;0-安装ef框架&#34;&gt;0. 安装EF框架&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-Powershell&#34;&gt;Install-Package Microsoft.EntityFrameworkCore.SqlServer
+Install-Package Microsoft.EntityFrameworkCore.Tools
+Install-Package Microsoft.VisualStudio.Web.CodeGeneration.Design
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;1-创建model实体&#34;&gt;1. 创建Model实体&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-C#&#34;&gt;public class Student
+{
+    public int ID { get; set; }
+    public string LastName { get; set; }
+    public string FirstMidName { get; set; }
+    public DateTime EnrollmentDate { get; set; }
+
+    public ICollection&amp;lt;Enrollment&amp;gt; Enrollments { get; set; }
+}
+public class Course
+{
+    [DatabaseGenerated(DatabaseGeneratedOption.None)]
+    public int CourseID { get; set; }
+    public string Title { get; set; }
+    public int Credits { get; set; }
+    public ICollection&amp;lt;Enrollment&amp;gt; Enrollments { get; set; }
+}
+public enum Grade
+{
+    A, B, C, D, F
+}
+public class Enrollment
+{
+    public int EnrollmentID { get; set; }
+    public int CourseID { get; set; }
+    public int StudentID { get; set; }
+    public Grade? Grade { get; set; }
+    public Course Course { get; set; }
+    public Student Student { get; set; }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;2-创建数据上下文&#34;&gt;2. 创建数据上下文&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-C#&#34;&gt;public class SchoolContext : DbContext
+    {
+        public SchoolContext(DbContextOptions&amp;lt;SchoolContext&amp;gt; options) : base(options)
+        {
+        }
+
+        public DbSet&amp;lt;Course&amp;gt; Courses { get; set; }
+        public DbSet&amp;lt;Enrollment&amp;gt; Enrollments { get; set; }
+        public DbSet&amp;lt;Student&amp;gt; Students { get; set; }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity&amp;lt;Course&amp;gt;().ToTable(&amp;quot;Course&amp;quot;);
+            modelBuilder.Entity&amp;lt;Enrollment&amp;gt;().ToTable(&amp;quot;Enrollment&amp;quot;);
+            modelBuilder.Entity&amp;lt;Student&amp;gt;().ToTable(&amp;quot;Student&amp;quot;);
+        }
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;3-依赖注入&#34;&gt;3. 依赖注入&lt;/h3&gt;
+
+&lt;p&gt;打开&lt;code&gt;Setup.cs&lt;/code&gt;文件&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-C#&#34;&gt;services.AddDbContext&amp;lt;SchoolContext&amp;gt;(options =&amp;gt;
+      options.UseSqlServer(Configuration.GetConnectionString(&amp;quot;DefaultConnection&amp;quot;)));
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;4-创建连接字符串&#34;&gt;4. 创建连接字符串&lt;/h3&gt;
+
+&lt;p&gt;打开&lt;code&gt;appsettings.json&lt;/code&gt;文件&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-JSON&#34;&gt;{
+  &amp;quot;ConnectionStrings&amp;quot;: {
+    &amp;quot;DefaultConnection&amp;quot;: &amp;quot;Server=(localdb)\\mssqllocaldb;Database=ContosoUniversity1;ConnectRetryCount=0;Trusted_Connection=True;MultipleActiveResultSets=true&amp;quot;
+  },
+  &amp;quot;Logging&amp;quot;: {
+    &amp;quot;IncludeScopes&amp;quot;: false,
+    &amp;quot;LogLevel&amp;quot;: {
+      &amp;quot;Default&amp;quot;: &amp;quot;Warning&amp;quot;
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;5-创建数据库&#34;&gt;5. 创建数据库&lt;/h3&gt;
+
+&lt;p&gt;打开&lt;code&gt;工具&lt;/code&gt; -&amp;gt; &lt;code&gt;NuGet包管理&lt;/code&gt; -&amp;gt; &lt;code&gt;包管理控制台&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-Powershell&#34;&gt; Add-Migration InitialCreate
+ Update-Database
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;如果过程中出现错误：&lt;code&gt;The term &#39;add-migration&#39; is not recognized as the name of a cmdlet&lt;/code&gt;，重启Visual Studio解决。&lt;/p&gt;
+
+&lt;h3 id=&#34;6-创建控制器&#34;&gt;6. 创建控制器&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;在&lt;code&gt;解决方案资源管理器&lt;/code&gt;中，右键单击&lt;code&gt;控制器&lt;/code&gt;文件夹，然后选择&lt;code&gt;添加&lt;/code&gt;&amp;gt;&lt;code&gt;控制器&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;选择&lt;code&gt;视图使用 Entity Framework 的 MVC 控制器&lt;/code&gt;，然后单击&lt;code&gt;确定&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;将&lt;code&gt;模型类&lt;/code&gt;设置为&lt;code&gt;Student&lt;/code&gt;，将&lt;code&gt;数据上下文类&lt;/code&gt;设置为 &lt;code&gt;StudentContext&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;单击 &lt;code&gt;添加&lt;/code&gt;。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;选中&lt;code&gt;wwwroot&lt;/code&gt;右键浏览器查看，输入你的控制器和地址即可，或者直接点击运行。&lt;/p&gt;
+
+&lt;h2 id=&#34;dbfirst&#34;&gt;DbFirst&lt;/h2&gt;
+
+&lt;h3 id=&#34;0-安装ef框架-1&#34;&gt;0. 安装EF框架&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-Powershell&#34;&gt;Install-Package Microsoft.EntityFrameworkCore.SqlServer
+Install-Package Microsoft.EntityFrameworkCore.Tools
+Install-Package Microsoft.VisualStudio.Web.CodeGeneration.Design
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;1-初始化数据库&#34;&gt;1. 初始化数据库&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-SQL&#34;&gt;CREATE DATABASE [Blogging];
+GO
+
+USE [Blogging];
+GO
+
+CREATE TABLE [Blog] (
+    [BlogId] int NOT NULL IDENTITY,
+    [Url] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_Blog] PRIMARY KEY ([BlogId])
+);
+GO
+
+CREATE TABLE [Post] (
+    [PostId] int NOT NULL IDENTITY,
+    [BlogId] int NOT NULL,
+    [Content] nvarchar(max),
+    [Title] nvarchar(max),
+    CONSTRAINT [PK_Post] PRIMARY KEY ([PostId]),
+    CONSTRAINT [FK_Post_Blog_BlogId] FOREIGN KEY ([BlogId]) REFERENCES [Blog] ([BlogId]) ON DELETE CASCADE
+);
+GO
+
+INSERT INTO [Blog] (Url) VALUES
+(&#39;http://blogs.msdn.com/dotnet&#39;),
+(&#39;http://blogs.msdn.com/webdev&#39;),
+(&#39;http://blogs.msdn.com/visualstudio&#39;)
+GO
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;2-反向工程生成代码&#34;&gt;2. 反向工程生成代码&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;工具&lt;/code&gt;–&amp;gt;&lt;code&gt;NuGet 包管理器&lt;/code&gt;–&amp;gt;&lt;code&gt;包管理器控制台&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-powershell&#34;&gt;Scaffold-DbContext &amp;quot;Server=(localdb)\mssqllocaldb;Database=Blogging;Trusted_Connection=True;&amp;quot; Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;如果遇到错误&lt;code&gt;The term &#39;Scaffold-DbContext&#39; is not recognized as the name of a cmdlet&lt;/code&gt;，请重启Visual Studio！&lt;/p&gt;
+
+&lt;h3 id=&#34;3-依赖注入-1&#34;&gt;3. 依赖注入&lt;/h3&gt;
+
+&lt;p&gt;打开&lt;code&gt;Setup.cs&lt;/code&gt;文件&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-C#&#34;&gt;services.AddDbContext&amp;lt;SchoolContext&amp;gt;(options =&amp;gt;
+      options.UseSqlServer(Configuration.GetConnectionString(&amp;quot;DefaultConnection&amp;quot;)));
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;4-创建连接字符串-1&#34;&gt;4. 创建连接字符串&lt;/h3&gt;
+
+&lt;p&gt;打开&lt;code&gt;appsettings.json&lt;/code&gt;文件&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-JSON&#34;&gt;{
+  &amp;quot;ConnectionStrings&amp;quot;: {
+    &amp;quot;DefaultConnection&amp;quot;: &amp;quot;Server=(localdb)\\mssqllocaldb;Database=ContosoUniversity1;ConnectRetryCount=0;Trusted_Connection=True;MultipleActiveResultSets=true&amp;quot;
+  },
+  &amp;quot;Logging&amp;quot;: {
+    &amp;quot;IncludeScopes&amp;quot;: false,
+    &amp;quot;LogLevel&amp;quot;: {
+      &amp;quot;Default&amp;quot;: &amp;quot;Warning&amp;quot;
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;5-创建控制器&#34;&gt;5. 创建控制器&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;在&lt;code&gt;解决方案资源管理器&lt;/code&gt;中，右键单击&lt;code&gt;控制器&lt;/code&gt;文件夹，然后选择&lt;code&gt;添加&lt;/code&gt;&amp;gt;&lt;code&gt;控制器&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;选择&lt;code&gt;视图使用 Entity Framework 的 MVC 控制器&lt;/code&gt;，然后单击&lt;code&gt;确定&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;将&lt;code&gt;模型类&lt;/code&gt;设置为&lt;code&gt;Blogs&lt;/code&gt;，将&lt;code&gt;数据上下文类&lt;/code&gt;设置为 &lt;code&gt;BlogsContext&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;单击 &lt;code&gt;添加&lt;/code&gt;。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;选中&lt;code&gt;wwwroot&lt;/code&gt;右键浏览器查看，输入你的控制器和地址即可，或者直接点击运行。&lt;/p&gt;
+
+&lt;h2 id=&#34;结果&#34;&gt;结果&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://docs.microsoft.com/zh-cn/ef/core/get-started/aspnetcore/_static/create.png&#34; alt=&#34;运行结果1&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://docs.microsoft.com/zh-cn/ef/core/get-started/aspnetcore/_static/index-existing-db.png&#34; alt=&#34;运行结果2&#34; /&gt;&lt;/p&gt;
+</description>
+      
+    </item>
     
     <item>
       <title>.NET Core 系列文章</title>
@@ -30,25 +247,31 @@
 
 &lt;h2 id=&#34;目录&#34;&gt;目录&lt;/h2&gt;
 
-&lt;h4 id=&#34;入门&#34;&gt;入门&lt;/h4&gt;
+&lt;h3 id=&#34;入门&#34;&gt;入门&lt;/h3&gt;
 
-&lt;h4 id=&#34;条件&#34;&gt;条件&lt;/h4&gt;
+&lt;h3 id=&#34;条件&#34;&gt;条件&lt;/h3&gt;
 
-&lt;h4 id=&#34;教程&#34;&gt;教程&lt;/h4&gt;
+&lt;h3 id=&#34;教程&#34;&gt;教程&lt;/h3&gt;
 
-&lt;h4 id=&#34;cli变更&#34;&gt;CLI变更&lt;/h4&gt;
+&lt;h4 id=&#34;mvc教程&#34;&gt;MVC教程&lt;/h4&gt;
 
-&lt;h4 id=&#34;迁移&#34;&gt;迁移&lt;/h4&gt;
+&lt;h5 id=&#34;数据库连接&#34;&gt;数据库连接&lt;/h5&gt;
 
-&lt;h4 id=&#34;部署&#34;&gt;部署&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.gecore.win/post/201804/asp.net-core-ef%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5/&#34;&gt;ASP.NET CORE EF操作数据库&lt;/a&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;docker&#34;&gt;Docker&lt;/h4&gt;
+&lt;h3 id=&#34;cli变更&#34;&gt;CLI变更&lt;/h3&gt;
 
-&lt;h4 id=&#34;单元测试&#34;&gt;单元测试&lt;/h4&gt;
+&lt;h3 id=&#34;迁移&#34;&gt;迁移&lt;/h3&gt;
 
-&lt;h4 id=&#34;版本控制&#34;&gt;版本控制&lt;/h4&gt;
+&lt;h3 id=&#34;部署&#34;&gt;部署&lt;/h3&gt;
 
-&lt;h4 id=&#34;一些工具&#34;&gt;一些工具&lt;/h4&gt;
+&lt;h3 id=&#34;docker&#34;&gt;Docker&lt;/h3&gt;
+
+&lt;h3 id=&#34;单元测试&#34;&gt;单元测试&lt;/h3&gt;
+
+&lt;h3 id=&#34;版本控制&#34;&gt;版本控制&lt;/h3&gt;
+
+&lt;h3 id=&#34;一些工具&#34;&gt;一些工具&lt;/h3&gt;
 
 &lt;hr /&gt;
 
@@ -1714,7 +1937,7 @@ cordova platform add android
 
 &lt;p&gt;【资料】&lt;a href=&#34;https://www.appinn.com/markdown/&#34;&gt;MarkDown&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;【.NET网站】 &lt;a href=&#34;http://www.ikende.com/&#34;&gt;IKende&lt;/a&gt; | &lt;a href=&#34;https://www.connectionstrings.com/&#34;&gt;ConnectStrings&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;【.NET网站】 &lt;a href=&#34;http://www.ikende.com/&#34;&gt;IKende&lt;/a&gt; | &lt;a href=&#34;https://www.connectionstrings.com/&#34;&gt;ConnectStrings&lt;/a&gt; | &lt;a href=&#34;https://docs.microsoft.com/zh-cn/&#34;&gt;MDN&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;【开发工具】&lt;a href=&#34;https://code.visualstudio.com/&#34;&gt;Visual Studio Code&lt;/a&gt; | &lt;a href=&#34;https://www.eclipse.org/downloads/download.php?file=/oomph/epp/oxygen/R2/eclipse-inst-win64.exe&#34;&gt;Eclipse&lt;/a&gt;&lt;/p&gt;
 </description>
@@ -1917,111 +2140,6 @@ Visual Studio Team Services
 Go
 Python for VSCode
 &lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title>ionic 操作http</title>
-      <link>https://www.gecore.win/post/201712/ionic%E6%93%8D%E4%BD%9Chttp/</link>
-      <pubDate>Sat, 30 Sep 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.gecore.win/post/201712/ionic%E6%93%8D%E4%BD%9Chttp/</guid>
-      
-        <description>
-
-&lt;h2 id=&#34;http技术&#34;&gt;Http技术：&lt;/h2&gt;
-
-&lt;p&gt;http请求是客户端请求api使用的一项非常重要的技术，主要有下面几种方法。&lt;/p&gt;
-
-&lt;h4 id=&#34;使用native组件&#34;&gt;使用Native组件&lt;/h4&gt;
-
-&lt;p&gt;这种方法是一种和原生交互行最强的一种方法。&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;官网：&lt;a href=&#34;https://ionicframework.com/docs/native/http/&#34;&gt;https://ionicframework.com/docs/native/http/&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ ionic cordova plugin add cordova-plugin-advanced-http
-$ npm install --save @ionic-native/http
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;具体用法：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-ts&#34;&gt;import { HTTP } from &#39;@ionic-native/http&#39;;
-
-constructor(private http: HTTP) { }
-
-this.http.get(&#39;http://ionic.io&#39;, {}, {})
-  .then(data =&amp;gt; {
-    console.log(data.status);
-    console.log(data.data); // data received by server
-    console.log(data.headers);
-  })
-  .catch(error =&amp;gt; {
-    console.log(error.status);
-    console.log(error.error); // error message as string
-    console.log(error.headers);
-  });
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&#34;使用angular自带的http组件-推荐&#34;&gt;使用Angular自带的http组件（推荐）&lt;/h4&gt;
-
-&lt;ol&gt;
-&lt;li&gt;从 @angular/http 模块中导入 Http 类&lt;/li&gt;
-&lt;li&gt;导入 RxJS 中的 map 操作符&lt;/li&gt;
-&lt;li&gt;使用 DI 方式注入 http 服务&lt;/li&gt;
-&lt;li&gt;调用 http 服务的 get() 方法，设置请求地址并发送 HTTP 请求&lt;/li&gt;
-&lt;li&gt;调用 Response 对象的 json() 方法，把响应体转成 JSON 对象&lt;/li&gt;
-&lt;li&gt;把请求的结果，赋值给 members 属性&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-ts&#34;&gt;import { Component, OnInit } from &#39;@angular/core&#39;;
-import { Http } from &#39;@angular/http&#39;; // (1)
-import &#39;rxjs/add/operator/map&#39;; // (2)
-interface Member {
-  id: string;
-  login: string;
-  avatar_url: string;
-}
-@Component({
-  selector: &#39;exe-app&#39;,
-  template: `
-    &amp;lt;h3&amp;gt;Angular Orgs Members&amp;lt;/h3&amp;gt;
-    &amp;lt;ul *ngIf=&amp;quot;members&amp;quot;&amp;gt;
-      &amp;lt;li *ngFor=&amp;quot;let member of members;&amp;quot;&amp;gt;
-        &amp;lt;p&amp;gt;
-          &amp;lt;img [src]=&amp;quot;member.avatar_url&amp;quot; width=&amp;quot;48&amp;quot; height=&amp;quot;48&amp;quot;/&amp;gt;
-          ID：&amp;lt;span&amp;gt;{{member.id}}&amp;lt;/span&amp;gt;
-          Name: &amp;lt;span&amp;gt;{{member.login}}&amp;lt;/span&amp;gt;
-        &amp;lt;/p&amp;gt;
-      &amp;lt;/li&amp;gt;
-    &amp;lt;/ul&amp;gt;
-  `
-})
-export class AppComponent implements OnInit {
-  members: Member[];
-  constructor(private http: Http) { } // (3)
-  ngOnInit() {
-    this.http.get(`https://api.github.com/orgs/angular/members?page=1&amp;amp;per_page=5`) // (4)
-      .map(res =&amp;gt; res.json()) // (5)
-      .subscribe(data =&amp;gt; {
-        if (data) this.members = data; // (6)
-      });
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;具体内容和步骤请到这里查看：&lt;a href=&#34;https://segmentfault.com/a/1190000009028150?utm_source=tuicool&amp;amp;utm_medium=referral#articleHeader2&#34;&gt;https://segmentfault.com/a/1190000009028150?utm_source=tuicool&amp;amp;utm_medium=referral#articleHeader2&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;使用jquery的http组件-不太推荐的方法&#34;&gt;使用JQuery的http组件（不太推荐的方法）&lt;/h4&gt;
-
-&lt;p&gt;如果你不熟悉上述的方法，也可以使用JQuery，&lt;code&gt;但是我们并不推荐使用这种方法&lt;/code&gt;，ionic是混合开发的框架，当然兼容JQuery。&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;引入JQuery脚本&lt;/li&gt;
-&lt;li&gt;使用JQuery 的Ajax&lt;/li&gt;
 &lt;/ol&gt;
 </description>
       
