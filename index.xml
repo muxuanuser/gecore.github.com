@@ -6,10 +6,112 @@
     <description>Recent content on 牧轩居士</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 11 Apr 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 01 May 2018 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://www.gecore.win/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ASP.NET Core 使用Entity Framework &#43; SQLite3</title>
+      <link>https://www.gecore.win/post/201805/netcore_ef_sqlite/</link>
+      <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.gecore.win/post/201805/netcore_ef_sqlite/</guid>
+      
+        <description>
+
+&lt;h2 id=&#34;说明名&#34;&gt;说明名&lt;/h2&gt;
+
+&lt;p&gt;目前java10已经发布，现在可以到
+ &lt;a href=&#34;http://www.oracle.com/technetwork/java/javase/downloads/jdk10-downloads-4416644.html&#34;&gt;Java10&lt;/a&gt; 下载java10，如果你是用记事本编写代码可以直接测试，如果使用Eclipse需要使用
+ &lt;a href=&#34;http://www.eclipse.org/downloads/download.php?file=/eclipse/downloads/drops4/M-4.7.3aRC1-201803231030/eclipse-SDK-4.7.3aRC1-win32-x86_64.zip&#34;&gt;Eclipse 4.7.3a Release Candidate Build: 4.7.3aRC1&lt;/a&gt; 才支持Java10。&lt;/p&gt;
+
+&lt;h2 id=&#34;创建一个netcore项目&#34;&gt;创建一个netcore项目&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gitee.com/Gecore/muxuanuser.github.io/raw/master/content/post/201805/imgs/201805011750.png&#34; alt=&#34;创建项目&#34; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;创建一个blog模型&#34;&gt;创建一个Blog模型&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cs&#34;&gt;[Table(name: &amp;quot;T_Blog&amp;quot;)]
+public class Blogs
+{
+    public int Id { get; set; }
+    public String Title { get; set; }
+    public String Posttime { get; set; }
+    public String Detial { get; set; }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;创建一个数据上下文&#34;&gt;创建一个数据上下文&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cs&#34;&gt;public class DB : DbContext
+{
+    public DbSet&amp;lt;Blogs&amp;gt; Blogs { get; set; }
+    public DB(DbContextOptions&amp;lt;DB&amp;gt; options) : base(options) { }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;添加数据项下文注入&#34;&gt;添加数据项下文注入&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cs&#34;&gt; public void ConfigureServices(IServiceCollection services)
+    {
+        services.AddDbContext&amp;lt;DB&amp;gt;(options =&amp;gt;
+        {
+            options.UseSqlite(&amp;quot;Data Source=sqlite.db&amp;quot;);
+        });
+        services.AddMvc();
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;装插件&#34;&gt;装插件&lt;/h4&gt;
+
+&lt;p&gt;下面开始安装一系列的插件，由于官网的教程是直接使用命令行安装的包，命令行比较长，我们才用&lt;code&gt;Nuget&lt;/code&gt;下载。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gitee.com/Gecore/muxuanuser.github.io/raw/master/content/post/201805/imgs/20180501175501.png&#34; alt=&#34;Nuget下载&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;找到&lt;code&gt;Microsoft EntityFrameCore.Sqlite&lt;/code&gt;，然后复制这个名字到搜索框里面，下面选取这两个安装插件：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gitee.com/Gecore/muxuanuser.github.io/raw/master/content/post/201805/imgs/201805011756.png&#34; alt=&#34;安装这两个&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;然后，我们把最后的&lt;code&gt;sqlite&lt;/code&gt;修改为&lt;code&gt;Tool&lt;/code&gt;搜索出来下面的图片：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gitee.com/Gecore/muxuanuser.github.io/raw/master/content/post/201805/imgs/201805011757.png&#34; alt=&#34;找出来tool&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;复制名称&lt;code&gt;Microsoft.EntityFrameworkCore.Tools.DotNet&lt;/code&gt;，关闭VS，然后用记事本或者notepad等工具打开项目文件&lt;code&gt;002_EFSQLite.csproj&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;添加一条数据：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;  &amp;lt;ItemGroup&amp;gt;
+    &amp;lt;DotNetCliToolReference Include=&amp;quot;Microsoft.EntityFrameworkCore.Tools.DotNet&amp;quot; Version=&amp;quot;2.0.0&amp;quot; /&amp;gt;
+  &amp;lt;/ItemGroup&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;开始反向工程&#34;&gt;开始反向工程&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;dotnet ef migrations add InitialCreate
+dotnet ef database update
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;此时你看到产生了一个db数据库文件。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gitee.com/Gecore/muxuanuser.github.io/raw/master/content/post/201805/imgs/201805011805.png&#34; alt=&#34;自动生成一个db文件&#34; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;创建controller控制器&#34;&gt;创建Controller控制器&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gitee.com/Gecore/muxuanuser.github.io/raw/master/content/post/201805/imgs/201805011759.png&#34; alt=&#34;找出来tool&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gitee.com/Gecore/muxuanuser.github.io/raw/master/content/post/201805/imgs/201805011802.png&#34; alt=&#34;找出来tool&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;我们向db里面添加一些数据，运行查看效果。&lt;/p&gt;
+
+&lt;h3 id=&#34;结果&#34;&gt;结果&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gitee.com/Gecore/muxuanuser.github.io/raw/master/content/post/201805/imgs/201805011810.png&#34; alt=&#34;结果&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gitee.com/Gecore/muxuanuser.github.io/raw/master/content/post/201805/imgs/201805011811.png&#34; alt=&#34;结果&#34; /&gt;&lt;/p&gt;
+</description>
+      
+    </item>
     
     <item>
       <title>ASP.NET CORE EF操作数据库</title>
@@ -1917,7 +2019,7 @@ cordova platform add android
 
 &lt;hr /&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/post/201804/asp_net_core/&#34;&gt;ASP.NET Core 专栏&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.gecore.win/post/201804/asp_net_core/&#34;&gt;ASP.NET Core 专栏&lt;/a&gt;&lt;/p&gt;
 </description>
       
     </item>
@@ -2140,85 +2242,6 @@ pi@raspberrypi:~ $ npm -v
 5.6.0
 &lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title>IONIC集成极光推送</title>
-      <link>https://www.gecore.win/post/201712/ionic_jpush/</link>
-      <pubDate>Sat, 30 Sep 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.gecore.win/post/201712/ionic_jpush/</guid>
-      
-        <description>
-
-&lt;h2 id=&#34;ionic-集成极光推送插件&#34;&gt;ionic 集成极光推送插件&lt;/h2&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;本文档主要介绍极光推送插件的安装使用，ionic环境搭建和ionic的项目创建不在本文范畴。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&#34;1-注册和使用&#34;&gt;1. 注册和使用&lt;/h2&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;打开 &lt;a href=&#34;https://www.jiguang.cn/&#34;&gt;极光推送官网&lt;/a&gt; ，注册并登陆，创建一个app。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;读取重要信息，包括appkey和你的应用包名，这两个缺一不可。&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/Gecore/muxuanuser.github.io/raw/master/content/post/201712/imgs/1_2.png&#34; alt=&#34;&#39;读取重要信息&#39;&#34; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;2-创建一个ionic项目&#34;&gt;2. 创建一个ionic项目&lt;/h2&gt;
-
-&lt;p&gt;创建一个ionic项目&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;ionic start jgPush
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;3-修改项目&#34;&gt;3. 修改项目&lt;/h2&gt;
-
-&lt;p&gt;修改config.xml文件，修改widget节点下面的id属性。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/Gecore/muxuanuser.github.io/raw/master/content/post/201712/imgs/1_4.png&#34; alt=&#34;&#39;修改属性&#39;&#34; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;4-安装插件&#34;&gt;4. 安装插件&lt;/h2&gt;
-
-&lt;p&gt;安装极光推送插件(请使用管理员身份)。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;ionic cordova plugin add jpush-phonegap-plugin --variable APP_KEY=your_jpush_appkey
-
-npm install --save @jiguang-ionic/jpush
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/Gecore/muxuanuser.github.io/raw/master/content/post/201712/imgs/1_5.png&#34; alt=&#34;&#39;安装插件&#39;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;插件安装完毕就可以编写代码了。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/Gecore/muxuanuser.github.io/raw/master/content/post/201712/imgs/1_8.png&#34; alt=&#34;&#39;编写代码&#39;&#34; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;5-编译项目&#34;&gt;5. 编译项目&lt;/h2&gt;
-
-&lt;p&gt;编译调试项目。（安卓为例）&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;ionic cordova build android
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/Gecore/muxuanuser.github.io/raw/master/content/post/201712/imgs/1_6.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/Gecore/muxuanuser.github.io/raw/master/content/post/201712/imgs/1_7.png&#34; alt=&#34;&#39;编译项目&#39;&#34; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;6-测试&#34;&gt;6. 测试&lt;/h2&gt;
-
-&lt;p&gt;在此使用的是在线调试，当然可以使用本团队的api项目调试，[api.lucoder.com/doc/jpush](&amp;lsquo;api.lucoder.com/doc/jpush&amp;rsquo;)调试，具体规则打开网站查看。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/Gecore/muxuanuser.github.io/raw/master/content/post/201712/imgs/1_9.png&#34; alt=&#34;&#39;调试&#39;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/Gecore/muxuanuser.github.io/raw/master/content/post/201712/imgs/1_10.jpg&#34; alt=&#34;&#39;结果&#39;&#34; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;注意&#34;&gt;注意&lt;/h2&gt;
-
-&lt;p&gt;你或许注意到了文中带有&lt;code&gt;appkey&lt;/code&gt;和包名，请勿使用这个&lt;code&gt;appkey&lt;/code&gt;和包名，请替换为自己的，因为推送需要激光后台推送，程序推送需要使用&lt;code&gt;masterkey&lt;/code&gt;。&lt;/p&gt;
 </description>
       
     </item>
