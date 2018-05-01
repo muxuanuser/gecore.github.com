@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>ASP.NET CORE EF操作数据库 - 牧轩居士</title>
+  <link rel="alternate" hreflang="zh-cn" href="https://www.gecore.win/" />
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="牧轩居士" />
+  <meta name="description" content="写在前面：本文主要内容大多参考的MSD官网文档，本节参考网址 https://docs.microsoft.com/zh-cn/aspnet/core/data/ef-rp/intro CodeFirst 0. 安装EF框架 Install-Package Microsoft.EntityFrameworkCore.SqlServer Install-Package Microsoft.EntityFrameworkCore.Tools Install-Package Microsoft.VisualStudio.Web.CodeGeneration.Design 1. 创建Model实体 public class Student { public int ID { get; set; } public string LastName {" />
+
+  <meta name="keywords" content="牧轩居士, java, c#, ionic, webrtc" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.37.1" />
+
+
+<link rel="canonical" href="https://www.gecore.win/post/201804/asp.net-core-ef%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+<link href="https://cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.css" rel="stylesheet" crossorigin="anonymous">
+
+
+
+
+<meta property="og:title" content="ASP.NET CORE EF操作数据库" />
+<meta property="og:description" content="写在前面：本文主要内容大多参考的MSD官网文档，本节参考网址 https://docs.microsoft.com/zh-cn/aspnet/core/data/ef-rp/intro CodeFirst 0. 安装EF框架 Install-Package Microsoft.EntityFrameworkCore.SqlServer Install-Package Microsoft.EntityFrameworkCore.Tools Install-Package Microsoft.VisualStudio.Web.CodeGeneration.Design 1. 创建Model实体 public class Student { public int ID { get; set; } public string LastName {" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.gecore.win/post/201804/asp.net-core-ef%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5/" />
+
+
+
+<meta property="article:published_time" content="2018-04-11T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2018-04-11T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="ASP.NET CORE EF操作数据库">
+<meta itemprop="description" content="写在前面：本文主要内容大多参考的MSD官网文档，本节参考网址 https://docs.microsoft.com/zh-cn/aspnet/core/data/ef-rp/intro CodeFirst 0. 安装EF框架 Install-Package Microsoft.EntityFrameworkCore.SqlServer Install-Package Microsoft.EntityFrameworkCore.Tools Install-Package Microsoft.VisualStudio.Web.CodeGeneration.Design 1. 创建Model实体 public class Student { public int ID { get; set; } public string LastName {">
+
+
+<meta itemprop="datePublished" content="2018-04-11T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2018-04-11T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="915">
+
+
+
+<meta itemprop="keywords" content="ASP.NET CPRE,EntityFramework,数据库," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ASP.NET CORE EF操作数据库"/>
+<meta name="twitter:description" content="写在前面：本文主要内容大多参考的MSD官网文档，本节参考网址 https://docs.microsoft.com/zh-cn/aspnet/core/data/ef-rp/intro CodeFirst 0. 安装EF框架 Install-Package Microsoft.EntityFrameworkCore.SqlServer Install-Package Microsoft.EntityFrameworkCore.Tools Install-Package Microsoft.VisualStudio.Web.CodeGeneration.Design 1. 创建Model实体 public class Student { public int ID { get; set; } public string LastName {"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">牧轩居士</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/column/">
+        <li class="mobile-menu-item">专栏</li>
+      </a><a href="/online/">
+        <li class="mobile-menu-item">在线应用</li>
+      </a><a href="/tools/">
+        <li class="mobile-menu-item">常用软件</li>
+      </a><a href="/links/">
+        <li class="mobile-menu-item">链接</li>
+      </a><a href="http://gecore.gitee.io/mypage/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">牧轩居士</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/column/">专栏</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/online/">在线应用</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tools/">常用软件</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/links/">链接</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="http://gecore.gitee.io/mypage/">关于</a>
+      </li>
+  </ul>
+</nav>
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">ASP.NET CORE EF操作数据库</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-04-11 </span>
+        <div class="post-category">
+            
+              <a href="/categories/asp.net-core/"> ASP.NET Core </a>
+            
+              <a href="/categories/ef/"> EF </a>
+            
+              <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"> 数据库 </a>
+            
+          </div>
+        <span class="more-meta"> 915 words </span>
+        <span class="more-meta"> 2 min read </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Table of Contents</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#codefirst">CodeFirst</a>
+<ul>
+<li><a href="#0-安装ef框架">0. 安装EF框架</a></li>
+<li><a href="#1-创建model实体">1. 创建Model实体</a></li>
+<li><a href="#2-创建数据上下文">2. 创建数据上下文</a></li>
+<li><a href="#3-依赖注入">3. 依赖注入</a></li>
+<li><a href="#4-创建连接字符串">4. 创建连接字符串</a></li>
+<li><a href="#5-创建数据库">5. 创建数据库</a></li>
+<li><a href="#6-创建控制器">6. 创建控制器</a></li>
+</ul></li>
+<li><a href="#dbfirst">DbFirst</a>
+<ul>
+<li><a href="#0-安装ef框架-1">0. 安装EF框架</a></li>
+<li><a href="#1-初始化数据库">1. 初始化数据库</a></li>
+<li><a href="#2-反向工程生成代码">2. 反向工程生成代码</a></li>
+<li><a href="#3-依赖注入-1">3. 依赖注入</a></li>
+<li><a href="#4-创建连接字符串-1">4. 创建连接字符串</a></li>
+<li><a href="#5-创建控制器">5. 创建控制器</a></li>
+</ul></li>
+<li><a href="#结果">结果</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<blockquote>
+<p>写在前面：本文主要内容大多参考的MSD官网文档，本节参考网址 <a href="https://docs.microsoft.com/zh-cn/aspnet/core/data/ef-rp/intro">https://docs.microsoft.com/zh-cn/aspnet/core/data/ef-rp/intro</a></p>
+</blockquote>
+
+<h2 id="codefirst">CodeFirst</h2>
+
+<h3 id="0-安装ef框架">0. 安装EF框架</h3>
+
+<pre><code class="language-Powershell">Install-Package Microsoft.EntityFrameworkCore.SqlServer
+Install-Package Microsoft.EntityFrameworkCore.Tools
+Install-Package Microsoft.VisualStudio.Web.CodeGeneration.Design
+</code></pre>
+
+<h3 id="1-创建model实体">1. 创建Model实体</h3>
+
+<pre><code class="language-C#">public class Student
+{
+    public int ID { get; set; }
+    public string LastName { get; set; }
+    public string FirstMidName { get; set; }
+    public DateTime EnrollmentDate { get; set; }
+
+    public ICollection&lt;Enrollment&gt; Enrollments { get; set; }
+}
+public class Course
+{
+    [DatabaseGenerated(DatabaseGeneratedOption.None)]
+    public int CourseID { get; set; }
+    public string Title { get; set; }
+    public int Credits { get; set; }
+    public ICollection&lt;Enrollment&gt; Enrollments { get; set; }
+}
+public enum Grade
+{
+    A, B, C, D, F
+}
+public class Enrollment
+{
+    public int EnrollmentID { get; set; }
+    public int CourseID { get; set; }
+    public int StudentID { get; set; }
+    public Grade? Grade { get; set; }
+    public Course Course { get; set; }
+    public Student Student { get; set; }
+}
+</code></pre>
+
+<h3 id="2-创建数据上下文">2. 创建数据上下文</h3>
+
+<pre><code class="language-C#">public class SchoolContext : DbContext
+    {
+        public SchoolContext(DbContextOptions&lt;SchoolContext&gt; options) : base(options)
+        {
+        }
+
+        public DbSet&lt;Course&gt; Courses { get; set; }
+        public DbSet&lt;Enrollment&gt; Enrollments { get; set; }
+        public DbSet&lt;Student&gt; Students { get; set; }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity&lt;Course&gt;().ToTable(&quot;Course&quot;);
+            modelBuilder.Entity&lt;Enrollment&gt;().ToTable(&quot;Enrollment&quot;);
+            modelBuilder.Entity&lt;Student&gt;().ToTable(&quot;Student&quot;);
+        }
+    }
+</code></pre>
+
+<h3 id="3-依赖注入">3. 依赖注入</h3>
+
+<p>打开<code>Setup.cs</code>文件</p>
+
+<pre><code class="language-C#">services.AddDbContext&lt;SchoolContext&gt;(options =&gt;
+      options.UseSqlServer(Configuration.GetConnectionString(&quot;DefaultConnection&quot;)));
+</code></pre>
+
+<h3 id="4-创建连接字符串">4. 创建连接字符串</h3>
+
+<p>打开<code>appsettings.json</code>文件</p>
+
+<pre><code class="language-JSON">{
+  &quot;ConnectionStrings&quot;: {
+    &quot;DefaultConnection&quot;: &quot;Server=(localdb)\\mssqllocaldb;Database=ContosoUniversity1;ConnectRetryCount=0;Trusted_Connection=True;MultipleActiveResultSets=true&quot;
+  },
+  &quot;Logging&quot;: {
+    &quot;IncludeScopes&quot;: false,
+    &quot;LogLevel&quot;: {
+      &quot;Default&quot;: &quot;Warning&quot;
+    }
+  }
+}
+</code></pre>
+
+<h3 id="5-创建数据库">5. 创建数据库</h3>
+
+<p>打开<code>工具</code> -&gt; <code>NuGet包管理</code> -&gt; <code>包管理控制台</code></p>
+
+<pre><code class="language-Powershell"> Add-Migration InitialCreate
+ Update-Database
+</code></pre>
+
+<p>如果过程中出现错误：<code>The term 'add-migration' is not recognized as the name of a cmdlet</code>，重启Visual Studio解决。</p>
+
+<h3 id="6-创建控制器">6. 创建控制器</h3>
+
+<ol>
+<li>在<code>解决方案资源管理器</code>中，右键单击<code>控制器</code>文件夹，然后选择<code>添加</code>&gt;<code>控制器</code>。</li>
+<li>选择<code>视图使用 Entity Framework 的 MVC 控制器</code>，然后单击<code>确定</code>。</li>
+<li>将<code>模型类</code>设置为<code>Student</code>，将<code>数据上下文类</code>设置为 <code>StudentContext</code>。</li>
+<li>单击 <code>添加</code>。</li>
+</ol>
+
+<p>选中<code>wwwroot</code>右键浏览器查看，输入你的控制器和地址即可，或者直接点击运行。</p>
+
+<h2 id="dbfirst">DbFirst</h2>
+
+<h3 id="0-安装ef框架-1">0. 安装EF框架</h3>
+
+<pre><code class="language-Powershell">Install-Package Microsoft.EntityFrameworkCore.SqlServer
+Install-Package Microsoft.EntityFrameworkCore.Tools
+Install-Package Microsoft.VisualStudio.Web.CodeGeneration.Design
+</code></pre>
+
+<h3 id="1-初始化数据库">1. 初始化数据库</h3>
+
+<pre><code class="language-SQL">CREATE DATABASE [Blogging];
+GO
+
+USE [Blogging];
+GO
+
+CREATE TABLE [Blog] (
+    [BlogId] int NOT NULL IDENTITY,
+    [Url] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_Blog] PRIMARY KEY ([BlogId])
+);
+GO
+
+CREATE TABLE [Post] (
+    [PostId] int NOT NULL IDENTITY,
+    [BlogId] int NOT NULL,
+    [Content] nvarchar(max),
+    [Title] nvarchar(max),
+    CONSTRAINT [PK_Post] PRIMARY KEY ([PostId]),
+    CONSTRAINT [FK_Post_Blog_BlogId] FOREIGN KEY ([BlogId]) REFERENCES [Blog] ([BlogId]) ON DELETE CASCADE
+);
+GO
+
+INSERT INTO [Blog] (Url) VALUES
+('http://blogs.msdn.com/dotnet'),
+('http://blogs.msdn.com/webdev'),
+('http://blogs.msdn.com/visualstudio')
+GO
+</code></pre>
+
+<h3 id="2-反向工程生成代码">2. 反向工程生成代码</h3>
+
+<p><code>工具</code>–&gt;<code>NuGet 包管理器</code>–&gt;<code>包管理器控制台</code></p>
+
+<pre><code class="language-powershell">Scaffold-DbContext &quot;Server=(localdb)\mssqllocaldb;Database=Blogging;Trusted_Connection=True;&quot; Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
+</code></pre>
+
+<p>如果遇到错误<code>The term 'Scaffold-DbContext' is not recognized as the name of a cmdlet</code>，请重启Visual Studio！</p>
+
+<h3 id="3-依赖注入-1">3. 依赖注入</h3>
+
+<p>打开<code>Setup.cs</code>文件</p>
+
+<pre><code class="language-C#">services.AddDbContext&lt;SchoolContext&gt;(options =&gt;
+      options.UseSqlServer(Configuration.GetConnectionString(&quot;DefaultConnection&quot;)));
+</code></pre>
+
+<h3 id="4-创建连接字符串-1">4. 创建连接字符串</h3>
+
+<p>打开<code>appsettings.json</code>文件</p>
+
+<pre><code class="language-JSON">{
+  &quot;ConnectionStrings&quot;: {
+    &quot;DefaultConnection&quot;: &quot;Server=(localdb)\\mssqllocaldb;Database=ContosoUniversity1;ConnectRetryCount=0;Trusted_Connection=True;MultipleActiveResultSets=true&quot;
+  },
+  &quot;Logging&quot;: {
+    &quot;IncludeScopes&quot;: false,
+    &quot;LogLevel&quot;: {
+      &quot;Default&quot;: &quot;Warning&quot;
+    }
+  }
+}
+</code></pre>
+
+<h3 id="5-创建控制器">5. 创建控制器</h3>
+
+<ol>
+<li>在<code>解决方案资源管理器</code>中，右键单击<code>控制器</code>文件夹，然后选择<code>添加</code>&gt;<code>控制器</code>。</li>
+<li>选择<code>视图使用 Entity Framework 的 MVC 控制器</code>，然后单击<code>确定</code>。</li>
+<li>将<code>模型类</code>设置为<code>Blogs</code>，将<code>数据上下文类</code>设置为 <code>BlogsContext</code>。</li>
+<li>单击 <code>添加</code>。</li>
+</ol>
+
+<p>选中<code>wwwroot</code>右键浏览器查看，输入你的控制器和地址即可，或者直接点击运行。</p>
+
+<h2 id="结果">结果</h2>
+
+<p><img src="https://docs.microsoft.com/zh-cn/ef/core/get-started/aspnetcore/_static/create.png" alt="运行结果1" /></p>
+
+<p><img src="https://docs.microsoft.com/zh-cn/ef/core/get-started/aspnetcore/_static/index-existing-db.png" alt="运行结果2" /></p>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">牧轩居士</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2018-04-11</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/asp.net-cpre/">ASP.NET CPRE</a>
+          
+          <a href="/tags/entityframework/">EntityFramework</a>
+          
+          <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/201804/asp_net_core/">
+            <span class="next-text nav-default">.NET Core 系列文章</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+    
+
+  
+
+  
+
+  
+  </article>
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:dev@gecore.win" rel="me" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" rel="me" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://github.com/muxuanuser" rel="me" class="iconfont icon-github" title="github"></a>
+  <a href="https://www.gecore.win/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">牧轩居士</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://cdn.bootcss.com/slideout/1.0.1/slideout.min.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.js" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/jane.min.js?v=2.7.0"></script>
+
+
+
+
+
+</body>
+</html>

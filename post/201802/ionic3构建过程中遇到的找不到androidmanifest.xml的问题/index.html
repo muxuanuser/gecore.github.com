@@ -76,7 +76,7 @@
 
 <meta itemprop="datePublished" content="2018-01-07T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2018-01-07T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="304">
+<meta itemprop="wordCount" content="319">
 
 
 
@@ -181,7 +181,7 @@
               <a href="/categories/androidmanifest/"> AndroidManifest </a>
             
           </div>
-        <span class="more-meta"> 304 words </span>
+        <span class="more-meta"> 319 words </span>
         <span class="more-meta"> 1 min read </span>
       </div>
     </header>
@@ -216,27 +216,33 @@
 <p>这个问题的原因就是新版本的cordova 7.0.0及以上版本对于新的AndroidManifest.xml路径还没有更新，导致找不到AndroidManifest.xml，下面给出两个解决办法：</p>
 
 <ol>
-<li>使用原先的cordova
-<code>shell
-npm uninstall -g cordova
-npm install -g cordova@6.5.0
-</code></li>
-<li>重新布置安卓项目
-<code>shell
-cordova platform rm android
-cordova platform add android
-</code></li>
-<li>Cordova官方给出的解决办法
-修改<code>config.xml</code>文件，具体可以查看网址<a href='https://cordova.apache.org/announcements/2017/12/04/cordova-android-7.0.0.html' target='_blank'><a href="https://cordova.apache.org/announcements/2017/12/04/cordova-android-7.0.0.html">https://cordova.apache.org/announcements/2017/12/04/cordova-android-7.0.0.html</a></a>
-```shell
-<!-- An existing config.xml -->
-<edit-config file="AndroidManifest.xml" target="/manifest/application" mode="merge"></li>
+<li>使用原先的cordova</li>
 </ol>
 
-<!-- needs to change to -->
+<pre><code class="language-shell">npm uninstall -g cordova
+npm install -g cordova@6.5.0
+</code></pre>
 
-<p><edit-config file="app/src/main/AndroidManifest.xml" target="/manifest/application" mode="merge">
-```</p>
+<ol>
+<li>重新布置安卓项目</li>
+</ol>
+
+<pre><code class="language-shell">cordova platform rm android
+cordova platform add android
+</code></pre>
+
+<ol>
+<li>Cordova官方给出的解决办法
+修改<code>config.xml</code>文件，具体可以查看网址<a href='https://cordova.apache.org/announcements/2017/12/04/cordova-android-7.0.0.html' target='_blank'><a href="https://cordova.apache.org/announcements/2017/12/04/cordova-android-7.0.0.html">https://cordova.apache.org/announcements/2017/12/04/cordova-android-7.0.0.html</a></a></li>
+</ol>
+
+<pre><code class="language-xml">&lt;!-- An existing config.xml --&gt;
+&lt;edit-config file=&quot;AndroidManifest.xml&quot; target=&quot;/manifest/application&quot; mode=&quot;merge&quot;&gt;
+
+&lt;!-- needs to change to --&gt;
+&lt;edit-config file=&quot;app/src/main/AndroidManifest.xml&quot; target=&quot;/manifest/application&quot; mode=&quot;merge&quot;&gt;
+
+</code></pre>
 
     </div>
 
@@ -279,8 +285,8 @@ cordova platform add android
             <span class="prev-text nav-mobile">Prev</span>
           </a>
         
-          <a class="next" href="/post/201802/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%89%E8%A3%85node/">
-            <span class="next-text nav-default">树莓派部署Node环境</span>
+          <a class="next" href="/post/201712/ionic%E6%93%8D%E4%BD%9Chttp/">
+            <span class="next-text nav-default">ionic 操作http</span>
             <span class="prev-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>

@@ -40,10 +40,10 @@
     
     <item>
       <title>mpi并行计算环境搭建</title>
-      <link>https://www.gecore.win/post/201804/mpi%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/</link>
+      <link>https://www.gecore.win/post/201804/mpi%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/mpi%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/</link>
       <pubDate>Sun, 01 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://www.gecore.win/post/201804/mpi%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/</guid>
+      <guid>https://www.gecore.win/post/201804/mpi%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/mpi%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/</guid>
       <description>什么是MPI MPI是一个跨语言的通讯协议，用于编写并行计算机。支持点对点和广播。MPI是一个信息传递应用程序接口，包括协议和和语义说明，他们</description>
     </item>
     
@@ -129,6 +129,15 @@
     </item>
     
     <item>
+      <title>ionic 操作http</title>
+      <link>https://www.gecore.win/post/201712/ionic%E6%93%8D%E4%BD%9Chttp/</link>
+      <pubDate>Sat, 30 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.gecore.win/post/201712/ionic%E6%93%8D%E4%BD%9Chttp/</guid>
+      <description>Http技术： http请求是客户端请求api使用的一项非常重要的技术，主要有下面几种方法。 使用Native组件 这种方法是一种和原生交互行最强</description>
+    </item>
+    
+    <item>
       <title>树莓派部署Node环境</title>
       <link>https://www.gecore.win/post/201802/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%89%E8%A3%85node/</link>
       <pubDate>Sat, 07 Oct 2017 00:00:00 +0000</pubDate>
@@ -143,7 +152,7 @@
       <pubDate>Sat, 30 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>https://www.gecore.win/post/201712/ionic_jpush/</guid>
-      <description>ionic 集成极光推送插件 本文档主要介绍极光推送插件的安装使用，ionic环境搭建和ionic的项目创建不在本文范畴。 1. 注册和使用 打开[&amp;lsquo</description>
+      <description>ionic 集成极光推送插件 本文档主要介绍极光推送插件的安装使用，ionic环境搭建和ionic的项目创建不在本文范畴。 1. 注册和使用 打开 极光推送官网 ，</description>
     </item>
     
     <item>
@@ -153,15 +162,6 @@
       
       <guid>https://www.gecore.win/post/201711/vscode/</guid>
       <description>Visual Studio Code 官网：https://code.visualstudio.com/ VSCode可以认为是一个迷你版的Visual Studio，大概45</description>
-    </item>
-    
-    <item>
-      <title>ionic 操作http</title>
-      <link>https://www.gecore.win/post/201712/ionic%E6%93%8D%E4%BD%9Chttp/</link>
-      <pubDate>Sat, 30 Sep 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.gecore.win/post/201712/ionic%E6%93%8D%E4%BD%9Chttp/</guid>
-      <description>Http技术： http请求是客户端请求api使用的一项非常重要的技术，主要有下面几种方法。 使用Native组件 这种方法是一种和原生交互行最强</description>
     </item>
     
     <item>

@@ -245,37 +245,38 @@ GO
 
 &lt;hr /&gt;
 
-&lt;h2 id=&#34;目录&#34;&gt;目录&lt;/h2&gt;
+&lt;h2 id=&#34;入门&#34;&gt;入门&lt;/h2&gt;
 
-&lt;h3 id=&#34;入门&#34;&gt;入门&lt;/h3&gt;
+&lt;h2 id=&#34;条件&#34;&gt;条件&lt;/h2&gt;
 
-&lt;h3 id=&#34;条件&#34;&gt;条件&lt;/h3&gt;
+&lt;h2 id=&#34;教程&#34;&gt;教程&lt;/h2&gt;
 
-&lt;h3 id=&#34;教程&#34;&gt;教程&lt;/h3&gt;
+&lt;h4 id=&#34;数据库&#34;&gt;数据库&lt;/h4&gt;
 
-&lt;h4 id=&#34;mvc教程&#34;&gt;MVC教程&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Entity Framework Core
+&lt;a href=&#34;https://www.gecore.win/post/201804/asp.net-core-ef%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5/&#34;&gt;ASP.NET Core SQLite3&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
 
-&lt;h5 id=&#34;数据库连接&#34;&gt;数据库连接&lt;/h5&gt;
+&lt;h2 id=&#34;cli变更&#34;&gt;CLI变更&lt;/h2&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://www.gecore.win/post/201804/asp.net-core-ef%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5/&#34;&gt;ASP.NET CORE EF操作数据库&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;迁移&#34;&gt;迁移&lt;/h2&gt;
 
-&lt;h3 id=&#34;cli变更&#34;&gt;CLI变更&lt;/h3&gt;
+&lt;h2 id=&#34;部署&#34;&gt;部署&lt;/h2&gt;
 
-&lt;h3 id=&#34;迁移&#34;&gt;迁移&lt;/h3&gt;
+&lt;h2 id=&#34;docker&#34;&gt;Docker&lt;/h2&gt;
 
-&lt;h3 id=&#34;部署&#34;&gt;部署&lt;/h3&gt;
+&lt;h2 id=&#34;单元测试&#34;&gt;单元测试&lt;/h2&gt;
 
-&lt;h3 id=&#34;docker&#34;&gt;Docker&lt;/h3&gt;
+&lt;h2 id=&#34;版本控制&#34;&gt;版本控制&lt;/h2&gt;
 
-&lt;h3 id=&#34;单元测试&#34;&gt;单元测试&lt;/h3&gt;
-
-&lt;h3 id=&#34;版本控制&#34;&gt;版本控制&lt;/h3&gt;
-
-&lt;h3 id=&#34;一些工具&#34;&gt;一些工具&lt;/h3&gt;
+&lt;h2 id=&#34;一些工具&#34;&gt;一些工具&lt;/h2&gt;
 
 &lt;hr /&gt;
 
 &lt;h2 id=&#34;更新记录&#34;&gt;更新记录&lt;/h2&gt;
+
+&lt;p&gt;2018-04-11 添加ASP.NET Core EF 操作数据库&lt;/p&gt;
 </description>
       
     </item>
@@ -324,17 +325,17 @@ public class Program {
 
 &lt;h3 id=&#34;结果&#34;&gt;结果&lt;/h3&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/Gecore/PictureCdn/raw/master/post/201804/Java10%E5%88%9D%E6%8E%A2/4.png&#34; alt=&#34;结果&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://gitee.com/Gecore/muxuanuser.github.io/raw/master/content/post/201804/imgs/4.png&#34; alt=&#34;结果&#34; /&gt;&lt;/p&gt;
 </description>
       
     </item>
     
     <item>
       <title>mpi并行计算环境搭建</title>
-      <link>https://www.gecore.win/post/201804/mpi%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/</link>
+      <link>https://www.gecore.win/post/201804/mpi%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/mpi%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/</link>
       <pubDate>Sun, 01 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://www.gecore.win/post/201804/mpi%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/</guid>
+      <guid>https://www.gecore.win/post/201804/mpi%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/mpi%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/</guid>
       
         <description>
 
@@ -344,7 +345,7 @@ public class Program {
 
 &lt;h4 id=&#34;下载安装mpi&#34;&gt;下载安装MPI&lt;/h4&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://www.mpich.org/downloads/&#34;&gt;下载地址&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.mpich.org/downloads/&#34;&gt;下载地址&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://msdn.microsoft.com/en-us/library/bb524831%28v=vs.85%29.aspx&#34;&gt;Windows下载地址&lt;/a&gt;&lt;/p&gt;
 
@@ -496,9 +497,11 @@ pause();
 
 &lt;h2 id=&#34;ionic-使用-webrtc&#34;&gt;ionic 使用 webrtc&lt;/h2&gt;
 
+&lt;blockquote&gt;
 &lt;p&gt;WebRTC实现了基于网页的视频会议，标准是WHATWG 协议，目的是通过浏览器提供简单的javascript就可以达到实时通讯（Real-Time Communications (RTC)）能力。
 WebRTC（Web Real-Time Communication）项目的最终目的主要是让Web开发者能够基于浏览器（Chrome\FireFox...）轻易快捷开发出丰富的实时多媒体应用，而无需下载安装任何插件，Web开发者也无需关注多媒体的数字信号处理过程，只需编写简单的Javascript程序即可实现，W3C等组织正在制定Javascript 标准API，目前是WebRTC 1.0版本，Draft状态；另外WebRTC还希望能够建立一个多互联网浏览器间健壮的实时通信的平台，形成开发者与浏览器厂商良好的生态环境。同时，Google也希望和致力于让WebRTC的技术成为HTML5标准之一，可见Google布局之深远。
 WebRTC提供了视频会议的核心技术，包括音视频的采集、编解码、网络传输、显示等功能，并且还支持跨平台：windows，linux，mac，android。 &amp;mdash; &lt;a href=&#34;https://baike.baidu.com/item/WebRTC/5522744?fr=aladdin&#34;&gt;百度百科&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;p&gt;官网：&lt;a href=&#34;www.webrtc.ort&#34;&gt;www.webrtc.org&lt;/a&gt;&lt;/p&gt;
 
@@ -506,10 +509,9 @@ WebRTC提供了视频会议的核心技术，包括音视频的采集、编解�
 
 &lt;p&gt;本节介绍如何使用ionic + webrtc使用rtcmulticonnection组件实现QQ电话功能。&lt;/p&gt;
 
-&lt;blockquote&gt;
-&lt;p&gt;官网：&lt;a href=&#34;http://www.rtcmulticonnection.org/&#34;&gt;http://www.rtcmulticonnection.org/&lt;/a&gt;
-Github：&lt;a href=&#34;https://github.com/muaz-khan/RTCMultiConnection&#34;&gt;https://github.com/muaz-khan/RTCMultiConnection&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;官网：&lt;a href=&#34;http://www.rtcmulticonnection.org/&#34;&gt;http://www.rtcmulticonnection.org/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Github：&lt;a href=&#34;https://github.com/muaz-khan/RTCMultiConnection&#34;&gt;https://github.com/muaz-khan/RTCMultiConnection&lt;/a&gt;&lt;/p&gt;
 
 &lt;h4 id=&#34;引用脚本&#34;&gt;引用脚本&lt;/h4&gt;
 
@@ -612,7 +614,7 @@ export class VideoRunningPage {
 
 &lt;h4 id=&#34;效果&#34;&gt;效果&lt;/h4&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/Gecore/PictureCdn/raw/master/post/201803/ionic-webrtc/%E6%95%88%E6%9E%9C.png&#34; alt=&#34;https://gitee.com/Gecore/PictureCdn/raw/master/post/201803/ionic-webrtc/%E6%95%88%E6%9E%9C.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://gitee.com/Gecore/muxuanuser.github.io/raw/master/content/post/201803/imgs/效果.png&#34; alt=&#34;效果&#34; /&gt;&lt;/p&gt;
 </description>
       
     </item>
@@ -703,8 +705,8 @@ export class MapDemosPage {
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;figure class=&#34;half&#34;&gt;
-    &lt;img src=&#34;https://gitee.com/Gecore/PictureCdn/raw/master/post/201803/ionic%E8%9E%8D%E5%85%A5%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE/%E6%95%88%E6%9E%9C1.png&#34;&gt;
-    &lt;img src=&#34;https://gitee.com/Gecore/PictureCdn/raw/master/post/201803/ionic%E8%9E%8D%E5%85%A5%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE/%E6%95%88%E6%9E%9C2.png&#34;&gt;
+    &lt;img src=&#34;https://gitee.com/Gecore/muxuanuser.github.io/raw/master/content/post/201803/imgs/效果1.png&#34; style=&#34;float:left;width:45%&#34;&gt;
+    &lt;img src=&#34;https://gitee.com/Gecore/muxuanuser.github.io/raw/master/content/post/201803/imgs/效果2.png&#34; style=&#34;float:left;width:45%;padding:1rem&#34;&gt;
 &lt;/figure&gt;
 </description>
       
@@ -892,7 +894,7 @@ var LocalDb = function () {
 
 &lt;h2 id=&#34;框架基本结构&#34;&gt;框架基本结构&lt;/h2&gt;
 
-&lt;pre&gt;&lt;code&gt;-       |----controllers  控制器
+&lt;pre&gt;&lt;code class=&#34;language-views&#34;&gt;-       |----controllers  控制器
 |       |----dao          dao层
 |       |----mapper       mybatis的mapper文件
 |--src--|----pojo         简单java对象
@@ -908,7 +910,7 @@ var LocalDb = function () {
 |---|Deployed Resources     部署资源文件
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;[图片](&amp;lsquo;&lt;a href=&#34;https://gitee.com/Gecore/PictureCdn/raw/master/post/201802/Java%E4%B8%AD%E7%9A%84SSM%E6%A1%86%E6%9E%B6%E5%92%8C%E9%85%8D%E7%BD%AE/1.png&#39;&#34;&gt;https://gitee.com/Gecore/PictureCdn/raw/master/post/201802/Java%E4%B8%AD%E7%9A%84SSM%E6%A1%86%E6%9E%B6%E5%92%8C%E9%85%8D%E7%BD%AE/1.png&#39;&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://gitee.com/Gecore/muxuanuser.github.io/raw/master/content/post/201802/imgs/1.png&#34; alt=&#34;图片&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;框架整合过程&#34;&gt;框架整合过程&lt;/h2&gt;
 
@@ -933,155 +935,158 @@ insert  into `user_t`(`id`,`user_name`,`password`,`age`) values (1,&#39;测试&#
 
 &lt;ol&gt;
 &lt;li&gt;maven配置文件
-&amp;gt; 下面的是maven项目的&lt;code&gt;pom.xml&lt;/code&gt;文件配置。
-&lt;code&gt;xml
-&amp;lt;properties&amp;gt;  
-    &amp;lt;!-- spring版本号 --&amp;gt;  
-    &amp;lt;spring.version&amp;gt;4.0.2.RELEASE&amp;lt;/spring.version&amp;gt;  
-    &amp;lt;!-- mybatis版本号 --&amp;gt;  
-    &amp;lt;mybatis.version&amp;gt;3.2.6&amp;lt;/mybatis.version&amp;gt;  
-    &amp;lt;!-- log4j日志文件管理包版本 --&amp;gt;  
-    &amp;lt;slf4j.version&amp;gt;1.7.7&amp;lt;/slf4j.version&amp;gt;  
-    &amp;lt;log4j.version&amp;gt;1.2.17&amp;lt;/log4j.version&amp;gt;  
-&amp;lt;/properties&amp;gt;  
-&amp;lt;dependencies&amp;gt;  
-    &amp;lt;dependency&amp;gt;  
-        &amp;lt;groupId&amp;gt;junit&amp;lt;/groupId&amp;gt;  
-        &amp;lt;artifactId&amp;gt;junit&amp;lt;/artifactId&amp;gt;  
-        &amp;lt;version&amp;gt;4.11&amp;lt;/version&amp;gt;  
-        &amp;lt;!-- 表示开发的时候引入，发布的时候不会加载此包 --&amp;gt;  
-        &amp;lt;scope&amp;gt;test&amp;lt;/scope&amp;gt;  
-    &amp;lt;/dependency&amp;gt;  
-    &amp;lt;!-- spring核心包 --&amp;gt;  
-    &amp;lt;dependency&amp;gt;  
-        &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt;  
-        &amp;lt;artifactId&amp;gt;spring-core&amp;lt;/artifactId&amp;gt;  
-        &amp;lt;version&amp;gt;${spring.version}&amp;lt;/version&amp;gt;  
-    &amp;lt;/dependency&amp;gt;  
-    &amp;lt;dependency&amp;gt;  
-        &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt;  
-        &amp;lt;artifactId&amp;gt;spring-web&amp;lt;/artifactId&amp;gt;  
-        &amp;lt;version&amp;gt;${spring.version}&amp;lt;/version&amp;gt;  
-    &amp;lt;/dependency&amp;gt;  
-    &amp;lt;dependency&amp;gt;  
-        &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt;  
-        &amp;lt;artifactId&amp;gt;spring-oxm&amp;lt;/artifactId&amp;gt;  
-        &amp;lt;version&amp;gt;${spring.version}&amp;lt;/version&amp;gt;  
-    &amp;lt;/dependency&amp;gt;  
-    &amp;lt;dependency&amp;gt;  
-        &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt;  
-        &amp;lt;artifactId&amp;gt;spring-tx&amp;lt;/artifactId&amp;gt;  
-        &amp;lt;version&amp;gt;${spring.version}&amp;lt;/version&amp;gt;  
-    &amp;lt;/dependency&amp;gt;  
-    &amp;lt;dependency&amp;gt;  
-        &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt;  
-        &amp;lt;artifactId&amp;gt;spring-jdbc&amp;lt;/artifactId&amp;gt;  
-        &amp;lt;version&amp;gt;${spring.version}&amp;lt;/version&amp;gt;  
-    &amp;lt;/dependency&amp;gt;  
-    &amp;lt;dependency&amp;gt;  
-        &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt;  
-        &amp;lt;artifactId&amp;gt;spring-webmvc&amp;lt;/artifactId&amp;gt;  
-        &amp;lt;version&amp;gt;${spring.version}&amp;lt;/version&amp;gt;  
-    &amp;lt;/dependency&amp;gt;  
-    &amp;lt;dependency&amp;gt;  
-        &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt;  
-        &amp;lt;artifactId&amp;gt;spring-aop&amp;lt;/artifactId&amp;gt;  
-        &amp;lt;version&amp;gt;${spring.version}&amp;lt;/version&amp;gt;  
-    &amp;lt;/dependency&amp;gt;  
-    &amp;lt;dependency&amp;gt;  
-        &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt;  
-        &amp;lt;artifactId&amp;gt;spring-context-support&amp;lt;/artifactId&amp;gt;  
-        &amp;lt;version&amp;gt;${spring.version}&amp;lt;/version&amp;gt;  
-    &amp;lt;/dependency&amp;gt;  
-    &amp;lt;dependency&amp;gt;  
-        &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt;  
-        &amp;lt;artifactId&amp;gt;spring-test&amp;lt;/artifactId&amp;gt;  
-        &amp;lt;version&amp;gt;${spring.version}&amp;lt;/version&amp;gt;  
-    &amp;lt;/dependency&amp;gt;  
-    &amp;lt;!-- mybatis核心包 --&amp;gt;  
-    &amp;lt;dependency&amp;gt;  
-        &amp;lt;groupId&amp;gt;org.mybatis&amp;lt;/groupId&amp;gt;  
-        &amp;lt;artifactId&amp;gt;mybatis&amp;lt;/artifactId&amp;gt;  
-        &amp;lt;version&amp;gt;${mybatis.version}&amp;lt;/version&amp;gt;  
-    &amp;lt;/dependency&amp;gt;  
-    &amp;lt;!-- mybatis/spring包 --&amp;gt;  
-    &amp;lt;dependency&amp;gt;  
-        &amp;lt;groupId&amp;gt;org.mybatis&amp;lt;/groupId&amp;gt;  
-        &amp;lt;artifactId&amp;gt;mybatis-spring&amp;lt;/artifactId&amp;gt;  
-        &amp;lt;version&amp;gt;1.2.2&amp;lt;/version&amp;gt;  
-    &amp;lt;/dependency&amp;gt;  
-    &amp;lt;!-- 导入java ee jar 包 --&amp;gt;  
-    &amp;lt;dependency&amp;gt;  
-        &amp;lt;groupId&amp;gt;javax&amp;lt;/groupId&amp;gt;  
-        &amp;lt;artifactId&amp;gt;javaee-api&amp;lt;/artifactId&amp;gt;  
-        &amp;lt;version&amp;gt;7.0&amp;lt;/version&amp;gt;  
-    &amp;lt;/dependency&amp;gt;  
-    &amp;lt;!-- 导入Mysql数据库链接jar包 --&amp;gt;  
-    &amp;lt;dependency&amp;gt;  
-        &amp;lt;groupId&amp;gt;mysql&amp;lt;/groupId&amp;gt;  
-        &amp;lt;artifactId&amp;gt;mysql-connector-java&amp;lt;/artifactId&amp;gt;  
-        &amp;lt;version&amp;gt;5.1.30&amp;lt;/version&amp;gt;  
-    &amp;lt;/dependency&amp;gt;  
-    &amp;lt;!-- 导入dbcp的jar包，用来在applicationContext.xml中配置数据库 --&amp;gt;  
-    &amp;lt;dependency&amp;gt;  
-        &amp;lt;groupId&amp;gt;commons-dbcp&amp;lt;/groupId&amp;gt;  
-        &amp;lt;artifactId&amp;gt;commons-dbcp&amp;lt;/artifactId&amp;gt;  
-        &amp;lt;version&amp;gt;1.2.2&amp;lt;/version&amp;gt;  
-    &amp;lt;/dependency&amp;gt;  
-    &amp;lt;!-- JSTL标签类 --&amp;gt;  
-    &amp;lt;dependency&amp;gt;  
-        &amp;lt;groupId&amp;gt;jstl&amp;lt;/groupId&amp;gt;  
-        &amp;lt;artifactId&amp;gt;jstl&amp;lt;/artifactId&amp;gt;  
-        &amp;lt;version&amp;gt;1.2&amp;lt;/version&amp;gt;  
-    &amp;lt;/dependency&amp;gt;  
-    &amp;lt;!-- 日志文件管理包 --&amp;gt;  
-    &amp;lt;!-- log start --&amp;gt;  
-    &amp;lt;dependency&amp;gt;  
-        &amp;lt;groupId&amp;gt;log4j&amp;lt;/groupId&amp;gt;  
-        &amp;lt;artifactId&amp;gt;log4j&amp;lt;/artifactId&amp;gt;  
-        &amp;lt;version&amp;gt;${log4j.version}&amp;lt;/version&amp;gt;  
-    &amp;lt;/dependency&amp;gt;  
-    &amp;lt;!-- 格式化对象，方便输出日志 --&amp;gt;  
-    &amp;lt;dependency&amp;gt;  
-        &amp;lt;groupId&amp;gt;com.alibaba&amp;lt;/groupId&amp;gt;  
-        &amp;lt;artifactId&amp;gt;fastjson&amp;lt;/artifactId&amp;gt;  
-        &amp;lt;version&amp;gt;1.1.41&amp;lt;/version&amp;gt;  
-    &amp;lt;/dependency&amp;gt;  
-    &amp;lt;dependency&amp;gt;  
-        &amp;lt;groupId&amp;gt;org.slf4j&amp;lt;/groupId&amp;gt;  
-        &amp;lt;artifactId&amp;gt;slf4j-api&amp;lt;/artifactId&amp;gt;  
-        &amp;lt;version&amp;gt;${slf4j.version}&amp;lt;/version&amp;gt;  
-    &amp;lt;/dependency&amp;gt;  
-    &amp;lt;dependency&amp;gt;  
-        &amp;lt;groupId&amp;gt;org.slf4j&amp;lt;/groupId&amp;gt;  
-        &amp;lt;artifactId&amp;gt;slf4j-log4j12&amp;lt;/artifactId&amp;gt;  
-        &amp;lt;version&amp;gt;${slf4j.version}&amp;lt;/version&amp;gt;  
-    &amp;lt;/dependency&amp;gt;  
-    &amp;lt;!-- log end --&amp;gt;  
-    &amp;lt;!-- 映入JSON --&amp;gt;  
-    &amp;lt;dependency&amp;gt;  
-        &amp;lt;groupId&amp;gt;org.codehaus.jackson&amp;lt;/groupId&amp;gt;  
-        &amp;lt;artifactId&amp;gt;jackson-mapper-asl&amp;lt;/artifactId&amp;gt;  
-        &amp;lt;version&amp;gt;1.9.13&amp;lt;/version&amp;gt;  
-    &amp;lt;/dependency&amp;gt;  
-    &amp;lt;!-- 上传组件包 --&amp;gt;  
-    &amp;lt;dependency&amp;gt;  
-        &amp;lt;groupId&amp;gt;commons-fileupload&amp;lt;/groupId&amp;gt;  
-        &amp;lt;artifactId&amp;gt;commons-fileupload&amp;lt;/artifactId&amp;gt;  
-        &amp;lt;version&amp;gt;1.3.1&amp;lt;/version&amp;gt;  
-    &amp;lt;/dependency&amp;gt;  
-    &amp;lt;dependency&amp;gt;  
-        &amp;lt;groupId&amp;gt;commons-io&amp;lt;/groupId&amp;gt;  
-        &amp;lt;artifactId&amp;gt;commons-io&amp;lt;/artifactId&amp;gt;  
-        &amp;lt;version&amp;gt;2.4&amp;lt;/version&amp;gt;  
-    &amp;lt;/dependency&amp;gt;  
-    &amp;lt;dependency&amp;gt;  
-        &amp;lt;groupId&amp;gt;commons-codec&amp;lt;/groupId&amp;gt;  
-        &amp;lt;artifactId&amp;gt;commons-codec&amp;lt;/artifactId&amp;gt;  
-        &amp;lt;version&amp;gt;1.9&amp;lt;/version&amp;gt;  
-    &amp;lt;/dependency&amp;gt; 
-&amp;lt;/dependencies&amp;gt;  
-&lt;/code&gt;&lt;/li&gt;
+&amp;gt; 下面的是maven项目的&lt;code&gt;pom.xml&lt;/code&gt;文件配置。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;&amp;lt;properties&amp;gt;  
+        &amp;lt;!-- spring版本号 --&amp;gt;  
+        &amp;lt;spring.version&amp;gt;4.0.2.RELEASE&amp;lt;/spring.version&amp;gt;  
+        &amp;lt;!-- mybatis版本号 --&amp;gt;  
+        &amp;lt;mybatis.version&amp;gt;3.2.6&amp;lt;/mybatis.version&amp;gt;  
+        &amp;lt;!-- log4j日志文件管理包版本 --&amp;gt;  
+        &amp;lt;slf4j.version&amp;gt;1.7.7&amp;lt;/slf4j.version&amp;gt;  
+        &amp;lt;log4j.version&amp;gt;1.2.17&amp;lt;/log4j.version&amp;gt;  
+    &amp;lt;/properties&amp;gt;  
+    &amp;lt;dependencies&amp;gt;  
+        &amp;lt;dependency&amp;gt;  
+            &amp;lt;groupId&amp;gt;junit&amp;lt;/groupId&amp;gt;  
+            &amp;lt;artifactId&amp;gt;junit&amp;lt;/artifactId&amp;gt;  
+            &amp;lt;version&amp;gt;4.11&amp;lt;/version&amp;gt;  
+            &amp;lt;!-- 表示开发的时候引入，发布的时候不会加载此包 --&amp;gt;  
+            &amp;lt;scope&amp;gt;test&amp;lt;/scope&amp;gt;  
+        &amp;lt;/dependency&amp;gt;  
+        &amp;lt;!-- spring核心包 --&amp;gt;  
+        &amp;lt;dependency&amp;gt;  
+            &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt;  
+            &amp;lt;artifactId&amp;gt;spring-core&amp;lt;/artifactId&amp;gt;  
+            &amp;lt;version&amp;gt;${spring.version}&amp;lt;/version&amp;gt;  
+        &amp;lt;/dependency&amp;gt;  
+        &amp;lt;dependency&amp;gt;  
+            &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt;  
+            &amp;lt;artifactId&amp;gt;spring-web&amp;lt;/artifactId&amp;gt;  
+            &amp;lt;version&amp;gt;${spring.version}&amp;lt;/version&amp;gt;  
+        &amp;lt;/dependency&amp;gt;  
+        &amp;lt;dependency&amp;gt;  
+            &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt;  
+            &amp;lt;artifactId&amp;gt;spring-oxm&amp;lt;/artifactId&amp;gt;  
+            &amp;lt;version&amp;gt;${spring.version}&amp;lt;/version&amp;gt;  
+        &amp;lt;/dependency&amp;gt;  
+        &amp;lt;dependency&amp;gt;  
+            &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt;  
+            &amp;lt;artifactId&amp;gt;spring-tx&amp;lt;/artifactId&amp;gt;  
+            &amp;lt;version&amp;gt;${spring.version}&amp;lt;/version&amp;gt;  
+        &amp;lt;/dependency&amp;gt;  
+        &amp;lt;dependency&amp;gt;  
+            &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt;  
+            &amp;lt;artifactId&amp;gt;spring-jdbc&amp;lt;/artifactId&amp;gt;  
+            &amp;lt;version&amp;gt;${spring.version}&amp;lt;/version&amp;gt;  
+        &amp;lt;/dependency&amp;gt;  
+        &amp;lt;dependency&amp;gt;  
+            &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt;  
+            &amp;lt;artifactId&amp;gt;spring-webmvc&amp;lt;/artifactId&amp;gt;  
+            &amp;lt;version&amp;gt;${spring.version}&amp;lt;/version&amp;gt;  
+        &amp;lt;/dependency&amp;gt;  
+        &amp;lt;dependency&amp;gt;  
+            &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt;  
+            &amp;lt;artifactId&amp;gt;spring-aop&amp;lt;/artifactId&amp;gt;  
+            &amp;lt;version&amp;gt;${spring.version}&amp;lt;/version&amp;gt;  
+        &amp;lt;/dependency&amp;gt;  
+        &amp;lt;dependency&amp;gt;  
+            &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt;  
+            &amp;lt;artifactId&amp;gt;spring-context-support&amp;lt;/artifactId&amp;gt;  
+            &amp;lt;version&amp;gt;${spring.version}&amp;lt;/version&amp;gt;  
+        &amp;lt;/dependency&amp;gt;  
+        &amp;lt;dependency&amp;gt;  
+            &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt;  
+            &amp;lt;artifactId&amp;gt;spring-test&amp;lt;/artifactId&amp;gt;  
+            &amp;lt;version&amp;gt;${spring.version}&amp;lt;/version&amp;gt;  
+        &amp;lt;/dependency&amp;gt;  
+        &amp;lt;!-- mybatis核心包 --&amp;gt;  
+        &amp;lt;dependency&amp;gt;  
+            &amp;lt;groupId&amp;gt;org.mybatis&amp;lt;/groupId&amp;gt;  
+            &amp;lt;artifactId&amp;gt;mybatis&amp;lt;/artifactId&amp;gt;  
+            &amp;lt;version&amp;gt;${mybatis.version}&amp;lt;/version&amp;gt;  
+        &amp;lt;/dependency&amp;gt;  
+        &amp;lt;!-- mybatis/spring包 --&amp;gt;  
+        &amp;lt;dependency&amp;gt;  
+            &amp;lt;groupId&amp;gt;org.mybatis&amp;lt;/groupId&amp;gt;  
+            &amp;lt;artifactId&amp;gt;mybatis-spring&amp;lt;/artifactId&amp;gt;  
+            &amp;lt;version&amp;gt;1.2.2&amp;lt;/version&amp;gt;  
+        &amp;lt;/dependency&amp;gt;  
+        &amp;lt;!-- 导入java ee jar 包 --&amp;gt;  
+        &amp;lt;dependency&amp;gt;  
+            &amp;lt;groupId&amp;gt;javax&amp;lt;/groupId&amp;gt;  
+            &amp;lt;artifactId&amp;gt;javaee-api&amp;lt;/artifactId&amp;gt;  
+            &amp;lt;version&amp;gt;7.0&amp;lt;/version&amp;gt;  
+        &amp;lt;/dependency&amp;gt;  
+        &amp;lt;!-- 导入Mysql数据库链接jar包 --&amp;gt;  
+        &amp;lt;dependency&amp;gt;  
+            &amp;lt;groupId&amp;gt;mysql&amp;lt;/groupId&amp;gt;  
+            &amp;lt;artifactId&amp;gt;mysql-connector-java&amp;lt;/artifactId&amp;gt;  
+            &amp;lt;version&amp;gt;5.1.30&amp;lt;/version&amp;gt;  
+        &amp;lt;/dependency&amp;gt;  
+        &amp;lt;!-- 导入dbcp的jar包，用来在applicationContext.xml中配置数据库 --&amp;gt;  
+        &amp;lt;dependency&amp;gt;  
+            &amp;lt;groupId&amp;gt;commons-dbcp&amp;lt;/groupId&amp;gt;  
+            &amp;lt;artifactId&amp;gt;commons-dbcp&amp;lt;/artifactId&amp;gt;  
+            &amp;lt;version&amp;gt;1.2.2&amp;lt;/version&amp;gt;  
+        &amp;lt;/dependency&amp;gt;  
+        &amp;lt;!-- JSTL标签类 --&amp;gt;  
+        &amp;lt;dependency&amp;gt;  
+            &amp;lt;groupId&amp;gt;jstl&amp;lt;/groupId&amp;gt;  
+            &amp;lt;artifactId&amp;gt;jstl&amp;lt;/artifactId&amp;gt;  
+            &amp;lt;version&amp;gt;1.2&amp;lt;/version&amp;gt;  
+        &amp;lt;/dependency&amp;gt;  
+        &amp;lt;!-- 日志文件管理包 --&amp;gt;  
+        &amp;lt;!-- log start --&amp;gt;  
+        &amp;lt;dependency&amp;gt;  
+            &amp;lt;groupId&amp;gt;log4j&amp;lt;/groupId&amp;gt;  
+            &amp;lt;artifactId&amp;gt;log4j&amp;lt;/artifactId&amp;gt;  
+            &amp;lt;version&amp;gt;${log4j.version}&amp;lt;/version&amp;gt;  
+        &amp;lt;/dependency&amp;gt;  
+        &amp;lt;!-- 格式化对象，方便输出日志 --&amp;gt;  
+        &amp;lt;dependency&amp;gt;  
+            &amp;lt;groupId&amp;gt;com.alibaba&amp;lt;/groupId&amp;gt;  
+            &amp;lt;artifactId&amp;gt;fastjson&amp;lt;/artifactId&amp;gt;  
+            &amp;lt;version&amp;gt;1.1.41&amp;lt;/version&amp;gt;  
+        &amp;lt;/dependency&amp;gt;  
+        &amp;lt;dependency&amp;gt;  
+            &amp;lt;groupId&amp;gt;org.slf4j&amp;lt;/groupId&amp;gt;  
+            &amp;lt;artifactId&amp;gt;slf4j-api&amp;lt;/artifactId&amp;gt;  
+            &amp;lt;version&amp;gt;${slf4j.version}&amp;lt;/version&amp;gt;  
+        &amp;lt;/dependency&amp;gt;  
+        &amp;lt;dependency&amp;gt;  
+            &amp;lt;groupId&amp;gt;org.slf4j&amp;lt;/groupId&amp;gt;  
+            &amp;lt;artifactId&amp;gt;slf4j-log4j12&amp;lt;/artifactId&amp;gt;  
+            &amp;lt;version&amp;gt;${slf4j.version}&amp;lt;/version&amp;gt;  
+        &amp;lt;/dependency&amp;gt;  
+        &amp;lt;!-- log end --&amp;gt;  
+        &amp;lt;!-- 映入JSON --&amp;gt;  
+        &amp;lt;dependency&amp;gt;  
+            &amp;lt;groupId&amp;gt;org.codehaus.jackson&amp;lt;/groupId&amp;gt;  
+            &amp;lt;artifactId&amp;gt;jackson-mapper-asl&amp;lt;/artifactId&amp;gt;  
+            &amp;lt;version&amp;gt;1.9.13&amp;lt;/version&amp;gt;  
+        &amp;lt;/dependency&amp;gt;  
+        &amp;lt;!-- 上传组件包 --&amp;gt;  
+        &amp;lt;dependency&amp;gt;  
+            &amp;lt;groupId&amp;gt;commons-fileupload&amp;lt;/groupId&amp;gt;  
+            &amp;lt;artifactId&amp;gt;commons-fileupload&amp;lt;/artifactId&amp;gt;  
+            &amp;lt;version&amp;gt;1.3.1&amp;lt;/version&amp;gt;  
+        &amp;lt;/dependency&amp;gt;  
+        &amp;lt;dependency&amp;gt;  
+            &amp;lt;groupId&amp;gt;commons-io&amp;lt;/groupId&amp;gt;  
+            &amp;lt;artifactId&amp;gt;commons-io&amp;lt;/artifactId&amp;gt;  
+            &amp;lt;version&amp;gt;2.4&amp;lt;/version&amp;gt;  
+        &amp;lt;/dependency&amp;gt;  
+        &amp;lt;dependency&amp;gt;  
+            &amp;lt;groupId&amp;gt;commons-codec&amp;lt;/groupId&amp;gt;  
+            &amp;lt;artifactId&amp;gt;commons-codec&amp;lt;/artifactId&amp;gt;  
+            &amp;lt;version&amp;gt;1.9&amp;lt;/version&amp;gt;  
+        &amp;lt;/dependency&amp;gt; 
+    &amp;lt;/dependencies&amp;gt;  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
 &lt;li&gt;properties配置&lt;/li&gt;
 &lt;/ol&gt;
 
@@ -1103,7 +1108,7 @@ minIdle=1
 maxWait=60000
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;然后是log4j的配置&lt;code&gt;log4j.properties&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;然后是log4j的配置&lt;code&gt;log4j.properties&lt;/code&gt;如下：&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-properties&#34;&gt;#定义LOG输出级别
 log4j.rootLogger=INFO,Console,File
@@ -1127,72 +1132,77 @@ log4j.appender.File.layout.ConversionPattern =[%p] [%d{yyyy-MM-dd HH\:mm\:ss}][%
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;spring-mybatis整合
-&amp;gt; 文件名为&lt;code&gt;spring-mybatis.xml&lt;/code&gt;，注意文件的位置。&lt;/p&gt;
+&lt;li&gt;spring-mybatis整合&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;文件名为&lt;code&gt;spring-mybatis.xml&lt;/code&gt;，注意文件的位置。&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
 &amp;lt;beans xmlns=&amp;quot;http://www.springframework.org/schema/beans&amp;quot;
-xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-instance&amp;quot; xmlns:p=&amp;quot;http://www.springframework.org/schema/p&amp;quot;
-xmlns:context=&amp;quot;http://www.springframework.org/schema/context&amp;quot;
-xmlns:mvc=&amp;quot;http://www.springframework.org/schema/mvc&amp;quot;
-xsi:schemaLocation=&amp;quot;http://www.springframework.org/schema/beans  
-                    http://www.springframework.org/schema/beans/spring-beans-4.0.xsd  
-                    http://www.springframework.org/schema/context  
-                    http://www.springframework.org/schema/context/spring-context-4.0.xsd  
-                    http://www.springframework.org/schema/mvc  
-                    http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd&amp;quot;&amp;gt;
-&amp;lt;!-- 这里的 base-package 需要修改，修改为你所需要的即可 --&amp;gt;
-&amp;lt;!-- 自动扫描 --&amp;gt;
-&amp;lt;context:component-scan base-package=&amp;quot;com.mxcms&amp;quot; /&amp;gt;
+    xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-instance&amp;quot; xmlns:p=&amp;quot;http://www.springframework.org/schema/p&amp;quot;
+    xmlns:context=&amp;quot;http://www.springframework.org/schema/context&amp;quot;
+    xmlns:mvc=&amp;quot;http://www.springframework.org/schema/mvc&amp;quot;
+    xsi:schemaLocation=&amp;quot;http://www.springframework.org/schema/beans  
+                        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd  
+                        http://www.springframework.org/schema/context  
+                        http://www.springframework.org/schema/context/spring-context-4.0.xsd  
+                        http://www.springframework.org/schema/mvc  
+                        http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd&amp;quot;&amp;gt;
+    &amp;lt;!-- 这里的 base-package 需要修改，修改为你所需要的即可 --&amp;gt;
+    &amp;lt;!-- 自动扫描 --&amp;gt;
+    &amp;lt;context:component-scan base-package=&amp;quot;com.mxcms&amp;quot; /&amp;gt;
 
-&amp;lt;!-- 引入配置文件 --&amp;gt;
-&amp;lt;bean id=&amp;quot;propertyConfigurer&amp;quot;
-    class=&amp;quot;org.springframework.beans.factory.config.PropertyPlaceholderConfigurer&amp;quot;&amp;gt;
-    &amp;lt;property name=&amp;quot;location&amp;quot; value=&amp;quot;classpath:jdbc.properties&amp;quot; /&amp;gt;
-&amp;lt;/bean&amp;gt;
+    &amp;lt;!-- 引入配置文件 --&amp;gt;
+    &amp;lt;bean id=&amp;quot;propertyConfigurer&amp;quot;
+        class=&amp;quot;org.springframework.beans.factory.config.PropertyPlaceholderConfigurer&amp;quot;&amp;gt;
+        &amp;lt;property name=&amp;quot;location&amp;quot; value=&amp;quot;classpath:jdbc.properties&amp;quot; /&amp;gt;
+    &amp;lt;/bean&amp;gt;
 
-&amp;lt;bean id=&amp;quot;dataSource&amp;quot; class=&amp;quot;org.apache.commons.dbcp.BasicDataSource&amp;quot;
-    destroy-method=&amp;quot;close&amp;quot;&amp;gt;
-    &amp;lt;property name=&amp;quot;driverClassName&amp;quot; value=&amp;quot;${driver}&amp;quot; /&amp;gt;
-    &amp;lt;property name=&amp;quot;url&amp;quot; value=&amp;quot;${url}&amp;quot; /&amp;gt;
-    &amp;lt;property name=&amp;quot;username&amp;quot; value=&amp;quot;${username}&amp;quot; /&amp;gt;
-    &amp;lt;property name=&amp;quot;password&amp;quot; value=&amp;quot;${password}&amp;quot; /&amp;gt;
-    &amp;lt;!-- 初始化连接大小 --&amp;gt;
-    &amp;lt;property name=&amp;quot;initialSize&amp;quot; value=&amp;quot;${initialSize}&amp;quot;&amp;gt;&amp;lt;/property&amp;gt;
-    &amp;lt;!-- 连接池最大数量 --&amp;gt;
-    &amp;lt;property name=&amp;quot;maxActive&amp;quot; value=&amp;quot;${maxActive}&amp;quot;&amp;gt;&amp;lt;/property&amp;gt;
-    &amp;lt;!-- 连接池最大空闲 --&amp;gt;
-    &amp;lt;property name=&amp;quot;maxIdle&amp;quot; value=&amp;quot;${maxIdle}&amp;quot;&amp;gt;&amp;lt;/property&amp;gt;
-    &amp;lt;!-- 连接池最小空闲 --&amp;gt;
-    &amp;lt;property name=&amp;quot;minIdle&amp;quot; value=&amp;quot;${minIdle}&amp;quot;&amp;gt;&amp;lt;/property&amp;gt;
-    &amp;lt;!-- 获取连接最大等待时间 --&amp;gt;
-    &amp;lt;property name=&amp;quot;maxWait&amp;quot; value=&amp;quot;${maxWait}&amp;quot;&amp;gt;&amp;lt;/property&amp;gt;
-&amp;lt;/bean&amp;gt;
+    &amp;lt;bean id=&amp;quot;dataSource&amp;quot; class=&amp;quot;org.apache.commons.dbcp.BasicDataSource&amp;quot;
+        destroy-method=&amp;quot;close&amp;quot;&amp;gt;
+        &amp;lt;property name=&amp;quot;driverClassName&amp;quot; value=&amp;quot;${driver}&amp;quot; /&amp;gt;
+        &amp;lt;property name=&amp;quot;url&amp;quot; value=&amp;quot;${url}&amp;quot; /&amp;gt;
+        &amp;lt;property name=&amp;quot;username&amp;quot; value=&amp;quot;${username}&amp;quot; /&amp;gt;
+        &amp;lt;property name=&amp;quot;password&amp;quot; value=&amp;quot;${password}&amp;quot; /&amp;gt;
+        &amp;lt;!-- 初始化连接大小 --&amp;gt;
+        &amp;lt;property name=&amp;quot;initialSize&amp;quot; value=&amp;quot;${initialSize}&amp;quot;&amp;gt;&amp;lt;/property&amp;gt;
+        &amp;lt;!-- 连接池最大数量 --&amp;gt;
+        &amp;lt;property name=&amp;quot;maxActive&amp;quot; value=&amp;quot;${maxActive}&amp;quot;&amp;gt;&amp;lt;/property&amp;gt;
+        &amp;lt;!-- 连接池最大空闲 --&amp;gt;
+        &amp;lt;property name=&amp;quot;maxIdle&amp;quot; value=&amp;quot;${maxIdle}&amp;quot;&amp;gt;&amp;lt;/property&amp;gt;
+        &amp;lt;!-- 连接池最小空闲 --&amp;gt;
+        &amp;lt;property name=&amp;quot;minIdle&amp;quot; value=&amp;quot;${minIdle}&amp;quot;&amp;gt;&amp;lt;/property&amp;gt;
+        &amp;lt;!-- 获取连接最大等待时间 --&amp;gt;
+        &amp;lt;property name=&amp;quot;maxWait&amp;quot; value=&amp;quot;${maxWait}&amp;quot;&amp;gt;&amp;lt;/property&amp;gt;
+    &amp;lt;/bean&amp;gt;
 
-&amp;lt;!-- spring和MyBatis完美整合，不需要mybatis的配置映射文件 --&amp;gt;
-&amp;lt;bean id=&amp;quot;sqlSessionFactory&amp;quot; class=&amp;quot;org.mybatis.spring.SqlSessionFactoryBean&amp;quot;&amp;gt;
-    &amp;lt;property name=&amp;quot;dataSource&amp;quot; ref=&amp;quot;dataSource&amp;quot; /&amp;gt;
-    &amp;lt;!-- 这里的value需要修改为你的mapper文件位置，注意这里是斜线 / 不是 . --&amp;gt;
-    &amp;lt;!-- 自动扫描mapping.xml文件 --&amp;gt;
-    &amp;lt;property name=&amp;quot;mapperLocations&amp;quot; value=&amp;quot;classpath:com/mxcms/mapper/*.xml&amp;quot;&amp;gt;&amp;lt;/property&amp;gt;
-&amp;lt;/bean&amp;gt;
+    &amp;lt;!-- spring和MyBatis完美整合，不需要mybatis的配置映射文件 --&amp;gt;
+    &amp;lt;bean id=&amp;quot;sqlSessionFactory&amp;quot; class=&amp;quot;org.mybatis.spring.SqlSessionFactoryBean&amp;quot;&amp;gt;
+        &amp;lt;property name=&amp;quot;dataSource&amp;quot; ref=&amp;quot;dataSource&amp;quot; /&amp;gt;
+        &amp;lt;!-- 这里的value需要修改为你的mapper文件位置，注意这里是斜线 / 不是 . --&amp;gt;
+        &amp;lt;!-- 自动扫描mapping.xml文件 --&amp;gt;
+        &amp;lt;property name=&amp;quot;mapperLocations&amp;quot; value=&amp;quot;classpath:com/mxcms/mapper/*.xml&amp;quot;&amp;gt;&amp;lt;/property&amp;gt;
+    &amp;lt;/bean&amp;gt;
 
-&amp;lt;!-- 这里的value需要修改为你的dao文件夹位置 --&amp;gt;
-&amp;lt;!-- DAO接口所在包名，Spring会自动查找其下的类 --&amp;gt;
-&amp;lt;bean class=&amp;quot;org.mybatis.spring.mapper.MapperScannerConfigurer&amp;quot;&amp;gt;
-    &amp;lt;property name=&amp;quot;basePackage&amp;quot; value=&amp;quot;com.mxcms.dao&amp;quot; /&amp;gt;
-    &amp;lt;property name=&amp;quot;sqlSessionFactoryBeanName&amp;quot; value=&amp;quot;sqlSessionFactory&amp;quot;&amp;gt;&amp;lt;/property&amp;gt;
-&amp;lt;/bean&amp;gt;
+    &amp;lt;!-- 这里的value需要修改为你的dao文件夹位置 --&amp;gt;
+    &amp;lt;!-- DAO接口所在包名，Spring会自动查找其下的类 --&amp;gt;
+    &amp;lt;bean class=&amp;quot;org.mybatis.spring.mapper.MapperScannerConfigurer&amp;quot;&amp;gt;
+        &amp;lt;property name=&amp;quot;basePackage&amp;quot; value=&amp;quot;com.mxcms.dao&amp;quot; /&amp;gt;
+        &amp;lt;property name=&amp;quot;sqlSessionFactoryBeanName&amp;quot; value=&amp;quot;sqlSessionFactory&amp;quot;&amp;gt;&amp;lt;/property&amp;gt;
+    &amp;lt;/bean&amp;gt;
 
-&amp;lt;!-- (事务管理)transaction manager, use JtaTransactionManager for global tx --&amp;gt;
-&amp;lt;bean id=&amp;quot;transactionManager&amp;quot;
-    class=&amp;quot;org.springframework.jdbc.datasource.DataSourceTransactionManager&amp;quot;&amp;gt;
-    &amp;lt;property name=&amp;quot;dataSource&amp;quot; ref=&amp;quot;dataSource&amp;quot; /&amp;gt;
-&amp;lt;/bean&amp;gt;
+    &amp;lt;!-- (事务管理)transaction manager, use JtaTransactionManager for global tx --&amp;gt;
+    &amp;lt;bean id=&amp;quot;transactionManager&amp;quot;
+        class=&amp;quot;org.springframework.jdbc.datasource.DataSourceTransactionManager&amp;quot;&amp;gt;
+        &amp;lt;property name=&amp;quot;dataSource&amp;quot; ref=&amp;quot;dataSource&amp;quot; /&amp;gt;
+    &amp;lt;/bean&amp;gt;
 &amp;lt;/beans&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;li&gt;&lt;p&gt;maven 自动生成代码&lt;/p&gt;&lt;/li&gt;
+&lt;ol&gt;
+&lt;li&gt;maven 自动生成代码&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;下面需要使用maven自动生成工具生成代码，可以&lt;/p&gt;
@@ -1405,71 +1415,73 @@ public class TestMyBatis {
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;web.xml整合&lt;/p&gt;
+&lt;li&gt;web.xml整合&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
 &amp;lt;web-app xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-instance&amp;quot;
-xmlns=&amp;quot;http://java.sun.com/xml/ns/javaee&amp;quot;
-xsi:schemaLocation=&amp;quot;http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd&amp;quot;
-version=&amp;quot;3.0&amp;quot;&amp;gt;
-&amp;lt;display-name&amp;gt;Archetype Created Web Application&amp;lt;/display-name&amp;gt;
+    xmlns=&amp;quot;http://java.sun.com/xml/ns/javaee&amp;quot;
+    xsi:schemaLocation=&amp;quot;http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd&amp;quot;
+    version=&amp;quot;3.0&amp;quot;&amp;gt;
+    &amp;lt;display-name&amp;gt;Archetype Created Web Application&amp;lt;/display-name&amp;gt;
     
-&amp;lt;!-- Spring和mybatis的配置文件 --&amp;gt;
-&amp;lt;context-param&amp;gt;
-    &amp;lt;param-name&amp;gt;contextConfigLocation&amp;lt;/param-name&amp;gt;
-    &amp;lt;param-value&amp;gt;classpath:spring-mybatis.xml&amp;lt;/param-value&amp;gt;
-&amp;lt;/context-param&amp;gt;
-    
-&amp;lt;!-- 编码过滤器 --&amp;gt;
-&amp;lt;filter&amp;gt;
-    &amp;lt;filter-name&amp;gt;encodingFilter&amp;lt;/filter-name&amp;gt;
-    &amp;lt;filter-class&amp;gt;org.springframework.web.filter.CharacterEncodingFilter&amp;lt;/filter-class&amp;gt;
-    &amp;lt;async-supported&amp;gt;true&amp;lt;/async-supported&amp;gt;
-    &amp;lt;init-param&amp;gt;
-        &amp;lt;param-name&amp;gt;encoding&amp;lt;/param-name&amp;gt;
-        &amp;lt;param-value&amp;gt;UTF-8&amp;lt;/param-value&amp;gt;
-    &amp;lt;/init-param&amp;gt;
-&amp;lt;/filter&amp;gt;
-&amp;lt;filter-mapping&amp;gt;
-    &amp;lt;filter-name&amp;gt;encodingFilter&amp;lt;/filter-name&amp;gt;
-    &amp;lt;url-pattern&amp;gt;/*&amp;lt;/url-pattern&amp;gt;
-&amp;lt;/filter-mapping&amp;gt;
-    
-&amp;lt;!-- Spring监听器 --&amp;gt;
-&amp;lt;listener&amp;gt;
-    &amp;lt;listener-class&amp;gt;org.springframework.web.context.ContextLoaderListener&amp;lt;/listener-class&amp;gt;
-&amp;lt;/listener&amp;gt;
-    
-&amp;lt;!-- 防止Spring内存溢出监听器 --&amp;gt;
-&amp;lt;listener&amp;gt;
-    &amp;lt;listener-class&amp;gt;org.springframework.web.util.IntrospectorCleanupListener&amp;lt;/listener-class&amp;gt;
-&amp;lt;/listener&amp;gt;
-    
-&amp;lt;!-- Spring MVC servlet --&amp;gt;
-&amp;lt;servlet&amp;gt;
-    &amp;lt;servlet-name&amp;gt;SpringMVC&amp;lt;/servlet-name&amp;gt;
-    &amp;lt;servlet-class&amp;gt;org.springframework.web.servlet.DispatcherServlet&amp;lt;/servlet-class&amp;gt;
-    &amp;lt;init-param&amp;gt;
+    &amp;lt;!-- Spring和mybatis的配置文件 --&amp;gt;
+    &amp;lt;context-param&amp;gt;
         &amp;lt;param-name&amp;gt;contextConfigLocation&amp;lt;/param-name&amp;gt;
-        &amp;lt;param-value&amp;gt;classpath:spring-mvc.xml&amp;lt;/param-value&amp;gt;
-    &amp;lt;/init-param&amp;gt;
-    &amp;lt;load-on-startup&amp;gt;1&amp;lt;/load-on-startup&amp;gt;
-    &amp;lt;async-supported&amp;gt;true&amp;lt;/async-supported&amp;gt;
-&amp;lt;/servlet&amp;gt;
-&amp;lt;servlet-mapping&amp;gt;
-    &amp;lt;servlet-name&amp;gt;SpringMVC&amp;lt;/servlet-name&amp;gt;
-    &amp;lt;!-- 此处可以可以配置成*.do，对应struts的后缀习惯 --&amp;gt;
-    &amp;lt;url-pattern&amp;gt;/&amp;lt;/url-pattern&amp;gt;
-&amp;lt;/servlet-mapping&amp;gt;
+        &amp;lt;param-value&amp;gt;classpath:spring-mybatis.xml&amp;lt;/param-value&amp;gt;
+    &amp;lt;/context-param&amp;gt;
     
-&amp;lt;welcome-file-list&amp;gt;
-    &amp;lt;welcome-file&amp;gt;/index.html&amp;lt;/welcome-file&amp;gt;
-    &amp;lt;welcome-file&amp;gt;/index.jsp&amp;lt;/welcome-file&amp;gt;
-&amp;lt;/welcome-file-list&amp;gt;
+    &amp;lt;!-- 编码过滤器 --&amp;gt;
+    &amp;lt;filter&amp;gt;
+        &amp;lt;filter-name&amp;gt;encodingFilter&amp;lt;/filter-name&amp;gt;
+        &amp;lt;filter-class&amp;gt;org.springframework.web.filter.CharacterEncodingFilter&amp;lt;/filter-class&amp;gt;
+        &amp;lt;async-supported&amp;gt;true&amp;lt;/async-supported&amp;gt;
+        &amp;lt;init-param&amp;gt;
+            &amp;lt;param-name&amp;gt;encoding&amp;lt;/param-name&amp;gt;
+            &amp;lt;param-value&amp;gt;UTF-8&amp;lt;/param-value&amp;gt;
+        &amp;lt;/init-param&amp;gt;
+    &amp;lt;/filter&amp;gt;
+    &amp;lt;filter-mapping&amp;gt;
+        &amp;lt;filter-name&amp;gt;encodingFilter&amp;lt;/filter-name&amp;gt;
+        &amp;lt;url-pattern&amp;gt;/*&amp;lt;/url-pattern&amp;gt;
+    &amp;lt;/filter-mapping&amp;gt;
+    
+    &amp;lt;!-- Spring监听器 --&amp;gt;
+    &amp;lt;listener&amp;gt;
+        &amp;lt;listener-class&amp;gt;org.springframework.web.context.ContextLoaderListener&amp;lt;/listener-class&amp;gt;
+    &amp;lt;/listener&amp;gt;
+    
+    &amp;lt;!-- 防止Spring内存溢出监听器 --&amp;gt;
+    &amp;lt;listener&amp;gt;
+        &amp;lt;listener-class&amp;gt;org.springframework.web.util.IntrospectorCleanupListener&amp;lt;/listener-class&amp;gt;
+    &amp;lt;/listener&amp;gt;
+    
+    &amp;lt;!-- Spring MVC servlet --&amp;gt;
+    &amp;lt;servlet&amp;gt;
+        &amp;lt;servlet-name&amp;gt;SpringMVC&amp;lt;/servlet-name&amp;gt;
+        &amp;lt;servlet-class&amp;gt;org.springframework.web.servlet.DispatcherServlet&amp;lt;/servlet-class&amp;gt;
+        &amp;lt;init-param&amp;gt;
+            &amp;lt;param-name&amp;gt;contextConfigLocation&amp;lt;/param-name&amp;gt;
+            &amp;lt;param-value&amp;gt;classpath:spring-mvc.xml&amp;lt;/param-value&amp;gt;
+        &amp;lt;/init-param&amp;gt;
+        &amp;lt;load-on-startup&amp;gt;1&amp;lt;/load-on-startup&amp;gt;
+        &amp;lt;async-supported&amp;gt;true&amp;lt;/async-supported&amp;gt;
+    &amp;lt;/servlet&amp;gt;
+    &amp;lt;servlet-mapping&amp;gt;
+        &amp;lt;servlet-name&amp;gt;SpringMVC&amp;lt;/servlet-name&amp;gt;
+        &amp;lt;!-- 此处可以可以配置成*.do，对应struts的后缀习惯 --&amp;gt;
+        &amp;lt;url-pattern&amp;gt;/&amp;lt;/url-pattern&amp;gt;
+    &amp;lt;/servlet-mapping&amp;gt;
+    
+    &amp;lt;welcome-file-list&amp;gt;
+        &amp;lt;welcome-file&amp;gt;/index.html&amp;lt;/welcome-file&amp;gt;
+        &amp;lt;welcome-file&amp;gt;/index.jsp&amp;lt;/welcome-file&amp;gt;
+    &amp;lt;/welcome-file-list&amp;gt;
 &amp;lt;/web-app&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;li&gt;&lt;p&gt;controllers编写配置&lt;/p&gt;&lt;/li&gt;
+&lt;ol&gt;
+&lt;li&gt;controllers编写配置&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;编写controller&lt;/p&gt;
@@ -1505,7 +1517,7 @@ public class UserController {
 
 &lt;h2 id=&#34;动态网站模块错误&#34;&gt;动态网站模块错误&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://ycdn.lucoder.com/usr/my_lucoder_com/log/2018/02/201802272217.png&#34; alt=&#34;&#39;错误&#39;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://gitee.com/Gecore/muxuanuser.github.io/raw/master/content/post/201802/imgs/201802272217.png&#34; alt=&#34;错误&#34; /&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;Dynamic Web Module 3.0 Require 1.6 Or Newer。
 &lt;/code&gt;&lt;/pre&gt;
@@ -1857,27 +1869,33 @@ public class JAXBController {
 &lt;p&gt;这个问题的原因就是新版本的cordova 7.0.0及以上版本对于新的AndroidManifest.xml路径还没有更新，导致找不到AndroidManifest.xml，下面给出两个解决办法：&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;使用原先的cordova
-&lt;code&gt;shell
-npm uninstall -g cordova
-npm install -g cordova@6.5.0
-&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;重新布置安卓项目
-&lt;code&gt;shell
-cordova platform rm android
-cordova platform add android
-&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Cordova官方给出的解决办法
-修改&lt;code&gt;config.xml&lt;/code&gt;文件，具体可以查看网址&lt;a href=&#39;https://cordova.apache.org/announcements/2017/12/04/cordova-android-7.0.0.html&#39; target=&#39;_blank&#39;&gt;&lt;a href=&#34;https://cordova.apache.org/announcements/2017/12/04/cordova-android-7.0.0.html&#34;&gt;https://cordova.apache.org/announcements/2017/12/04/cordova-android-7.0.0.html&lt;/a&gt;&lt;/a&gt;
-```shell
-&lt;!-- An existing config.xml --&gt;
-&lt;edit-config file=&#34;AndroidManifest.xml&#34; target=&#34;/manifest/application&#34; mode=&#34;merge&#34;&gt;&lt;/li&gt;
+&lt;li&gt;使用原先的cordova&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;!-- needs to change to --&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;npm uninstall -g cordova
+npm install -g cordova@6.5.0
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;edit-config file=&#34;app/src/main/AndroidManifest.xml&#34; target=&#34;/manifest/application&#34; mode=&#34;merge&#34;&gt;
-```&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;重新布置安卓项目&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;cordova platform rm android
+cordova platform add android
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Cordova官方给出的解决办法
+修改&lt;code&gt;config.xml&lt;/code&gt;文件，具体可以查看网址&lt;a href=&#39;https://cordova.apache.org/announcements/2017/12/04/cordova-android-7.0.0.html&#39; target=&#39;_blank&#39;&gt;&lt;a href=&#34;https://cordova.apache.org/announcements/2017/12/04/cordova-android-7.0.0.html&#34;&gt;https://cordova.apache.org/announcements/2017/12/04/cordova-android-7.0.0.html&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;&amp;lt;!-- An existing config.xml --&amp;gt;
+&amp;lt;edit-config file=&amp;quot;AndroidManifest.xml&amp;quot; target=&amp;quot;/manifest/application&amp;quot; mode=&amp;quot;merge&amp;quot;&amp;gt;
+
+&amp;lt;!-- needs to change to --&amp;gt;
+&amp;lt;edit-config file=&amp;quot;app/src/main/AndroidManifest.xml&amp;quot; target=&amp;quot;/manifest/application&amp;quot; mode=&amp;quot;merge&amp;quot;&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;
 </description>
       
     </item>
@@ -1899,7 +1917,7 @@ cordova platform add android
 
 &lt;hr /&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://www.gecore.win/post/201804/asp_net_core/&#34;&gt;ASP.NET Core 专栏&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:1313/post/201804/asp_net_core/&#34;&gt;ASP.NET Core 专栏&lt;/a&gt;&lt;/p&gt;
 </description>
       
     </item>
@@ -1918,6 +1936,12 @@ cordova platform add android
 &lt;hr /&gt;
 
 &lt;p&gt;【编辑器】&lt;a href=&#34;https://www.zybuluo.com/mdeditor&#34;&gt;Markdown&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;【开发工具】&lt;a href=&#34;https://www.bejson.com/&#34;&gt;Json&lt;/a&gt;|&lt;a href=&#34;http://tool.oschina.net/regex/&#34;&gt;正则表达式&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;【办公】&lt;a href=&#34;http://www.uupoop.com/&#34;&gt;在线ps&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;【工具】&lt;a href=&#34;https://tool.lu/&#34;&gt;Tools&lt;/a&gt;|&lt;a href=&#34;http://tool.oschina.net/&#34;&gt;OSChina&lt;/a&gt; | &lt;a href=&#34;http://tools.jb51.net/&#34;&gt;脚本之家&lt;/a&gt;&lt;/p&gt;
 </description>
       
     </item>
@@ -1935,9 +1959,9 @@ cordova platform add android
 
 &lt;hr /&gt;
 
-&lt;p&gt;【资料】&lt;a href=&#34;https://www.appinn.com/markdown/&#34;&gt;MarkDown&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;【资料】&lt;a href=&#34;https://www.appinn.com/markdown/&#34;&gt;MarkDown&lt;/a&gt; | &lt;a href=&#34;https://mirrors.lucoder.com&#34;&gt;牧轩镜像&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;【.NET网站】 &lt;a href=&#34;http://www.ikende.com/&#34;&gt;IKende&lt;/a&gt; | &lt;a href=&#34;https://www.connectionstrings.com/&#34;&gt;ConnectStrings&lt;/a&gt; | &lt;a href=&#34;https://docs.microsoft.com/zh-cn/&#34;&gt;MDN&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;【.NET网站】 &lt;a href=&#34;http://www.ikende.com/&#34;&gt;IKende&lt;/a&gt; | &lt;a href=&#34;https://www.connectionstrings.com/&#34;&gt;ConnectStrings&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;【开发工具】&lt;a href=&#34;https://code.visualstudio.com/&#34;&gt;Visual Studio Code&lt;/a&gt; | &lt;a href=&#34;https://www.eclipse.org/downloads/download.php?file=/oomph/epp/oxygen/R2/eclipse-inst-win64.exe&#34;&gt;Eclipse&lt;/a&gt;&lt;/p&gt;
 </description>
@@ -1956,6 +1980,111 @@ cordova platform add android
 &lt;/blockquote&gt;
 
 &lt;hr /&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>ionic 操作http</title>
+      <link>https://www.gecore.win/post/201712/ionic%E6%93%8D%E4%BD%9Chttp/</link>
+      <pubDate>Sat, 30 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.gecore.win/post/201712/ionic%E6%93%8D%E4%BD%9Chttp/</guid>
+      
+        <description>
+
+&lt;h2 id=&#34;http技术&#34;&gt;Http技术：&lt;/h2&gt;
+
+&lt;p&gt;http请求是客户端请求api使用的一项非常重要的技术，主要有下面几种方法。&lt;/p&gt;
+
+&lt;h4 id=&#34;使用native组件&#34;&gt;使用Native组件&lt;/h4&gt;
+
+&lt;p&gt;这种方法是一种和原生交互行最强的一种方法。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;官网：&lt;a href=&#34;https://ionicframework.com/docs/native/http/&#34;&gt;https://ionicframework.com/docs/native/http/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ ionic cordova plugin add cordova-plugin-advanced-http
+$ npm install --save @ionic-native/http
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;具体用法：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ts&#34;&gt;import { HTTP } from &#39;@ionic-native/http&#39;;
+
+constructor(private http: HTTP) { }
+
+this.http.get(&#39;http://ionic.io&#39;, {}, {})
+  .then(data =&amp;gt; {
+    console.log(data.status);
+    console.log(data.data); // data received by server
+    console.log(data.headers);
+  })
+  .catch(error =&amp;gt; {
+    console.log(error.status);
+    console.log(error.error); // error message as string
+    console.log(error.headers);
+  });
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;使用angular自带的http组件-推荐&#34;&gt;使用Angular自带的http组件（推荐）&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;从 @angular/http 模块中导入 Http 类&lt;/li&gt;
+&lt;li&gt;导入 RxJS 中的 map 操作符&lt;/li&gt;
+&lt;li&gt;使用 DI 方式注入 http 服务&lt;/li&gt;
+&lt;li&gt;调用 http 服务的 get() 方法，设置请求地址并发送 HTTP 请求&lt;/li&gt;
+&lt;li&gt;调用 Response 对象的 json() 方法，把响应体转成 JSON 对象&lt;/li&gt;
+&lt;li&gt;把请求的结果，赋值给 members 属性&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ts&#34;&gt;import { Component, OnInit } from &#39;@angular/core&#39;;
+import { Http } from &#39;@angular/http&#39;; // (1)
+import &#39;rxjs/add/operator/map&#39;; // (2)
+interface Member {
+  id: string;
+  login: string;
+  avatar_url: string;
+}
+@Component({
+  selector: &#39;exe-app&#39;,
+  template: `
+    &amp;lt;h3&amp;gt;Angular Orgs Members&amp;lt;/h3&amp;gt;
+    &amp;lt;ul *ngIf=&amp;quot;members&amp;quot;&amp;gt;
+      &amp;lt;li *ngFor=&amp;quot;let member of members;&amp;quot;&amp;gt;
+        &amp;lt;p&amp;gt;
+          &amp;lt;img [src]=&amp;quot;member.avatar_url&amp;quot; width=&amp;quot;48&amp;quot; height=&amp;quot;48&amp;quot;/&amp;gt;
+          ID：&amp;lt;span&amp;gt;{{member.id}}&amp;lt;/span&amp;gt;
+          Name: &amp;lt;span&amp;gt;{{member.login}}&amp;lt;/span&amp;gt;
+        &amp;lt;/p&amp;gt;
+      &amp;lt;/li&amp;gt;
+    &amp;lt;/ul&amp;gt;
+  `
+})
+export class AppComponent implements OnInit {
+  members: Member[];
+  constructor(private http: Http) { } // (3)
+  ngOnInit() {
+    this.http.get(`https://api.github.com/orgs/angular/members?page=1&amp;amp;per_page=5`) // (4)
+      .map(res =&amp;gt; res.json()) // (5)
+      .subscribe(data =&amp;gt; {
+        if (data) this.members = data; // (6)
+      });
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;具体内容和步骤请到这里查看：&lt;a href=&#34;https://segmentfault.com/a/1190000009028150?utm_source=tuicool&amp;amp;utm_medium=referral#articleHeader2&#34;&gt;https://segmentfault.com/a/1190000009028150?utm_source=tuicool&amp;amp;utm_medium=referral#articleHeader2&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;使用jquery的http组件-不太推荐的方法&#34;&gt;使用JQuery的http组件（不太推荐的方法）&lt;/h4&gt;
+
+&lt;p&gt;如果你不熟悉上述的方法，也可以使用JQuery，&lt;code&gt;但是我们并不推荐使用这种方法&lt;/code&gt;，ionic是混合开发的框架，当然兼容JQuery。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;引入JQuery脚本&lt;/li&gt;
+&lt;li&gt;使用JQuery 的Ajax&lt;/li&gt;
+&lt;/ol&gt;
 </description>
       
     </item>
@@ -2033,16 +2162,12 @@ pi@raspberrypi:~ $ npm -v
 &lt;h2 id=&#34;1-注册和使用&#34;&gt;1. 注册和使用&lt;/h2&gt;
 
 &lt;ol&gt;
-&lt;li&gt;打开[&amp;lsquo;极光推送官网&amp;rsquo;](&amp;lsquo;&lt;a href=&#34;https://www.jiguang.cn/&#39;)，注册并登陆，创建一个app。&#34;&gt;https://www.jiguang.cn/&#39;)，注册并登陆，创建一个app。&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;打开 &lt;a href=&#34;https://www.jiguang.cn/&#34;&gt;极光推送官网&lt;/a&gt; ，注册并登陆，创建一个app。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;读取重要信息，包括appkey和你的应用包名，这两个缺一不可。&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://ycdn.lucoder.com/usr/my_lucoder_com/log/20171216/1_2.png&#34; alt=&#34;&#39;创建一个APP&#39;&#34; /&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;读取重要信息，包括appkey和你的应用包名，这两个缺一不可。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://ycdn.lucoder.com/usr/my_lucoder_com/log/20171216/1_2.png&#34; alt=&#34;&#39;读取重要信息&#39;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://gitee.com/Gecore/muxuanuser.github.io/raw/master/content/post/201712/imgs/1_2.png&#34; alt=&#34;&#39;读取重要信息&#39;&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;2-创建一个ionic项目&#34;&gt;2. 创建一个ionic项目&lt;/h2&gt;
 
@@ -2055,7 +2180,7 @@ pi@raspberrypi:~ $ npm -v
 
 &lt;p&gt;修改config.xml文件，修改widget节点下面的id属性。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://ycdn.lucoder.com/usr/my_lucoder_com/log/20171216/1_4.png&#34; alt=&#34;&#39;修改属性&#39;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://gitee.com/Gecore/muxuanuser.github.io/raw/master/content/post/201712/imgs/1_4.png&#34; alt=&#34;&#39;修改属性&#39;&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;4-安装插件&#34;&gt;4. 安装插件&lt;/h2&gt;
 
@@ -2066,11 +2191,11 @@ pi@raspberrypi:~ $ npm -v
 npm install --save @jiguang-ionic/jpush
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://ycdn.lucoder.com/usr/my_lucoder_com/log/20171216/1_5.png&#34; alt=&#34;&#39;安装插件&#39;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://gitee.com/Gecore/muxuanuser.github.io/raw/master/content/post/201712/imgs/1_5.png&#34; alt=&#34;&#39;安装插件&#39;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;插件安装完毕就可以编写代码了。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://ycdn.lucoder.com/usr/my_lucoder_com/log/20171216/1_8.png&#34; alt=&#34;&#39;编写代码&#39;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://gitee.com/Gecore/muxuanuser.github.io/raw/master/content/post/201712/imgs/1_8.png&#34; alt=&#34;&#39;编写代码&#39;&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;5-编译项目&#34;&gt;5. 编译项目&lt;/h2&gt;
 
@@ -2079,68 +2204,21 @@ npm install --save @jiguang-ionic/jpush
 &lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;ionic cordova build android
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://ycdn.lucoder.com/usr/my_lucoder_com/log/20171216/1_6.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://gitee.com/Gecore/muxuanuser.github.io/raw/master/content/post/201712/imgs/1_6.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://ycdn.lucoder.com/usr/my_lucoder_com/log/20171216/1_7.png&#34; alt=&#34;&#39;编译项目&#39;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://gitee.com/Gecore/muxuanuser.github.io/raw/master/content/post/201712/imgs/1_7.png&#34; alt=&#34;&#39;编译项目&#39;&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;6-测试&#34;&gt;6. 测试&lt;/h2&gt;
 
 &lt;p&gt;在此使用的是在线调试，当然可以使用本团队的api项目调试，[api.lucoder.com/doc/jpush](&amp;lsquo;api.lucoder.com/doc/jpush&amp;rsquo;)调试，具体规则打开网站查看。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://ycdn.lucoder.com/usr/my_lucoder_com/log/20171216/1_9.png&#34; alt=&#34;&#39;调试&#39;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://gitee.com/Gecore/muxuanuser.github.io/raw/master/content/post/201712/imgs/1_9.png&#34; alt=&#34;&#39;调试&#39;&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://ycdn.lucoder.com/usr/my_lucoder_com/log/20171216/1_10.jpg&#34; alt=&#34;&#39;结果&#39;&#34; /&gt;&lt;/p&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title>Visual Studio Code</title>
-      <link>https://www.gecore.win/post/201711/vscode/</link>
-      <pubDate>Sat, 30 Sep 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.gecore.win/post/201711/vscode/</guid>
-      
-        <description>
+&lt;p&gt;&lt;img src=&#34;https://gitee.com/Gecore/muxuanuser.github.io/raw/master/content/post/201712/imgs/1_10.jpg&#34; alt=&#34;&#39;结果&#39;&#34; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;visual-studio-code&#34;&gt;Visual Studio Code&lt;/h2&gt;
+&lt;h2 id=&#34;注意&#34;&gt;注意&lt;/h2&gt;
 
-&lt;blockquote&gt;
-&lt;p&gt;官网：&lt;a href=&#34;https://code.visualstudio.com/&#34;&gt;https://code.visualstudio.com/&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;VSCode可以认为是一个迷你版的Visual Studio，大概45M左右，拥有海量的插件可以满足PHP、JAVA、C#、JavaScript、Typescript 、Go、C/C++等语言开发和调试，支持智能提示等。&lt;/p&gt;
-
-&lt;h4 id=&#34;软件安装&#34;&gt;软件安装&lt;/h4&gt;
-
-&lt;p&gt;进入&lt;a href=&#34;https://code.visualstudio.com/&#34;&gt;官网&lt;/a&gt;下载软件，建议安装完成之时将所有的复选框都选上，方便以后的开发和使用。&lt;/p&gt;
-
-&lt;h4 id=&#34;插件推荐&#34;&gt;插件推荐&lt;/h4&gt;
-
-&lt;ol&gt;
-&lt;li&gt;因为笔者安装VSCode主要是用来开发ionic应用的，所以下面有限推荐ionic开发所用到的实用插件。
-&lt;code&gt;mark
-Angular 5 Snippets - Typescript,Html,Angular Material
-Beautify css/sass/scss/less
-Ionic 3 ionView Snippets
-Ionic3 snippets
-cssrem
-&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;常用的插件
-&lt;code&gt;mark
-VScode-icons
-Debugger for Java
-ILSpy.Net Decomiler
-Java Exctension Pack
-Java Test Runner
-Maven for Java
-Markdown  Preview Enhanced
-SQL Beautify
-Visual Studio Team Services
-Go
-Python for VSCode
-&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;你或许注意到了文中带有&lt;code&gt;appkey&lt;/code&gt;和包名，请勿使用这个&lt;code&gt;appkey&lt;/code&gt;和包名，请替换为自己的，因为推送需要激光后台推送，程序推送需要使用&lt;code&gt;masterkey&lt;/code&gt;。&lt;/p&gt;
 </description>
       
     </item>

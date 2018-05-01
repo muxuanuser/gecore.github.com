@@ -19,7 +19,7 @@
 
 
 <meta name="author" content="牧轩居士" />
-  <meta name="description" content="ionic 集成极光推送插件 本文档主要介绍极光推送插件的安装使用，ionic环境搭建和ionic的项目创建不在本文范畴。 1. 注册和使用 打开[&amp;lsquo" />
+  <meta name="description" content="ionic 集成极光推送插件 本文档主要介绍极光推送插件的安装使用，ionic环境搭建和ionic的项目创建不在本文范畴。 1. 注册和使用 打开 极光推送官网 ，" />
 
   <meta name="keywords" content="牧轩居士, java, c#, ionic, webrtc" />
 
@@ -50,7 +50,7 @@
 
 
 <meta property="og:title" content="IONIC集成极光推送" />
-<meta property="og:description" content="ionic 集成极光推送插件 本文档主要介绍极光推送插件的安装使用，ionic环境搭建和ionic的项目创建不在本文范畴。 1. 注册和使用 打开[&lsquo" />
+<meta property="og:description" content="ionic 集成极光推送插件 本文档主要介绍极光推送插件的安装使用，ionic环境搭建和ionic的项目创建不在本文范畴。 1. 注册和使用 打开 极光推送官网 ，" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.gecore.win/post/201712/ionic_jpush/" />
 
@@ -71,19 +71,19 @@
 
 
 <meta itemprop="name" content="IONIC集成极光推送">
-<meta itemprop="description" content="ionic 集成极光推送插件 本文档主要介绍极光推送插件的安装使用，ionic环境搭建和ionic的项目创建不在本文范畴。 1. 注册和使用 打开[&lsquo">
+<meta itemprop="description" content="ionic 集成极光推送插件 本文档主要介绍极光推送插件的安装使用，ionic环境搭建和ionic的项目创建不在本文范畴。 1. 注册和使用 打开 极光推送官网 ，">
 
 
 <meta itemprop="datePublished" content="2017-09-30T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2017-09-30T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="351">
+<meta itemprop="wordCount" content="429">
 
 
 
 <meta itemprop="keywords" content="ionic,极光推送," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="IONIC集成极光推送"/>
-<meta name="twitter:description" content="ionic 集成极光推送插件 本文档主要介绍极光推送插件的安装使用，ionic环境搭建和ionic的项目创建不在本文范畴。 1. 注册和使用 打开[&lsquo"/>
+<meta name="twitter:description" content="ionic 集成极光推送插件 本文档主要介绍极光推送插件的安装使用，ionic环境搭建和ionic的项目创建不在本文范畴。 1. 注册和使用 打开 极光推送官网 ，"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -181,7 +181,7 @@
               <a href="/categories/%E6%9E%81%E5%85%89%E6%8E%A8%E9%80%81/"> 极光推送 </a>
             
           </div>
-        <span class="more-meta"> 351 words </span>
+        <span class="more-meta"> 429 words </span>
         <span class="more-meta"> 1 min read </span>
       </div>
     </header>
@@ -203,6 +203,7 @@
 <li><a href="#4-安装插件">4. 安装插件</a></li>
 <li><a href="#5-编译项目">5. 编译项目</a></li>
 <li><a href="#6-测试">6. 测试</a></li>
+<li><a href="#注意">注意</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -222,16 +223,12 @@
 <h2 id="1-注册和使用">1. 注册和使用</h2>
 
 <ol>
-<li>打开[&lsquo;极光推送官网&rsquo;](&lsquo;<a href="https://www.jiguang.cn/')，注册并登陆，创建一个app。">https://www.jiguang.cn/')，注册并登陆，创建一个app。</a></li>
+<li><p>打开 <a href="https://www.jiguang.cn/">极光推送官网</a> ，注册并登陆，创建一个app。</p></li>
+
+<li><p>读取重要信息，包括appkey和你的应用包名，这两个缺一不可。</p></li>
 </ol>
 
-<p><img src="https://ycdn.lucoder.com/usr/my_lucoder_com/log/20171216/1_2.png" alt="'创建一个APP'" /></p>
-
-<ol>
-<li>读取重要信息，包括appkey和你的应用包名，这两个缺一不可。</li>
-</ol>
-
-<p><img src="https://ycdn.lucoder.com/usr/my_lucoder_com/log/20171216/1_2.png" alt="'读取重要信息'" /></p>
+<p><img src="https://gitee.com/Gecore/muxuanuser.github.io/raw/master/content/post/201712/imgs/1_2.png" alt="'读取重要信息'" /></p>
 
 <h2 id="2-创建一个ionic项目">2. 创建一个ionic项目</h2>
 
@@ -244,7 +241,7 @@
 
 <p>修改config.xml文件，修改widget节点下面的id属性。</p>
 
-<p><img src="https://ycdn.lucoder.com/usr/my_lucoder_com/log/20171216/1_4.png" alt="'修改属性'" /></p>
+<p><img src="https://gitee.com/Gecore/muxuanuser.github.io/raw/master/content/post/201712/imgs/1_4.png" alt="'修改属性'" /></p>
 
 <h2 id="4-安装插件">4. 安装插件</h2>
 
@@ -255,11 +252,11 @@
 npm install --save @jiguang-ionic/jpush
 </code></pre>
 
-<p><img src="https://ycdn.lucoder.com/usr/my_lucoder_com/log/20171216/1_5.png" alt="'安装插件'" /></p>
+<p><img src="https://gitee.com/Gecore/muxuanuser.github.io/raw/master/content/post/201712/imgs/1_5.png" alt="'安装插件'" /></p>
 
 <p>插件安装完毕就可以编写代码了。</p>
 
-<p><img src="https://ycdn.lucoder.com/usr/my_lucoder_com/log/20171216/1_8.png" alt="'编写代码'" /></p>
+<p><img src="https://gitee.com/Gecore/muxuanuser.github.io/raw/master/content/post/201712/imgs/1_8.png" alt="'编写代码'" /></p>
 
 <h2 id="5-编译项目">5. 编译项目</h2>
 
@@ -268,17 +265,21 @@ npm install --save @jiguang-ionic/jpush
 <pre><code class="language-shell">ionic cordova build android
 </code></pre>
 
-<p><img src="https://ycdn.lucoder.com/usr/my_lucoder_com/log/20171216/1_6.png" alt="image" /></p>
+<p><img src="https://gitee.com/Gecore/muxuanuser.github.io/raw/master/content/post/201712/imgs/1_6.png" alt="image" /></p>
 
-<p><img src="https://ycdn.lucoder.com/usr/my_lucoder_com/log/20171216/1_7.png" alt="'编译项目'" /></p>
+<p><img src="https://gitee.com/Gecore/muxuanuser.github.io/raw/master/content/post/201712/imgs/1_7.png" alt="'编译项目'" /></p>
 
 <h2 id="6-测试">6. 测试</h2>
 
 <p>在此使用的是在线调试，当然可以使用本团队的api项目调试，[api.lucoder.com/doc/jpush](&lsquo;api.lucoder.com/doc/jpush&rsquo;)调试，具体规则打开网站查看。</p>
 
-<p><img src="https://ycdn.lucoder.com/usr/my_lucoder_com/log/20171216/1_9.png" alt="'调试'" /></p>
+<p><img src="https://gitee.com/Gecore/muxuanuser.github.io/raw/master/content/post/201712/imgs/1_9.png" alt="'调试'" /></p>
 
-<p><img src="https://ycdn.lucoder.com/usr/my_lucoder_com/log/20171216/1_10.jpg" alt="'结果'" /></p>
+<p><img src="https://gitee.com/Gecore/muxuanuser.github.io/raw/master/content/post/201712/imgs/1_10.jpg" alt="'结果'" /></p>
+
+<h2 id="注意">注意</h2>
+
+<p>你或许注意到了文中带有<code>appkey</code>和包名，请勿使用这个<code>appkey</code>和包名，请替换为自己的，因为推送需要激光后台推送，程序推送需要使用<code>masterkey</code>。</p>
 
     </div>
 
