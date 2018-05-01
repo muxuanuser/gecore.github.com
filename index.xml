@@ -356,8 +356,11 @@ GO
 &lt;h4 id=&#34;数据库&#34;&gt;数据库&lt;/h4&gt;
 
 &lt;ol&gt;
-&lt;li&gt;Entity Framework Core
-&lt;a href=&#34;https://www.gecore.win/post/201804/asp.net-core-ef%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5/&#34;&gt;ASP.NET Core SQLite3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Entity Framework Core
+&lt;a href=&#34;https://www.gecore.win/post/201804/asp.net-core-ef%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5/&#34;&gt;ASP.NET Core MSSQL&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Entity Framework Core SQLite
+&lt;a href=&#34;https://www.gecore.win/post/201805/netcore_ef_sqlite/&#34;&gt;ASP.NET Core SQLite3&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h2 id=&#34;cli变更&#34;&gt;CLI变更&lt;/h2&gt;
