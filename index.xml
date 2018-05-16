@@ -6,10 +6,628 @@
     <description>Recent content on 牧轩居士</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 01 May 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 02 May 2018 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://www.gecore.win/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>MxBlog</title>
+      <link>https://www.gecore.win/post/201805/mxblog_core_01/</link>
+      <pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.gecore.win/post/201805/mxblog_core_01/</guid>
+      
+        <description>
+
+&lt;blockquote&gt;
+&lt;p&gt;本章节主要介绍环境搭建，创建基本的开发环境，创建项目等。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;mxblog&#34;&gt;MXBlog&lt;/h2&gt;
+
+&lt;p&gt;MXBlog是采用&lt;code&gt;ASP.NET CORE2.0&lt;/code&gt;开发的一款博客程序，主要功能是对文章的增删改查，通过对MxBlog的代码编写，开始深入学习&lt;code&gt;ASP.NET Core&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;同步更新Gitee：&lt;a href=&#34;https://gitee.com/Gecore/MxBlog&#34;&gt;https://gitee.com/Gecore/MxBlog&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;工具环境&#34;&gt;工具环境&lt;/h2&gt;
+
+&lt;p&gt;开发工具：Visual Studio 2017 Enterprise&lt;/p&gt;
+
+&lt;p&gt;数据库：SQLite3，支持MSSQL、Mariadb（MySQL）&lt;/p&gt;
+
+&lt;p&gt;宿主：Windows 10 专业版&lt;/p&gt;
+
+&lt;h2 id=&#34;所需环境&#34;&gt;所需环境&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;IIS 7+&lt;/li&gt;
+&lt;li&gt;Nginx 1.12+&lt;/li&gt;
+&lt;li&gt;Jexus 5.8+&lt;/li&gt;
+&lt;li&gt;参考文档：&lt;a href=&#34;https://docs.microsoft.com/zh-cn/aspnet/core/&#34;&gt;https://docs.microsoft.com/zh-cn/aspnet/core/&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;开始工作&#34;&gt;开始工作&lt;/h2&gt;
+
+&lt;h4 id=&#34;创建项目&#34;&gt;创建项目&lt;/h4&gt;
+
+&lt;p&gt;创建一个ASP.NET Core 2.0项目，选择&lt;code&gt;模型控制器&lt;/code&gt;类型。&lt;/p&gt;
+
+&lt;h4 id=&#34;创建模型&#34;&gt;创建模型&lt;/h4&gt;
+
+&lt;p&gt;本项目主要用到&lt;code&gt;Blog&lt;/code&gt;、&lt;code&gt;Poster&lt;/code&gt;、&lt;code&gt;Sort&lt;/code&gt;、&lt;code&gt;Tag&lt;/code&gt;、&lt;code&gt;Site&lt;/code&gt;、&lt;code&gt;Weichat&lt;/code&gt;这几个类，不懂的可以看注释，如果你对EF框架已经有所了解，请直接忽略本小节，下面是代码：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cs&#34;&gt;//数据上下文
+public class DB : DbContext
+    {
+        public DbSet&amp;lt;Weichat&amp;gt; Weichat { get; set; }
+        public DbSet&amp;lt;Blog&amp;gt; Blogs { get; set; }
+        public DbSet&amp;lt;Poster&amp;gt; Posters { get; set; }
+        public DbSet&amp;lt;Site&amp;gt; Sites { get; set; }
+        public DbSet&amp;lt;Sort&amp;gt; Sorts { get; set; }
+        public DbSet&amp;lt;Tag&amp;gt; Tags { get; set; }
+
+        public DB(DbContextOptions&amp;lt;DB&amp;gt; options) : base(options) { }
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cs&#34;&gt;//博客类
+[Table(name: &amp;quot;T_Blog&amp;quot;)]
+    public class Blog
+    {
+        [Display(Name = &amp;quot;编号&amp;quot;)]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]//设置主键并且自增
+        public int BlogId { get; set; }
+        [Display(Name = &amp;quot;标题&amp;quot;)]
+        public String Title { get; set; }
+        [Display(Name = &amp;quot;详情&amp;quot;)]
+        public String Content { get; set; }
+        [Display(Name = &amp;quot;分类&amp;quot;)]
+        //设置外键，外键名称是 fk_blog_sort_id ：SortId是外键，关系表Sort，下同
+        [ForeignKey(&amp;quot;fk_blog_sort_id&amp;quot;)]
+        public int SortId { get; set; }
+        public virtual Sort Sort { get; set; }
+        [Display(Name = &amp;quot;标签&amp;quot;)]
+        [ForeignKey(&amp;quot;fk_blog_tag_id&amp;quot;)]
+        public int TagId { get; set; }
+        public virtual Tag Tag { get; set; }
+        [Display(Name = &amp;quot;作者&amp;quot;)]
+        [ForeignKey(&amp;quot;fk_blog_poster_id&amp;quot;)]
+        public int PosterId { get; set; }
+        public virtual Poster Poster { get; set; }
+        //发表日期，设置日期格式是 2018-05-02 
+        [Column(TypeName = &amp;quot;date&amp;quot;)]
+        [Display(Name = &amp;quot;发布时间&amp;quot;), DisplayFormat(DataFormatString = &amp;quot;yyyy-MM-dd&amp;quot;)]
+        public DateTime? PostTime { get; set; }
+        //制定限制，必须在 1-10之间
+        [Display(Name = &amp;quot;置顶&amp;quot;), Range(1, 10, ErrorMessage = &amp;quot;置顶数据必须在1-10之间，数据越大显示权限越高，显示越靠前，默认是1&amp;quot;)]
+        public int? TopLevel { get; set; } = 1;
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cs&#34;&gt;//作者信息表
+[Table(name: &amp;quot;T_Poster&amp;quot;)]
+    public class Poster
+    {
+        [Display(Name = &amp;quot;用户编号&amp;quot;)]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int PosterId { get; set; }
+        [Display(Name = &amp;quot;用户名&amp;quot;)]
+        public String Name { get; set; }
+        [Display(Name = &amp;quot;密码&amp;quot;)]
+        public String Passwd { get; set; }
+        [Display(Name = &amp;quot;邮箱&amp;quot;)]
+        //邮箱格式约束，必须满足邮箱格式
+        [RegularExpression(@&amp;quot;^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$&amp;quot;, ErrorMessage = &amp;quot;不合法的邮箱格式！&amp;quot;)]
+        public String Email { get; set; }
+        //QQ号码约束，必须满足QQ号码格式
+        [Display(Name = &amp;quot;QQ号码&amp;quot;)]
+        [RegularExpression(@&amp;quot;[0-9]{4,12}&amp;quot;, ErrorMessage = &amp;quot;QQ号码不合法&amp;quot;)]
+        public String QQ { get; set; }
+        [Display(Name = &amp;quot;Token&amp;quot;)]
+        public String Token { get; set; }
+        //个人主页约束，必须满足url格式
+        [Display(Name = &amp;quot;个人主页&amp;quot;)]
+        [RegularExpression(@&amp;quot;[a-zA-z]+://[^\s]*&amp;quot;, ErrorMessage = &amp;quot;网页地址不合法！&amp;quot;)]
+        public String Page { get; set; }
+        [Display(Name = &amp;quot;简介&amp;quot;)]
+        public String Description { get; set; }
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cs&#34;&gt;[Table(name: &amp;quot;T_Site&amp;quot;)]
+    public class Site
+    {
+        [Display(Name = &amp;quot;修改记录&amp;quot;)]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int SiteId { get; set; }
+        [Display(Name = &amp;quot;地址&amp;quot;)]
+        public String Siteurl { get; set; }
+        [Display(Name = &amp;quot;标题&amp;quot;)]
+        public String SiteTitle { get; set; }
+        [Display(Name = &amp;quot;关键字&amp;quot;)]
+        public String SiteKeyword { get; set; }
+        [Display(Name = &amp;quot;描述&amp;quot;)]
+        public String Description { get; set; }
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cs&#34;&gt;[Table(name: &amp;quot;T_Sort&amp;quot;)]
+    public class Sort
+    {
+        [Display(Name = &amp;quot;编号&amp;quot;)]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int SortId { get; set; }
+
+        [Display(Name = &amp;quot;名称&amp;quot;)]
+        public String Title { get; set; }
+
+        [Display(Name = &amp;quot;文章数目&amp;quot;)]
+        public int Count { get; set; }
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cs&#34;&gt;[Table(name: &amp;quot;T_Tag&amp;quot;)]
+    public class Tag
+    {
+        [Display(Name = &amp;quot;编号&amp;quot;)]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int TagId { get; set; }
+
+        [Display(Name = &amp;quot;名称&amp;quot;)]
+        public String Title { get; set; }
+
+        [Display(Name = &amp;quot;文章数目&amp;quot;)]
+        public int Count { get; set; }
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cs&#34;&gt;[Table(name: &amp;quot;T_Weichat&amp;quot;)]
+    public class Weichat
+    {
+        [Display(Name = &amp;quot;编号&amp;quot;)]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int WeichatId { get; set; }
+        [Display(Name = &amp;quot;标题&amp;quot;)]
+        public String Title { get; set; }
+        [Display(Name = &amp;quot;详情&amp;quot;)]
+        public String Content { get; set; }
+        [Column(TypeName = &amp;quot;date&amp;quot;)]
+        [Display(Name = &amp;quot;发布时间&amp;quot;), DisplayFormat(DataFormatString = &amp;quot;yyyy-MM-dd&amp;quot;)]
+        public DateTime? Posttime { get; set; }
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;![数据库结构图]()&lt;/p&gt;
+
+&lt;h4 id=&#34;依赖注入&#34;&gt;依赖注入&lt;/h4&gt;
+
+&lt;p&gt;修改&lt;code&gt;appsettings.json&lt;/code&gt;文件连接字符串信息：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+  &amp;quot;Logging&amp;quot;: {
+    &amp;quot;IncludeScopes&amp;quot;: false,
+    &amp;quot;LogLevel&amp;quot;: {
+      &amp;quot;Default&amp;quot;: &amp;quot;Warning&amp;quot;
+    }
+  },
+  &amp;quot;ConnectionStrings&amp;quot;: {
+    &amp;quot;SQLite&amp;quot;: &amp;quot;Data Source=App_Data\\muxuan.db&amp;quot;,
+    &amp;quot;MSSQL&amp;quot;: &amp;quot;Data Source=.;Database=muxuan;User=sa;Pwd=123456&amp;quot;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;注意项目开发过程使用的是SQLite数据库。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;修改&lt;code&gt;Startup.cs&lt;/code&gt;文件&lt;code&gt;ConfigureServices&lt;/code&gt;方法。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cs&#34;&gt;public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddDbContext&amp;lt;DB&amp;gt;(options =&amp;gt; {
+                options.UseSqlite(Configuration.GetConnectionString(&amp;quot;SQLite&amp;quot;));
+            });
+            services.AddMvc();
+        }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;参考 &lt;a href=&#34;https://www.gecore.win/post/201805/netcore_ef_sqlite/&#34;&gt;这篇文章&lt;/a&gt;，进行注入。&lt;/p&gt;
+
+&lt;h4 id=&#34;结束语&#34;&gt;结束语&lt;/h4&gt;
+
+&lt;p&gt;到此为止，项目的基本框架已经搭建完毕，下一步开始制作非管理员的业务。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.gecore.win/post/201805/mxblog_core_02/&#34;&gt;飞机&lt;/a&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>MxBlog 分页处理</title>
+      <link>https://www.gecore.win/post/201805/mxblog_core_03/</link>
+      <pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.gecore.win/post/201805/mxblog_core_03/</guid>
+      
+        <description>
+
+&lt;blockquote&gt;
+&lt;p&gt;经过上小结已经完成了基本数据的显示，这一小节我们着重处理分页操作，注意的是我们写好了分页的API，所以这节变得简单了好多。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;开始工作&#34;&gt;开始工作&lt;/h2&gt;
+
+&lt;h4 id=&#34;分页准备&#34;&gt;分页准备&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gitee.com/Gecore/muxuanuser.github.io/raw/master/content/post/201805/imgs/201805022044.png&#34; alt=&#34;添加带有EF读写的控制器&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;我擦，什么鬼，还没做就分好了？看来没这么简单，不然怎会单独拿来一节来说明，这是我们的最终效果。&lt;/p&gt;
+
+&lt;p&gt;首先分析一下，分页需要那些数据：看到分页栏之后第一个想法有&lt;code&gt;开始点&lt;/code&gt;、&lt;code&gt;结束点&lt;/code&gt;，一般的这两个点可以对数据进行分割，进行最大化和最小化分割，还要一个&lt;code&gt;当前节点&lt;/code&gt;，还有一个&lt;code&gt;分页大小&lt;/code&gt;，表示当前处于第几页。例如给出一组数据：Max=100，Min=1，PageIndex=5，PageSize=10，表示出来从1开始（首页），每10个元素当成一页，一共有10页（100 / 10），当前处于第5页。&lt;/p&gt;
+
+&lt;p&gt;所以我们定义一个数据结构如下：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cs&#34;&gt;public class PagerTemplate
+    {
+        public int Max { get; set; }
+        public int Min { get; set; }
+        public int PageSize { get; set; }
+        public int PageIndex { get; set; }
+        public Object DataParams { get; set; }
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;其中max表示最大页码，min表示最小页码，pagesize表示页码大小，pageindex表示当前页码，dataparams表示数据集合。所以修改原先的方法：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cs&#34;&gt;public async Task&amp;lt;IActionResult&amp;gt; GetBlogs(int? pageIndex)
+    {
+        var list = await _context.Blogs.ToListAsync();
+        var template = new ResponseTemplate();
+        try
+        {
+            int pid = pageIndex ?? 1;
+            list = list.Skip((pid - 1) * Siteconfig.Site.PageSize).Take(Siteconfig.Site.PageSize).ToList();
+            template.Code = 1;
+            template.Info = &amp;quot;获取成功！&amp;quot;;
+            template.Params = new PagerTemplate()
+            {
+                Max = list.Count / Siteconfig.Site.PageSize,
+                Min = 1,
+                PageIndex = pid,
+                PageSize = Siteconfig.Site.PageSize,
+                DataParams = list
+            };
+        }
+        catch (Exception ex)
+        {
+            XTrace.WriteLine(ex);
+            template.Code = -1;
+            template.Info = ex.Message;
+            template.Params = ex;
+        }
+        var jsonResult = new JsonResult(template);
+
+        return jsonResult;
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;提示一下，我这里代码就贴了一个方法，注意都要修改。我又骚了一把，创建了一个&lt;code&gt;api&lt;/code&gt;区域，可以获取所有的文章，当然你可以不这么做，因为没什么太大区别。话锋一转，我们继续分页。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;经过上面的修改你应该获取下面&lt;code&gt;一坨&lt;/code&gt;数据：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+  &amp;quot;code&amp;quot;: 1,
+  &amp;quot;info&amp;quot;: &amp;quot;获取成功！&amp;quot;,
+  &amp;quot;params&amp;quot;: {
+    &amp;quot;max&amp;quot;: 9,
+    &amp;quot;min&amp;quot;: 1,
+    &amp;quot;pageSize&amp;quot;: 10,
+    &amp;quot;pageIndex&amp;quot;: 1,
+    &amp;quot;dataParams&amp;quot;: [
+      {
+        &amp;quot;blogId&amp;quot;: 1,
+        &amp;quot;title&amp;quot;: &amp;quot;世界你好！&amp;quot;,
+        &amp;quot;content&amp;quot;: &amp;quot;看到这篇文章说明你的程序安装成功了！&amp;quot;,
+        &amp;quot;sortId&amp;quot;: 1,
+        &amp;quot;sort&amp;quot;: null,
+        &amp;quot;tagId&amp;quot;: 1,
+        &amp;quot;tag&amp;quot;: null,
+        &amp;quot;posterId&amp;quot;: 1,
+        &amp;quot;poster&amp;quot;: null,
+        &amp;quot;postTime&amp;quot;: &amp;quot;2018-05-02T00:00:00&amp;quot;,
+        &amp;quot;topLevel&amp;quot;: 1
+      },
+      {
+        &amp;quot;blogId&amp;quot;: 2,
+        &amp;quot;title&amp;quot;: &amp;quot;世界你好-1！&amp;quot;,
+        &amp;quot;content&amp;quot;: &amp;quot;看到这篇文章说明你的程序安装成功了-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1！&amp;quot;,
+        &amp;quot;sortId&amp;quot;: 1,
+        &amp;quot;sort&amp;quot;: null,
+        &amp;quot;tagId&amp;quot;: 1,
+        &amp;quot;tag&amp;quot;: null,
+        &amp;quot;posterId&amp;quot;: 1,
+        &amp;quot;poster&amp;quot;: null,
+        &amp;quot;postTime&amp;quot;: &amp;quot;2018-05-02T00:00:00&amp;quot;,
+        &amp;quot;topLevel&amp;quot;: 1
+      }
+    ]
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;很明显我们已经知道了他一共有多少页码，一共有多少个数据，当前页码和当前数据都知道了，所以下一步就是前台拼接字符串的操作了。，&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>MxBlog 列表处理</title>
+      <link>https://www.gecore.win/post/201805/mxblog_core_02/</link>
+      <pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.gecore.win/post/201805/mxblog_core_02/</guid>
+      
+        <description>
+
+&lt;blockquote&gt;
+&lt;p&gt;经过上小结已经创建完毕一个项目，在本小节将会处理所有的列表显示处理。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;开始工作&#34;&gt;开始工作&lt;/h2&gt;
+
+&lt;h4 id=&#34;为数据库添加部分测试数据&#34;&gt;为数据库添加部分测试数据。&lt;/h4&gt;
+
+&lt;p&gt;如果你是才用的我前文使用的数据库，可以尝试使用下面的sql代码快速添加到数据库一些测试数据。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;注意：这些数据都是随机填写的，基本上没有任何意义，数据后来需要处理。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;INSERT INTO t_poster(`Name`,`Nickname`,`Passwd`,`Email`,`QQ`,`Page` ,`Description`) 
+    VALUES(&#39;admin&#39;,&#39;牧轩居士&#39;,&#39;admin&#39;,&#39;dev@gecore.win&#39;,&#39;1053024080&#39;,&#39;https://www.gecore.win&#39;,&#39;一个爱写代码的文艺青年！&#39;);
+
+INSERT INTO t_sort(Title,`Count`,ParentId) VALUES(&#39;.NET&#39;,0,0);
+INSERT INTO t_sort(Title,`Count`,ParentId) VALUES(&#39;Java&#39;,0,0);
+INSERT INTO t_sort(Title,`Count`,ParentId) VALUES(&#39;大前端&#39;,0,0);
+INSERT INTO t_sort(Title,`Count`,ParentId) VALUES(&#39;C#&#39;,0,1);
+INSERT INTO t_sort(Title,`Count`,ParentId) VALUES(&#39;ASP.NET Core&#39;,0,1);
+INSERT INTO t_sort(Title,`Count`,ParentId) VALUES(&#39;Bootstrap&#39;,0,4);
+
+INSERT INTO t_tag(Title,`Count`) VALUES(&#39;.NET Core&#39;,0);
+INSERT INTO t_tag(Title,`Count`) VALUES(&#39;Java&#39;,0);
+
+INSERT INTO t_site(Siteurl,SiteTitle,SiteKeyword,`Description`) VALUES(&#39;http://localhost:54869/&#39;,&#39;MxBlog&#39;,&#39;MxBlog&#39;,&#39;MxBlog,一个ASP.NET Core 开发的博客系统&#39;);
+
+INSERT INTO t_weichat(`Title`,`Content`,`Posttime`) VALUES(&#39;hello&#39;,&#39;你好呀&#39;,&#39;2018-05-02&#39;);
+
+INSERT INTO t_blog(Title,Content,SortId,TagId,PosterId,PostTime,TopLevel) 
+    VALUES(&#39;世界你好！&#39;,&#39;看到这篇文章说明你的程序安装成功了！&#39;,1,1,1,&#39;2018-05-02&#39;,1);
+INSERT INTO t_blog(Title,Content,SortId,TagId,PosterId,PostTime,TopLevel) 
+    VALUES(&#39;世界你好-1！&#39;,&#39;看到这篇文章说明你的程序安装成功了-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1！&#39;,1,1,1,&#39;2018-05-02&#39;,1);
+INSERT INTO t_blog(Title,Content,SortId,TagId,PosterId,PostTime,TopLevel) 
+    VALUES(&#39;世界你好-2！&#39;,&#39;看到这篇文章说明你的程序安装成功了！-2-2-2-2-2-2-2-2-2-2-2-2-2-2-2-2-2-2-2-2-2-2-2-2-2-2-2-2&#39;,1,1,1,&#39;2018-05-02&#39;,1);
+INSERT INTO t_blog(Title,Content,SortId,TagId,PosterId,PostTime,TopLevel) 
+    VALUES(&#39;世界你好-3！&#39;,&#39;看到这篇文章说明你的程序安装成功了！-3-3-3-3-3-3-3-3-3-3-3-3-3-3-3-3-3-3-3-3-3-3看到这篇文章说明你的程序安装成功了！-3-3-3-3-3-3-3-3-3-3-3-3-3-3-3-3-3-3-3-3-3-3看到这篇文章说明你的程序安装成功了！-3-3-3-3-3-3-3-3-3-3-3-3-3-3-3-3-3-3-3-3-3-3&#39;,1,1,1,&#39;2018-04-05&#39;,1);
+INSERT INTO t_blog(Title,Content,SortId,TagId,PosterId,PostTime,TopLevel) 
+    VALUES(&#39;世界你好！-4&#39;,&#39;看到这篇文章说明你的程序安装成功了！-4-4-4-4-4-4-4-4-4-4-4-4-4-4-4-4-4-4-4-4-4-4-4&#39;,1,1,1,&#39;2018-05-04&#39;,1);
+INSERT INTO t_blog(Title,Content,SortId,TagId,PosterId,PostTime,TopLevel) 
+    VALUES(&#39;世界你好！-5&#39;,&#39;看到这篇文章说明你的程序安装成功了！-5-5-5-5-5-5-5-5-5-5-5-5-5-5-5-5-5-5-5-5-5-5-5-5-5-5-5-5&#39;,1,1,1,&#39;2018-05-02&#39;,1);
+INSERT INTO t_blog(Title,Content,SortId,TagId,PosterId,PostTime,TopLevel) 
+    VALUES(&#39;世界你好！-7&#39;,&#39;看到这篇文章说明你的程序安装成功了！-7-7-7-7-7-7-7-7-7-7-7-7-7-7-7-7-7-7-7-7-7-7-7-7-7-7&#39;,1,1,1,&#39;2018-05-02&#39;,7);
+INSERT INTO t_blog(Title,Content,SortId,TagId,PosterId,PostTime,TopLevel) 
+    VALUES(&#39;世界你好！-8&#39;,&#39;看到这篇文章说明你的程序安装成功了！-8-8-8-8-8-8-8-8-8-8-8-8&#39;,1,1,1,&#39;2018-05-02&#39;,3);
+INSERT INTO t_blog(Title,Content,SortId,TagId,PosterId,PostTime,TopLevel) 
+    VALUES(&#39;世界你好！-9&#39;,&#39;看到这篇文章说明你的程序安装成功了！&#39;,1,1,1,&#39;2018-05-04&#39;,1);
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;此时你的数据库中应该会有很多数据了！&lt;/p&gt;
+
+&lt;h4 id=&#34;添加控制器&#34;&gt;添加控制器&lt;/h4&gt;
+
+&lt;p&gt;如图所示，添加Blog控制器。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gitee.com/Gecore/muxuanuser.github.io/raw/master/content/post/201805/imgs/20180502191702.png&#34; alt=&#34;添加带有EF读写的控制器&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gitee.com/Gecore/muxuanuser.github.io/raw/master/content/post/201805/imgs/20180502191703.png&#34; alt=&#34;选择Blog，数据上下文选择DB&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;为了程序正常运行，我们首先创建两个类：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cs&#34;&gt;public class Siteconfig
+    {
+        private Site _site;
+        public Site Site
+        {
+            get
+            {
+                if (_site == null)
+                {
+                    _site = new Site()
+                    {
+                        Siteurl = &amp;quot;http://localhost:54869/&amp;quot;,
+                        SiteTitle = &amp;quot;MxBlog&amp;quot;,
+                        SiteKeyword = &amp;quot;MxBlog&amp;quot;,
+                        Description = &amp;quot;MxBlog&amp;quot;,
+                        PageSize = 10
+                    };
+                }
+                return _site;
+            }
+        }
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;你或许注意到了，文中直接写死了site的数据，我们现在姑且这么做，后面从数据库中读取在绑定，现在融入太多内容对于新手而言将会是一个挑战。并且笔者也是在学习之中，数据库字段有时候会随机修改，请自行甄别做出修改，重新生成数据库，否则将会有报错内容。 在本处&lt;code&gt;Site&lt;/code&gt;中添加了一个 &lt;code&gt;Pagesize&lt;/code&gt; 字段，请作出修改！在此强调，本博客所有的内容均为笔者记录笔记所用，不保证其可靠性。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cs&#34;&gt;public class XTrace
+    {
+        /// &amp;lt;summary&amp;gt;
+        /// 写日志的方法
+        /// &amp;lt;/summary&amp;gt;
+        /// &amp;lt;param name=&amp;quot;o&amp;quot;&amp;gt;&amp;lt;/param&amp;gt;
+        public static void WriteLine(object o)
+        {
+            Console.WriteLine(o.ToString());
+        }
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;添加下面几个方法：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cs&#34;&gt;public async Task&amp;lt;IActionResult&amp;gt; GetBlogs(int? pageIndex)
+{
+    var list = await _context.Blogs.ToListAsync();
+    var template = new ResponseTemplate();
+    try
+    {
+        int pid = pageIndex ?? 1;
+        list = list.Skip((pid - 1) * 10).Take(10).ToList();
+        
+        template.Code = 1;
+        template.Info = &amp;quot;获取成功！&amp;quot;;
+        template.Params = list;
+    }
+    catch (Exception ex)
+    {
+        XTrace.WriteLine(ex);
+        template.Code = -1;
+        template.Info = ex.Message;
+        template.Params = ex;
+    }
+    var jsonResult = new JsonResult(template);
+    return jsonResult;
+}
+public async Task&amp;lt;IActionResult&amp;gt; GetBlogsBySort(int? pageIndex, int? SortId)
+{
+    var list = await _context.Blogs.ToListAsync();
+    var template = new ResponseTemplate();
+    try
+    {
+        int pid = pageIndex ?? 1;
+        int sid = SortId ?? 0;
+        list = (from v in list where v.SortId == sid select v).Skip((pid - 1) * 10).Take(10).ToList();
+
+        template.Code = 1;
+        template.Info = &amp;quot;获取成功！&amp;quot;;
+        template.Params = list;
+    }
+    catch (Exception ex)
+    {
+        XTrace.WriteLine(ex);
+        template.Code = -1;
+        template.Info = ex.Message;
+        template.Params = ex;
+    }
+    var jsonResult = new JsonResult(template);
+
+    return jsonResult;
+}
+
+public async Task&amp;lt;IActionResult&amp;gt; GetBlogsByTag(int? pageIndex, int? tagId)
+{
+    var list = await _context.Blogs.ToListAsync();
+    var template = new ResponseTemplate();
+
+    var jsonResult = new JsonResult(template);
+    try
+    {
+        int pid = pageIndex ?? 1;
+        int tid = tagId ?? 0;
+        list = (from v in list where v.TagId == tid select v).Skip((pid - 1) * 10).Take(10).ToList();
+
+        template.Code = 1;
+        template.Info = &amp;quot;获取成功！&amp;quot;;
+        template.Params = list;
+    }
+    catch (Exception ex)
+    {
+        XTrace.WriteLine(ex);
+        template.Code = -1;
+        template.Info = ex.Message;
+        template.Params = ex;
+    }
+    return jsonResult;
+}
+
+public async Task&amp;lt;IActionResult&amp;gt; GetBlogsByPoster(int? pageIndex, int? posterId)
+{
+    var list = await _context.Blogs.ToListAsync();
+    var template = new ResponseTemplate();
+
+    var jsonResult = new JsonResult(template);
+    try
+    {
+        int pid = pageIndex ?? 1;
+        int poid = posterId ?? 0;
+
+        list = (from v in list where v.PosterId == poid select v).Skip((pid - 1) * 10).Take(10).ToList();
+        
+        template.Code = 1;
+        template.Info = &amp;quot;获取成功！&amp;quot;;
+        template.Params = list;
+    }
+    catch (Exception ex)
+    {
+        XTrace.WriteLine(ex);
+        template.Code = -1;
+        template.Info = ex.Message;
+        template.Params = ex;
+    }
+    return jsonResult;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;显示操作&#34;&gt;显示操作&lt;/h4&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;偷偷的告诉你，我开发过程中用的是AmazeUI，当然你不用样式也行，样式随便挑。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;
+        (function () {
+            $.ajax({
+                url:&amp;quot;@Siteconfig.Site.Siteurl/Blogs/GetBlogs&amp;quot;,
+                data: { pageIndex: 1 },
+                success: function (data) {
+                    var list = blist;
+                    var json = data.params;
+                    var result = &amp;quot;&amp;quot;;
+                    for (var i = 0; i &amp;lt; json.length; i++) {
+                        result += &amp;quot;&amp;lt;li&amp;gt; &amp;lt;a href=&#39;@Siteconfig.Site.Siteurl/Blogs/Details/&amp;quot; + json[i].blogId + &amp;quot;&#39;&amp;gt;&amp;quot; + json[i].title + &amp;quot;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&amp;quot;;
+                    }
+
+                    list.innerHTML = result;
+                },
+                error: function (x, r, s) {
+                    console.log(x);
+                    console.log(r);
+                    console.log(s);
+                }
+            });
+        })();
+    &amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;看到数据显示出来惊不惊喜，一部意外！！！&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gitee.com/Gecore/muxuanuser.github.io/raw/master/content/post/201805/imgs/20180502042040.png&#34; alt=&#34;显示结果&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;结束语&#34;&gt;结束语&lt;/h2&gt;
+
+&lt;p&gt;到此为止，显示操作基本完成，下面我们开始作分页操作。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.gecore.win/post/201805/mxblog_core_03/&#34;&gt;飞机&lt;/a&gt;&lt;/p&gt;
+</description>
+      
+    </item>
     
     <item>
       <title>ASP.NET Core 使用Entity Framework &#43; SQLite3</title>
@@ -20,13 +638,254 @@
       
         <description>
 
+&lt;h2 id=&#34;创建一个netcore项目&#34;&gt;创建一个netcore项目&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gitee.com/Gecore/muxuanuser.github.io/raw/master/content/post/201805/imgs/201805011750.png&#34; alt=&#34;创建项目&#34; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;创建一个blog模型&#34;&gt;创建一个Blog模型&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cs&#34;&gt;[Table(name: &amp;quot;T_Blog&amp;quot;)]
+public class Blogs
+{
+    public int Id { get; set; }
+    public String Title { get; set; }
+    public String Posttime { get; set; }
+    public String Detial { get; set; }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;创建一个数据上下文&#34;&gt;创建一个数据上下文&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cs&#34;&gt;public class DB : DbContext
+{
+    public DbSet&amp;lt;Blogs&amp;gt; Blogs { get; set; }
+    public DB(DbContextOptions&amp;lt;DB&amp;gt; options) : base(options) { }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;添加数据项下文注入&#34;&gt;添加数据项下文注入&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cs&#34;&gt; public void ConfigureServices(IServiceCollection services)
+    {
+        services.AddDbContext&amp;lt;DB&amp;gt;(options =&amp;gt;
+        {
+            options.UseSqlite(&amp;quot;Data Source=sqlite.db&amp;quot;);
+        });
+        services.AddMvc();
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;装插件&#34;&gt;装插件&lt;/h4&gt;
+
+&lt;p&gt;下面开始安装一系列的插件，由于官网的教程是直接使用命令行安装的包，命令行比较长，我们才用&lt;code&gt;Nuget&lt;/code&gt;下载。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gitee.com/Gecore/muxuanuser.github.io/raw/master/content/post/201805/imgs/20180501175501.png&#34; alt=&#34;Nuget下载&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;找到&lt;code&gt;Microsoft EntityFrameCore.Sqlite&lt;/code&gt;，然后复制这个名字到搜索框里面，下面选取这两个安装插件：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gitee.com/Gecore/muxuanuser.github.io/raw/master/content/post/201805/imgs/201805011756.png&#34; alt=&#34;安装这两个&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;然后，我们把最后的&lt;code&gt;sqlite&lt;/code&gt;修改为&lt;code&gt;Tool&lt;/code&gt;搜索出来下面的图片：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gitee.com/Gecore/muxuanuser.github.io/raw/master/content/post/201805/imgs/201805011757.png&#34; alt=&#34;找出来tool&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;复制名称&lt;code&gt;Microsoft.EntityFrameworkCore.Tools.DotNet&lt;/code&gt;，关闭VS，然后用记事本或者notepad等工具打开项目文件&lt;code&gt;002_EFSQLite.csproj&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;添加一条数据：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;  &amp;lt;ItemGroup&amp;gt;
+    &amp;lt;DotNetCliToolReference Include=&amp;quot;Microsoft.EntityFrameworkCore.Tools.DotNet&amp;quot; Version=&amp;quot;2.0.0&amp;quot; /&amp;gt;
+  &amp;lt;/ItemGroup&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;开始反向工程&#34;&gt;开始反向工程&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;dotnet ef migrations add InitialCreate
+dotnet ef database update
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;此时你看到产生了一个db数据库文件。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gitee.com/Gecore/muxuanuser.github.io/raw/master/content/post/201805/imgs/201805011805.png&#34; alt=&#34;自动生成一个db文件&#34; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;创建controller控制器&#34;&gt;创建Controller控制器&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gitee.com/Gecore/muxuanuser.github.io/raw/master/content/post/201805/imgs/201805011759.png&#34; alt=&#34;找出来tool&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gitee.com/Gecore/muxuanuser.github.io/raw/master/content/post/201805/imgs/201805011802.png&#34; alt=&#34;找出来tool&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;我们向db里面添加一些数据，运行查看效果。&lt;/p&gt;
+
+&lt;h3 id=&#34;结果&#34;&gt;结果&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gitee.com/Gecore/muxuanuser.github.io/raw/master/content/post/201805/imgs/201805011810.png&#34; alt=&#34;结果&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gitee.com/Gecore/muxuanuser.github.io/raw/master/content/post/201805/imgs/201805011811.png&#34; alt=&#34;结果&#34; /&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Ionic 教程专题</title>
+      <link>https://www.gecore.win/post/201805/ionic_column/</link>
+      <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.gecore.win/post/201805/ionic_column/</guid>
+      
+        <description>
+
+&lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
+
+&lt;p&gt;ionic是一个用来开发混合手机应用的，开源的，免费的代码库。可以优化html、css和js的性能，构建高效的应用程序，而且还可以用于构建Sass和AngularJS的优化。ionic会是一个可以信赖的框架。使用了IONICcss + Angular JS + Cordova，允许用户快速开发一套混合应用。&lt;/p&gt;
+
+&lt;h2 id=&#34;目录&#34;&gt;目录&lt;/h2&gt;
+
+&lt;h4 id=&#34;环境搭建&#34;&gt;环境搭建&lt;/h4&gt;
+
+&lt;h4 id=&#34;基本组件&#34;&gt;基本组件&lt;/h4&gt;
+
+&lt;h4 id=&#34;基本api&#34;&gt;基本API&lt;/h4&gt;
+
+&lt;h4 id=&#34;native&#34;&gt;Native&lt;/h4&gt;
+
+&lt;h4 id=&#34;其他工具&#34;&gt;其他工具&lt;/h4&gt;
+
+&lt;h2 id=&#34;牧轩开源&#34;&gt;牧轩开源&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://gitee.com/Gecore/IonicProject&#34;&gt;Gitee&lt;/a&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Ionic制作自定义组件</title>
+      <link>https://www.gecore.win/post/201805/ionic_column_ionic_md_component/</link>
+      <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.gecore.win/post/201805/ionic_column_ionic_md_component/</guid>
+      
+        <description>
+
+&lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
+
+&lt;p&gt;ionic中包含了大量的组件，一般开发借助这些组件基本可以完成项目开发，但是总会有一些组件不能满足我们的需求或者没有该组件，所以就要我们自己动手制作自定义组件，本文介绍一个图片组件，具体功能是：点击图片可以放大图片，然后可以左右滚动图片。&lt;/p&gt;
+
+&lt;h2 id=&#34;开始动手&#34;&gt;开始动手&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;首先需要创建一个组件&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;ionic g component ImgRoller
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;指令运行结束之后将会在&lt;code&gt;src&lt;/code&gt;目录里面看到一个&lt;code&gt;components&lt;/code&gt;的文件夹，该文件夹下面均为我们创建的组件，并且自带了一个HelloWord。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;测试&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;现在我们在一个空白页面里面进行测试，使用我们创建的组件&lt;code&gt;&amp;lt;imgroller&amp;gt;&amp;lt;/imgroller&amp;gt;&lt;/code&gt;，如果没有什么意外的话，将会看到下面的错误信息：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-error&#34;&gt;Runtime Error
+Template parse errors: &#39;imgroller&#39; is not a known element: 1. If &#39;imgroller&#39; is an Angular component, then verify that it is part of this module. 2. To allow any element add &#39;NO_ERRORS_SCHEMA&#39; to the &#39;@NgModule.schemas&#39; of this component. (&amp;quot; &amp;lt;/p&amp;gt; &amp;lt;p&amp;gt; [ERROR -&amp;gt;]&amp;lt;imgroller&amp;gt; &amp;lt;/imgroller&amp;gt; &amp;lt;/p&amp;gt; &amp;lt;/ion-content&amp;gt;&amp;quot;): ng:///HomePageModule/HomePage.html@13:4
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+&lt;li&gt;改错&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;根据错误信息很明显，找不到&lt;code&gt;component&lt;/code&gt;组件，并且看到关键字&lt;code&gt;&#39;@NgModule.schemas&lt;/code&gt;，我们尝试将&lt;code&gt;component.module.ts&lt;/code&gt;导入到&lt;code&gt;app.module.ts&lt;/code&gt;中：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-typescript&#34;&gt;imports: [
+    ComponentsModule,
+    TabsPageModule,
+    BrowserModule,
+    IonicModule.forRoot(MyApp)
+  ],
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;错误依然存在，这是我们把&lt;code&gt;ImgRollerComponent&lt;/code&gt;放到&lt;code&gt;home&lt;/code&gt;下面（使用img-roller的页面）的&lt;code&gt;homes.module.ts&lt;/code&gt;中：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-typescript&#34;&gt;@NgModule({
+  declarations: [
+    ImgRollerComponent,
+    HomePage
+  ],
+  imports: [
+    IonicPageModule.forChild(HomePage),
+  ],
+})
+export class HomePageModule {}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;注意：&lt;code&gt;Component&lt;/code&gt;必须放在&lt;code&gt;Page&lt;/code&gt;之前，因为页面渲染页面的顺序有关，否则竟会继续报错。首先渲染组件，然后渲染页面时组件存在！&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;修改前的预备知识&#34;&gt;修改前的预备知识&lt;/h2&gt;
+
+&lt;p&gt;在自定义组件中，用户可以通过&lt;code&gt;@Input&lt;/code&gt;输入数据，&lt;code&gt;@Output&lt;/code&gt;传出数据，当然，传出数据建议使用数据绑定的方法。&lt;/p&gt;
+
+&lt;h2 id=&#34;修改组件&#34;&gt;修改组件&lt;/h2&gt;
+
+&lt;p&gt;其实到此位置可以看出，组件就是一个页面，可以理解未&lt;code&gt;ASP.NET&lt;/code&gt;的&lt;code&gt;Razor&lt;/code&gt;中的局部视图，最后看到的页面为程序自动拼接的页面。&lt;/p&gt;
+
+&lt;p&gt;首先分析我们组件的功能：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;点击图片，此时必须包含图片，所以需要有一个图片容器&lt;code&gt;imgs&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;点击放大，所以需要有一个点击事件&lt;code&gt;imgClick()&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;可以滑动切换图片，所以需要一个切换事件&lt;code&gt;imgSwitch()&lt;/code&gt;。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-typescript&#34;&gt;export class ImgRollerComponent {
+
+  @Input() imgs: IImgages[] = [
+    {}
+  ];
+  private curIndex: number;
+
+  constructor() {
+  }
+  /**
+   * 点击图片方法，点击图片放大图片
+   * @param picIndex 点击图片索引
+   */
+  public onImgClick(picIndex: number): void {
+  }
+  /**
+   * 从该图片开始切换图片
+   * @param picIndex 图片索引
+   */
+  public onImgSwitch(picIndex: number) {
+  }
+}
+interface IImgages {
+  imgIndex?: number;
+  imgUrl?: string;
+} 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;牧轩开源&#34;&gt;牧轩开源&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://gitee.com/Gecore/IonicProject&#34;&gt;Gitee&lt;/a&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>MPI.NET系列文章</title>
+      <link>https://www.gecore.win/post/201805/mpi_net_column/</link>
+      <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.gecore.win/post/201805/mpi_net_column/</guid>
+      
+        <description>
+
 &lt;h2 id=&#34;说明名&#34;&gt;说明名&lt;/h2&gt;
 
-&lt;p&gt;目前java10已经发布，现在可以到
- &lt;a href=&#34;http://www.oracle.com/technetwork/java/javase/downloads/jdk10-downloads-4416644.html&#34;&gt;Java10&lt;/a&gt; 下载java10，如果你是用记事本编写代码可以直接测试，如果使用Eclipse需要使用
- &lt;a href=&#34;http://www.eclipse.org/downloads/download.php?file=/eclipse/downloads/drops4/M-4.7.3aRC1-201803231030/eclipse-SDK-4.7.3aRC1-win32-x86_64.zip&#34;&gt;Eclipse 4.7.3a Release Candidate Build: 4.7.3aRC1&lt;/a&gt; 才支持Java10。&lt;/p&gt;
-
-&lt;h2 id=&#34;创建一个netcore项目&#34;&gt;创建一个netcore项目&lt;/h2&gt;
+&lt;h2 id=&#34;mpi-net&#34;&gt;MPI.NET&lt;/h2&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://gitee.com/Gecore/muxuanuser.github.io/raw/master/content/post/201805/imgs/201805011750.png&#34; alt=&#34;创建项目&#34; /&gt;&lt;/p&gt;
 
@@ -2001,250 +2860,6 @@ cordova platform add android
 &amp;lt;edit-config file=&amp;quot;app/src/main/AndroidManifest.xml&amp;quot; target=&amp;quot;/manifest/application&amp;quot; mode=&amp;quot;merge&amp;quot;&amp;gt;
 
 &lt;/code&gt;&lt;/pre&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title>专栏</title>
-      <link>https://www.gecore.win/column/</link>
-      <pubDate>Sun, 07 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.gecore.win/column/</guid>
-      
-        <description>
-
-&lt;h2 id=&#34;专栏&#34;&gt;专栏&lt;/h2&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;这个页面是博客文章专栏导航&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://www.gecore.win/post/201804/asp_net_core/&#34;&gt;ASP.NET Core 专栏&lt;/a&gt;&lt;/p&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title>在线工具</title>
-      <link>https://www.gecore.win/online/</link>
-      <pubDate>Sun, 07 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.gecore.win/online/</guid>
-      
-        <description>&lt;blockquote&gt;
-&lt;p&gt;这个页面的工具是博主自己常用的收藏，仅提供个人备份使用。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;【编辑器】&lt;a href=&#34;https://www.zybuluo.com/mdeditor&#34;&gt;Markdown&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;【开发工具】&lt;a href=&#34;https://www.bejson.com/&#34;&gt;Json&lt;/a&gt;|&lt;a href=&#34;http://tool.oschina.net/regex/&#34;&gt;正则表达式&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;【办公】&lt;a href=&#34;http://www.uupoop.com/&#34;&gt;在线ps&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;【工具】&lt;a href=&#34;https://tool.lu/&#34;&gt;Tools&lt;/a&gt;|&lt;a href=&#34;http://tool.oschina.net/&#34;&gt;OSChina&lt;/a&gt; | &lt;a href=&#34;http://tools.jb51.net/&#34;&gt;脚本之家&lt;/a&gt;&lt;/p&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title>常用工具</title>
-      <link>https://www.gecore.win/links/</link>
-      <pubDate>Sun, 07 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.gecore.win/links/</guid>
-      
-        <description>&lt;blockquote&gt;
-&lt;p&gt;这个页面的软件是博主自己常用的收藏，仅提供个人备份使用。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;【资料】&lt;a href=&#34;https://www.appinn.com/markdown/&#34;&gt;MarkDown&lt;/a&gt; | &lt;a href=&#34;https://mirrors.lucoder.com&#34;&gt;牧轩镜像&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;【.NET网站】 &lt;a href=&#34;http://www.ikende.com/&#34;&gt;IKende&lt;/a&gt; | &lt;a href=&#34;https://www.connectionstrings.com/&#34;&gt;ConnectStrings&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;【开发工具】&lt;a href=&#34;https://code.visualstudio.com/&#34;&gt;Visual Studio Code&lt;/a&gt; | &lt;a href=&#34;https://www.eclipse.org/downloads/download.php?file=/oomph/epp/oxygen/R2/eclipse-inst-win64.exe&#34;&gt;Eclipse&lt;/a&gt;&lt;/p&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title>常用工具</title>
-      <link>https://www.gecore.win/tools/</link>
-      <pubDate>Sun, 07 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.gecore.win/tools/</guid>
-      
-        <description>&lt;blockquote&gt;
-&lt;p&gt;这个页面的软件是博主自己常用的收藏，仅提供个人备份使用。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;hr /&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title>ionic 操作http</title>
-      <link>https://www.gecore.win/post/201712/ionic%E6%93%8D%E4%BD%9Chttp/</link>
-      <pubDate>Sat, 30 Dec 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.gecore.win/post/201712/ionic%E6%93%8D%E4%BD%9Chttp/</guid>
-      
-        <description>
-
-&lt;h2 id=&#34;http技术&#34;&gt;Http技术：&lt;/h2&gt;
-
-&lt;p&gt;http请求是客户端请求api使用的一项非常重要的技术，主要有下面几种方法。&lt;/p&gt;
-
-&lt;h4 id=&#34;使用native组件&#34;&gt;使用Native组件&lt;/h4&gt;
-
-&lt;p&gt;这种方法是一种和原生交互行最强的一种方法。&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;官网：&lt;a href=&#34;https://ionicframework.com/docs/native/http/&#34;&gt;https://ionicframework.com/docs/native/http/&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ ionic cordova plugin add cordova-plugin-advanced-http
-$ npm install --save @ionic-native/http
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;具体用法：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-ts&#34;&gt;import { HTTP } from &#39;@ionic-native/http&#39;;
-
-constructor(private http: HTTP) { }
-
-this.http.get(&#39;http://ionic.io&#39;, {}, {})
-  .then(data =&amp;gt; {
-    console.log(data.status);
-    console.log(data.data); // data received by server
-    console.log(data.headers);
-  })
-  .catch(error =&amp;gt; {
-    console.log(error.status);
-    console.log(error.error); // error message as string
-    console.log(error.headers);
-  });
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&#34;使用angular自带的http组件-推荐&#34;&gt;使用Angular自带的http组件（推荐）&lt;/h4&gt;
-
-&lt;ol&gt;
-&lt;li&gt;从 @angular/http 模块中导入 Http 类&lt;/li&gt;
-&lt;li&gt;导入 RxJS 中的 map 操作符&lt;/li&gt;
-&lt;li&gt;使用 DI 方式注入 http 服务&lt;/li&gt;
-&lt;li&gt;调用 http 服务的 get() 方法，设置请求地址并发送 HTTP 请求&lt;/li&gt;
-&lt;li&gt;调用 Response 对象的 json() 方法，把响应体转成 JSON 对象&lt;/li&gt;
-&lt;li&gt;把请求的结果，赋值给 members 属性&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-ts&#34;&gt;import { Component, OnInit } from &#39;@angular/core&#39;;
-import { Http } from &#39;@angular/http&#39;; // (1)
-import &#39;rxjs/add/operator/map&#39;; // (2)
-interface Member {
-  id: string;
-  login: string;
-  avatar_url: string;
-}
-@Component({
-  selector: &#39;exe-app&#39;,
-  template: `
-    &amp;lt;h3&amp;gt;Angular Orgs Members&amp;lt;/h3&amp;gt;
-    &amp;lt;ul *ngIf=&amp;quot;members&amp;quot;&amp;gt;
-      &amp;lt;li *ngFor=&amp;quot;let member of members;&amp;quot;&amp;gt;
-        &amp;lt;p&amp;gt;
-          &amp;lt;img [src]=&amp;quot;member.avatar_url&amp;quot; width=&amp;quot;48&amp;quot; height=&amp;quot;48&amp;quot;/&amp;gt;
-          ID：&amp;lt;span&amp;gt;{{member.id}}&amp;lt;/span&amp;gt;
-          Name: &amp;lt;span&amp;gt;{{member.login}}&amp;lt;/span&amp;gt;
-        &amp;lt;/p&amp;gt;
-      &amp;lt;/li&amp;gt;
-    &amp;lt;/ul&amp;gt;
-  `
-})
-export class AppComponent implements OnInit {
-  members: Member[];
-  constructor(private http: Http) { } // (3)
-  ngOnInit() {
-    this.http.get(`https://api.github.com/orgs/angular/members?page=1&amp;amp;per_page=5`) // (4)
-      .map(res =&amp;gt; res.json()) // (5)
-      .subscribe(data =&amp;gt; {
-        if (data) this.members = data; // (6)
-      });
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;具体内容和步骤请到这里查看：&lt;a href=&#34;https://segmentfault.com/a/1190000009028150?utm_source=tuicool&amp;amp;utm_medium=referral#articleHeader2&#34;&gt;https://segmentfault.com/a/1190000009028150?utm_source=tuicool&amp;amp;utm_medium=referral#articleHeader2&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;使用jquery的http组件-不太推荐的方法&#34;&gt;使用JQuery的http组件（不太推荐的方法）&lt;/h4&gt;
-
-&lt;p&gt;如果你不熟悉上述的方法，也可以使用JQuery，&lt;code&gt;但是我们并不推荐使用这种方法&lt;/code&gt;，ionic是混合开发的框架，当然兼容JQuery。&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;引入JQuery脚本&lt;/li&gt;
-&lt;li&gt;使用JQuery 的Ajax&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title>树莓派部署Node环境</title>
-      <link>https://www.gecore.win/post/201802/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%89%E8%A3%85node/</link>
-      <pubDate>Sat, 07 Oct 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.gecore.win/post/201802/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%89%E8%A3%85node/</guid>
-      
-        <description>
-
-&lt;h2 id=&#34;树莓派安装node环境&#34;&gt;树莓派安装node环境&lt;/h2&gt;
-
-&lt;ol&gt;
-&lt;li&gt;下载node包
-&amp;gt; &lt;a href=&#34;https://npm.taobao.org/mirrors/node/&#34;&gt;https://npm.taobao.org/mirrors/node/&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;我选择的是&lt;code&gt;node-v9.5.0-linux-armv7l.tar.gz&lt;/code&gt;，当然可以选择其他版本，但是注意是&lt;code&gt;arm版本&lt;/code&gt;即可。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-code&#34;&gt;wget https://npm.taobao.org/mirrors/node/v9.5.0/node-v9.5.0-linux-armv7l.tar.gz
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ol&gt;
-&lt;li&gt;解压node包&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-code&#34;&gt;tar -zxvf node-v9.5.0-linux-armv7l.tar.gz
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ol&gt;
-&lt;li&gt;复制到&lt;code&gt;/usr/&lt;/code&gt;目录里面&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-code&#34;&gt;sudo cp -rvi node-v9.5.0-linux-armv7l /usr/
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ol&gt;
-&lt;li&gt;添加链接&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;首先切换到&lt;code&gt;/usr/bin&lt;/code&gt;目录。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-code&#34;&gt;sudo ln -s ../node-v9.5.0-linux-armv7l/lib/node_modules/npm/bin/npm-cli.js
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ol&gt;
-&lt;li&gt;测试结果
-&lt;code&gt;code
-pi@raspberrypi:~ $ npm -v
-5.6.0
-&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
 </description>
       
     </item>

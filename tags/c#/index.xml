@@ -6,10 +6,19 @@
     <description>Recent content in C# on 牧轩居士</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 09 Apr 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 01 May 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.gecore.win/tags/c#/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>MPI.NET系列文章</title>
+      <link>https://www.gecore.win/post/201805/mpi_net_column/</link>
+      <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.gecore.win/post/201805/mpi_net_column/</guid>
+      <description>说明名 MPI.NET 创建一个Blog模型 [Table(name: &amp;quot;T_Blog&amp;quot;)] public class Blogs { public int Id { get; set; } public String Title { get; set; } public String Posttime { get; set; } public String Detial { get; set; } } 创建一个数据上下文 public class DB : DbContext { public DbSet&amp;lt;Blogs&amp;gt; Blogs { get; set;</description>
+    </item>
     
     <item>
       <title>.NET Core 系列文章</title>

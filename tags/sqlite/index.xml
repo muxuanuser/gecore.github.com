@@ -6,10 +6,37 @@
     <description>Recent content in Sqlite on 牧轩居士</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 01 May 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 02 May 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.gecore.win/tags/sqlite/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>MxBlog</title>
+      <link>https://www.gecore.win/post/201805/mxblog_core_01/</link>
+      <pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.gecore.win/post/201805/mxblog_core_01/</guid>
+      <description>本章节主要介绍环境搭建，创建基本的开发环境，创建项目等。 MXBlog MXBlog是采用ASP.NET CORE2.0开发的一款博客程序，主要功能是对文章</description>
+    </item>
+    
+    <item>
+      <title>MxBlog 分页处理</title>
+      <link>https://www.gecore.win/post/201805/mxblog_core_03/</link>
+      <pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.gecore.win/post/201805/mxblog_core_03/</guid>
+      <description>经过上小结已经完成了基本数据的显示，这一小节我们着重处理分页操作，注意的是我们写好了分页的API，所以这节变得简单了好多。 开始工作 分页准备 我</description>
+    </item>
+    
+    <item>
+      <title>MxBlog 列表处理</title>
+      <link>https://www.gecore.win/post/201805/mxblog_core_02/</link>
+      <pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.gecore.win/post/201805/mxblog_core_02/</guid>
+      <description>经过上小结已经创建完毕一个项目，在本小节将会处理所有的列表显示处理。 开始工作 为数据库添加部分测试数据。 如果你是才用的我前文使用的数据库，可以</description>
+    </item>
     
     <item>
       <title>ASP.NET Core 使用Entity Framework &#43; SQLite3</title>
@@ -17,7 +44,7 @@
       <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.gecore.win/post/201805/netcore_ef_sqlite/</guid>
-      <description>说明名 目前java10已经发布，现在可以到 Java10 下载java10，如果你是用记事本编写代码可以直接测试，如果使用Eclipse需要使用 Eclipse 4.7.3a Release Candidate Build:</description>
+      <description>创建一个netcore项目 创建一个Blog模型 [Table(name: &amp;quot;T_Blog&amp;quot;)] public class Blogs { public int Id { get; set; } public String Title { get; set; } public String Posttime { get; set; } public String Detial { get; set; } } 创建一个数据上下文 public class DB</description>
     </item>
     
   </channel>
